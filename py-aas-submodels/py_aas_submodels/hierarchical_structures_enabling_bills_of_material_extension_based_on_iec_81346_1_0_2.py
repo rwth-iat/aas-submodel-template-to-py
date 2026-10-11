@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,55 +95,42 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class IEC81346Structure(aas.Submodel):
 
-    def __init__(
-        self,
-        id_: str,
-        id_short: Optional[str] = r"IEC81346Structure",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-    ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"IEC81346Structure",
+            "description": aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Definition of the Submodel Extension IEC 81346 of HierarchicalStructures identified by its semanticId. The Submodel idShort can be picked freely."
                 }
-            )
+            ),
+            "semantic_id": global_ref(
+                r"https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0"
+            ),
+        }
 
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
+    def __init__(self, id_: str, **kwargs: Unpack[SubmodelMetadata]):
 
         # Add all passed/initialized submodel elements to a single list
 
         embedded_submodel_elements = collect_submodel_elements()
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

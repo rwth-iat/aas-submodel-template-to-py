@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,6 +95,99 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class HandoverDocumentation(aas.Submodel):
 
     class Documents(GeneratedSubmodelElementList):
@@ -107,195 +200,111 @@ class HandoverDocumentation(aas.Submodel):
 
                     class ClassName(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"ClassName",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABJ219#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABJ219-002"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#className"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"ClassName",
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"class name", r"de": r"Klassenname"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABJ219#002"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABJ219-002"),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#className"),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ClassId(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"ClassId",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH996#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH996-003"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classId"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"ClassId",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"class ID", r"de": r"Klassenidentifikator"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABH996#003"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH996-003"),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classId"),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ClassificationSystem(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"ClassificationSystem",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH997#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH997-003"),
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"ClassificationSystem",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"classification system", r"de": r"Klassifizierungssystem"}
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABH997#003"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH997-003"),
+                                    global_ref(
+                                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classificationSystem"
+                                    ),
+                                ),
+                            }
+
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "display_name": aas.MultiLanguageNameType(
+                                dict_={r"en": r"document classification", r"de": r"Dokumentklassifikation"}
+                            ),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
+                                }
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"),
+                            "supplemental_semantic_id": (
+                                aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"0173-1#02-ABI502#003~0/0173-1#01-AHF581#003",
+                                        ),
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABI502-003/0173-1-01-AHF581-003",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
                                 global_ref(
-                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classificationSystem"
+                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentClassification"
                                 ),
                             ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"classification system", r"de": r"Klassifizierungssystem"}
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                        }
 
                     def __init__(
                         self,
                         className: Union[aas.LangStringSet, ClassName],
                         classId: Union[str, ClassId],
                         classificationSystem: Union[str, ClassificationSystem],
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABI502#003~0/0173-1#01-AHF581#003",
-                                    ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://api.eclass-cdp.com/0173-1-02-ABI502-003/0173-1-01-AHF581-003",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            global_ref(
-                                r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentClassification"
-                            ),
-                        ),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"document classification", r"de": r"Dokumentklassifikation"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -318,54 +327,31 @@ class HandoverDocumentation(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(className, classId, classificationSystem)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"DocumentClassifications",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"),
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"en": r"document classifications", r"de": r"Dokumentklassifikationen"}
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABI502#003"),
+                        "supplemental_semantic_id": (
+                            global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI502-003"),
+                            global_ref(
+                                r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentClassifications"
+                            ),
+                        ),
+                    }
 
                 def __init__(
                     self,
                     documentclassifications_items: Iterable[Documentclassifications_item],
-                    id_short: Optional[str] = r"DocumentClassifications",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI502#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI502-003"),
-                        global_ref(
-                            r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentClassifications"
-                        ),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document classifications", r"de": r"Dokumentklassifikationen"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(documentclassifications_items, str):
@@ -377,22 +363,7 @@ class HandoverDocumentation(aas.Submodel):
                         documentclassifications_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class DocumentIds(GeneratedSubmodelElementList):
 
@@ -400,199 +371,114 @@ class HandoverDocumentation(aas.Submodel):
 
                     class DocumentDomainId(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"DocumentDomainId",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH994#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH994-003"),
-                                global_ref(
-                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentDomainId"
-                                ),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DocumentDomainId",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"document domain ID", r"de": r"Document Domain Identifikator"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABH994#003"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH994-003"),
+                                    global_ref(
+                                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentDomainId"
+                                    ),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DocumentIdentifier(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"DocumentIdentifier",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO099#004"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAO099-004"),
-                                global_ref(
-                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier"
-                                ),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DocumentIdentifier",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"document identifier", r"de": r"Dokumentennummer"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-AAO099#004"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAO099-004"),
+                                    global_ref(
+                                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier"
+                                    ),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DocumentIsPrimary(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: bool,
-                            id_short: Optional[str] = r"DocumentIsPrimary",
-                            value_type: aas.DataTypeDefXsd = bool,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH995#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH995-003"),
-                                global_ref(
-                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIsPrimary"
-                                ),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DocumentIsPrimary",
+                                "value_type": bool,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"document is primary", r"de": r"Dokument ist primär"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABH995#003"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH995-003"),
+                                    global_ref(
+                                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIsPrimary"
+                                    ),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: bool, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "display_name": aas.MultiLanguageNameType(
+                                dict_={r"en": r"document ID", r"de": r"Dokumentidentifikator"}
+                            ),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
+                                }
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"),
+                            "supplemental_semantic_id": (
+                                aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"0173-1#02-ABI501#003~0/0173-1#01-AHF580#003",
+                                        ),
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABI501-003/0173-1-01-AHF580-003",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId"),
+                            ),
+                        }
 
                     def __init__(
                         self,
                         documentDomainId: Union[str, DocumentDomainId],
                         documentIdentifier: Union[str, DocumentIdentifier],
                         documentIsPrimary: Optional[Union[bool, DocumentIsPrimary]] = None,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABI501#003~0/0173-1#01-AHF580#003",
-                                    ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://api.eclass-cdp.com/0173-1-02-ABI501-003/0173-1-01-AHF580-003",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId"),
-                        ),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"document ID", r"de": r"Dokumentidentifikator"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -615,52 +501,27 @@ class HandoverDocumentation(aas.Submodel):
                             documentDomainId, documentIdentifier, documentIsPrimary
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"DocumentIds",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"),
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"en": r"document IDs", r"de": r"Dokumentidentifikatoren"}
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABI501#003"),
+                        "supplemental_semantic_id": (
+                            global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI501-003"),
+                            global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIds"),
+                        ),
+                    }
 
                 def __init__(
-                    self,
-                    documentids_items: Iterable[Documentids_item],
-                    id_short: Optional[str] = r"DocumentIds",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI501#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI501-003"),
-                        global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIds"),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    self, documentids_items: Iterable[Documentids_item], **kwargs: Unpack[SubmodelElementListMetadata]
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document IDs", r"de": r"Dokumentidentifikatoren"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(documentids_items, str):
@@ -670,22 +531,7 @@ class HandoverDocumentation(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(documentids_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class DocumentVersions(GeneratedSubmodelElementList):
 
@@ -695,79 +541,46 @@ class HandoverDocumentation(aas.Submodel):
 
                         class Language_item(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = None,
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = global_ref(r"0173-1#07-AAS045#003"),
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN468#008"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    global_ref(r"urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Locale"),
-                                ),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": None,
+                                    "value_type": str,
+                                    "value_id": global_ref(r"0173-1#07-AAS045#003"),
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"language", r"de": r"en (Englisch)"}
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-AAN468#008"),
+                                    "supplemental_semantic_id": (
+                                        global_ref(r"urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Locale"),
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementListMetadata:
+                            return {
+                                "id_short": r"Language",
+                                "type_value_list_element": aas.Property,
+                                "value_type_list_element": str,
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Language", r"de": r"Sprache"}
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAN468#008"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN468-008"),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#languages"),
+                                ),
+                            }
 
                         def __init__(
                             self,
                             language_items: Iterable[Union[str, Language_item]],
-                            id_short: Optional[str] = r"Language",
-                            type_value_list_element: aas.SubmodelElement = aas.Property,
-                            semantic_id_list_element: Optional[aas.Reference] = None,
-                            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                            order_relevant: bool = True,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN468#008"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN468-008"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#languages"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementListMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Language", r"de": r"Sprache"})
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # A str would be split into its characters
                             if isinstance(language_items, str):
@@ -786,285 +599,150 @@ class HandoverDocumentation(aas.Submodel):
                                 language_items, number_repeated=False
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                type_value_list_element=type_value_list_element,
-                                semantic_id_list_element=semantic_id_list_element,
-                                value_type_list_element=value_type_list_element,
-                                order_relevant=order_relevant,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class Version(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"Version",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAP003#005"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAP003-005"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#version"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Version",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"Version", r"de": r"Dokumentenversion"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-AAP003#005"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAP003-005"),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#version"),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Title(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"Title",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG940#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABG940-003"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#title"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"Title",
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"Title", r"de": r"Dokumententitel"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABG940#003"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABG940-003"),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#title"),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Subtitle(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"Subtitle",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH998#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH998-003"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#subtitle"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"Subtitle",
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"Subtitle", r"de": r"Untertitel"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-ABH998#003"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH998-003"),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#subtitle"),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Description(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"Description",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN466#004"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN466-004"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#description"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"Description",
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"Description", r"de": r"Dokumentenbeschreibung"}
-                                )
+                                ),
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(r"0173-1#02-AAN466#004"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN466-004"),
+                                    global_ref(
+                                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#description"
+                                    ),
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DigitalFiles(GeneratedSubmodelElementList):
 
                         class Digitalfiles_item(aas.File):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = None,
-                                content_type: Optional[str] = r"application/pdf",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABK126#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType"),
-                                ),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> FileMetadata:
+                                return {
+                                    "id_short": None,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={
                                             r"en": r"digital files",
                                             r"de": r"Name der spezifischen digitalen Datei@de",
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABK126#002"),
+                                    "supplemental_semantic_id": (
+                                        global_ref(
+                                            r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType"
+                                        ),
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(
+                                self,
+                                value: str,
+                                content_type: Optional[str] = r"application/pdf",
+                                **kwargs: Unpack[FileMetadata],
+                            ):
 
                                 super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    content_type=content_type,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementListMetadata:
+                            return {
+                                "id_short": r"DigitalFiles",
+                                "type_value_list_element": aas.File,
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"digital files", r"de": r"Digitale Dateien"}
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABK126#002"),
+                                "supplemental_semantic_id": (
+                                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABK126-002"),
+                                    global_ref(
+                                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#digtialFiles"
+                                    ),
+                                ),
+                            }
 
                         def __init__(
                             self,
                             digitalfiles_items: Iterable[Digitalfiles_item],
-                            id_short: Optional[str] = r"DigitalFiles",
-                            type_value_list_element: aas.SubmodelElement = aas.File,
-                            semantic_id_list_element: Optional[aas.Reference] = None,
-                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                            order_relevant: bool = True,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABK126#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABK126-002"),
-                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#digtialFiles"),
-                            ),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementListMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"digital files", r"de": r"Digitale Dateien"}
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # A str would be split into its characters
                             if isinstance(digitalfiles_items, str):
@@ -1076,22 +754,35 @@ class HandoverDocumentation(aas.Submodel):
                                 digitalfiles_items, number_repeated=False
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                type_value_list_element=type_value_list_element,
-                                semantic_id_list_element=semantic_id_list_element,
-                                value_type_list_element=value_type_list_element,
-                                order_relevant=order_relevant,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "display_name": aas.MultiLanguageNameType(
+                                dict_={r"en": r"document version", r"de": r"Document version"}
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"),
+                            "supplemental_semantic_id": (
+                                aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"0173-1#02-ABI503#003~0/0173-1#01-AHF582#003",
+                                        ),
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABI503-003/0173-1-01-AHF582-003",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                global_ref(
+                                    r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersion"
+                                ),
+                            ),
+                        }
 
                     def __init__(
                         self,
@@ -1101,44 +792,8 @@ class HandoverDocumentation(aas.Submodel):
                         version: Optional[Union[str, Version]] = None,
                         subtitle: Optional[Union[aas.LangStringSet, Subtitle]] = None,
                         description_: Optional[Union[aas.LangStringSet, Description]] = None,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-ABI503#003~0/0173-1#01-AHF582#003",
-                                    ),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://api.eclass-cdp.com/0173-1-02-ABI503-003/0173-1-01-AHF582-003",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            global_ref(
-                                r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersion"
-                            ),
-                        ),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
-                                dict_={r"en": r"document version", r"de": r"Document version"}
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(language, str):
@@ -1184,54 +839,31 @@ class HandoverDocumentation(aas.Submodel):
                             language, version, title, subtitle, description_, digitalFiles
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"DocumentVersions",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"),
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"en": r"document versions", r"de": r"Dokumentenversionen"}
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABI503#003"),
+                        "supplemental_semantic_id": (
+                            global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI503-003"),
+                            global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documentVersions"
+                            ),
+                        ),
+                    }
 
                 def __init__(
                     self,
                     documentversions_items: Iterable[Documentversions_item],
-                    id_short: Optional[str] = r"DocumentVersions",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI503#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI503-003"),
-                        global_ref(
-                            r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documentVersions"
-                        ),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"document versions", r"de": r"Dokumentenversionen"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(documentversions_items, str):
@@ -1243,22 +875,36 @@ class HandoverDocumentation(aas.Submodel):
                         documentversions_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"document"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
+                        }
+                    ),
+                    "semantic_id": global_ref(r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"),
+                    "supplemental_semantic_id": (
+                        aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"0173-1#02-ABI500#003~0/0173-1#01-AHF579#003",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://api.eclass-cdp.com/0173-1-02-ABI500-003/0173-1-01-AHF579-003",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#Document"),
+                    ),
+                }
 
             def __init__(
                 self,
@@ -1267,47 +913,8 @@ class HandoverDocumentation(aas.Submodel):
                 ],
                 documentIds: Union[Iterable[DocumentIds.Documentids_item], DocumentIds],
                 documentVersions: Union[Iterable[DocumentVersions.Documentversions_item], DocumentVersions],
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"0173-1#02-ABI500#003~0/0173-1#01-AHF579#003",
-                            ),
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://api.eclass-cdp.com/0173-1-02-ABI500-003/0173-1-01-AHF579-003",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#Document"),
-                ),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"document"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # A str would be split into its characters
                 if isinstance(documentClassifications, str):
@@ -1342,52 +949,25 @@ class HandoverDocumentation(aas.Submodel):
                     documentClassifications, documentIds, documentVersions
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            documents_items: Iterable[Documents_item],
-            id_short: Optional[str] = r"Documents",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"
-            ),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = True,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI500#003"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI500-003"),
-                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documents"),
-            ),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"Documents",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"),
+                "display_name": aas.MultiLanguageNameType(
                     dict_={r"en": r"Documents", r"de": r"Dokumente (Übergabedokumentation)"}
-                )
+                ),
+                "semantic_id": global_ref(r"0173-1#02-ABI500#003"),
+                "supplemental_semantic_id": (
+                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI500-003"),
+                    global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documents"),
+                ),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, documents_items: Iterable[Documents_item], **kwargs: Unpack[SubmodelElementListMetadata]):
 
             # A str would be split into its characters
             if isinstance(documents_items, str):
@@ -1397,71 +977,44 @@ class HandoverDocumentation(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(documents_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-    def __init__(
-        self,
-        id_: str,
-        documents: Union[Iterable[Documents.Documents_item], Documents],
-        id_short: Optional[str] = r"HandoverDocumentation",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AHF578#003"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (
-            global_ref(r"https://api.eclass-cdp.com/0173-1-01-AHF578-003"),
-            global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#HandoverDocumentation"),
-        ),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-    ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"en": r"handover documentation"})
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"HandoverDocumentation",
+            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"handover documentation"}),
+            "description": aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment"
                 }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
+            ),
+            "administration": aas.AdministrativeInformation(
                 version=r"1",
                 revision=r"0",
                 creator=None,
                 template_id=r"https://admin-shell.io/idta-02035-2",
                 embedded_data_specifications=[],
-            )
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AHF578#003"),),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+            "supplemental_semantic_id": (
+                global_ref(r"https://api.eclass-cdp.com/0173-1-01-AHF578-003"),
+                global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#HandoverDocumentation"
+                ),
+            ),
+        }
 
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
+    def __init__(
+        self,
+        id_: str,
+        documents: Union[Iterable[Documents.Documents_item], Documents],
+        **kwargs: Unpack[SubmodelMetadata],
+    ):
 
         # A str would be split into its characters
         if isinstance(documents, str):
@@ -1476,18 +1029,4 @@ class HandoverDocumentation(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(documents)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

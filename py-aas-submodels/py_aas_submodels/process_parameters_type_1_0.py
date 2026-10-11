@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,6 +95,67 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class ProcessParameters(aas.Submodel):
 
     class Processes(aas.SubmodelElementCollection):
@@ -103,361 +164,166 @@ class ProcessParameters(aas.Submodel):
 
             class ProcessId(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ProcessId",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ProcessId/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ProcessId",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Describes the ID of the process"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ProcessParameters/ProcessId/1/0"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the ID of the process"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ProcessName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ProcessName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ProcessName/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ProcessName",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Describes the Name of the Process"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ProcessParameters/ProcessName/1/0"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the Name of the Process"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ProcessDescription(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"ProcessDescription",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ProcessDescription/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"ProcessDescription",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Describes the process."}),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ProcessParameters/ProcessDescription/1/0"
+                        ),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the process."})
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PlannedProcessTime(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Duration,
-                    id_short: Optional[str] = r"PlannedProcessTime",
-                    value_type: aas.DataTypeDefXsd = xsd.Duration,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/PlannedProcessTime/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PlannedProcessTime",
+                        "value_type": xsd.Duration,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Planned processing time for process execution (without set-up time)"}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ProcessParameters/PlannedProcessTime/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Duration, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ProductParameters(aas.SubmodelElementCollection):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"ProductParameters",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ProductParameters/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProductParameters",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Mandatory product parameters for process execution"}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ProcessParameters/ProductParameters/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ProcessParameters(aas.SubmodelElementCollection):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"ProcessParameters",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ProcessParameters/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProcessParameters",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Mandatory process parameters for process execution"}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ProcessParameters/ProcessParameters/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ResourceParameters(aas.SubmodelElementCollection):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"ResourceParameters",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ResourceParameters/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ResourceParameters",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Mandatory resource parameters for process execution"}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ProcessParameters/ResourceParameters/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ProcessBoM(aas.SubmodelElementCollection):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"ProcessBoM",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ProcessParameters/ProcessBoM/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProcessBoM",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Describes the products or semi-finished products to be involved in the process"
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ProcessParameters/ProcessBoM/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Process",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"The processes to be executed are described individually in the SMC Process."}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ProcessParameters/Process/1/0"),
+                }
 
             def __init__(
                 self,
@@ -469,29 +335,8 @@ class ProcessParameters(aas.Submodel):
                 processParameters: ProcessParameters,
                 resourceParameters: ResourceParameters,
                 processBoM: ProcessBoM,
-                id_short: Optional[str] = r"Process",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ProcessParameters/Process/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"The processes to be executed are described individually in the SMC Process."}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -526,47 +371,23 @@ class ProcessParameters(aas.Submodel):
                     processBoM,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            process: Optional[Iterable[Process]] = None,
-            id_short: Optional[str] = r"Processes",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ProcessParameters/Processes/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"Processes",
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Provides all the necessary parameters of processes in a structured form that are required to manufacture a product"
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ProcessParameters/Processes/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(
+            self, process: Optional[Iterable[Process]] = None, **kwargs: Unpack[SubmodelElementCollectionMetadata]
+        ):
 
             # A str would be split into its characters
             if isinstance(process, str):
@@ -576,76 +397,31 @@ class ProcessParameters(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(process)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-    def __init__(
-        self,
-        id_: str,
-        processes: Processes,
-        id_short: Optional[str] = r"ProcessParameters",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"https://admin-shell-io/idta/SubmodelTemplate/ProcessParameters/1/0"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-    ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"ProcessParameters",
+            "description": aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"The Submodel provides all the necessary parameters in a structured form that are required for the manufacture of any product"
                 }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
+            ),
+            "administration": aas.AdministrativeInformation(
                 version=r"1",
                 revision=r"0",
                 creator=None,
                 template_id=r"https://admin-shell-io/IDTA-02031-1",
                 embedded_data_specifications=[],
-            )
+            ),
+            "semantic_id": global_ref(r"https://admin-shell-io/idta/SubmodelTemplate/ProcessParameters/1/0"),
+        }
 
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
+    def __init__(self, id_: str, processes: Processes, **kwargs: Unpack[SubmodelMetadata]):
 
         # Add all passed/initialized submodel elements to a single list
 
         embedded_submodel_elements = collect_submodel_elements(processes)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

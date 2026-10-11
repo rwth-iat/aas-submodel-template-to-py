@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,739 +95,335 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class DEXPI(aas.Submodel):
 
     class PlantMetadata(aas.SubmodelElementCollection):
 
         class EnterpriseIdentificationCode(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"EnterpriseIdentificationCode",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/EnterpriseIdentificationCodeAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"EnterpriseIdentificationCode",
+                    "value_type": str,
+                    "semantic_id": global_ref(
+                        r"http://sandbox.dexpi.org/rdl/EnterpriseIdentificationCodeAssignmentClass"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class EnterpriseName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"EnterpriseName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/EnterpriseNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"EnterpriseName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/EnterpriseNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class IndustrialComplexIdentificationCode(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"IndustrialComplexIdentificationCode",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/IndustrialComplexIdentificationCodeAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"IndustrialComplexIdentificationCode",
+                    "value_type": str,
+                    "semantic_id": global_ref(
+                        r"http://sandbox.dexpi.org/rdl/IndustrialComplexIdentificationCodeAssignmentClass"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class IndustrialComplexName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"IndustrialComplexName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/IndustrialComplexNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"IndustrialComplexName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/IndustrialComplexNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class PlantSectionIdentificationCode(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"PlantSectionIdentificationCode",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/PlantSectionIdentificationCodeAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"PlantSectionIdentificationCode",
+                    "value_type": str,
+                    "semantic_id": global_ref(
+                        r"http://sandbox.dexpi.org/rdl/PlantSectionIdentificationCodeAssignmentClass"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class PlantSectionName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"PlantSectionName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/PlantSectionNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"PlantSectionName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/PlantSectionNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ProcessPlantIdentificationCode(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ProcessPlantIdentificationCode",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/ProcessPlantIdentificationCodeAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ProcessPlantIdentificationCode",
+                    "value_type": str,
+                    "semantic_id": global_ref(
+                        r"http://sandbox.dexpi.org/rdl/ProcessPlantIdentificationCodeAssignmentClass"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ProcessPlantName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ProcessPlantName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/ProcessPlantNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ProcessPlantName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/ProcessPlantNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ProjectName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ProjectName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/ProjectNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ProjectName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/ProjectNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ProjectNumber(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ProjectNumber",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/ProjectNumberAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ProjectNumber",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/ProjectNumberAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SiteIdentificationCode(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SiteIdentificationCode",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/SiteIdentificationCodeAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SiteIdentificationCode",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/SiteIdentificationCodeAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SiteName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SiteName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/SiteNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SiteName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/SiteNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SubProjectName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SubProjectName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/SubProjectNameAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SubProjectName",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/SubProjectNameAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SubProjectNumber(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SubProjectNumber",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://sandbox.dexpi.org/rdl/SubProjectNumberAssignmentClass"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SubProjectNumber",
+                    "value_type": str,
+                    "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/SubProjectNumberAssignmentClass"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ManufacturerName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ManufacturerName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = None,
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {"id_short": r"ManufacturerName", "value_type": str}
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class DateOfManufacture(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Date,
-                id_short: Optional[str] = r"DateOfManufacture",
-                value_type: aas.DataTypeDefXsd = xsd.Date,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = None,
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {"id_short": r"DateOfManufacture", "value_type": xsd.Date}
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.Date, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class EndProductCASName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"EndProductCASName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = None,
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {"id_short": r"EndProductCASName", "value_type": str}
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class EndProductName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"EndProductName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = None,
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {"id_short": r"EndProductName", "value_type": str}
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"PlantMetadata",
+                "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/PlantMetadata"),
+            }
 
         def __init__(
             self,
@@ -849,22 +445,8 @@ class DEXPI(aas.Submodel):
             dateOfManufacture: Optional[Union[xsd.Date, DateOfManufacture]] = None,
             endProductCASName: Optional[Iterable[Union[str, EndProductCASName]]] = None,
             endProductName: Optional[Iterable[Union[str, EndProductName]]] = None,
-            id_short: Optional[str] = r"PlantMetadata",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/PlantMetadata"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -999,18 +581,7 @@ class DEXPI(aas.Submodel):
                 endProductName,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class Model(aas.SubmodelElementCollection):
 
@@ -1018,409 +589,154 @@ class DEXPI(aas.Submodel):
 
             class ApprovalDate(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Date,
-                    id_short: Optional[str] = r"ApprovalDate",
-                    value_type: aas.DataTypeDefXsd = xsd.Date,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/ApprovalDateRepresentationAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ApprovalDate",
+                        "value_type": xsd.Date,
+                        "semantic_id": global_ref(
+                            r"http://sandbox.dexpi.org/rdl/ApprovalDateRepresentationAssignmentClass"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Date, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ApprovalDescription(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"ApprovalDescription",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/ApprovalDescriptionAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"ApprovalDescription",
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/ApprovalDescriptionAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ArchiveNumber(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ArchiveNumber",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/ArchiveNumberAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ArchiveNumber",
+                        "value_type": str,
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/ArchiveNumberAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CheckerName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CheckerName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/CheckerNameAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CheckerName",
+                        "value_type": str,
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/CheckerNameAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CreationDate(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Date,
-                    id_short: Optional[str] = r"CreationDate",
-                    value_type: aas.DataTypeDefXsd = xsd.Date,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/CreationDateRepresentationAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CreationDate",
+                        "value_type": xsd.Date,
+                        "semantic_id": global_ref(
+                            r"http://sandbox.dexpi.org/rdl/CreationDateRepresentationAssignmentClass"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Date, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CreatorName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CreatorName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/CreatorNameAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CreatorName",
+                        "value_type": str,
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/CreatorNameAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DesignerName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DesignerName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/DesignerNameAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DesignerName",
+                        "value_type": str,
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/DesignerNameAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DrawingNumber(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DrawingNumber",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/DrawingNumberAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DrawingNumber",
+                        "value_type": str,
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/DrawingNumberAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DrawingSubTitle(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"DrawingSubTitle",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/DrawingSubTitleAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"DrawingSubTitle",
+                        "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/DrawingSubTitleAssignmentClass"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LastModificationDate(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Date,
-                    id_short: Optional[str] = r"LastModificationDate",
-                    value_type: aas.DataTypeDefXsd = xsd.Date,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://sandbox.dexpi.org/rdl/LastModificationDateRepresentationAssignmentClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LastModificationDate",
+                        "value_type": xsd.Date,
+                        "semantic_id": global_ref(
+                            r"http://sandbox.dexpi.org/rdl/LastModificationDateRepresentationAssignmentClass"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Date, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"ModelMetadata",
+                    "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ModelMetadata"),
+                }
 
             def __init__(
                 self,
@@ -1434,22 +750,8 @@ class DEXPI(aas.Submodel):
                 drawingNumber: Optional[Union[str, DrawingNumber]] = None,
                 drawingSubTitle: Optional[Union[aas.LangStringSet, DrawingSubTitle]] = None,
                 lastModificationDate: Optional[Union[xsd.Date, LastModificationDate]] = None,
-                id_short: Optional[str] = r"ModelMetadata",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/ModelMetadata"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1516,94 +818,37 @@ class DEXPI(aas.Submodel):
                     lastModificationDate,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class ModelFile(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"ModelFile",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/DEXPI/1/0/ModelFile"),
+                }
+
             def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ModelFile",
-                content_type: Optional[str] = r"application/xml",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/DEXPI/1/0/ModelFile"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                self, value: str, content_type: Optional[str] = r"application/xml", **kwargs: Unpack[FileMetadata]
             ):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
         class ModelRepresentation(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"ModelRepresentation",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/DEXPI/1/0/ModelRepresentation"),
+                }
+
             def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ModelRepresentation",
-                content_type: Optional[str] = r"application/pdf",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/DEXPI/1/0/ModelRepresentation"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                self, value: str, content_type: Optional[str] = r"application/pdf", **kwargs: Unpack[FileMetadata]
             ):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
         class MappingDirectory(aas.SubmodelElementCollection):
 
@@ -1611,142 +856,60 @@ class DEXPI(aas.Submodel):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProcessInstrumentationFunction_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1767,159 +930,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ProcessInstrumentationFunction_2(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProcessInstrumentationFunction_2",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction_2",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1940,159 +1010,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ProcessInstrumentationFunction_3(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProcessInstrumentationFunction_3",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction_3",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2113,159 +1090,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ProcessInstrumentationFunction_4(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ProcessInstrumentationFunction_4",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ProcessInstrumentationFunction_4",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2286,159 +1170,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ActuatingFunction_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ActuatingFunction_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ActuatingFunction_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2459,159 +1250,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ActuatingFunction_2(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ActuatingFunction_2",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ActuatingFunction_2",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2632,159 +1330,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ActuatingFunction_3(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ActuatingFunction_3",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ActuatingFunction_3",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2805,159 +1410,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class PlateHeatExchanger_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"PlateHeatExchanger_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"PlateHeatExchanger_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2978,159 +1490,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class TubularHeatExchanger_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"TubularHeatExchanger_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"TubularHeatExchanger_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -3151,159 +1570,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class CentrifugalPump_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"CentrifugalPump_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"CentrifugalPump_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -3324,159 +1650,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ReciprocatingPump_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ReciprocatingPump_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ReciprocatingPump_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -3497,159 +1730,66 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Tank_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"TagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/TagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Tank_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
+                    }
 
                 def __init__(
                     self,
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Tank_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/DEXPI/1/0/TagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -3670,180 +1810,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(tagName, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ControlledActuator_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ControlledActuator_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -3851,22 +1883,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ControlledActuator_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -3892,180 +1910,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class OperatedValveReference_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"OperatedValveReference_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -4073,22 +1983,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"OperatedValveReference_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4114,180 +2010,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ControlledActuator_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ControlledActuator_2",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -4295,22 +2083,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ControlledActuator_2",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4336,180 +2110,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class OperatedValveReference_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"OperatedValveReference_2",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -4517,22 +2183,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"OperatedValveReference_2",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4558,180 +2210,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ControlledActuator_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ControlledActuator_3",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -4739,22 +2283,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ControlledActuator_3",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4780,180 +2310,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class OperatedValveReference_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"OperatedValveReference_3",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -4961,22 +2383,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"OperatedValveReference_3",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5002,180 +2410,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_3",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -5183,22 +2483,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_3",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5224,180 +2510,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_4(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_4",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -5405,22 +2583,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_4",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5446,180 +2610,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_13(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_13",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -5627,22 +2683,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_13",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5668,180 +2710,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_14(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_14",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -5849,22 +2783,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_14",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5890,180 +2810,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Chamber_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Chamber_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -6071,22 +2883,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6112,180 +2910,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Chamber_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Chamber_2",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -6293,22 +2983,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber_2",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6334,180 +3010,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_10(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_10",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -6515,22 +3083,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_10",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6556,180 +3110,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_11(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_11",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -6737,22 +3183,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_11",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6778,180 +3210,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_16(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_16",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -6959,22 +3283,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_16",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7000,180 +3310,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_15(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_15",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -7181,22 +3383,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_15",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7222,180 +3410,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Chamber_3(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Chamber_3",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -7403,22 +3483,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber_3",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7444,180 +3510,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Chamber_4(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Chamber_4",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -7625,22 +3583,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber_4",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7666,180 +3610,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_1(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_1",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -7847,22 +3683,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_1",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -7888,180 +3710,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_2(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_2",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -8069,22 +3783,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_2",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8110,180 +3810,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_7(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_7",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -8291,22 +3883,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_7",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8332,180 +3910,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_9(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_9",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -8513,22 +3983,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_9",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8554,180 +4010,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_5(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_5",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -8735,22 +4083,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_5",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8776,180 +4110,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_6(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_6",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -8957,22 +4183,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_6",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -8998,180 +4210,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_18(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_18",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -9179,22 +4283,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_18",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -9220,180 +4310,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_8(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_8",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -9401,22 +4383,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_8",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -9442,180 +4410,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_12(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_12",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -9623,22 +4483,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_12",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -9664,180 +4510,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_17(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_17",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -9845,22 +4583,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_17",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -9886,180 +4610,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Nozzle_19(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Nozzle_19",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -10067,22 +4683,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Nozzle_19",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -10108,180 +4710,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Chamber_7(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Chamber_7",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -10289,22 +4783,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber_7",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -10330,180 +4810,72 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Chamber_8(aas.SubmodelElementCollection):
 
                 class SubTagName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"SubTagName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/SubTagName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"SubTagName",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagName"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ParentLocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ParentLocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ParentLocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/ParentTagLocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Class(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Class",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Class",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Class"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocalId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LocalId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LocalId",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/LocalId"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Chamber_8",
+                        "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
+                    }
 
                 def __init__(
                     self,
@@ -10511,22 +4883,8 @@ class DEXPI(aas.Submodel):
                     parentLocalId: Union[str, ParentLocalId],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Chamber_8",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/SubTagMapping"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -10552,18 +4910,14 @@ class DEXPI(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(subTagName, parentLocalId, class_, localId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"MappingDirectory",
+                    "semantic_id": global_ref(r"http://admin-shell.io/idta/DEXPI/1/0/MappingDirectory"),
+                }
 
             def __init__(
                 self,
@@ -10610,24 +4964,8 @@ class DEXPI(aas.Submodel):
                 nozzle_19: Optional[Nozzle_19] = None,
                 chamber_7: Optional[Chamber_7] = None,
                 chamber_8: Optional[Chamber_8] = None,
-                id_short: Optional[str] = r"MappingDirectory",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://admin-shell.io/idta/DEXPI/1/0/MappingDirectory"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Add all passed/initialized submodel elements to a single list
 
@@ -10677,18 +5015,11 @@ class DEXPI(aas.Submodel):
                     chamber_8,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {"id_short": r"Model", "semantic_id": global_ref(r"http://admin-shell.io/dexpi/1/0/Model")}
 
         def __init__(
             self,
@@ -10696,22 +5027,8 @@ class DEXPI(aas.Submodel):
             modelFile: ModelFile,
             modelRepresentation: Optional[ModelRepresentation] = None,
             mappingDirectory: Optional[MappingDirectory] = None,
-            id_short: Optional[str] = r"Model",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/dexpi/1/0/Model"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Add all passed/initialized submodel elements to a single list
 
@@ -10719,42 +5036,18 @@ class DEXPI(aas.Submodel):
                 modelMetadata, modelFile, modelRepresentation, mappingDirectory
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"DEXPI",
+            "semantic_id": global_ref(r"https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0"),
+        }
 
     def __init__(
-        self,
-        id_: str,
-        plantMetadata: PlantMetadata,
-        model: Iterable[Model],
-        id_short: Optional[str] = r"DEXPI",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0"),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        self, id_: str, plantMetadata: PlantMetadata, model: Iterable[Model], **kwargs: Unpack[SubmodelMetadata]
     ):
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # A str would be split into its characters
         if isinstance(model, str):
@@ -10764,18 +5057,4 @@ class DEXPI(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(plantMetadata, model)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,51 +95,148 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RelationshipElementMetadata(TypedDict, total=False):
+    """Metadata of aas.RelationshipElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    first: Optional[aas.Reference]
+    second: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class DataRetentionPolicies(aas.Submodel):
 
     class InheritedFrom(aas.ReferenceElement):
 
-        def __init__(
-            self,
-            value: aas.Reference,
-            id_short: Optional[str] = r"InheritedFrom",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/DataRetentionPolicies/InheritedFrom/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> ReferenceElementMetadata:
+            return {
+                "id_short": r"InheritedFrom",
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Reference to a DataRetentionPolicies Submodel whose policies are extended or changed by the policies defined in this Submodel."
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/InheritedFrom/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class Policies(aas.SubmodelElementCollection):
 
@@ -147,130 +244,66 @@ class DataRetentionPolicies(aas.Submodel):
 
             class RetentionTime(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Duration,
-                    id_short: Optional[str] = r"RetentionTime",
-                    value_type: aas.DataTypeDefXsd = xsd.Duration,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/RetentionTime/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"RetentionTime",
+                        "value_type": xsd.Duration,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Specifies how long an element must be retained before it can be deleted."}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/DataRetentionPolicies/RetentionTime/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Duration, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class SemanticIds(GeneratedSubmodelElementList):
 
                 class Semanticids_item(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/SemanticId/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": None,
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Reference to a semantic identifier of an element that this policy shall apply to."
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/SemanticId/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"SemanticIds",
+                        "type_value_list_element": aas.ReferenceElement,
+                        "semantic_id_list_element": global_ref(
+                            r"https://admin-shell.io/idta/DataRetentionPolicies/SemanticId/1/0"
+                        ),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"References to semantic identifiers of elements that this policy shall apply to."
+                            }
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/SemanticIds/1/0"),
+                    }
 
                 def __init__(
                     self,
                     semanticids_items: Iterable[Union[aas.Reference, Semanticids_item]],
-                    id_short: Optional[str] = r"SemanticIds",
-                    type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/SemanticId/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/SemanticIds/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"References to semantic identifiers of elements that this policy shall apply to."
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(semanticids_items, str):
@@ -287,450 +320,201 @@ class DataRetentionPolicies(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(semanticids_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Overrides(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"Overrides",
-                    first: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0",
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"Overrides",
+                        "first": aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0"
                             ),
                         ),
-                        referred_semantic_id=global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0"
-                        ),
-                    ),
-                    second: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0",
+                        "second": aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0",
+                                ),
+                            ),
+                            referred_semantic_id=global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0"
                             ),
                         ),
-                        referred_semantic_id=global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0"
-                        ),
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Establishes a relationship with a policy that is being overridden by this policy."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/Overrides/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class Immutable(aas.Property):
 
-                def __init__(
-                    self,
-                    value: bool,
-                    id_short: Optional[str] = r"Immutable",
-                    value_type: aas.DataTypeDefXsd = bool,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/Immutable/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Immutable",
+                        "value_type": bool,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Specifies whether the policy is immutable."}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/Immutable/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: bool, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CreatedBy(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CreatedBy",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/CreatedBy/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CreatedBy",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Legal name of the entity who created the policy."}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/CreatedBy/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CreationTime(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.DateTime,
-                    id_short: Optional[str] = r"CreationTime",
-                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/CreationTime/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CreationTime",
+                        "value_type": xsd.DateTime,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Timestamp of when the policy was created."}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/DataRetentionPolicies/CreationTime/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Issuer(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Issuer",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/Issuer/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Issuer",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Legal name of the entity that issued the policy."}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/Issuer/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Source(aas.SubmodelElementCollection):
 
                 class Identifier(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Identifier",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/SourceIdentifier/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Identifier",
+                            "value_type": str,
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Identifier of the source."}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/SourceIdentifier/1/0"
+                            ),
+                        }
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Identifier of the source."})
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Document(aas.File):
 
+                    @staticmethod
+                    def template_defaults() -> FileMetadata:
+                        return {
+                            "id_short": r"Document",
+                            "description": aas.MultiLanguageTextType(
+                                dict_={r"en": r"Reference to an external file representing the policy source."}
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/SourceDocument/1/0"
+                            ),
+                        }
+
                     def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Document",
-                        content_type: Optional[str] = r"image/png",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/SourceDocument/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        self, value: str, content_type: Optional[str] = r"image/png", **kwargs: Unpack[FileMetadata]
                     ):
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Reference to an external file representing the policy source."}
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            content_type=content_type,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
                 class Link(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.AnyURI,
-                        id_short: Optional[str] = r"Link",
-                        value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/SourceLink/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Link",
+                            "value_type": xsd.AnyURI,
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Link to an external source."}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/SourceLink/1/0"
+                            ),
+                        }
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Link to an external source."})
+                    def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Reference(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = r"Reference",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/SourceReference/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": r"Reference",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Reference to a source in the same or an external Asset Administration Shell."
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/SourceReference/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Source",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Describes the source of a policy."}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/Source/1/0"),
+                    }
 
                 def __init__(
                     self,
@@ -738,27 +522,8 @@ class DataRetentionPolicies(aas.Submodel):
                     document: Optional[Document] = None,
                     link: Optional[Union[xsd.AnyURI, Link]] = None,
                     reference: Optional[Union[aas.Reference, Reference]] = None,
-                    id_short: Optional[str] = r"Source",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/Source/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Describes the source of a policy."})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -779,110 +544,45 @@ class DataRetentionPolicies(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(identifier, document, link, reference)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class EffectiveFrom(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.DateTime,
-                    id_short: Optional[str] = r"EffectiveFrom",
-                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/EffectiveFrom/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"EffectiveFrom",
+                        "value_type": xsd.DateTime,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Date and time that the policy is valid from."}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/DataRetentionPolicies/EffectiveFrom/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class EffectiveUntil(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.DateTime,
-                    id_short: Optional[str] = r"EffectiveUntil",
-                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/EffectiveUntil/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"EffectiveUntil",
+                        "value_type": xsd.DateTime,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Date and time until when the policy is valid."}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/DataRetentionPolicies/EffectiveUntil/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AuditLog(GeneratedSubmodelElementList):
 
@@ -890,225 +590,105 @@ class DataRetentionPolicies(aas.Submodel):
 
                     class Timestamp(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.DateTime,
-                            id_short: Optional[str] = r"Timestamp",
-                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/DataRetentionPolicies/Timestamp/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Timestamp",
+                                "value_type": xsd.DateTime,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Time when the change was made."}
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/DataRetentionPolicies/Timestamp/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Identity(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"Identity",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/DataRetentionPolicies/Identity/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"Identity",
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Username or legal name of the entity that made the change."}
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/DataRetentionPolicies/Identity/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Operation(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"Operation",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/DataRetentionPolicies/Operation/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"Operation",
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Description of the action taken."}
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/DataRetentionPolicies/Operation/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Reason(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"Reason",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/DataRetentionPolicies/Reason/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"Reason",
+                                "description": aas.MultiLanguageTextType(dict_={r"en": r"Reason for the change."}),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/DataRetentionPolicies/Reason/1/0"
+                                ),
+                            }
 
-                            if description is None:
-                                description = aas.MultiLanguageTextType(dict_={r"en": r"Reason for the change."})
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Signature(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"Signature",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/DataRetentionPolicies/Signature/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Signature",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Signature of the Policy after the change was made."}
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/DataRetentionPolicies/Signature/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "description": aas.MultiLanguageTextType(
+                                dict_={r"en": r"An activity related to the policy."}
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/DataRetentionPolicies/Activity/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
@@ -1117,29 +697,8 @@ class DataRetentionPolicies(aas.Submodel):
                         operation: Union[aas.LangStringSet, Operation],
                         reason: Union[aas.LangStringSet, Reason],
                         signature: Union[str, Signature],
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/DataRetentionPolicies/Activity/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"An activity related to the policy."}
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1172,51 +731,25 @@ class DataRetentionPolicies(aas.Submodel):
                             timestamp, identity, operation, reason, signature
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"AuditLog",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(
+                            r"https://admin-shell.io/idta/DataRetentionPolicies/Activity/1/0"
+                        ),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Activity log of changes to the policy."}
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/AuditLog/1/0"),
+                    }
 
                 def __init__(
-                    self,
-                    auditlog_items: Iterable[Auditlog_item],
-                    id_short: Optional[str] = r"AuditLog",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/Activity/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/DataRetentionPolicies/AuditLog/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    self, auditlog_items: Iterable[Auditlog_item], **kwargs: Unpack[SubmodelElementListMetadata]
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Activity log of changes to the policy."}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(auditlog_items, str):
@@ -1226,22 +759,17 @@ class DataRetentionPolicies(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(auditlog_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Policy",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"Describes a single data retention policy."}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/Policy/1/0"),
+                }
 
             def __init__(
                 self,
@@ -1256,27 +784,8 @@ class DataRetentionPolicies(aas.Submodel):
                 auditLog: Union[Iterable[AuditLog.Auditlog_item], AuditLog],
                 overrides: Optional[Overrides] = None,
                 effectiveUntil: Optional[Union[xsd.DateTime, EffectiveUntil]] = None,
-                id_short: Optional[str] = r"Policy",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/DataRetentionPolicies/Policy/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"Describes a single data retention policy."})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1347,43 +856,19 @@ class DataRetentionPolicies(aas.Submodel):
                     auditLog,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"Policies",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Defines the set of policies."}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/DataRetentionPolicies/Policies/1/0"),
+            }
 
         def __init__(
-            self,
-            policy: Optional[Iterable[Policy]] = None,
-            id_short: Optional[str] = r"Policies",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/DataRetentionPolicies/Policies/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            self, policy: Optional[Iterable[Policy]] = None, **kwargs: Unpack[SubmodelElementCollectionMetadata]
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the set of policies."})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(policy, str):
@@ -1393,58 +878,38 @@ class DataRetentionPolicies(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(policy)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"DataRetentionPolicies",
+            "description": aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Submodel containing data retention policies for data elements in the Asset Administration Shell."
+                }
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(
+                    aas.Key(
+                        type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/DataRetentionPolicies/1/0"
+                    ),
+                ),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
     def __init__(
         self,
         id_: str,
         policies: Policies,
         inheritedFrom: Optional[Union[aas.Reference, InheritedFrom]] = None,
-        id_short: Optional[str] = r"DataRetentionPolicies",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/DataRetentionPolicies/1/0"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Submodel containing data retention policies for data elements in the Asset Administration Shell."
-                }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -1455,18 +920,4 @@ class DataRetentionPolicies(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(inheritedFrom, policies)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

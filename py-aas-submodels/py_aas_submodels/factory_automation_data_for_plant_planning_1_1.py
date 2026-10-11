@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,150 +95,174 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RelationshipElementMetadata(TypedDict, total=False):
+    """Metadata of aas.RelationshipElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    first: Optional[aas.Reference]
+    second: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class FactoryAutomationDataForPlant(aas.Submodel):
 
     class AutomationMLData(aas.File):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"AutomationMLData",
-            content_type: Optional[str] = r"text/plain",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/automationMLData/1"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Data"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> FileMetadata:
+            return {
+                "id_short": r"AutomationMLData",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Data"}),
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Reference to the AutomationML project file that contains the engineering information of the asset."
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/automationMLData/1"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: str, content_type: Optional[str] = r"text/plain", **kwargs: Unpack[FileMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                content_type=content_type,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
     class AutomationMLVersion(aas.Property):
 
-        def __init__(
-            self,
-            value: xsd.PositiveInteger,
-            id_short: Optional[str] = r"AutomationMLVersion",
-            value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"PARAMETER",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/automationMLVersion/1"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Version"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"AutomationMLVersion",
+                "value_type": xsd.PositiveInteger,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Version"}),
+                "category": r"PARAMETER",
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"The AML version that the included AML file follows. This should be either 1 (i.e. CAEX 2.15) or 2 (i.e. CAEX 3.0)."
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/automationMLVersion/1"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: xsd.PositiveInteger, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class AutomationMLElementReference(aas.ReferenceElement):
 
-        def __init__(
-            self,
-            value: aas.Reference,
-            id_short: Optional[str] = r"AutomationMLElementReference",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/cds/automationMLElementReference/1"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Element Reference"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> ReferenceElementMetadata:
+            return {
+                "id_short": r"AutomationMLElementReference",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Element Reference"}),
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Reference to the AutomationML element hosting the engineering information of the asset."
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/automationMLElementReference/1"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class AutomationMLAttributeAndInterfaceList(GeneratedSubmodelElementList):
 
@@ -246,164 +270,96 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
             class OnOff(aas.Property):
 
-                def __init__(
-                    self,
-                    value: bool,
-                    id_short: Optional[str] = r"onOff",
-                    value_type: aas.DataTypeDefXsd = bool,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/onOff/1"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"onOff",
+                        "value_type": bool,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"On/Off"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "On/Off is a binary state with only two possible values: 'On' (true/active) or 'Off' (false/inactive)."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/onOff/1"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: bool, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RelationBetweenPropertyAndAttribute(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelationBetweenPropertyAndAttribute",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL,
-                                value=r"https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelationBetweenPropertyAndAttribute",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL,
+                                    value=r"https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.FILE, value=r"AutomationMLData"),
+                                aas.Key(
+                                    type_=aas.KeyTypes.FRAGMENT_REFERENCE,
+                                    value=r"AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.onOff",
+                                ),
                             ),
-                            aas.Key(type_=aas.KeyTypes.FILE, value=r"AutomationMLData"),
-                            aas.Key(
-                                type_=aas.KeyTypes.FRAGMENT_REFERENCE,
-                                value=r"AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.onOff",
-                            ),
+                            type_=type(None),
+                            referred_semantic_id=None,
                         ),
-                        type_=type(None),
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL,
-                                value=r"https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL,
+                                    value=r"https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_LIST,
+                                    value=r"AutomationMLAttributeAndInterfaceList",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"0"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"onOff"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_LIST, value=r"AutomationMLAttributeAndInterfaceList"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"0"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"onOff"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"Relation Between Property and Attribute"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Relation between related property SubmodelElements and corresponding AutomationML attribute."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/cds/relationBetweenPropertyAndAttribute/1"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"On/Off"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"Collection of AutomationML Attributes to be published as properties"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/attributeContainer/1"),
+                    "supplemental_semantic_id": (global_ref(r"https://admin-shell.io/idta/cds/onOff/1"),),
+                }
 
             def __init__(
                 self,
                 onOff: Union[bool, OnOff],
                 relationBetweenPropertyAndAttribute: RelationBetweenPropertyAndAttribute,
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/cds/attributeContainer/1"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    global_ref(r"https://admin-shell.io/idta/cds/onOff/1"),
-                ),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Collection of AutomationML Attributes to be published as properties"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -414,54 +370,26 @@ class FactoryAutomationDataForPlant(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(onOff, relationBetweenPropertyAndAttribute)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"AutomationMLAttributeAndInterfaceList",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(r"https://admin-shell.io/idta/cds/attributeContainer/1"),
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Attribute and Interface List"}),
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"List of AutomationML attributes to be published."}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/automationMLAttributeAndInterfaceList/1"),
+            }
 
         def __init__(
             self,
             automationmlattributeandinterfacelist_items: Iterable[Automationmlattributeandinterfacelist_item],
-            id_short: Optional[str] = r"AutomationMLAttributeAndInterfaceList",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/cds/attributeContainer/1"
-            ),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = True,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/cds/automationMLAttributeAndInterfaceList/1"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementListMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Attribute and Interface List"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"List of AutomationML attributes to be published."}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(automationmlattributeandinterfacelist_items, str):
@@ -473,22 +401,31 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 automationmlattributeandinterfacelist_items, number_repeated=False
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"FactoryAutomationDataForPlant",
+            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Factory Automation Data For Plant"}),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02075",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(
+                    aas.Key(
+                        type_=aas.KeyTypes.SUBMODEL,
+                        value=r"https://admin-shell.io/idta/cds/factoryAutomationDataForPlant/1",
+                    ),
+                ),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
     def __init__(
         self,
@@ -500,45 +437,8 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             Iterable[AutomationMLAttributeAndInterfaceList.Automationmlattributeandinterfacelist_item],
             AutomationMLAttributeAndInterfaceList,
         ],
-        id_short: Optional[str] = r"FactoryAutomationDataForPlant",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/cds/factoryAutomationDataForPlant/1",
-                ),
-            ),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Factory Automation Data For Plant"})
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02075",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -571,18 +471,4 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             automationMLData, automationMLVersion, automationMLElementReference, automationMLAttributeAndInterfaceList
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

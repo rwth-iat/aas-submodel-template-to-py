@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,616 +95,326 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class ControlConfig(aas.Submodel):
 
     class DigitalNameplate(aas.ReferenceElement):
 
-        def __init__(
-            self,
-            value: aas.Reference,
-            id_short: Optional[str] = r"DigitalNameplate",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/nameplate/3/0/Nameplate"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> ReferenceElementMetadata:
+            return {
+                "id_short": r"DigitalNameplate",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"Reference to the digital nameplate of the controller."}
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/nameplate/3/0/Nameplate"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class ControllerType(aas.Property):
 
         ALLOWED_VALUES = (r"Path controlled", r"Point controlled", r"Track controlled")
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"ControllerType",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"PARAMETER",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/ControllerType/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"ControllerType",
+                "value_type": str,
+                "category": r"PARAMETER",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"The Controller Type describes the type of controller"}
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/ControllerType/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
             if value is not None and value not in self.ALLOWED_VALUES:
                 raise ValueError(
                     f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                 )
 
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class TimeUnit(aas.Property):
 
-        def __init__(
-            self,
-            value: xsd.Float,
-            id_short: Optional[str] = r"TimeUnit",
-            value_type: aas.DataTypeDefXsd = xsd.Float,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"VARIABLE",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/TimeUnit/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"TimeUnit",
+                "value_type": xsd.Float,
+                "category": r"VARIABLE",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Time unit of the control"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/TimeUnit/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Time unit of the control"})
+        def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class LengthUnit(aas.Property):
 
-        def __init__(
-            self,
-            value: float,
-            id_short: Optional[str] = r"LengthUnit",
-            value_type: aas.DataTypeDefXsd = float,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/LengthUnit/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"LengthUnit",
+                "value_type": float,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Length Unit of the control"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/LengthUnit/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Length Unit of the control"})
+        def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class FieldbusType(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"FieldbusType",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/FieldbusType/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"FieldbusType",
+                "value_type": str,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Fieldbus Type of the control"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/FieldbusType/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Fieldbus Type of the control"})
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class CNCCycleTime(aas.Property):
 
-        def __init__(
-            self,
-            value: float,
-            id_short: Optional[str] = r"CNCCycleTime",
-            value_type: aas.DataTypeDefXsd = float,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"VARIABLE",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/CNCCycleTime/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"CNCCycleTime",
+                "value_type": float,
+                "category": r"VARIABLE",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Defines the cycle time of the CNC control"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/CNCCycleTime/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the cycle time of the CNC control"})
+        def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class PLCCycleTime(aas.Property):
 
-        def __init__(
-            self,
-            value: float,
-            id_short: Optional[str] = r"PLCCycleTime",
-            value_type: aas.DataTypeDefXsd = float,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"VARIABLE",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/PLCCycleTime/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"PLCCycleTime",
+                "value_type": float,
+                "category": r"VARIABLE",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Defines the cycle time of the PLC control"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/PLCCycleTime/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the cycle time of the PLC control"})
+        def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class FieldbusCycleTime(aas.Property):
 
-        def __init__(
-            self,
-            value: float,
-            id_short: Optional[str] = r"FieldbusCycleTime",
-            value_type: aas.DataTypeDefXsd = float,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"VARIABLE",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/FieldbusCycleTime/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"FieldbusCycleTime",
+                "value_type": float,
+                "category": r"VARIABLE",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"Defines the cycle time of the fieldbus control"}
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/FieldbusCycleTime/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class VelocityUnit(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"VelocityUnit",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/VelocityType/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"VelocityUnit",
+                "value_type": str,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"Defines the velocity unit of the CNC control "}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/VelocityType/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the velocity unit of the CNC control "})
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class AccelerationUnit(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"AccelerationUnit",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/AccelerationUnit/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"AccelerationUnit",
+                "value_type": str,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"Defines the acceleration unit unit of the CNC control"}
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/AccelerationUnit/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class JerkUnit(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"JerkUnit",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/JerkUnit/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"JerkUnit",
+                "value_type": str,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Defines the jerk unit of the CNC control "}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/JerkUnit/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Defines the jerk unit of the CNC control "})
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class ControlConfigData(aas.SubmodelElementCollection):
 
         class ControlConfigFileName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ControlConfigFileName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/ControlConfigFileName/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ControlConfigFileName",
+                    "value_type": str,
+                    "category": r"PARAMETER",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"Name of the control configuration file"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/ControlConfigFileName/1/0"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the control configuration file"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ControlConfigFile(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"ControlConfigFile",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"File to configure the control"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/ControlConfigFile/1/0"),
+                }
+
             def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ControlConfigFile",
-                content_type: Optional[str] = r"application/json",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/ControlConfigFile/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                self, value: str, content_type: Optional[str] = r"application/json", **kwargs: Unpack[FileMetadata]
             ):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"File to configure the control"})
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"ControlConfigData",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"Control configuration data", r"de": r"Steuerungskonfigurationsdaten"}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/ControlConfigData/1/0"),
+            }
 
         def __init__(
             self,
             controlConfigFileName: Union[str, ControlConfigFileName],
             controlConfigFile: ControlConfigFile,
-            id_short: Optional[str] = r"ControlConfigData",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/ControlConfigData/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Control configuration data", r"de": r"Steuerungskonfigurationsdaten"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -715,18 +425,7 @@ class ControlConfig(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(controlConfigFileName, controlConfigFile)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class Channels(aas.SubmodelElementCollection):
 
@@ -734,165 +433,82 @@ class ControlConfig(aas.Submodel):
 
             class ChannelIdentification(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ChannelIdentification",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"VARIABLE",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Channels/ChannelIdentification/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ChannelIdentification",
+                        "value_type": str,
+                        "category": r"VARIABLE",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"This describes the unique channel identification of the specific channel"}
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Channels/ChannelIdentification/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AxesReference(aas.SubmodelElementCollection):
 
                 class AxisName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"AxisName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"AxisName",
+                            "value_type": str,
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Unique axis name"}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0"
+                            ),
+                        }
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Unique axis name"})
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ReferenceToAxis(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = r"ReferenceToAxis",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ControlConfig/Channels/ReferenceToAxis/1/0"
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": r"ReferenceToAxis",
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Reference to the axis"}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/ControlConfig/Channels/ReferenceToAxis/1/0"
+                            ),
+                        }
+
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"AxesReference",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The SMC “AxesReference” is a collection of referenced axes for the specific channel."
+                            }
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Reference to the axis"})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     axisName: Union[str, AxisName],
                     referenceToAxis: Union[aas.Reference, ReferenceToAxis],
-                    id_short: Optional[str] = r"AxesReference",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Channels/AxesReference/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The SMC “AxesReference” is a collection of referenced axes for the specific channel."
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -908,46 +524,25 @@ class ControlConfig(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(axisName, referenceToAxis)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Channel",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"Configuration information of a specific channel"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Channel/1/0"),
+                }
 
             def __init__(
                 self,
                 channelIdentification: Union[str, ChannelIdentification],
                 axesReference: Optional[Iterable[AxesReference]] = None,
-                id_short: Optional[str] = r"Channel",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/Channel/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Configuration information of a specific channel"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -962,60 +557,24 @@ class ControlConfig(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(channelIdentification, axesReference)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            channel: Channel,
-            id_short: Optional[str] = r"Channels",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/Channels/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"Channels",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"Collection of channels of the control"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Channels/1/0"),
+            }
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Collection of channels of the control"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, channel: Channel, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
             # Add all passed/initialized submodel elements to a single list
 
             embedded_submodel_elements = collect_submodel_elements(channel)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class Axes(aas.SubmodelElementCollection):
 
@@ -1023,471 +582,199 @@ class ControlConfig(aas.Submodel):
 
             class AxisName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AxisName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/AxisName/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AxisName",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Name of the axis"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/AxisName/1/0"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Name of the axis"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AxisType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AxisType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/AxisType/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AxisType",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Type of the axis"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/AxisType/1/0"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Type of the axis"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class SimulationAxis(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"SimulationAxis",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"SimulationAxis",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Axis is a simulated or real one"}),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0"
+                        ),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Axis is a simulated or real one"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class SwLimitSwitchNeg(aas.Property):
 
-                def __init__(
-                    self,
-                    value: float,
-                    id_short: Optional[str] = r"SwLimitSwitchNeg",
-                    value_type: aas.DataTypeDefXsd = float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchNeg/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"SwLimitSwitchNeg",
+                        "value_type": float,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Positive software limit switch"}),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchNeg/1/0"
+                        ),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Positive software limit switch"})
+                def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class SwLimitSwitchPos(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"SwLimitSwitchPos",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"SwLimitSwitchPos",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Negative software limit switch"}),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Axes/SwLimitSwitchPos/1/0"
+                        ),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Negative software limit switch"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class VelocityLimit(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"VelocityLimit",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/VelocityLimit/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"VelocityLimit",
+                        "value_type": xsd.Long,
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Velocity limit of the axis"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/VelocityLimit/1/0"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Velocity limit of the axis"})
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AccelerationLimit(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"AccelerationLimit",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/AccelerationLimit/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AccelerationLimit",
+                        "value_type": xsd.Long,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Accelerationlimit of the axis"}),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Axes/AccelerationLimit/1/0"
+                        ),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Accelerationlimit of the axis"})
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class JerkLimit(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"JerkLimit",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/JerkLimit/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"JerkLimit",
+                        "value_type": xsd.Long,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"Jerk limit of the axis"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/JerkLimit/1/0"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Jerk limit of the axis"})
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AxisConfigData(aas.SubmodelElementCollection):
 
                 class AxisConfigFileName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"AxisConfigFileName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"PARAMETER",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFileName/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"AxisConfigFileName",
+                            "value_type": str,
+                            "category": r"PARAMETER",
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Axis configuration file name"}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFileName/1/0"
+                            ),
+                        }
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Axis configuration file name"})
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class AxisConfigFile(aas.File):
 
+                    @staticmethod
+                    def template_defaults() -> FileMetadata:
+                        return {
+                            "id_short": r"AxisConfigFile",
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Configuration file of the axis"}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFile/1/0"
+                            ),
+                        }
+
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"AxisConfigFile",
                         content_type: Optional[str] = r"application/json",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigFile/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[FileMetadata],
                     ):
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Configuration file of the axis"})
+                        super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            content_type=content_type,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"AxisConfigData",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."}
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigData/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     axisConfigFileName: Optional[Union[str, AxisConfigFileName]] = None,
                     axisConfigFile: Optional[AxisConfigFile] = None,
-                    id_short: Optional[str] = r"AxisConfigData",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Channels/Axes/AxisConfigData/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1498,226 +785,117 @@ class ControlConfig(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(axisConfigFileName, axisConfigFile)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Drive(aas.SubmodelElementCollection):
 
                 class Manual(aas.File):
 
+                    @staticmethod
+                    def template_defaults() -> FileMetadata:
+                        return {
+                            "id_short": r"Manual",
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"The manual file of the drive "}),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Manual/1/0"
+                            ),
+                        }
+
                     def __init__(
                         self,
                         value: str,
-                        id_short: Optional[str] = r"Manual",
                         content_type: Optional[str] = r"application/json",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Manual/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[FileMetadata],
                     ):
 
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"The manual file of the drive "})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            content_type=content_type,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
                 class TechnicalData(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = r"TechnicalData",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/IDTA/TechnicalData/Submodel/2/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": r"TechnicalData",
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Reference to the Submodel Technical Specification of the axis to gather more information"
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/IDTA/TechnicalData/Submodel/2/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class DriveConfigData(aas.SubmodelElementCollection):
 
                     class DriveConfigFileName(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"DriveConfigFileName",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFileName/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DriveConfigFileName",
+                                "value_type": str,
+                                "category": r"CONSTANT",
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Name of the configuration file of the drive "}
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFileName/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DriveConfigFile(aas.File):
 
+                        @staticmethod
+                        def template_defaults() -> FileMetadata:
+                            return {
+                                "id_short": r"DriveConfigFile",
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Configuration File of the drive"}
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFile/1/0"
+                                ),
+                            }
+
                         def __init__(
                             self,
                             value: str,
-                            id_short: Optional[str] = r"DriveConfigFile",
                             content_type: Optional[str] = r"application/json",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/DriveConfigFile/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[FileMetadata],
                         ):
 
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Configuration File of the drive"}
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
                             super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                content_type=content_type,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
+                                value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                             )
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"DriveConfigData",
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(
+                                dict_={r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."}
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/DriveConfigData/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         driveConfigFileName: Optional[Union[str, DriveConfigFileName]] = None,
                         driveConfigFile: Optional[DriveConfigFile] = None,
-                        id_short: Optional[str] = r"DriveConfigData",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/DriveConfigData/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."}
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1728,47 +906,26 @@ class ControlConfig(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(driveConfigFileName, driveConfigFile)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Drive",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"The SMC “Drive” is a collection of drive configuration information."}
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/1/0"),
+                    }
 
                 def __init__(
                     self,
                     manual: Optional[Manual] = None,
                     technicalData: Optional[Union[aas.Reference, TechnicalData]] = None,
                     driveConfigData: Optional[DriveConfigData] = None,
-                    id_short: Optional[str] = r"Drive",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ControlConfig/Axes/Axis/Drive/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"The SMC “Drive” is a collection of drive configuration information."}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1779,18 +936,18 @@ class ControlConfig(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(manual, technicalData, driveConfigData)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Axis",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"The SMC “Axis” is a collection of axis configuration information."}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Channel/Axis/1/0"),
+                }
 
             def __init__(
                 self,
@@ -1804,29 +961,8 @@ class ControlConfig(aas.Submodel):
                 jerkLimit: Optional[Union[xsd.Long, JerkLimit]] = None,
                 axisConfigData: Optional[AxisConfigData] = None,
                 drive: Optional[Drive] = None,
-                id_short: Optional[str] = r"Axis",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/Channel/Axis/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"The SMC “Axis” is a collection of axis configuration information."}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1883,225 +1019,100 @@ class ControlConfig(aas.Submodel):
                     drive,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            axis: Optional[Axis] = None,
-            id_short: Optional[str] = r"Axes",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"Axes",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"The SMC “Axes” is a collection of axes of the CNC controller."}
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Axes/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, axis: Optional[Axis] = None, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
             # Add all passed/initialized submodel elements to a single list
 
             embedded_submodel_elements = collect_submodel_elements(axis)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class NCProgramConfig(aas.SubmodelElementCollection):
 
         class NCProgramFileType(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"NCProgramFileType",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/NCProgramFileType/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"NCProgramFileType",
+                    "value_type": str,
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"NC program file type, which the CNC control can work with"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/NCProgramFileType/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class NCProgramSyntaxType(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"NCProgramSyntaxType",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxType/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"NCProgramSyntaxType",
+                    "value_type": str,
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"NC program syntax type"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxType/1/0"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"NC program syntax type"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class NCProgramSyntaxManual(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"NCProgramSyntaxManual",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"Manual file of the syntax of the NC program"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxManual/1/0"),
+                }
+
             def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"NCProgramSyntaxManual",
-                content_type: Optional[str] = r"application/json",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/NCProgramSyntaxManual/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                self, value: str, content_type: Optional[str] = r"application/json", **kwargs: Unpack[FileMetadata]
             ):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Manual file of the syntax of the NC program"}
-                    )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"NCProgramConfig",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/NCProgramConfig/1/0"),
+            }
 
         def __init__(
             self,
             nCProgramFileType: Optional[Union[str, NCProgramFileType]] = None,
             nCProgramSyntaxType: Optional[Union[str, NCProgramSyntaxType]] = None,
             nCProgramSyntaxManual: Optional[Iterable[NCProgramSyntaxManual]] = None,
-            id_short: Optional[str] = r"NCProgramConfig",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/NCProgramConfig/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2123,196 +1134,90 @@ class ControlConfig(aas.Submodel):
                 nCProgramFileType, nCProgramSyntaxType, nCProgramSyntaxManual
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class CommunicationConfig(aas.SubmodelElementCollection):
 
         class CommunicationType(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"CommunicationType",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/CommunicationType/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"CommunicationType",
+                    "value_type": str,
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"Type of communication to the control"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/CommunicationType/1/0"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"Type of communication to the control"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class CommunicationAdress(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"CommunicationAdress",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/CommunicationAdress/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"CommunicationAdress",
+                    "value_type": str,
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"Communication address into the control"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/CommunicationAdress/1/0"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"Communication address into the control"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class CommunicationInformationModel(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"CommunicationInformationModel",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/CommunicationInformationModel/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"CommunicationInformationModel",
+                    "value_type": str,
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"Communication information model if ones exist like OPCUA"}
-                    )
+                    ),
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/ControlConfig/CommunicationInformationModel/1/0"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class OPCUAServerDataSheet(aas.ReferenceElement):
 
-            def __init__(
-                self,
-                value: aas.Reference,
-                id_short: Optional[str] = r"OPCUAServerDataSheet",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/opcua-server-datasheet/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> ReferenceElementMetadata:
+                return {
+                    "id_short": r"OPCUAServerDataSheet",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"Reference to the OPCUA server datasheet Submodel"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/opcua-server-datasheet/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"CommunicationConfig",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The SMC “CommunicationConfig” is a collection of communication configuration information."
+                    }
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/CommunicationConfig/1/0"),
+            }
 
         def __init__(
             self,
@@ -2320,31 +1225,8 @@ class ControlConfig(aas.Submodel):
             communicationAdress: Optional[Union[str, CommunicationAdress]] = None,
             communicationInformationModel: Optional[Union[str, CommunicationInformationModel]] = None,
             oPCUAServerDataSheet: Optional[Union[aas.Reference, OPCUAServerDataSheet]] = None,
-            id_short: Optional[str] = r"CommunicationConfig",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/ControlConfig/CommunicationConfig/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The SMC “CommunicationConfig” is a collection of communication configuration information."
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2374,18 +1256,7 @@ class ControlConfig(aas.Submodel):
                 communicationType, communicationAdress, communicationInformationModel, oPCUAServerDataSheet
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class Tools(aas.SubmodelElementCollection):
 
@@ -2393,72 +1264,37 @@ class ControlConfig(aas.Submodel):
 
             class ToolDescription(aas.ReferenceElement):
 
-                def __init__(
-                    self,
-                    value: aas.Reference,
-                    id_short: Optional[str] = r"ToolDescription",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ToolDescription/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> ReferenceElementMetadata:
+                    return {
+                        "id_short": r"ToolDescription",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Reference to the tool description Submodel of the specific tool."}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ToolDescription/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Tool",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"The SMC “Tool” is a collection of tool configuration information."}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Tool/1/0"),
+                }
 
             def __init__(
                 self,
                 toolDescription: Optional[Union[aas.Reference, ToolDescription]] = None,
-                id_short: Optional[str] = r"Tool",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ControlConfig/Tool/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"The SMC “Tool” is a collection of tool configuration information."}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2469,43 +1305,20 @@ class ControlConfig(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(toolDescription)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            tool: Optional[Iterable[Tool]] = None,
-            id_short: Optional[str] = r"Tools",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/ControlConfig/Tools/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"Tools",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"Explanation: The SMC “Tools” is a collection of tools of the CNC controller."}
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/ControlConfig/Tools/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, tool: Optional[Iterable[Tool]] = None, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
             # A str would be split into its characters
             if isinstance(tool, str):
@@ -2515,18 +1328,30 @@ class ControlConfig(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(tool)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"ControlConfig",
+            "description": aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel “ControlConfig” is the collection for various parametrizations for the control of CNC machines "
+                }
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02053-1-0",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/ControlConfig/1/0"),),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
     def __init__(
         self,
@@ -2548,44 +1373,8 @@ class ControlConfig(aas.Submodel):
         channels: Optional[Iterable[Channels]] = None,
         nCProgramConfig: Optional[NCProgramConfig] = None,
         communicationConfig: Optional[CommunicationConfig] = None,
-        id_short: Optional[str] = r"ControlConfig",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/ControlConfig/1/0"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The Submodel “ControlConfig” is the collection for various parametrizations for the control of CNC machines "
-                }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02053-1-0",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -2680,18 +1469,4 @@ class ControlConfig(aas.Submodel):
             tools,
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

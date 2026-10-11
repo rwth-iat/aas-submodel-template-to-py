@@ -123,7 +123,7 @@ def generated_class(module_name: str, id_short: str) -> type:
         pytest.skip(f"No module {module_name}: BaSyx reads no submodel from the template")
     classes = [obj for obj in vars(module).values()
                if isinstance(obj, type) and issubclass(obj, model.Submodel) and obj.__module__ == module.__name__
-               and inspect.signature(obj).parameters["id_short"].default in (id_short, iteration_stem(id_short))]
+               and obj.template_defaults().get("id_short") in (id_short, iteration_stem(id_short))]
     assert classes, f"No class for submodel {id_short} in {module_name}"
     return classes[0]
 

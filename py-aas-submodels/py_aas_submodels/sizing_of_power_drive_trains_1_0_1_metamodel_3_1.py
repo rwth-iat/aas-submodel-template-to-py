@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,414 +95,290 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class EntityMetadata(TypedDict, total=False):
+    """Metadata of aas.Entity, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    entity_type: Optional[aas.EntityType]
+    global_asset_id: Optional[str]
+    specific_asset_id: Iterable[aas.SpecificAssetId]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RangeMetadata(TypedDict, total=False):
+    """Metadata of aas.Range, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class PowerDriveTrainSizing(aas.Submodel):
 
     class SizingProjectInformation(aas.SubmodelElementCollection):
 
         class ClientName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ClientName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/ClientName/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ClientName",
+                    "value_type": str,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/ClientName/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SizingProjectName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SizingProjectName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectName/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SizingProjectName",
+                    "value_type": str,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectName/1/0"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SizingProjectAxisReference(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SizingProjectAxisReference",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectAxisReference/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SizingProjectAxisReference",
+                    "value_type": str,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectAxisReference/1/0"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SizingProjectDescription(aas.MultiLanguageProperty):
 
-            def __init__(
-                self,
-                value: aas.LangStringSet,
-                id_short: Optional[str] = r"SizingProjectDescription",
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectDescription/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> MultiLanguagePropertyMetadata:
+                return {
+                    "id_short": r"SizingProjectDescription",
+                    "category": r"CONSTANT",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectDescription/1/0"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class SizingProjectLink(aas.File):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SizingProjectLink",
-                content_type: Optional[str] = r"text/xml",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectLink/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"SizingProjectLink",
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectLink/1/0"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, content_type: Optional[str] = r"text/xml", **kwargs: Unpack[FileMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
         class SizingToolName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SizingToolName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingToolName/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SizingToolName",
+                    "value_type": str,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingToolName/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class DateCreated(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"DateCreated",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateCreated/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"DateCreated",
+                    "value_type": xsd.DateTime,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateCreated/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class DateChanged(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"DateChanged",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateChanged/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"DateChanged",
+                    "value_type": xsd.DateTime,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateChanged/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ContactInformation(aas.SubmodelElementCollection):
 
-            def __init__(
-                self,
-                id_short: Optional[str] = r"ContactInformation",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"ContactInformation",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation"
+                    ),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                 # Add all passed/initialized submodel elements to a single list
 
                 embedded_submodel_elements = collect_submodel_elements()
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class AmlDriveConfigVersion(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"AmlDriveConfigVersion",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmlDriveConfigVersion/1/0"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"AmlDriveConfigVersion",
+                    "value_type": str,
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmlDriveConfigVersion/1/0"
+                    ),
+                }
+
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"SizingProjectInformation",
+                "display_name": aas.MultiLanguageNameType(
+                    dict_={r"de": r"Auslegungsprojektinformationen", r"en": r"Sizing project information"}
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectInformation1/0"
+                ),
+            }
 
         def __init__(
             self,
@@ -516,29 +392,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             sizingProjectAxisReference: Optional[Union[str, SizingProjectAxisReference]] = None,
             sizingProjectDescription: Optional[Union[aas.LangStringSet, SizingProjectDescription]] = None,
             amlDriveConfigVersion: Optional[Union[str, AmlDriveConfigVersion]] = None,
-            id_short: Optional[str] = r"SizingProjectInformation",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectInformation1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Auslegungsprojektinformationen", r"en": r"Sizing project information"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -605,18 +460,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 amlDriveConfigVersion,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class ApplicationRequirements(aas.SubmodelElementCollection):
 
@@ -624,44 +468,20 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             class MotionPatternName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"MotionPatternName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternName/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MotionPatternName",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternName/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MotionPatternSections(aas.SubmodelElementCollection):
 
@@ -669,26 +489,16 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                     class FrictionTorque(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"FrictionTorque",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"FrictionTorque",
+                                "value_type": xsd.Long,
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -698,89 +508,42 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class LeverArmAxialForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"LeverArmAxialForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"LeverArmAxialForce",
+                                "value_type": xsd.Long,
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class AxialForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"AxialForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"AxialForce",
+                                "value_type": xsd.Long,
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -790,89 +553,42 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class LeverArmRadialForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"LeverArmRadialForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"LeverArmRadialForce",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class RadialForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"RadialForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"RadialForce",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -882,89 +598,42 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class MomentOfInertiaOfLoad(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"MomentOfInertiaOfLoad",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MomentOfInertiaOfLoad/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"MomentOfInertiaOfLoad",
+                                "value_type": xsd.Long,
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MomentOfInertiaOfLoad/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class LoadTorque(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"LoadTorque",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"LoadTorque",
+                                "value_type": xsd.Long,
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -974,255 +643,112 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class MetadataRotativeMotionFile(aas.SubmodelElementCollection):
 
                         class Time(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"Time",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Time",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class AngularPosition(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"AngularPosition",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularPosition/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"AngularPosition",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularPosition/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class AngularVelocity(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"AngularVelocity",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularVelocity/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"AngularVelocity",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularVelocity/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class AngularAcceleration(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"AngularAcceleration",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularAcceleration/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"AngularAcceleration",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularAcceleration/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class AngularJerk(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"AngularJerk",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularJerk/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"AngularJerk",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularJerk/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class FrictionTorque(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"FrictionTorque",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"FrictionTorque",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"Note",
                                             value_type=str,
@@ -1232,48 +758,25 @@ class PowerDriveTrainSizing(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class AxialForce(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"AxialForce",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"AxialForce",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"Note",
                                             value_type=str,
@@ -1283,48 +786,25 @@ class PowerDriveTrainSizing(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class RadialForce(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"RadialForce",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"CONSTANT",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"RadialForce",
+                                    "value_type": xsd.Long,
+                                    "category": r"CONSTANT",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"Note",
                                             value_type=str,
@@ -1334,48 +814,25 @@ class PowerDriveTrainSizing(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class LoadTorque(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"LoadTorque",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"CONSTANT",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"LoadTorque",
+                                    "value_type": xsd.Long,
+                                    "category": r"CONSTANT",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"Note",
                                             value_type=str,
@@ -1385,25 +842,21 @@ class PowerDriveTrainSizing(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"MetadataRotativeMotionFile",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataRotativeMotionFile/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
@@ -1416,24 +869,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             axialForce: Optional[Union[xsd.Long, AxialForce]] = None,
                             radialForce: Optional[Union[xsd.Long, RadialForce]] = None,
                             loadTorque: Optional[Union[xsd.Long, LoadTorque]] = None,
-                            id_short: Optional[str] = r"MetadataRotativeMotionFile",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataRotativeMotionFile/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1496,57 +933,36 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 loadTorque,
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class MotionSectionFile(aas.File):
 
+                        @staticmethod
+                        def template_defaults() -> FileMetadata:
+                            return {
+                                "id_short": r"MotionSectionFile",
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0"
+                                ),
+                            }
+
                         def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"MotionSectionFile",
-                            content_type: Optional[str] = r"image/png",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            self, value: str, content_type: Optional[str] = r"image/png", **kwargs: Unpack[FileMetadata]
                         ):
 
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
                             super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                content_type=content_type,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
+                                value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                             )
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"RotativeSection",
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotativeMotionPatternSection/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
@@ -1559,24 +975,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         momentOfInertiaOfLoad: Optional[Union[xsd.Long, MomentOfInertiaOfLoad]] = None,
                         loadTorque: Optional[Union[xsd.Long, LoadTorque]] = None,
                         motionSectionFile: Optional[MotionSectionFile] = None,
-                        id_short: Optional[str] = r"RotativeSection",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotativeMotionPatternSection/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1629,84 +1029,39 @@ class PowerDriveTrainSizing(aas.Submodel):
                             motionSectionFile,
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class LinearSection(aas.SubmodelElementCollection):
 
                     class FrictionCoefficient(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"FrictionCoefficient",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"FrictionCoefficient",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class FrictionForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"FrictionForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"FrictionForce",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -1716,48 +1071,25 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class CompensationForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"CompensationForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/CompensationForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"CompensationForce",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/CompensationForce/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -1767,89 +1099,42 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class LoadMass(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"LoadMass",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadMass/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"LoadMass",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadMass/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class LoadSideForce(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"LoadSideForce",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = (
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"LoadSideForce",
+                                "value_type": xsd.Long,
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0"
+                                ),
+                                "qualifier": (
                                     aas.Qualifier(
                                         type_=r"Note",
                                         value_type=str,
@@ -1859,296 +1144,129 @@ class PowerDriveTrainSizing(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                )
+                                ),
+                            }
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class CounterMass(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Long,
-                            id_short: Optional[str] = r"CounterMass",
-                            value_type: aas.DataTypeDefXsd = xsd.Long,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"CONSTANT",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/CounterMass/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"CounterMass",
+                                "value_type": xsd.Long,
+                                "category": r"CONSTANT",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/CounterMass/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class MetadataLinearMotionFile(aas.SubmodelElementCollection):
 
                         class Time(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"Time",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"VARIABLE",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Time",
+                                    "value_type": xsd.Long,
+                                    "category": r"VARIABLE",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Position(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"Position",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Position/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Position",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Position/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class LinearVelocity(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"LinearVelocity",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearVelocity/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"LinearVelocity",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearVelocity/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class LinearAcceleration(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"LinearAcceleration",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearAcceleration/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"LinearAcceleration",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearAcceleration/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class LinearJerk(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"LinearJerk",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearJerk/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"LinearJerk",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearJerk/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class FrictionForce(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"FrictionForce",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"CONSTANT",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"FrictionForce",
+                                    "value_type": xsd.Long,
+                                    "category": r"CONSTANT",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"Note",
                                             value_type=str,
@@ -2158,48 +1276,25 @@ class PowerDriveTrainSizing(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class LoadSideForce(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Long,
-                                id_short: Optional[str] = r"LoadSideForce",
-                                value_type: aas.DataTypeDefXsd = xsd.Long,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = r"PARAMETER",
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = (
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"LoadSideForce",
+                                    "value_type": xsd.Long,
+                                    "category": r"PARAMETER",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"Note",
                                             value_type=str,
@@ -2209,25 +1304,21 @@ class PowerDriveTrainSizing(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"MetadataLinearMotionFile",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataLinearMotionFile/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
@@ -2238,24 +1329,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             linearJerk: Optional[Union[xsd.Long, LinearJerk]] = None,
                             frictionForce: Optional[Union[xsd.Long, FrictionForce]] = None,
                             loadSideForce: Optional[Union[xsd.Long, LoadSideForce]] = None,
-                            id_short: Optional[str] = r"MetadataLinearMotionFile",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataLinearMotionFile/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -2306,57 +1381,36 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 loadSideForce,
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class MotionSectionFile(aas.File):
 
+                        @staticmethod
+                        def template_defaults() -> FileMetadata:
+                            return {
+                                "id_short": r"MotionSectionFile",
+                                "category": r"PARAMETER",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0"
+                                ),
+                            }
+
                         def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"MotionSectionFile",
-                            content_type: Optional[str] = r"image/png",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = r"PARAMETER",
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            self, value: str, content_type: Optional[str] = r"image/png", **kwargs: Unpack[FileMetadata]
                         ):
 
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
                             super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                content_type=content_type,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
+                                value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                             )
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"LinearSection",
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearMotionPatternSection/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
@@ -2368,24 +1422,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         loadSideForce: Optional[Union[xsd.Long, LoadSideForce]] = None,
                         counterMass: Optional[Union[xsd.Long, CounterMass]] = None,
                         motionSectionFile: Optional[MotionSectionFile] = None,
-                        id_short: Optional[str] = r"LinearSection",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearMotionPatternSection/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -2430,41 +1468,23 @@ class PowerDriveTrainSizing(aas.Submodel):
                             motionSectionFile,
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"MotionPatternSections",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternSections/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     rotativeSection: Optional[Iterable[RotativeSection]] = None,
                     linearSection: Optional[Iterable[LinearSection]] = None,
-                    id_short: Optional[str] = r"MotionPatternSections",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternSections/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(rotativeSection, str):
@@ -2478,41 +1498,21 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(rotativeSection, linearSection)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"MotionPattern",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPattern/1/0"),
+                }
 
             def __init__(
                 self,
                 motionPatternSections: MotionPatternSections,
                 motionPatternName: Optional[Union[str, MotionPatternName]] = None,
-                id_short: Optional[str] = r"MotionPattern",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPattern/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2523,219 +1523,97 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(motionPatternName, motionPatternSections)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Environmental(aas.SubmodelElementCollection):
 
             class InstallationAltitude(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"InstallationAltitude",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ614#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InstallationAltitude",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAZ614#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Atex2Gas(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Atex2Gas",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR865#004"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Atex2Gas",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAR865#004"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Atex2Dust(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Atex2Dust",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR866#004"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Atex2Dust",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAR866#004"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AmbientTemperatureController(aas.Range):
 
-                def __init__(
-                    self,
-                    min: str,
-                    max: str,
-                    id_short: Optional[str] = r"AmbientTemperatureController",
-                    value_type: aas.DataTypeDefXsd = str,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureController/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> RangeMetadata:
+                    return {
+                        "id_short": r"AmbientTemperatureController",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureController/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, min: str, max: str, **kwargs: Unpack[RangeMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        min=min,
-                        max=max,
-                        id_short=id_short,
-                        value_type=value_type,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(min=min, max=max, **(self.template_defaults() | kwargs))
 
             class AmbientTemperatureMotor(aas.Range):
 
-                def __init__(
-                    self,
-                    min: str,
-                    max: str,
-                    id_short: Optional[str] = r"AmbientTemperatureMotor",
-                    value_type: aas.DataTypeDefXsd = str,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureMotor/1/0"
+                @staticmethod
+                def template_defaults() -> RangeMetadata:
+                    return {
+                        "id_short": r"AmbientTemperatureMotor",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureMotor/1/0"
+                        ),
+                    }
+
+                def __init__(self, min: str, max: str, **kwargs: Unpack[RangeMetadata]):
+
+                    super().__init__(min=min, max=max, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Environmental",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnvironmentalRequirements/1/0"
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        min=min,
-                        max=max,
-                        id_short=id_short,
-                        value_type=value_type,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                }
 
             def __init__(
                 self,
@@ -2744,24 +1622,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 atex2Dust: Optional[Union[str, Atex2Dust]] = None,
                 ambientTemperatureController: Optional[Union[Tuple[str, str], AmbientTemperatureController]] = None,
                 ambientTemperatureMotor: Optional[Union[Tuple[str, str], AmbientTemperatureMotor]] = None,
-                id_short: Optional[str] = r"Environmental",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnvironmentalRequirements/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2800,383 +1662,161 @@ class PowerDriveTrainSizing(aas.Submodel):
                     installationAltitude, atex2Gas, atex2Dust, ambientTemperatureController, ambientTemperatureMotor
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class OverallSystemRequirements(aas.SubmodelElementCollection):
 
             class DcLinkCoupling(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DcLinkCoupling",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/DcLinkCoupling/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DcLinkCoupling",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/DcLinkCoupling/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class BrakePresent(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"BrakePresent",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAE085#007"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"BrakePresent",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-BAE085#007"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MainsConnection(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"MainsConnection",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF822#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MainsConnection",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-ABF822#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MountingType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"MountingType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAH167#006"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MountingType",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAH167#006"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MinSwitchingFrequency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"MinSwitchingFrequency",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN329#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MinSwitchingFrequency",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAN329#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CoolingType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CoolingType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAE122#007"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CoolingType",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-BAE122#007"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ProtectionType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ProtectionType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAG342#007"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ProtectionType",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-BAG342#007"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CertificateApproval(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CertificateApproval",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAB392#018"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CertificateApproval",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Zertifikat/Zulassung", r"en": r"Certificate/Approval"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-BAB392#018"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class SafetyIntegrityLevel(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"SafetyIntegrityLevel",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH715#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"SafetyIntegrityLevel",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"safety integrity level (SIL) according to IEC 61508"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABH715#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"OverallSystemRequirements",
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystemRequirements/1/0"
+                    ),
+                }
 
             def __init__(
                 self,
@@ -3189,24 +1829,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 protectionType: Optional[Union[str, ProtectionType]] = None,
                 certificateApproval: Optional[Union[str, CertificateApproval]] = None,
                 safetyIntegrityLevel: Optional[Union[str, SafetyIntegrityLevel]] = None,
-                id_short: Optional[str] = r"OverallSystemRequirements",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystemRequirements/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3267,167 +1891,75 @@ class PowerDriveTrainSizing(aas.Submodel):
                     safetyIntegrityLevel,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class UsageProfile(aas.SubmodelElementCollection):
 
             class CyclesPerMinute(aas.Property):
 
-                def __init__(
-                    self,
-                    value: int,
-                    id_short: Optional[str] = r"CyclesPerMinute",
-                    value_type: aas.DataTypeDefXsd = int,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/CyclesPerMinute/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CyclesPerMinute",
+                        "value_type": int,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/CyclesPerMinute/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class OperatingHoursPerDay(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"OperatingHoursPerDay",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingHoursPerDay/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"OperatingHoursPerDay",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingHoursPerDay/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class OperatingDaysPerYear(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"OperatingDaysPerYear",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingDaysPerYear/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"OperatingDaysPerYear",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingDaysPerYear/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"UsageProfile",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/UsageProfile/1/0"),
+                }
 
             def __init__(
                 self,
                 cyclesPerMinute: Union[int, CyclesPerMinute],
                 operatingHoursPerDay: Union[xsd.Long, OperatingHoursPerDay],
                 operatingDaysPerYear: Union[xsd.Long, OperatingDaysPerYear],
-                id_short: Optional[str] = r"UsageProfile",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/UsageProfile/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3450,18 +1982,19 @@ class PowerDriveTrainSizing(aas.Submodel):
                     cyclesPerMinute, operatingHoursPerDay, operatingDaysPerYear
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"ApplicationRequirements",
+                "display_name": aas.MultiLanguageNameType(
+                    dict_={r"de": r"Applikationsanforderungen", r"en": r"Application requirements"}
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/ApplicationRequirements/1/0"
+                ),
+            }
 
         def __init__(
             self,
@@ -3469,29 +2002,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             environmental: Optional[Environmental] = None,
             overallSystemRequirements: Optional[OverallSystemRequirements] = None,
             usageProfile: Optional[UsageProfile] = None,
-            id_short: Optional[str] = r"ApplicationRequirements",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/PowerDriveTrainSizing/ApplicationRequirements/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Applikationsanforderungen", r"en": r"Application requirements"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Add all passed/initialized submodel elements to a single list
 
@@ -3499,18 +2011,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 motionPattern, environmental, overallSystemRequirements, usageProfile
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class TransformationMechanism(aas.SubmodelElementCollection):
 
@@ -3518,264 +2019,122 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"Fan",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Lüfter", r"en": r"Fan"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Fan/1/0"),
+                }
 
             def __init__(
                 self,
@@ -3785,30 +2144,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                id_short: Optional[str] = r"Fan",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Fan/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Lüfter", r"en": r"Fan"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3851,284 +2188,128 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Pump(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"Pump",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Pumpe", r"en": r"Pump"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Pump/1/0"),
+                }
 
             def __init__(
                 self,
@@ -4138,30 +2319,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 leverArmRadialForce: Optional[Union[xsd.Long, LeverArmRadialForce]] = None,
                 noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
-                id_short: Optional[str] = r"Pump",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Pump/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Pumpe", r"en": r"Pump"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4204,388 +2363,182 @@ class PowerDriveTrainSizing(aas.Submodel):
                     inclinationAngle,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class RotraryTable(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class StaticEccentricity(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"StaticEccentricity",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/StaticEccentricity/1/0",
-                            ),
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"StaticEccentricity",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"de": r"Exzentrität", r"en": r"Eccentricity"}
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/StaticEccentricity/1/0",
+                                ),
+                            ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Exzentrität", r"en": r"Eccentricity"})
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CentroidAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"CentroidAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CentroidAngle/1/0",
-                            ),
-                        ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CentroidAngle",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Mittelpunktswinkel", r"en": r"Centroid angle"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CentroidAngle/1/0",
+                                ),
+                            ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"RotraryTable",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Drehtisch", r"en": r"Rotrary table"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotraryTable/1/0"),
+                }
 
             def __init__(
                 self,
@@ -4597,30 +2550,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 staticEccentricity: Optional[Union[xsd.Long, StaticEccentricity]] = None,
                 centroidAngle: Optional[Union[xsd.Long, CentroidAngle]] = None,
-                id_short: Optional[str] = r"RotraryTable",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotraryTable/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Drehtisch", r"en": r"Rotrary table"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4675,376 +2606,170 @@ class PowerDriveTrainSizing(aas.Submodel):
                     centroidAngle,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class ChainConveyor(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"ChainConveyor",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"de": r"Kettenförderer", r"en": r"Chain conveyor"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/ChainConveyor/1/0"),
+                }
 
             def __init__(
                 self,
@@ -5056,30 +2781,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
-                id_short: Optional[str] = r"ChainConveyor",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/ChainConveyor/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Kettenförderer", r"en": r"Chain conveyor"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5134,376 +2837,168 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class BeltConveyor(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"BeltConveyor",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Bandförderer", r"en": r"Belt conveyor"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltConveyor/1/0"),
+                }
 
             def __init__(
                 self,
@@ -5515,30 +3010,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
-                id_short: Optional[str] = r"BeltConveyor",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltConveyor/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Bandförderer", r"en": r"Belt conveyor"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5593,376 +3066,168 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class RollerConveyor(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"RollerConveyor",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Rollenbahn", r"en": r"Roller conveyor"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/RollerConveyor/1/0"),
+                }
 
             def __init__(
                 self,
@@ -5974,30 +3239,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
-                id_short: Optional[str] = r"RollerConveyor",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RollerConveyor/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Rollenbahn", r"en": r"Roller conveyor"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6052,376 +3295,168 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class BeltDrive(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"BeltDrive",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Riemenantrieb", r"en": r"Belt drive"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltDrive/1/0"),
+                }
 
             def __init__(
                 self,
@@ -6433,30 +3468,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
-                id_short: Optional[str] = r"BeltDrive",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltDrive/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Riemenantrieb", r"en": r"Belt drive"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6511,376 +3524,170 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class TravelingDrive(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"TravelingDrive",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"de": r"Fahrender Antrieb", r"en": r"Traveling drive"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/TravelingDrive/1/0"),
+                }
 
             def __init__(
                 self,
@@ -6892,32 +3699,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
-                id_short: Optional[str] = r"TravelingDrive",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/TravelingDrive/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Fahrender Antrieb", r"en": r"Traveling drive"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6972,533 +3755,251 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class RackDrive(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DiameterPinion(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"DiameterPinion",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DiameterPinion/1/0",
-                            ),
-                        ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DiameterPinion",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Durchmesser Ritzel", r"en": r"Diameter of pinion"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DiameterPinion/1/0",
+                                ),
+                            ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HelixAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"HelixAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/HelixAngle/1/0",
-                            ),
-                        ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"HelixAngle",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Schrägungswinkel der Verzahnung", r"en": r"Helix angle of the toothing"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/HelixAngle/1/0",
+                                ),
+                            ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MovingPart(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MovingPart",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackMovingPart/1/0",
-                            ),
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MovingPart",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"de": r"Bewegtes Teil", r"en": r"Moving part"}
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackMovingPart/1/0",
+                                ),
+                            ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
+                        ),
+                    }
+
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"RackDrive",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"de": r"Zahnstangenapplikation", r"en": r"Rack drive"}
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Bewegtes Teil", r"en": r"Moving part"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackDrive/1/0"),
+                }
 
             def __init__(
                 self,
@@ -7513,32 +4014,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 diameterPinion: Optional[Union[xsd.Long, DiameterPinion]] = None,
                 helixAngle: Optional[Union[xsd.Long, HelixAngle]] = None,
                 movingPart: Optional[Union[xsd.Long, MovingPart]] = None,
-                id_short: Optional[str] = r"RackDrive",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackDrive/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Zahnstangenapplikation", r"en": r"Rack drive"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7611,376 +4088,170 @@ class PowerDriveTrainSizing(aas.Submodel):
                     movingPart,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class SpindleDrive(aas.Entity):
 
             class Efficiency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"Efficiency",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Efficiency",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InertiaMotorSide(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InertiaMotorSide",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InertiaMotorSide",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmAxialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmAxialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmAxialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LeverArmRadialForce(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"LeverArmRadialForce",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LeverArmRadialForce",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Hebelarm Axialkraft", r"en": r"Lever arm axial force"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NoLoadTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"NoLoadTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NoLoadTorque",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Leerlaufdrehmoment", r"en": r"No-load Torque"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InclinationAngle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InclinationAngle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InclinationAngle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrictionCoefficient(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrictionCoefficient",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrictionCoefficient",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Reibungskoeffizient", r"en": r"Coefficient of friction"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FeedConstant(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FeedConstant",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FeedConstant",
+                        "value_type": xsd.Long,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"SpindleDrive",
+                    "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                    "global_asset_id": r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"de": r"Spindelantrieb", r"en": r"Spindle drive"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/SpindleDrive/1/0"),
+                }
 
             def __init__(
                 self,
@@ -7992,30 +4263,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 frictionCoefficient: Optional[Union[xsd.Long, FrictionCoefficient]] = None,
                 feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
-                id_short: Optional[str] = r"SpindleDrive",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SpindleDrive/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Spindelantrieb", r"en": r"Spindle drive"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8070,21 +4319,24 @@ class PowerDriveTrainSizing(aas.Submodel):
                     feedConstant,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"TransformationMechanism",
+                "display_name": aas.MultiLanguageNameType(
+                    dict_={r"de": r"Transformationsmechanismen", r"en": r"Transformation mechanism"}
+                ),
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"All application mechanisms are listed in the submodel template - note that only one application mechanism can be selected in the design project instance."
+                    }
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/TransformationMechanism/1/0"
+                ),
+            }
 
         def __init__(
             self,
@@ -8098,36 +4350,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             travelingDrive: Optional[TravelingDrive] = None,
             rackDrive: Optional[RackDrive] = None,
             spindleDrive: Optional[SpindleDrive] = None,
-            id_short: Optional[str] = r"TransformationMechanism",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/PowerDriveTrainSizing/TransformationMechanism/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Transformationsmechanismen", r"en": r"Transformation mechanism"}
-                )
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"All application mechanisms are listed in the submodel template - note that only one application mechanism can be selected in the design project instance."
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Add all passed/initialized submodel elements to a single list
 
@@ -8144,18 +4368,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 spindleDrive,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class SizingResult(aas.SubmodelElementCollection):
 
@@ -8163,451 +4376,197 @@ class PowerDriveTrainSizing(aas.Submodel):
 
             class ManufacturerName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerName",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAO677#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerArticleNumber(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerArticleNumber",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO676#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerArticleNumber",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAO676#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"ManufacturerProductDesignation",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#001"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerProductDesignation",
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAW338#001"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerOrderCode(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerOrderCode",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAO227#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerOrderCode",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r" 0173-1#02-AAO227#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ExternalMomentOfInertia(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"ExternalMomentOfInertia",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ExternalMomentOfInertia",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class InternalMomentOfIntertia(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"InternalMomentOfIntertia",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InternalMomentOfIntertia",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MassInertiaRatio(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MassInertiaRatio",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MassInertiaRatio",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DecelerationForEmergencyStop(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"DecelerationForEmergencyStop",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DecelerationForEmergencyStop",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CurrentForEmergencyStop(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"CurrentForEmergencyStop",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CurrentForEmergencyStop",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DisplacementDuringEmergencyStop(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"DisplacementDuringEmergencyStop",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DisplacementDuringEmergencyStop",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class EnergyConsumtionPerCycle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"EnergyConsumtionPerCycle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"EnergyConsumtionPerCycle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"OverallSystem",
+                    "entity_type": aas.EntityType.CO_MANAGED_ENTITY,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Gesamtsystem", r"en": r"Overall system"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystem/1/0"),
+                }
 
             def __init__(
                 self,
@@ -8624,30 +4583,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 currentForEmergencyStop: Optional[Union[xsd.Long, CurrentForEmergencyStop]] = None,
                 displacementDuringEmergencyStop: Optional[Union[xsd.Long, DisplacementDuringEmergencyStop]] = None,
                 energyConsumtionPerCycle: Optional[Union[xsd.Long, EnergyConsumtionPerCycle]] = None,
-                id_short: Optional[str] = r"OverallSystem",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = None,
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystem/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Gesamtsystem", r"en": r"Overall system"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8734,1221 +4671,519 @@ class PowerDriveTrainSizing(aas.Submodel):
                     energyConsumtionPerCycle,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class MainComponent(aas.Entity):
 
             class MainComponentType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"MainComponentType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponentType/1/0",
-                            ),
-                        ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MainComponentType",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Typ der Hauptkomponente", r"en": r"Main component type"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponentType/1/0",
+                                ),
+                            ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerName",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAO677#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerArticleNumber(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerArticleNumber",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO676#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerArticleNumber",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAO676#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"ManufacturerProductDesignation",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#001"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerProductDesignation",
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAW338#001"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerOrderCode(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerOrderCode",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAO227#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerOrderCode",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r" 0173-1#02-AAO227#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxCurrentUtilizationPercentage(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxCurrentUtilizationPercentage",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxCurrentUtilizationPercentage",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxCurrentUtilization(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxCurrentUtilization",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxCurrentUtilization",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxThermalUtilizationPercentage(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxThermalUtilizationPercentage",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxThermalUtilizationPercentage",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxThermalUtilization(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxThermalUtilization",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxThermalUtilization",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AveragePowerLosses(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"AveragePowerLosses",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AveragePowerLosses",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AverageRegenerativePowerDcLink(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"AverageRegenerativePowerDcLink",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AverageRegenerativePowerDcLink",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxRegenerativePowerDcLink(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxRegenerativePowerDcLink",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxRegenerativePowerDcLink",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AverageFeedInPowerDcLink(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"AverageFeedInPowerDcLink",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AverageFeedInPowerDcLink",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AverageFeedInPowerMains(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"AverageFeedInPowerMains",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AverageFeedInPowerMains",
+                        "value_type": xsd.Long,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxFeedInPowerMains(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxFeedInPowerMains",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxFeedInPowerMains",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ContinuousCurrent(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"ContinuousCurrent",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ContinuousCurrent",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RmsOfPower(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"RmsOfPower",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"RmsOfPower",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxTorqueUtilizationPercentage(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxTorqueUtilizationPercentage",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxTorqueUtilizationPercentage",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxTorqueUtilization(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxTorqueUtilization",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxTorqueUtilization",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxRotationSpeedUtilizationPercentage(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxRotationSpeedUtilizationPercentage",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxRotationSpeedUtilizationPercentage",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MaxRotationSpeedUtilization(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MaxRotationSpeedUtilization",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MaxRotationSpeedUtilization",
+                        "value_type": xsd.Long,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class EffectiveUtilization(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"EffectiveUtilization",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"EffectiveUtilization",
+                        "value_type": xsd.Long,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CalculatedServiceLife(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"CalculatedServiceLife",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CalculatedServiceLife",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class MassInertiaRatio(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"MassInertiaRatio",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"MassInertiaRatio",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class FrequencyAtMaxSpeed(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"FrequencyAtMaxSpeed",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"FrequencyAtMaxSpeed",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PowerInRegenerativeOperation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"PowerInRegenerativeOperation",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PowerInRegenerativeOperation",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PowerInMotorOperation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"PowerInMotorOperation",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PowerInMotorOperation",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RmsOfMotorTorque(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"RmsOfMotorTorque",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"RmsOfMotorTorque",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class EnergyConsumtionPerCycle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"EnergyConsumtionPerCycle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"EnergyConsumtionPerCycle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
+                    }
+
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"MainComponent",
+                    "entity_type": aas.EntityType.CO_MANAGED_ENTITY,
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"de": r"Hauptkomponente", r"en": r"Main component"}
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponent/1/0"),
+                }
 
             def __init__(
                 self,
@@ -9985,32 +5220,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 powerInMotorOperation: Optional[Union[xsd.Long, PowerInMotorOperation]] = None,
                 rmsOfMotorTorque: Optional[Union[xsd.Long, RmsOfMotorTorque]] = None,
                 energyConsumtionPerCycle: Optional[Union[xsd.Long, EnergyConsumtionPerCycle]] = None,
-                id_short: Optional[str] = r"MainComponent",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = None,
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponent/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Hauptkomponente", r"en": r"Main component"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # A str would be split into its characters
                 if isinstance(mainComponentType, str):
@@ -10227,312 +5438,136 @@ class PowerDriveTrainSizing(aas.Submodel):
                     energyConsumtionPerCycle,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class OtherComponent(aas.Entity):
 
             class ManufacturerName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerName",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAO677#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerArticleNumber(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerArticleNumber",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO676#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerArticleNumber",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAO676#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"ManufacturerProductDesignation",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#001"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerProductDesignation",
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"0173-1#02-AAW338#001"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ManufacturerOrderCode(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerOrderCode",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAO227#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerOrderCode",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r" 0173-1#02-AAO227#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class QuantityOfParts(aas.Property):
 
-                def __init__(
-                    self,
-                    value: int,
-                    id_short: Optional[str] = r"QuantityOfParts",
-                    value_type: aas.DataTypeDefXsd = int,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"QuantityOfParts",
+                        "value_type": int,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Anzahl Einzelteile", r"en": r"Quantity of parts"}
-                        )
+                        ),
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class BulkCount(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.UnsignedLong,
-                    id_short: Optional[str] = r"BulkCount",
-                    value_type: aas.DataTypeDefXsd = xsd.UnsignedLong,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"BulkCount",
+                        "value_type": xsd.UnsignedLong,
+                        "category": r"PARAMETER",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.UnsignedLong, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class EnergyConsumtionPerCycle(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Long,
-                    id_short: Optional[str] = r"EnergyConsumtionPerCycle",
-                    value_type: aas.DataTypeDefXsd = xsd.Long,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"EnergyConsumtionPerCycle",
+                        "value_type": xsd.Long,
+                        "category": r"PARAMETER",
+                        "semantic_id": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Long, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> EntityMetadata:
+                return {
+                    "id_short": r"OtherComponent",
+                    "entity_type": aas.EntityType.CO_MANAGED_ENTITY,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Komponente", r"en": r"Component"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/OtherComponent/1/0"),
+                }
 
             def __init__(
                 self,
@@ -10545,30 +5580,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 quantityOfParts: Optional[Union[int, QuantityOfParts]] = None,
                 bulkCount: Optional[Union[xsd.UnsignedLong, BulkCount]] = None,
                 energyConsumtionPerCycle: Optional[Union[xsd.Long, EnergyConsumtionPerCycle]] = None,
-                id_short: Optional[str] = r"OtherComponent",
-                entity_type: Optional[aas.EntityType] = aas.EntityType.CO_MANAGED_ENTITY,
-                global_asset_id: Optional[str] = None,
-                specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/OtherComponent/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[EntityMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Komponente", r"en": r"Component"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -10623,21 +5636,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     energyConsumtionPerCycle,
                 )
 
-                super().__init__(
-                    statement=embedded_submodel_elements,
-                    id_short=id_short,
-                    entity_type=entity_type,
-                    global_asset_id=global_asset_id,
-                    specific_asset_id=specific_asset_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Messages(aas.SubmodelElementCollection):
 
@@ -10645,119 +5644,57 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 class CriticalityOfMessage(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"CriticalityOfMessage",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"PARAMETER",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/CriticalityOfMessage/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"CriticalityOfMessage",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"de": r"Kritikalität der Meldung", r"en": r"Criticality of message"}
-                            )
+                            ),
+                            "category": r"PARAMETER",
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/CriticalityOfMessage/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class MessageText(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"MessageText",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"PARAMETER",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MessageText/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"MessageText",
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"de": r"Nachrichtentext", r"en": r"Message text"}
-                            )
+                            ),
+                            "category": r"PARAMETER",
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MessageText/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Message",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Nachricht", r"en": r"Message"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Message/1/0"),
+                    }
 
                 def __init__(
                     self,
                     criticalityOfMessage: Union[str, CriticalityOfMessage],
                     messageText: Union[aas.LangStringSet, MessageText],
-                    id_short: Optional[str] = r"Message",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Message/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"de": r"Nachricht", r"en": r"Message"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -10773,43 +5710,19 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(criticalityOfMessage, messageText)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Messages",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Nachrichten", r"en": r"Messages"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/Messages/1/0"),
+                }
 
             def __init__(
-                self,
-                message: Optional[Iterable[Message]] = None,
-                id_short: Optional[str] = r"Messages",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Messages/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                self, message: Optional[Iterable[Message]] = None, **kwargs: Unpack[SubmodelElementCollectionMetadata]
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Nachrichten", r"en": r"Messages"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # A str would be split into its characters
                 if isinstance(message, str):
@@ -10819,60 +5732,32 @@ class PowerDriveTrainSizing(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(message)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class TextStatement(aas.MultiLanguageProperty):
 
-            def __init__(
-                self,
-                value: aas.LangStringSet,
-                id_short: Optional[str] = r"TextStatement",
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/TextStatement/1/0"
+            @staticmethod
+            def template_defaults() -> MultiLanguagePropertyMetadata:
+                return {
+                    "id_short": r"TextStatement",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"de": r"Textaussage", r"en": r"Text statement"}),
+                    "category": r"PARAMETER",
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/TextStatement/1/0"),
+                }
+
+            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"SizingResult",
+                "display_name": aas.MultiLanguageNameType(
+                    dict_={r"de": r"Auslegungsergebnisse", r"en": r"Sizing result"}
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"de": r"Textaussage", r"en": r"Text statement"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingResult/1/0"),
+            }
 
         def __init__(
             self,
@@ -10881,29 +5766,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             mainComponent: Optional[Iterable[MainComponent]] = None,
             otherComponent: Optional[Iterable[OtherComponent]] = None,
             textStatement: Optional[Union[aas.LangStringSet, TextStatement]] = None,
-            id_short: Optional[str] = r"SizingResult",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingResult/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Auslegungsergebnisse", r"en": r"Sizing result"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(mainComponent, str):
@@ -10924,18 +5788,30 @@ class PowerDriveTrainSizing(aas.Submodel):
                 overallSystem, mainComponent, otherComponent, messages, textStatement
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"PowerDriveTrainSizing",
+            "description": aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Submodel containing customer specifications for motion and load profile, limitations and requirements of an industrial motion application."
+                }
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(
+                    aas.Key(
+                        type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/1/0"
+                    ),
+                ),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
     def __init__(
         self,
@@ -10944,40 +5820,8 @@ class PowerDriveTrainSizing(aas.Submodel):
         applicationRequirements: ApplicationRequirements,
         transformationMechanism: Optional[TransformationMechanism] = None,
         sizingResult: Optional[SizingResult] = None,
-        id_short: Optional[str] = r"PowerDriveTrainSizing",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/1/0"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Submodel containing customer specifications for motion and load profile, limitations and requirements of an industrial motion application."
-                }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Add all passed/initialized submodel elements to a single list
 
@@ -10985,18 +5829,4 @@ class PowerDriveTrainSizing(aas.Submodel):
             sizingProjectInformation, applicationRequirements, transformationMechanism, sizingResult
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

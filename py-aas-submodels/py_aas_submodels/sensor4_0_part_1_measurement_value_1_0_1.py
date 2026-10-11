@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,180 +95,143 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RangeMetadata(TypedDict, total=False):
+    """Metadata of aas.Range, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class MeasurementValue(aas.Submodel):
 
     class MeasuredValue(aas.SubmodelElementCollection):
 
         class Value(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"Value",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"VARIABLE",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/measurementvalue/value/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Value",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Value"}),
+                    "category": r"VARIABLE",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"The value of the of measured sensor output"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/value/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class Unit(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Unit",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Unit",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Unit"}),
+                    "category": r"PARAMETER",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"}),
+                    "semantic_id": global_ref(r"0112/2///62720#UBA000"),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"The unit of the measured value"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class Kind(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Kind",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Kind",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Kind"}),
+                    "category": r"PARAMETER",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"}),
+                    "semantic_id": global_ref(r"0112/2///62683#ACI144"),
+                    "supplemental_semantic_id": (global_ref(r"0112/2///62683#ACI144"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"})
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"MeasuredValue",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"}),
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"This is the measured value of the sensor output"}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"),
+            }
 
         def __init__(
             self,
             value_: Union[xsd.Float, Value],
             unit: Union[str, Unit],
             kind: Union[str, Kind],
-            id_short: Optional[str] = r"MeasuredValue",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"This is the measured value of the sensor output"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -289,93 +252,36 @@ class MeasurementValue(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(value_, unit, kind)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class MeasuredValuePreDefined(aas.SubmodelElementCollection):
 
         class Distance(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"Distance",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABN718#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Distance",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Distance"}),
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"The measured length between two points."}),
+                    "semantic_id": global_ref(r"0112/2///61987#ABN718#001"),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Distance"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"The measured length between two points."})
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                if qualifier is None:
-                    qualifier = ()
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"MeasuredValuePreDefined",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Measured Value Pre Defined"}),
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"The predefined measured value of the sensor"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/measuredvaluepredefined/1/0"),
+            }
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
-
-        def __init__(
-            self,
-            distance: Union[xsd.Float, Distance],
-            id_short: Optional[str] = r"MeasuredValuePreDefined",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/measurementvalue/measuredvaluepredefined/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value Pre Defined"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"The predefined measured value of the sensor"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, distance: Union[xsd.Float, Distance], **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -386,242 +292,100 @@ class MeasurementValue(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(distance)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class MeasurementTimestamp(aas.Property):
 
-        def __init__(
-            self,
-            value: xsd.DateTime,
-            id_short: Optional[str] = r"MeasurementTimestamp",
-            value_type: aas.DataTypeDefXsd = xsd.DateTime,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"VARIABLE",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#CBA007"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///61360_7#CBA008"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"MeasurementTimestamp",
+                "value_type": xsd.DateTime,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Measurement Timestamp"}),
+                "category": r"VARIABLE",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"Date and time when the measurement was taken."}
+                ),
+                "semantic_id": global_ref(r"0112/2///61360_7#CBA007"),
+                "supplemental_semantic_id": (global_ref(r"0112/2///61360_7#CBA008"),),
+            }
 
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measurement Timestamp"})
+        def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"Date and time when the measurement was taken."})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class Concept(aas.SubmodelElementCollection):
 
         class Origin(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Origin",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/measurementvalue/origin/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Origin",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"The origin of the semantic description"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/origin/1/0"),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"The origin of the semantic description"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class Version(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Version",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/measurementvalue/version/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Version",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Version"}),
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"The version of the semantic defintion used"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/version/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class Identifier(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Identifier",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/measurementvalue/identifier/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Identifier"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Identifier",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Identifier"}),
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"The identifier of the semantic definition used"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/identifier/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"Concept",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Concept"}),
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"This collection defines which semantic definition is used for measuredvalue"}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/concept/1/0"),
+            }
 
         def __init__(
             self,
             origin: Optional[Union[str, Origin]] = None,
             version: Optional[Union[str, Version]] = None,
             identifier: Optional[Union[str, Identifier]] = None,
-            id_short: Optional[str] = r"Concept",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/measurementvalue/concept/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Concept"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"This collection defines which semantic definition is used for measuredvalue"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -642,18 +406,7 @@ class MeasurementValue(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(origin, version, identifier)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class MeasurementQualifier(aas.SubmodelElementCollection):
 
@@ -661,202 +414,94 @@ class MeasurementValue(aas.Submodel):
 
             ALLOWED_VALUES = (r"good", r"bad", r"uncertain", r"others")
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Quality",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"VARIABLE",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#CBA006"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Quality"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Quality",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Quality"}),
+                    "category": r"VARIABLE",
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Quality of the measured value (e.g., Good, Bad, Uncertain and others like out of range)."
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///61360_7#CBA006"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
                 if value is not None and value not in self.ALLOWED_VALUES:
                     raise ValueError(
                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                     )
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class Range(aas.Range):
 
-            def __init__(
-                self,
-                min: xsd.Float,
-                max: xsd.Float,
-                id_short: Optional[str] = r"Range",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/meaurementvalue/range/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Range"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> RangeMetadata:
+                return {
+                    "id_short": r"Range",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Range"}),
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"Allowed minimum and maximum measurement limits."}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/meaurementvalue/range/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, min: xsd.Float, max: xsd.Float, **kwargs: Unpack[RangeMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    min=min,
-                    max=max,
-                    id_short=id_short,
-                    value_type=value_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(min=min, max=max, **(self.template_defaults() | kwargs))
 
         class Scale(aas.Property):
 
-            def __init__(
-                self,
-                value: int,
-                id_short: Optional[str] = r"Scale",
-                value_type: aas.DataTypeDefXsd = int,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/measurementvalue/scale/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Scale"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Scale",
+                    "value_type": int,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Scale"}),
+                    "category": r"PARAMETER",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"Factor used to convert or adjust the measured value."}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/scale/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class Tag(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"Tag",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"PARAMETER",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABB271"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Tag"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Tag",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Tag"}),
+                    "category": r"PARAMETER",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"Identifier linking the measurement to its source or device."}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///61987#ABB271"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"MeasurementQualifier",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Measurement Qualifier"}),
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"The Qualifier of the measurement"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/measurementvalue/measurementqualifier/1/0"),
+            }
 
         def __init__(
             self,
@@ -864,30 +509,8 @@ class MeasurementValue(aas.Submodel):
             range: Optional[Union[Tuple[xsd.Float, xsd.Float], Range]] = None,
             scale: Optional[Union[int, Scale]] = None,
             tag: Optional[Union[str, Tag]] = None,
-            id_short: Optional[str] = r"MeasurementQualifier",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/measurementvalue/measurementqualifier/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measurement Qualifier"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"The Qualifier of the measurement"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -913,18 +536,16 @@ class MeasurementValue(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(quality, range, scale, tag)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"MeasurementValue",
+            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Measurement Value"}),
+            "description": aas.MultiLanguageTextType(dict_={r"en": r"The Submodel Template for Measurement Value"}),
+            "semantic_id": global_ref(r"https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0"),
+        }
 
     def __init__(
         self,
@@ -934,32 +555,8 @@ class MeasurementValue(aas.Submodel):
         measurementQualifier: MeasurementQualifier,
         measuredValuePreDefined: Optional[MeasuredValuePreDefined] = None,
         concept: Optional[Concept] = None,
-        id_short: Optional[str] = r"MeasurementValue",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Measurement Value"})
-
-        if description is None:
-            description = aas.MultiLanguageTextType(dict_={r"en": r"The Submodel Template for Measurement Value"})
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -972,18 +569,4 @@ class MeasurementValue(aas.Submodel):
             measuredValue, measuredValuePreDefined, measurementTimestamp, concept, measurementQualifier
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

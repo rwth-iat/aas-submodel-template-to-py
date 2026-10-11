@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,6 +95,70 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class CarbonFootprint(aas.Submodel):
 
     class ProductCarbonFootprints(GeneratedSubmodelElementList):
@@ -105,91 +169,54 @@ class CarbonFootprint(aas.Submodel):
 
                 class Pcfcalculationmethods_item(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = None,
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"PARAMETER",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG854#003"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": None,
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={
                                     r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
                                     r"en": r"PCF calculation method",
                                 }
-                            )
+                            ),
+                            "category": r"PARAMETER",
+                            "semantic_id": global_ref(r"0173-1#02-ABG854#003"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
-
-                def __init__(
-                    self,
-                    pcfcalculationmethods_items: Iterable[Union[str, Pcfcalculationmethods_item]],
-                    id_short: Optional[str] = r"PcfCalculationMethods",
-                    type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG854#003"),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/CarbonFootprint/PcfCalculationMethods/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods"),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"PcfCalculationMethods",
+                        "type_value_list_element": aas.Property,
+                        "semantic_id_list_element": global_ref(r"0173-1#02-ABG854#003"),
+                        "value_type_list_element": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"Folgenabschätzungsmethoden", r"en": r"PCF calculation methods"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"de": r"Normen, Standards, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
                                 r"en": 'Standards, methods for determining the greenhouse gas emissions of a product.\n\nThis Value List is based on ECLASS 15 with IRDI 0173-1#09-AAO115#003. The full list can be found in Section 2.5 in "Product Carbon Footprint 1.0 (IDTA-02023)".\n',
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/CarbonFootprint/PcfCalculationMethods/1/0"
+                        ),
+                        "supplemental_semantic_id": (
+                            global_ref(r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCalculationMethods"),
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(
+                    self,
+                    pcfcalculationmethods_items: Iterable[Union[str, Pcfcalculationmethods_item]],
+                    **kwargs: Unpack[SubmodelElementListMetadata],
+                ):
 
                     # A str would be split into its characters
                     if isinstance(pcfcalculationmethods_items, str):
@@ -208,276 +235,141 @@ class CarbonFootprint(aas.Submodel):
                         pcfcalculationmethods_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class PcfCO2eq(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Decimal,
-                    id_short: Optional[str] = r"PcfCO2eq",
-                    value_type: aas.DataTypeDefXsd = xsd.Decimal,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG855#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq"),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PcfCO2eq",
+                        "value_type": xsd.Decimal,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"de": r"CO2-Äquivalent", r"en": r"PCF co 2 eq"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"DIN DKE Spec 99100 chapter reference: 6.3.2"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABG855#003"),
+                        "supplemental_semantic_id": (
+                            global_ref(r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#pcfCo2eq"),
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Decimal, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ReferenceImpactUnitForCalculation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ReferenceImpactUnitForCalculation",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG856#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(
-                            r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation"
-                        ),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ReferenceImpactUnitForCalculation",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={
                                 r"de": r"Referenzeinheit für die Berechnung",
                                 r"en": r"reference impact unit for calculation",
                             }
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "If a normalized product carbon footprint (PCF) value is provided, the reference value for calculation should be a specific unit such as 'kWh'. \nIf the total PCF value is provided the reference value for calculation should be 'piece'."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABG856#003"),
+                        "supplemental_semantic_id": (
+                            global_ref(
+                                r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#referenceImpactUnitForCalculation"
+                            ),
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class QuantityOfMeasureForCalculation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: float,
-                    id_short: Optional[str] = r"QuantityOfMeasureForCalculation",
-                    value_type: aas.DataTypeDefXsd = float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG857#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(
-                            r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation"
-                        ),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"QuantityOfMeasureForCalculation",
+                        "value_type": float,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={
                                 r"de": r"Mengenangabe für die Berechnung",
                                 r"en": r"quantity of measure for calculation",
                             }
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "If a normalized product carbon footprint (PCF) value is provided, the quantity of measure for calculation should be 1.\nIf the total PCF value is provided the quantity of measure for calculation should be 1."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABG857#003"),
+                        "supplemental_semantic_id": (
+                            global_ref(
+                                r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#quantityOfMeasureForCalculation"
+                            ),
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LifeCyclePhases(GeneratedSubmodelElementList):
 
                 class Lifecyclephases_item(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = None,
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"PARAMETER",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG858#004"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": None,
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"de": r"Lebenszyklusphase", r"en": r"life cycle phase"}
-                            )
+                            ),
+                            "category": r"PARAMETER",
+                            "semantic_id": global_ref(r"0173-1#02-ABG858#004"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"LifeCyclePhases",
+                        "type_value_list_element": aas.Property,
+                        "semantic_id_list_element": global_ref(r"0173-1#02-ABG858#004"),
+                        "value_type_list_element": str,
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"de": r"Lebenszyklusphasen", r"en": r"life cycle phases"}
+                        ),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": 'List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: "A1 - raw material supply (and upstream production)" (6.3.5 required lify cycle mapping), "A3 - production" (6.3.4 Contribution of main product production/manufacturing lifecycle stage), "A4 - transport to final destination" (6.3.5 Contribution of distribution lifecycle stage), "C3 - recycling, waste treatment" (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery.\n'
+                            }
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/CarbonFootprint/LifeCyclePhases/1/0"),
+                        "supplemental_semantic_id": (
+                            global_ref(r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases"),
+                            global_ref(r"0173-1#02-ABG858#003"),
+                        ),
+                    }
 
                 def __init__(
                     self,
                     lifecyclephases_items: Iterable[Union[str, Lifecyclephases_item]],
-                    id_short: Optional[str] = r"LifeCyclePhases",
-                    type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG858#004"),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/CarbonFootprint/LifeCyclePhases/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"urn:samm:io.admin-shell.idta.carbon_footprint:1.0.0#lifeCyclePhases"),
-                        global_ref(r"0173-1#02-ABG858#003"),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Lebenszyklusphasen", r"en": r"life cycle phases"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": 'List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers.\n\nThe string value in the value list is based on DIN DKE SPEC 99100: "A1 - raw material supply (and upstream production)" (6.3.5 required lify cycle mapping), "A3 - production" (6.3.4 Contribution of main product production/manufacturing lifecycle stage), "A4 - transport to final destination" (6.3.5 Contribution of distribution lifecycle stage), "C3 - recycling, waste treatment" (6.3.6 Contribution of end of life and recycling lifecycle stage)\n\nPlease note that the model should always contain at least one Product Carbon Footprint entry that reflects the total PCF value (including all life cycle phases) of the battery.\n'
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(lifecyclephases_items, str):
@@ -494,152 +386,71 @@ class CarbonFootprint(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(lifecyclephases_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class PerformanceClass(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"PerformanceClass",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PerformanceClass",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"performance class"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#performanceClass"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"performance class"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class WebLinkToPublicCarbonFootprintStudy(GeneratedSubmodelElementList):
 
                 class Weblinktopubliccarbonfootprintstudy_item(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = None,
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO099#004"),),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": None,
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": "Document identifier of the document (e.g., PDF) that can be found in the HandoverDocumentation Submodel.\n\nDIN DKE Spec 99100 chapter reference: 6.3.8 "
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                            ),
+                            "supplemental_semantic_id": (global_ref(r"0173-1#02-AAO099#004"),),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"WebLinkToPublicCarbonFootprintStudy",
+                        "type_value_list_element": aas.Property,
+                        "value_type_list_element": str,
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"en": r"web link to public carbon footprint study"}
+                        ),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     weblinktopubliccarbonfootprintstudy_items: Iterable[
                         Union[str, Weblinktopubliccarbonfootprintstudy_item]
                     ],
-                    id_short: Optional[str] = r"WebLinkToPublicCarbonFootprintStudy",
-                    type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[aas.Reference] = None,
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#webLinkToPublicCarbonFootprintStudy"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
-                            dict_={r"en": r"web link to public carbon footprint study"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(weblinktopubliccarbonfootprintstudy_items, str):
@@ -662,22 +473,29 @@ class CarbonFootprint(aas.Submodel):
                         weblinktopubliccarbonfootprintstudy_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"de": r"Produkt CO2-Fußabdruck", r"en": r"product carbon footprint"}
+                    ),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+                        }
+                    ),
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0"
+                    ),
+                    "supplemental_semantic_id": (
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint"
+                        ),
+                    ),
+                }
 
             def __init__(
                 self,
@@ -693,40 +511,8 @@ class CarbonFootprint(aas.Submodel):
                     Iterable[Union[str, WebLinkToPublicCarbonFootprintStudy.Weblinktopubliccarbonfootprintstudy_item]],
                     WebLinkToPublicCarbonFootprintStudy,
                 ],
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#ProductCarbonFootprint"
-                    ),
-                ),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Produkt CO2-Fußabdruck", r"en": r"product carbon footprint"}
-                    )
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # A str would be split into its characters
                 if isinstance(pcfCalculationMethods, str):
@@ -799,60 +585,37 @@ class CarbonFootprint(aas.Submodel):
                     webLinkToPublicCarbonFootprintStudy,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"ProductCarbonFootprints",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(
+                    r"https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0"
+                ),
+                "display_name": aas.MultiLanguageNameType(
+                    dict_={r"de": r"Produkt CO2-Fußabdruck", r"en": r"product carbon footprints"}
+                ),
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+                    }
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprints/1/0"),
+                "supplemental_semantic_id": (
+                    global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery"
+                    ),
+                ),
+            }
 
         def __init__(
             self,
             productcarbonfootprints_items: Iterable[Productcarbonfootprints_item],
-            id_short: Optional[str] = r"ProductCarbonFootprints",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprint/1/0"
-            ),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = True,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/CarbonFootprint/ProductCarbonFootprints/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery"),
-            ),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementListMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Produkt CO2-Fußabdruck", r"en": r"product carbon footprints"}
-                )
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(productcarbonfootprints_items, str):
@@ -862,22 +625,28 @@ class CarbonFootprint(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(productcarbonfootprints_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"CarbonFootprint",
+            "display_name": aas.MultiLanguageNameType(dict_={r"de": r"C02 Footprint", r"en": r"carbon footprint"}),
+            "description": aas.MultiLanguageTextType(
+                dict_={r"en": r"The Submodel provides the means to access the Carbon Footprint of the asset."}
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02023-1-0",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": global_ref(r"https://admin-shell.io/idta/CarbonFootprint/CarbonFootprint/1/0"),
+            "supplemental_semantic_id": (
+                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery"),
+            ),
+        }
 
     def __init__(
         self,
@@ -885,45 +654,8 @@ class CarbonFootprint(aas.Submodel):
         productCarbonFootprints: Union[
             Iterable[ProductCarbonFootprints.Productcarbonfootprints_item], ProductCarbonFootprints
         ],
-        id_short: Optional[str] = r"CarbonFootprint",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"https://admin-shell.io/idta/CarbonFootprint/CarbonFootprint/1/0"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (
-            global_ref(r"urn:samm:io.admin-shell.idta.batterypass.carbon_footprint:1.0.0#CarbonFootprintBattery"),
-        ),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"de": r"C02 Footprint", r"en": r"carbon footprint"})
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"The Submodel provides the means to access the Carbon Footprint of the asset."}
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02023-1-0",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # A str would be split into its characters
         if isinstance(productCarbonFootprints, str):
@@ -938,18 +670,4 @@ class CarbonFootprint(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(productCarbonFootprints)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

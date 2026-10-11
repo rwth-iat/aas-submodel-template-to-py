@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,75 +95,165 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class BasicEventElementMetadata(TypedDict, total=False):
+    """Metadata of aas.BasicEventElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    observed: aas.ModelReference[Union[ForwardRef("aas.AssetAdministrationShell"), aas.Submodel, aas.SubmodelElement]]
+    direction: aas.Direction
+    state: aas.StateOfEvent
+    message_topic: Optional[str]
+    message_broker: Optional[
+        aas.ModelReference[Union[aas.Submodel, aas.SubmodelElementList, aas.SubmodelElementCollection, aas.Entity]]
+    ]
+    last_update: Optional[xsd.DateTime]
+    min_interval: Optional[xsd.Duration]
+    max_interval: Optional[xsd.Duration]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class ProductChangeNotifications(aas.Submodel):
 
     class PcnEventsOutgoing(aas.BasicEventElement):
 
-        def __init__(
-            self,
-            id_short: Optional[str] = r"PcnEventsOutgoing",
-            observed: aas.ModelReference[
-                Union[ForwardRef("aas.AssetAdministrationShell"), aas.Submodel, aas.SubmodelElement]
-            ] = aas.ModelReference(
-                key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"www.example.com/ids/sm/3212_3160_4022_4516"),),
-                type_=aas.Submodel,
-                referred_semantic_id=None,
-            ),
-            direction: aas.Direction = aas.Direction.INPUT,
-            state: aas.StateOfEvent = aas.StateOfEvent.OFF,
-            message_topic: Optional[str] = None,
-            message_broker: Optional[
-                aas.ModelReference[
-                    Union[aas.Submodel, aas.SubmodelElementList, aas.SubmodelElementCollection, aas.Entity]
-                ]
-            ] = None,
-            last_update: Optional[xsd.DateTime] = None,
-            min_interval: Optional[xsd.Duration] = None,
-            max_interval: Optional[xsd.Duration] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/EventsOutgoing/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> BasicEventElementMetadata:
+            return {
+                "id_short": r"PcnEventsOutgoing",
+                "observed": aas.ModelReference(
+                    key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"www.example.com/ids/sm/3212_3160_4022_4516"),),
+                    type_=aas.Submodel,
+                    referred_semantic_id=None,
+                ),
+                "direction": aas.Direction.INPUT,
+                "state": aas.StateOfEvent.OFF,
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"Note: Industrial users will subscribe to this event by different implementation technologies."
                     }
-                )
+                ),
+                "semantic_id": global_ref(
+                    r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/EventsOutgoing/1/0"
+                ),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, **kwargs: Unpack[BasicEventElementMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                id_short=id_short,
-                observed=observed,
-                direction=direction,
-                state=state,
-                message_topic=message_topic,
-                message_broker=message_broker,
-                last_update=last_update,
-                min_interval=min_interval,
-                max_interval=max_interval,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(**(self.template_defaults() | kwargs))
 
     class Records(GeneratedSubmodelElementList):
 
@@ -173,160 +263,82 @@ class ProductChangeNotifications(aas.Submodel):
 
                 class ManufacturerName(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"ManufacturerName",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#004"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {"id_short": r"ManufacturerName", "semantic_id": global_ref(r"0173-1#02-AAO677#004")}
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class PhysicalAddress__0__(aas.SubmodelElementCollection):
 
-                    def __init__(
-                        self,
-                        id_short: Optional[str] = r"PhysicalAddress__0__",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            global_ref(r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"),
-                            global_ref(r"0173-1#02-ABG791#003/0173-1#01-ADR442#008"),
-                        ),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"PhysicalAddress__0__",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r'Note: This set of information is defined by SMT drop-in "Contact Information" in (current) version 1.0, given by the SMT for Contact and Address Information V1.0. The ECLASS IRDI reserved for the SMC was added as supplementalSemanticId.  Note: Use this set of information, until version 1.1 of the SMT drop-in "Contact Information" is published. Note: The idShort shall go without the index "__0__".'
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation"
+                            ),
+                            "supplemental_semantic_id": (
+                                global_ref(r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"),
+                                global_ref(r"0173-1#02-ABG791#003/0173-1#01-ADR442#008"),
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                    def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                         # Add all passed/initialized submodel elements to a single list
 
                         embedded_submodel_elements = collect_submodel_elements()
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class PhysicalAddress__1__(aas.SubmodelElementCollection):
 
-                    def __init__(
-                        self,
-                        id_short: Optional[str] = r"PhysicalAddress__1__",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#AAS034"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            global_ref(r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"),
-                            global_ref(r"0173-1#02-ABG791#003/0173-1#01-ADR442#008"),
-                        ),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"PhysicalAddress__1__",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r'Note: this set of information is defined by SMT drop-in "Contact Information" in upcoming version 1.1, given by the SMT for Contact and Address Information V1.1. The ECLASS IRDI reserved for the SMC was added as supplementalSemanticId.  Note: Use this set of information, if version 1.1 of the SMT drop-in "Contact Information" is published. Note: The idShort shall go without the index "__1__".'
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0112/2///61360_7#AAS034"),
+                            "supplemental_semantic_id": (
+                                global_ref(r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"),
+                                global_ref(r"0173-1#02-ABG791#003/0173-1#01-ADR442#008"),
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                    def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                         # Add all passed/initialized submodel elements to a single list
 
                         embedded_submodel_elements = collect_submodel_elements()
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Manufacturer",
+                        "semantic_id": global_ref(r"0173-1#02-ABI295#003/0173-1#01-AHE584#003"),
+                    }
 
                 def __init__(
                     self,
                     manufacturerName: Union[aas.LangStringSet, ManufacturerName],
                     physicalAddress__0__: PhysicalAddress__0__,
                     physicalAddress__1__: PhysicalAddress__1__,
-                    id_short: Optional[str] = r"Manufacturer",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI295#003/0173-1#01-AHE584#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -339,109 +351,47 @@ class ProductChangeNotifications(aas.Submodel):
                         manufacturerName, physicalAddress__0__, physicalAddress__1__
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ManufacturerChangeID(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ManufacturerChangeID",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG772#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ManufacturerChangeID",
+                        "value_type": str,
+                        "semantic_id": global_ref(r"0173-1#02-ABG772#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PcnType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"PcnType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = aas.ModelReference(
-                        key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#07-ABU000#003"),),
-                        type_=aas.Submodel,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnType/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PcnType",
+                        "value_type": str,
+                        "value_id": aas.ModelReference(
+                            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#07-ABU000#003"),),
+                            type_=aas.Submodel,
+                            referred_semantic_id=None,
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: Following the VDMA 24903, this mandatory global flag distincts between a PCN and PDN. Use either value PCN or PDN with valueId 0173-1#07-ABU000#003 (PCN) or 0173-1#07-ABU001#003 (PDN). Note: According this global flag, the PCN milestone (173-1#07-ABU000#003) communicates the effective date of the PCN and the EOP milestone (EOP milestone (0173-1#07-ABU003#003) communicates the end of production date for the PDN in the life-cycle data."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnType/1/0"
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LifeCycleData(GeneratedSubmodelElementList):
 
@@ -449,122 +399,62 @@ class ProductChangeNotifications(aas.Submodel):
 
                     class MilestoneClassification(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"MilestoneClassification",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = aas.ModelReference(
-                                key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#07-ABU002#003"),),
-                                type_=aas.Submodel,
-                                referred_semantic_id=None,
-                            ),
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG773#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"MilestoneClassification",
+                                "value_type": str,
+                                "value_id": aas.ModelReference(
+                                    key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#07-ABU002#003"),),
+                                    type_=aas.Submodel,
+                                    referred_semantic_id=None,
+                                ),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: defined point in time with a specific meaning for life-cycle management (IEC 62890:2020). Note: Set value and valueId with one of these: SOP (0173-1#07-ABT998#003),  NRND (0173-1#07-ABT999#003),  PCN (0173-1#07-ABU000#003),  EOS (0173-1#07-ABU002#003),  EOP (0173-1#07-ABU003#003),  LTD (0173-1#07-ABU004#003),  EOSR (0173-1#07-ABU087#003) Note: The PDN milestone is not to be used for this classification. Instead, the global flag PcnType is set with value=PCN and valueId=0173-1#07-ABU000#003."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABG773#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DateOfValidity(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.DateTime,
-                            id_short: Optional[str] = r"DateOfValidity",
-                            value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF815#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DateOfValidity",
+                                "value_type": xsd.DateTime,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABF815#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/Milestone/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         milestoneClassification: Union[str, MilestoneClassification],
                         dateOfValidity: Union[xsd.DateTime, DateOfValidity],
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/Milestone/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -582,46 +472,26 @@ class ProductChangeNotifications(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(milestoneClassification, dateOfValidity)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"LifeCycleData",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/Milestone/1/0"
+                        ),
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/List/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     lifecycledata_items: Optional[Iterable[Lifecycledata_item]] = None,
-                    id_short: Optional[str] = r"LifeCycleData",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/Milestone/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/LifeCycleData/List/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(lifecycledata_items, str):
@@ -631,22 +501,7 @@ class ProductChangeNotifications(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(lifecycledata_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ReasonsOfChange(GeneratedSubmodelElementList):
 
@@ -654,164 +509,76 @@ class ProductChangeNotifications(aas.Submodel):
 
                     class ReasonClassificationSystem(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"ReasonClassificationSystem",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF813#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"ReasonClassificationSystem",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r'Note: Examples for common names for classification systems are "VDMA24903" or "ECLASS".'
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABF813#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class VersionOfClassificationSystem(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"VersionOfClassificationSystem",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR710#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"VersionOfClassificationSystem",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored.",
                                         r"de": r"Note: 4 digit year of publication date of classifcation standard can serve as version.",
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAR710#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ReasonId(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"ReasonId",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG774#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"ReasonId",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABG774#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "semantic_id": global_ref(r"0173-1#02-ABI296#002/0173-1#01-AHE585#002"),
+                        }
 
                     def __init__(
                         self,
                         reasonClassificationSystem: Union[str, ReasonClassificationSystem],
                         reasonId: Union[str, ReasonId],
                         versionOfClassificationSystem: Optional[Union[str, VersionOfClassificationSystem]] = None,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI296#002/0173-1#01-AHE585#002"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -840,51 +607,27 @@ class ProductChangeNotifications(aas.Submodel):
                             reasonClassificationSystem, versionOfClassificationSystem, reasonId
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"ReasonsOfChange",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(r"0173-1#02-ABI296#002/0173-1#01-AHE585#002"),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Multiple classification systems might be used. Constraint: At least one reason according VDM24903 shall be given."
+                            }
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABI296#002"),
+                    }
 
                 def __init__(
                     self,
                     reasonsofchange_items: Iterable[Reasonsofchange_item],
-                    id_short: Optional[str] = r"ReasonsOfChange",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"0173-1#02-ABI296#002/0173-1#01-AHE585#002"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI296#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Multiple classification systems might be used. Constraint: At least one reason according VDM24903 shall be given."
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(reasonsofchange_items, str):
@@ -894,22 +637,7 @@ class ProductChangeNotifications(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(reasonsofchange_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class ItemCategories(GeneratedSubmodelElementList):
 
@@ -917,170 +645,82 @@ class ProductChangeNotifications(aas.Submodel):
 
                     class ItemClassificationSystem(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"ItemClassificationSystem",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/ItemClassificationSystem/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"ItemClassificationSystem",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r'Note: Examples for common names for classification systems are "VDMA24903".'
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/ItemClassificationSystem/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class VersionOfClassificationSystem(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"VersionOfClassificationSystem",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR710#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"VersionOfClassificationSystem",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored.",
                                         r"de": r"Note: 4 digit year of publication data of classifcation standard can serve as version.",
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAR710#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ItemCategory(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"ItemCategory",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/ItemCategory/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"ItemCategory",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/ItemCategory/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         itemClassificationSystem: Union[str, ItemClassificationSystem],
                         itemCategory: Union[str, ItemCategory],
                         versionOfClassificationSystem: Optional[Union[str, VersionOfClassificationSystem]] = None,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1109,53 +749,31 @@ class ProductChangeNotifications(aas.Submodel):
                             itemClassificationSystem, versionOfClassificationSystem, itemCategory
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"ItemCategories",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/1/0"
+                        ),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Multiple classification systems might be used. Constraint: At least one item category according VDM24903 shall be given."
+                            }
+                        ),
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/List/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     itemcategories_items: Iterable[Itemcategories_item],
-                    id_short: Optional[str] = r"ItemCategories",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/ItemCategory/List/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Multiple classification systems might be used. Constraint: At least one item category according VDM24903 shall be given."
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(itemcategories_items, str):
@@ -1165,107 +783,55 @@ class ProductChangeNotifications(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(itemcategories_items, number_repeated=False)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class AffectedPartNumbers(GeneratedSubmodelElementList):
 
                 class Affectedpartnumbers_item(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = None,
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": None,
+                            "value_type": str,
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": "Note: This Property codes only part number (\"12345\"), a set of part numbers (\"12345;23456;34567\"), a range of part numbers(\"10000-19999\"). For each of these, wildcards like asterix (\"1*8\", all numbers starting with '1' and ending with '8') or question mark (\"1?3?8\", all 5 digit numbers starting with '1' and ending with '8' and middle as '5') are allowed."
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"AffectedPartNumbers",
+                        "type_value_list_element": aas.Property,
+                        "semantic_id_list_element": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/1/0"
+                        ),
+                        "value_type_list_element": str,
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Constraint: Affected part numbers shall only be listed, if not the full range of part numbers produced for this item (product family and designation) is affected. Note: Multiple single part numbers with wildcards or ranges of part numbers are listed."
+                            }
+                        ),
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/List/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     affectedpartnumbers_items: Optional[Iterable[Union[str, Affectedpartnumbers_item]]] = None,
-                    id_short: Optional[str] = r"AffectedPartNumbers",
-                    type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AffectedPartNumber/List/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Constraint: Affected part numbers shall only be listed, if not the full range of part numbers produced for this item (product family and designation) is affected. Note: Multiple single part numbers with wildcards or ranges of part numbers are listed."
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(affectedpartnumbers_items, str):
@@ -1284,167 +850,71 @@ class ProductChangeNotifications(aas.Submodel):
                         affectedpartnumbers_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class PcnReasonComment(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"PcnReasonComment",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF814#002"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"PcnReasonComment",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Note: May be substituted by PcnChangeInformation"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABF814#002"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PcnChangeInformation(aas.SubmodelElementCollection):
 
                 class ChangeTitle(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"ChangeTitle",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/ChangeTitle/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"ChangeTitle",
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/ChangeTitle/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ChangeDetail(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"ChangeDetail",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/ChangeDetail/1/0"
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"ChangeDetail",
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/ChangeDetail/1/0"
+                            ),
+                        }
+
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"PcnChangeInformation",
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/1/0"
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                    }
 
                 def __init__(
                     self,
                     changeTitle: Union[aas.LangStringSet, ChangeTitle],
                     changeDetail: Union[aas.LangStringSet, ChangeDetail],
-                    id_short: Optional[str] = r"PcnChangeInformation",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/PcnChangeInformation/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1460,101 +930,58 @@ class ProductChangeNotifications(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(changeTitle, changeDetail)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class AdditionalInformation(GeneratedSubmodelElementList):
 
                 class Additionalinformation_item(aas.File):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = None,
-                        content_type: Optional[str] = r"application/octet-stream",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/AdditionalInformation/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> FileMetadata:
+                        return {
+                            "id_short": None,
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r'Note: This File element can be used to attach the conventional "product change information" already provided by many suppliers or e.g. some detail geometry information.'
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/AdditionalInformation/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(
+                        self,
+                        value: str,
+                        content_type: Optional[str] = r"application/octet-stream",
+                        **kwargs: Unpack[FileMetadata],
+                    ):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            content_type=content_type,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"AdditionalInformation",
+                        "type_value_list_element": aas.File,
+                        "semantic_id_list_element": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/AdditionalInformation/1/0"
+                        ),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r'Note: Suppliers are encouraged to add the conventional "product change information" documents and further details, e.g. photo-based or geometric change information to the PCN record.'
+                            }
+                        ),
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/List/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     additionalinformation_items: Optional[Iterable[Additionalinformation_item]] = None,
-                    id_short: Optional[str] = r"AdditionalInformation",
-                    type_value_list_element: aas.SubmodelElement = aas.File,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/AdditionalInformation/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/AdditionalInformation/List/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Note: Suppliers are encouraged to add the conventional "product change information" documents and further details, e.g. photo-based or geometric change information to the PCN record.'
-                            }
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(additionalinformation_items, str):
@@ -1566,238 +993,94 @@ class ProductChangeNotifications(aas.Submodel):
                         additionalinformation_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class DateOfRecord(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.DateTime,
-                    id_short: Optional[str] = r"DateOfRecord",
-                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF816#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfRecord",
+                        "value_type": xsd.DateTime,
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABF816#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ItemOfChange(aas.SubmodelElementCollection):
 
                 class ManufacturerProductFamily(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"ManufacturerProductFamily",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAU731#003"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"ManufacturerProductFamily",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-AAU731#003"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"ManufacturerProductDesignation",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#002"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"ManufacturerProductDesignation",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-AAW338#002"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class OrderCodeOfManufacturer(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"OrderCodeOfManufacturer",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO227#004"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"OrderCodeOfManufacturer",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Note: Optional, as it might not exist for long term used items."}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-AAO227#004"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ManufacturerAssetID(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = r"ManufacturerAssetID",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG775#002"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": r"ManufacturerAssetID",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: This can be used to easily retrieve further information on the described item, such as full technical data, documentation, MCAD or ECAD models."
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-ABG775#002"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ProductClassifications(GeneratedSubmodelElementList):
 
@@ -1805,158 +1088,70 @@ class ProductChangeNotifications(aas.Submodel):
 
                         class ClassificationSystem(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ClassificationSystem",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR709#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ClassificationSystem",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(r"0173-1#02-AAR709#002"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class VersionOfClassificationSystem(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"VersionOfClassificationSystem",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR710#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"VersionOfClassificationSystem",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r'Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-AAR710#002"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ProductClassId(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ProductClassId",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG776#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ProductClassId",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r'Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABG776#002"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"),
+                            }
 
                         def __init__(
                             self,
                             classificationSystem: Union[str, ClassificationSystem],
                             productClassId: Union[str, ProductClassId],
                             versionOfClassificationSystem: Optional[Union[str, VersionOfClassificationSystem]] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1985,51 +1180,27 @@ class ProductChangeNotifications(aas.Submodel):
                                 classificationSystem, versionOfClassificationSystem, productClassId
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"ProductClassifications",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id_list_element": global_ref(r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: It is encouraged to provide the actual product classficiation, e.g. by ECLASS, in order to ease the identification of relevant items by the industrial user."
+                                }
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-ABI298#002"),
+                        }
 
                     def __init__(
                         self,
                         productclassifications_items: Optional[Iterable[Productclassifications_item]] = None,
-                        id_short: Optional[str] = r"ProductClassifications",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                            r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"
-                        ),
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI298#002"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: It is encouraged to provide the actual product classficiation, e.g. by ECLASS, in order to ease the identification of relevant items by the industrial user."
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(productclassifications_items, str):
@@ -2041,107 +1212,40 @@ class ProductChangeNotifications(aas.Submodel):
                             productclassifications_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class HardwareVersion(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"HardwareVersion",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN270#003"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"HardwareVersion",
+                            "value_type": str,
+                            "semantic_id": global_ref(r"0173-1#02-AAN270#003"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class RemainingAmountAvailable(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.PositiveInteger,
-                        id_short: Optional[str] = r"RemainingAmountAvailable",
-                        value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAF551#004"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"RemainingAmountAvailable",
+                            "value_type": xsd.PositiveInteger,
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Note: This is an indicative figure; the manufacturer/ supplier may use a heuristical model to distribute available stock to a forecasted number of industrial users. Useful for industrial users to assess individual need of products against assumed availability."
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-BAF551#004"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.PositiveInteger, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class TechnicalData_Changes(GeneratedSubmodelElementList):
 
@@ -2149,183 +1253,95 @@ class ProductChangeNotifications(aas.Submodel):
 
                         class Arbitrary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"Arbitrary",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/SMT/General/Arbitrary"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    global_ref(
-                                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/NewValue/1/0"
-                                    ),
-                                ),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Arbitrary",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": "Note: An arbitrary Property, MLP, Range-element can be placed in this structure with arbitrary semanticId. It is marked by the supplementalSemanticId for 'new value'."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                                    "supplemental_semantic_id": (
+                                        global_ref(
+                                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/NewValue/1/0"
+                                        ),
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class OriginOfChange(aas.ReferenceElement):
 
-                            def __init__(
-                                self,
-                                value: aas.Reference,
-                                id_short: Optional[str] = r"OriginOfChange",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                            value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/OriginOfChange/1/0",
-                                        ),
-                                    ),
-                                    type_=aas.ConceptDescription,
-                                    referred_semantic_id=None,
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> ReferenceElementMetadata:
+                                return {
+                                    "id_short": r"OriginOfChange",
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Note: The set of technical data in the definition refers to the Submodel for technical data in the AAS."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": aas.ModelReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                                value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/OriginOfChange/1/0",
+                                            ),
+                                        ),
+                                        type_=aas.ConceptDescription,
+                                        referred_semantic_id=None,
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ReasonId(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ReasonId",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG774#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ReasonId",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABG774#002"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: This SMC can be added to annotate changes in DataElements of existing Submodels (e.g. for technical data) and to provide more specific information to reason and items of a VDMA 24903 change."
+                                    }
+                                ),
+                                "semantic_id": global_ref(
+                                    r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/Change/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
                             arbitrary: Optional[Union[str, Arbitrary]] = None,
                             originOfChange: Optional[Union[aas.Reference, OriginOfChange]] = None,
                             reasonId: Optional[Union[str, ReasonId]] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/Change/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: This SMC can be added to annotate changes in DataElements of existing Submodels (e.g. for technical data) and to provide more specific information to reason and items of a VDMA 24903 change."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -2346,46 +1362,26 @@ class ProductChangeNotifications(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(arbitrary, originOfChange, reasonId)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"TechnicalData_Changes",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id_list_element": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/Change/1/0"
+                            ),
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/List/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         technicaldata_changes_items: Optional[Iterable[Technicaldata_changes_item]] = None,
-                        id_short: Optional[str] = r"TechnicalData_Changes",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/Change/1/0"
-                        ),
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_Changes/List/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(technicaldata_changes_items, str):
@@ -2397,108 +1393,55 @@ class ProductChangeNotifications(aas.Submodel):
                             technicaldata_changes_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class TechnicalData_CurrentState(aas.SubmodelElementCollection):
 
                     class Arbitrary(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"Arbitrary",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/SMT/General/Arbitrary"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Arbitrary",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: Each DataElement represents a change of a technical data element. DataElements such as Property, MultiLanguageProperty and Range are applicable. To bring about the information, both idShort and semanticId can be set to the resepctive {arbitrary} attribute of the corresponding  technical data element."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"TechnicalData_CurrentState",
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: For the recommended items, the technical data elements are individually grouped in fit, form, function, other. As different alternatives might engange different groupings, the respective technical data elements of the item of change are not grouped, at all. Note: If possible, technical data elements in the recommended items should find its counterparts here (that is: DataElement with identical semanticId)."
+                                }
+                            ),
+                            "semantic_id": aas.ModelReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                        value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_CurrentState/List/1/0",
+                                    ),
+                                ),
+                                type_=aas.ConceptDescription,
+                                referred_semantic_id=None,
+                            ),
+                        }
 
                     def __init__(
                         self,
                         arbitrary: Optional[Iterable[Union[str, Arbitrary]]] = None,
-                        id_short: Optional[str] = r"TechnicalData_CurrentState",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                    value=r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/TechnicalData_CurrentState/List/1/0",
-                                ),
-                            ),
-                            type_=aas.ConceptDescription,
-                            referred_semantic_id=None,
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: For the recommended items, the technical data elements are individually grouped in fit, form, function, other. As different alternatives might engange different groupings, the respective technical data elements of the item of change are not grouped, at all. Note: If possible, technical data elements in the recommended items should find its counterparts here (that is: DataElement with identical semanticId)."
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(arbitrary, str):
@@ -2514,18 +1457,14 @@ class ProductChangeNotifications(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(arbitrary)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"ItemOfChange",
+                        "semantic_id": global_ref(r"0173-1#02-ABI297#003/0173-1#01-AHE586#003"),
+                    }
 
                 def __init__(
                     self,
@@ -2542,22 +1481,8 @@ class ProductChangeNotifications(aas.Submodel):
                         Union[Iterable[TechnicalData_Changes.Technicaldata_changes_item], TechnicalData_Changes]
                     ] = None,
                     technicalData_CurrentState: Optional[TechnicalData_CurrentState] = None,
-                    id_short: Optional[str] = r"ItemOfChange",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI297#003/0173-1#01-AHE586#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2633,18 +1558,7 @@ class ProductChangeNotifications(aas.Submodel):
                         technicalData_CurrentState,
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class RecommendedItems(GeneratedSubmodelElementList):
 
@@ -2652,133 +1566,55 @@ class ProductChangeNotifications(aas.Submodel):
 
                     class ManufacturerProductFamily(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"ManufacturerProductFamily",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAU731#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"ManufacturerProductFamily",
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAU731#003"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ManufacturerProductDesignation(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"ManufacturerProductDesignation",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"ManufacturerProductDesignation",
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAW338#002"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class OrderCodeOfManufacturer(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"OrderCodeOfManufacturer",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO227#004"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"OrderCodeOfManufacturer",
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Note: Mandatory, as required to order."}
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAO227#004"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ProductClassifications(GeneratedSubmodelElementList):
 
@@ -2786,158 +1622,70 @@ class ProductChangeNotifications(aas.Submodel):
 
                             class ClassificationSystem(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"ClassificationSystem",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR709#002"),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"ClassificationSystem",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(r"0173-1#02-AAR709#002"),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class VersionOfClassificationSystem(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"VersionOfClassificationSystem",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR710#002"),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if description is None:
-                                        description = aas.MultiLanguageTextType(
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"VersionOfClassificationSystem",
+                                        "value_type": str,
+                                        "description": aas.MultiLanguageTextType(
                                             dict_={
                                                 r"en": r'Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
                                             }
-                                        )
+                                        ),
+                                        "semantic_id": global_ref(r"0173-1#02-AAR710#002"),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class ProductClassId(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"ProductClassId",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG776#002"),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if description is None:
-                                        description = aas.MultiLanguageTextType(
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"ProductClassId",
+                                        "value_type": str,
+                                        "description": aas.MultiLanguageTextType(
                                             dict_={
                                                 r"en": r'Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
                                             }
-                                        )
+                                        ),
+                                        "semantic_id": global_ref(r"0173-1#02-ABG776#002"),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": None,
+                                    "semantic_id": global_ref(r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"),
+                                }
 
                             def __init__(
                                 self,
                                 classificationSystem: Union[str, ClassificationSystem],
                                 versionOfClassificationSystem: Union[str, VersionOfClassificationSystem],
                                 productClassId: Union[str, ProductClassId],
-                                id_short: Optional[str] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2967,43 +1715,23 @@ class ProductChangeNotifications(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementListMetadata:
+                            return {
+                                "id_short": r"ProductClassifications",
+                                "type_value_list_element": aas.SubmodelElementCollection,
+                                "semantic_id_list_element": global_ref(r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"),
+                                "semantic_id": global_ref(r"0173-1#02-ABI298#002"),
+                            }
 
                         def __init__(
                             self,
                             productclassifications_items: Optional[Iterable[Productclassifications_item]] = None,
-                            id_short: Optional[str] = r"ProductClassifications",
-                            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI298#002/0173-1#01-AHE587#002"
-                            ),
-                            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                            order_relevant: bool = True,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI298#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementListMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # A str would be split into its characters
                             if isinstance(productclassifications_items, str):
@@ -3015,148 +1743,66 @@ class ProductChangeNotifications(aas.Submodel):
                                 productclassifications_items, number_repeated=False
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                type_value_list_element=type_value_list_element,
-                                semantic_id_list_element=semantic_id_list_element,
-                                value_type_list_element=value_type_list_element,
-                                order_relevant=order_relevant,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class TechnicalData_Fit(aas.SubmodelElementCollection):
 
                         class TargetEstimate(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Float,
-                                id_short: Optional[str] = r"TargetEstimate",
-                                value_type: aas.DataTypeDefXsd = xsd.Float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG777#003"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"TargetEstimate",
+                                    "value_type": xsd.Float,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABG777#003"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Arbitrary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"Arbitrary",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/SMT/General/Arbitrary"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Arbitrary",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"TechnicalData_Fit",
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
+                                    }
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABI299#003/0173-1#01-AHE588#003"),
+                            }
 
                         def __init__(
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[Union[xsd.Float, TargetEstimate]] = None,
-                            id_short: Optional[str] = r"TechnicalData_Fit",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI299#003/0173-1#01-AHE588#003"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3172,144 +1818,66 @@ class ProductChangeNotifications(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(targetEstimate, arbitrary)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class TechnicalData_Form(aas.SubmodelElementCollection):
 
                         class TargetEstimate(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Float,
-                                id_short: Optional[str] = r"TargetEstimate",
-                                value_type: aas.DataTypeDefXsd = xsd.Float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG777#003"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"TargetEstimate",
+                                    "value_type": xsd.Float,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABG777#003"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Arbitrary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"Arbitrary",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/SMT/General/Arbitrary"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Arbitrary",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"TechnicalData_Form",
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
+                                    }
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABI300#003/0173-1#01-AHE589#003"),
+                            }
 
                         def __init__(
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[Union[xsd.Float, TargetEstimate]] = None,
-                            id_short: Optional[str] = r"TechnicalData_Form",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI300#003/0173-1#01-AHE589#003"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3325,144 +1893,66 @@ class ProductChangeNotifications(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(targetEstimate, arbitrary)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class TechnicalData_Function(aas.SubmodelElementCollection):
 
                         class TargetEstimate(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Float,
-                                id_short: Optional[str] = r"TargetEstimate",
-                                value_type: aas.DataTypeDefXsd = xsd.Float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG777#003"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"TargetEstimate",
+                                    "value_type": xsd.Float,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABG777#003"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Arbitrary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"Arbitrary",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/SMT/General/Arbitrary"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Arbitrary",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"TechnicalData_Function",
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
+                                    }
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABI301#003/0173-1#01-AHE590#003"),
+                            }
 
                         def __init__(
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[Union[xsd.Float, TargetEstimate]] = None,
-                            id_short: Optional[str] = r"TechnicalData_Function",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI301#003/0173-1#01-AHE590#003"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3478,144 +1968,66 @@ class ProductChangeNotifications(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(targetEstimate, arbitrary)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class TechnicalData_Other(aas.SubmodelElementCollection):
 
                         class TargetEstimate(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Float,
-                                id_short: Optional[str] = r"TargetEstimate",
-                                value_type: aas.DataTypeDefXsd = xsd.Float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG777#003"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"TargetEstimate",
+                                    "value_type": xsd.Float,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"0173-1#02-ABG777#003"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Arbitrary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"Arbitrary",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/SMT/General/Arbitrary"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Arbitrary",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"TechnicalData_Other",
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information. Note: the SMC TechnicalData_Other is supposed to comprise meaningful property instances, which do not fit into the categorries fit, form, function."
+                                    }
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABI302#003/0173-1#01-AHE591#003"),
+                            }
 
                         def __init__(
                             self,
                             arbitrary: Union[str, Arbitrary],
                             targetEstimate: Optional[Union[xsd.Float, TargetEstimate]] = None,
-                            id_short: Optional[str] = r"TechnicalData_Other",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI302#003/0173-1#01-AHE591#003"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information. Note: the SMC TechnicalData_Other is supposed to comprise meaningful property instances, which do not fit into the categorries fit, form, function."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3631,212 +2043,84 @@ class ProductChangeNotifications(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(targetEstimate, arbitrary)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class IncotermCode(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"IncotermCode",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO280#004"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"IncotermCode",
+                                "value_type": str,
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"Note: see https://en.wikipedia.org/wiki/Incoterms"}
-                                )
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-AAO280#004"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DeliveryTimeClassOtherRegion(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Int,
-                            id_short: Optional[str] = r"DeliveryTimeClassOtherRegion",
-                            value_type: aas.DataTypeDefXsd = xsd.Int,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG779#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DeliveryTimeClassOtherRegion",
+                                "value_type": xsd.Int,
+                                "semantic_id": global_ref(r"0173-1#02-ABG779#003"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Int, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class DeliveryTimeClassSameRegion(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Int,
-                            id_short: Optional[str] = r"DeliveryTimeClassSameRegion",
-                            value_type: aas.DataTypeDefXsd = xsd.Int,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG778#003"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"DeliveryTimeClassSameRegion",
+                                "value_type": xsd.Int,
+                                "semantic_id": global_ref(r"0173-1#02-ABG778#003"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Int, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ConformityDeclarations(aas.SubmodelElementCollection):
 
                         class Arbitrary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"Arbitrary",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/SMT/General/Arbitrary"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Arbitrary",
+                                    "value_type": str,
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Arbitrary SubmodelElements with specific semanticIds might be added."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"ConformityDeclarations",
+                                "semantic_id": global_ref(r"0173-1#02-ABI303#003/0173-1#01-AHE592#003"),
+                            }
 
                         def __init__(
-                            self,
-                            arbitrary: Union[str, Arbitrary],
-                            id_short: Optional[str] = r"ConformityDeclarations",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"0173-1#02-ABI303#003/0173-1#01-AHE592#003"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            self, arbitrary: Union[str, Arbitrary], **kwargs: Unpack[SubmodelElementCollectionMetadata]
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3847,18 +2131,16 @@ class ProductChangeNotifications(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(arbitrary)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "semantic_id": global_ref(
+                                r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
@@ -3876,24 +2158,8 @@ class ProductChangeNotifications(aas.Submodel):
                         deliveryTimeClassOtherRegion: Optional[Union[xsd.Int, DeliveryTimeClassOtherRegion]] = None,
                         deliveryTimeClassSameRegion: Optional[Union[xsd.Int, DeliveryTimeClassSameRegion]] = None,
                         conformityDeclarations: Optional[ConformityDeclarations] = None,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -3967,51 +2233,29 @@ class ProductChangeNotifications(aas.Submodel):
                             conformityDeclarations,
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"RecommendedItems",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/1/0"
+                        ),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Note: The supplier is encoraged to provide recommended items."}
+                        ),
+                        "semantic_id": global_ref(
+                            r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/List/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
                     recommendeditems_items: Optional[Iterable[Recommendeditems_item]] = None,
-                    id_short: Optional[str] = r"RecommendedItems",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://admin-shell.io/VDMA/Fluidics/ProductChangeNotification/RecommendedItem/List/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Note: The supplier is encoraged to provide recommended items."}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(recommendeditems_items, str):
@@ -4023,22 +2267,11 @@ class ProductChangeNotifications(aas.Submodel):
                         recommendeditems_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {"id_short": None, "semantic_id": global_ref(r"0173-1#02-ABI294#003/0173-1#01-AHE583#003")}
 
             def __init__(
                 self,
@@ -4061,22 +2294,8 @@ class ProductChangeNotifications(aas.Submodel):
                 recommendedItems: Optional[
                     Union[Iterable[RecommendedItems.Recommendeditems_item], RecommendedItems]
                 ] = None,
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI294#003/0173-1#01-AHE583#003"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4170,49 +2389,23 @@ class ProductChangeNotifications(aas.Submodel):
                     recommendedItems,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"Records",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(r"0173-1#02-ABI294#003/0173-1#01-AHE583#003"),
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"Note: Newer records shall be added by adding a new highest index to the list."}
+                ),
+                "semantic_id": global_ref(r"0173-1#02-ABI294#003"),
+            }
 
         def __init__(
-            self,
-            records_items: Optional[Iterable[Records_item]] = None,
-            id_short: Optional[str] = r"Records",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                r"0173-1#02-ABI294#003/0173-1#01-AHE583#003"
-            ),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = True,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI294#003"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            self, records_items: Optional[Iterable[Records_item]] = None, **kwargs: Unpack[SubmodelElementListMetadata]
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Note: Newer records shall be added by adding a new highest index to the list."}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(records_items, str):
@@ -4222,55 +2415,29 @@ class ProductChangeNotifications(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(records_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"ProductChangeNotifications",
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta_02036",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": global_ref(r"0173-1#01-AHE582#003"),
+        }
 
     def __init__(
         self,
         id_: str,
         pcnEventsOutgoing: Optional[PcnEventsOutgoing] = None,
         records: Optional[Union[Iterable[Records.Records_item], Records]] = None,
-        id_short: Optional[str] = r"ProductChangeNotifications",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#01-AHE582#003"),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta_02036",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # A str would be split into its characters
         if isinstance(records, str):
@@ -4285,18 +2452,4 @@ class ProductChangeNotifications(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(pcnEventsOutgoing, records)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

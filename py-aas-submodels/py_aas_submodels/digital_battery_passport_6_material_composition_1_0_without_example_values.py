@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,123 +95,124 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class MaterialComposition(aas.Submodel):
 
     class BatteryChemistry(aas.SubmodelElementCollection):
 
         class ShortName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ShortName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#shortName"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ShortName",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"short name"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#shortName"
+                    ),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"short name"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class ClearName(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"ClearName",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#clearName"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"ClearName",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"clear name"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#clearName"
+                    ),
+                }
+
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"BatteryChemistry",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery chemistry"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryChemistry"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"clear name"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            }
 
         def __init__(
             self,
             shortName: Union[str, ShortName],
             clearName: Union[str, ClearName],
-            id_short: Optional[str] = r"BatteryChemistry",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryChemistry"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery chemistry"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -227,18 +228,7 @@ class MaterialComposition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(shortName, clearName)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class BatteryMaterials(GeneratedSubmodelElementList):
 
@@ -248,117 +238,54 @@ class MaterialComposition(aas.Submodel):
 
                 class ComponentName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ComponentName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ComponentName",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"component name"}),
+                            "semantic_id": global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentName"
+                            ),
+                        }
 
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component name"})
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ComponentId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ComponentId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentId"
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ComponentId",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"component ID"}),
+                            "semantic_id": global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentId"
+                            ),
+                        }
+
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"BatteryMaterialLocation",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery material location"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialLocation"
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component ID"})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                    }
 
                 def __init__(
                     self,
                     componentName: Optional[Union[str, ComponentName]] = None,
                     componentId: Optional[Union[str, ComponentId]] = None,
-                    id_short: Optional[str] = r"BatteryMaterialLocation",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialLocation"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material location"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -374,197 +301,90 @@ class MaterialComposition(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(componentName, componentId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class BatteryMaterialIdentifier(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"BatteryMaterialIdentifier",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialIdentifier"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"https://www.cas.org/cas-data/cas-registry"),
-                        global_ref(r"urn:irdi:0173-1#02-ABH034#003"),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"BatteryMaterialIdentifier",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery material identifier"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialIdentifier"
+                        ),
+                        "supplemental_semantic_id": (
+                            global_ref(r"https://www.cas.org/cas-data/cas-registry"),
+                            global_ref(r"urn:irdi:0173-1#02-ABH034#003"),
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material identifier"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class BatteryMaterialName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"BatteryMaterialName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialName"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-AAN920#003"),),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"BatteryMaterialName",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery material name"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialName"
+                        ),
+                        "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-AAN920#003"),),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material name"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class BatteryMaterialMass(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Float,
-                    id_short: Optional[str] = r"BatteryMaterialMass",
-                    value_type: aas.DataTypeDefXsd = xsd.Float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialMass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"BatteryMaterialMass",
+                        "value_type": xsd.Float,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery material mass"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterialMass"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material mass"})
+                def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class IsCriticalRawMaterial(aas.Property):
 
-                def __init__(
-                    self,
-                    value: bool,
-                    id_short: Optional[str] = r"IsCriticalRawMaterial",
-                    value_type: aas.DataTypeDefXsd = bool,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#isCriticalRawMaterial"
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"IsCriticalRawMaterial",
+                        "value_type": bool,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"is critical raw material"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#isCriticalRawMaterial"
+                        ),
+                    }
+
+                def __init__(self, value: bool, **kwargs: Unpack[PropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery material"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#BatteryMaterial"
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"is critical raw material"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                }
 
             def __init__(
                 self,
@@ -573,27 +393,8 @@ class MaterialComposition(aas.Submodel):
                 batteryMaterialName: Union[str, BatteryMaterialName],
                 batteryMaterialMass: Union[xsd.Float, BatteryMaterialMass],
                 isCriticalRawMaterial: Union[bool, IsCriticalRawMaterial],
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#BatteryMaterial"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery material"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -627,47 +428,23 @@ class MaterialComposition(aas.Submodel):
                     isCriticalRawMaterial,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"BatteryMaterials",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "order_relevant": False,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"battery materials"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterials"
+                ),
+            }
 
         def __init__(
-            self,
-            batterymaterials_items: Iterable[Batterymaterials_item],
-            id_short: Optional[str] = r"BatteryMaterials",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = None,
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = False,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#batteryMaterials"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            self, batterymaterials_items: Iterable[Batterymaterials_item], **kwargs: Unpack[SubmodelElementListMetadata]
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"battery materials"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(batterymaterials_items, str):
@@ -677,22 +454,7 @@ class MaterialComposition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(batterymaterials_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class HazardousSubstances(GeneratedSubmodelElementList):
 
@@ -700,212 +462,94 @@ class MaterialComposition(aas.Submodel):
 
             class HazardousSubstanceClass(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"HazardousSubstanceClass",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceClass"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"HazardousSubstanceClass",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance class"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceClass"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance class"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HazardousSubstanceName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"HazardousSubstanceName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceName"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"HazardousSubstanceName",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance name"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceName"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance name"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HazardousSubstanceConcentration(aas.Property):
 
-                def __init__(
-                    self,
-                    value: float,
-                    id_short: Optional[str] = r"HazardousSubstanceConcentration",
-                    value_type: aas.DataTypeDefXsd = float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceConcentration"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"HazardousSubstanceConcentration",
+                        "value_type": float,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance concentration"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceConcentration"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance concentration"})
+                def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HazardousSubstanceImpact(GeneratedSubmodelElementList):
 
                 class Hazardoussubstanceimpact_item(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = None,
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#Impact"
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": None,
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"impact"}),
+                            "semantic_id": global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#Impact"
+                            ),
+                        }
+
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"HazardousSubstanceImpact",
+                        "type_value_list_element": aas.Property,
+                        "value_type_list_element": str,
+                        "order_relevant": False,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance impact"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceImpact"
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"impact"})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                    }
 
                 def __init__(
                     self,
                     hazardoussubstanceimpact_items: Optional[
                         Iterable[Union[str, Hazardoussubstanceimpact_item]]
                     ] = None,
-                    id_short: Optional[str] = r"HazardousSubstanceImpact",
-                    type_value_list_element: aas.SubmodelElement = aas.Property,
-                    semantic_id_list_element: Optional[aas.Reference] = None,
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                    order_relevant: bool = False,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceImpact"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementListMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance impact"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(hazardoussubstanceimpact_items, str):
@@ -924,138 +568,60 @@ class MaterialComposition(aas.Submodel):
                         hazardoussubstanceimpact_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class HazardousSubstanceLocation(aas.SubmodelElementCollection):
 
                 class ComponentName(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ComponentName",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentName"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ComponentName",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"component name"}),
+                            "semantic_id": global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentName"
+                            ),
+                        }
 
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component name"})
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ComponentId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ComponentId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentId"
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ComponentId",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"component ID"}),
+                            "semantic_id": global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#componentId"
+                            ),
+                        }
+
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"HazardousSubstanceLocation",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance location"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceLocation"
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"component ID"})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                    }
 
                 def __init__(
                     self,
                     componentName: Optional[Union[str, ComponentName]] = None,
                     componentId: Optional[Union[str, ComponentId]] = None,
-                    id_short: Optional[str] = r"HazardousSubstanceLocation",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceLocation"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance location"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1071,64 +637,35 @@ class MaterialComposition(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(componentName, componentId)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class HazardousSubstanceIdentifier(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"HazardousSubstanceIdentifier",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceIdentifier"
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"HazardousSubstanceIdentifier",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance identifier"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstanceIdentifier"
+                        ),
+                        "supplemental_semantic_id": (global_ref(r"https://www.cas.org/cas-data/cas-registry"),),
+                    }
+
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#HazardousSubstance"
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        global_ref(r"https://www.cas.org/cas-data/cas-registry"),
-                    ),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance identifier"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                }
 
             def __init__(
                 self,
@@ -1141,27 +678,8 @@ class MaterialComposition(aas.Submodel):
                 ],
                 hazardousSubstanceLocation: HazardousSubstanceLocation,
                 hazardousSubstanceIdentifier: Union[str, HazardousSubstanceIdentifier],
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#HazardousSubstance"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1211,47 +729,25 @@ class MaterialComposition(aas.Submodel):
                     hazardousSubstanceIdentifier,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"HazardousSubstances",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "order_relevant": False,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"hazardous substances"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstances"
+                ),
+            }
 
         def __init__(
             self,
             hazardoussubstances_items: Optional[Iterable[Hazardoussubstances_item]] = None,
-            id_short: Optional[str] = r"HazardousSubstances",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = None,
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = False,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#hazardousSubstances"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementListMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substances"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(hazardoussubstances_items, str):
@@ -1261,22 +757,29 @@ class MaterialComposition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(hazardoussubstances_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"MaterialComposition",
+            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"material composition"}),
+            "description": aas.MultiLanguageTextType(
+                dict_={
+                    r"en": "Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and \nelectrolyte; hazardous substances; impact of substances on the environment and on human health or \nsafety."
+                }
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02035-6",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition"
+            ),
+        }
 
     def __init__(
         self,
@@ -1284,45 +787,8 @@ class MaterialComposition(aas.Submodel):
         batteryChemistry: BatteryChemistry,
         batteryMaterials: Union[Iterable[BatteryMaterials.Batterymaterials_item], BatteryMaterials],
         hazardousSubstances: Union[Iterable[HazardousSubstances.Hazardoussubstances_item], HazardousSubstances],
-        id_short: Optional[str] = r"MaterialComposition",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"en": r"material composition"})
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": "Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and \nelectrolyte; hazardous substances; impact of substances on the environment and on human health or \nsafety."
-                }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02035-6",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # A str would be split into its characters
         if isinstance(batteryMaterials, str):
@@ -1346,18 +812,4 @@ class MaterialComposition(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(batteryChemistry, batteryMaterials, hazardousSubstances)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

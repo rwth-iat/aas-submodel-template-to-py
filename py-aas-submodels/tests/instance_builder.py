@@ -29,7 +29,7 @@ def allowed_sample(element_cls: type):
         return element_cls.ALLOWED_RANGE[0]
     pattern = getattr(element_cls, "ALLOWED_PATTERN", None)
     if pattern:
-        value_type = inspect.signature(element_cls.__init__).parameters["value_type"].default
+        value_type = element_cls.template_defaults()["value_type"]
         for candidate in (*SAMPLE_LEXICALS, pattern):
             if re.fullmatch(pattern, candidate):
                 return datatypes.from_xsd(candidate, value_type)
@@ -43,13 +43,13 @@ def build_instance(cls: type, full: bool = False):
     typehints = typing.get_type_hints(cls.__init__)
     kwargs = {}
     for name, parameter in inspect.signature(cls.__init__).parameters.items():
-        if name == "self":
+        if name == "self" or parameter.kind is inspect.Parameter.VAR_KEYWORD:
             continue
         if parameter.default is inspect.Parameter.empty or (full and takes_generated_class(cls, typehints[name])):
             sample = allowed_sample(cls) if name == "value" else None
             kwargs[name] = sample if sample is not None else sample_argument(cls, name, typehints[name], full)
     if issubclass(cls, model.Entity) and \
-            inspect.signature(cls.__init__).parameters["entity_type"].default is model.EntityType.SELF_MANAGED_ENTITY:
+            cls.template_defaults().get("entity_type") is model.EntityType.SELF_MANAGED_ENTITY:
         kwargs["global_asset_id"] = "https://example.com/ids/asset"  # AASd-014
     while True:
         try:

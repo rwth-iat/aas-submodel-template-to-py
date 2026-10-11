@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,6 +95,113 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class AssetLocation(aas.Submodel):
 
     class Addresses(GeneratedSubmodelElementList):
@@ -103,473 +210,198 @@ class AssetLocation(aas.Submodel):
 
             class AddressLine1(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AddressLine1",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO124#004"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AddressLine1",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-AAO124#004"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AddressLine2(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AddressLine2",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO125#004"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AddressLine2",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-AAO125#004"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AddressLine3(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AddressLine3",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO126#004"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AddressLine3",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-AAO126#004"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AddressOfAdditionalLink(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AddressOfAdditionalLink",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAQ326#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AddressOfAdditionalLink",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"address of additional link", r"de": r"zusätzlicher Online-Verweis"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"address of additional link", r"de": r"zusätzlicher Online-Verweis"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-AAQ326#003"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AddressRemarks(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AddressRemarks",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO202#004"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AddressRemarks",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"address remarks", r"de": r"Anmerkungen zur Adresse"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"address remarks", r"de": r"Anmerkungen zur Adresse"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-AAO202#004"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NationalCode(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"NationalCode",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO134#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NationalCode",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"en": r"national code", r"de": r"Ländercode"}
+                        ),
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"national code", r"de": r"Ländercode"}),
+                        "semantic_id": global_ref(r"0173-1#02-AAO134#003"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"national code", r"de": r"Ländercode"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"national code", r"de": r"Ländercode"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Statecounty(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Statecounty",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO133#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Statecounty",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"state/county", r"de": r"Bundesland"}),
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"state/county", r"de": r"Bundesland"}),
+                        "semantic_id": global_ref(r"0173-1#02-AAO133#003"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"state/county", r"de": r"Bundesland"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"state/county", r"de": r"Bundesland"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Citytown(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Citytown",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO132#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Citytown",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"city/town", r"de": r"Ort"}),
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"city/town", r"de": r"Ort"}),
+                        "semantic_id": global_ref(r"0173-1#02-AAO132#003"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"city/town", r"de": r"Ort"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"city/town", r"de": r"Ort"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Street(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Street",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO128#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Street",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"street", r"de": r"Straße"}),
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"street", r"de": r"Straße"}),
+                        "semantic_id": global_ref(r"0173-1#02-AAO128#003"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"street", r"de": r"Straße"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"street", r"de": r"Straße"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ZipCode(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ZipCode",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO129#003"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ZipCode",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"zip code", r"de": r"Postleitzahl"}),
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"zip code", r"de": r"Postleitzahl"}),
+                        "semantic_id": global_ref(r"0173-1#02-AAO129#003"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"zip code", r"de": r"Postleitzahl"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"zip code", r"de": r"Postleitzahl"})
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Postal addresses where an object has been located",
+                            r"de": r"Postadresse an der ein Objekt lokalisiert wurde",
+                        }
+                    ),
+                    "semantic_id": global_ref(r"0173-1#01-ADR442#007"),
+                }
 
             def __init__(
                 self,
@@ -583,30 +415,8 @@ class AssetLocation(aas.Submodel):
                 citytown: Optional[Union[str, Citytown]] = None,
                 street: Optional[Union[str, Street]] = None,
                 zipCode: Optional[Union[str, ZipCode]] = None,
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#01-ADR442#007"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Postal addresses where an object has been located",
-                            r"de": r"Postadresse an der ein Objekt lokalisiert wurde",
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -673,53 +483,26 @@ class AssetLocation(aas.Submodel):
                     zipCode,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            addresses_items: Iterable[Addresses_item],
-            id_short: Optional[str] = r"Addresses",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(r"0173-1#01-ADR442#007"),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = False,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/sml/addresses/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Addresses", r"de": r"Adressen"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"Addresses",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(r"0173-1#01-ADR442#007"),
+                "order_relevant": False,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Addresses", r"de": r"Adressen"}),
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"List with postal addresses where an object has been located",
                         r"de": r"Liste mit Postadressen, an denen sich ein Asset aufgehalten hat",
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/addresses/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(self, addresses_items: Iterable[Addresses_item], **kwargs: Unpack[SubmodelElementListMetadata]):
 
             # A str would be split into its characters
             if isinstance(addresses_items, str):
@@ -729,22 +512,7 @@ class AssetLocation(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(addresses_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class CoordinateSystems(GeneratedSubmodelElementList):
 
@@ -752,233 +520,88 @@ class AssetLocation(aas.Submodel):
 
             class CoordinateSystemName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CoordinateSystemName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/prop/coordinatesystemname/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CoordinateSystemName",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"coordinate system name", r"de": r"Koordinatensystenbezeichnung"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/coordinatesystemname/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CoordinateSystemId(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CoordinateSystemId",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/prop/coordinatesystemid/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CoordinateSystemId",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"coordinate system (ID)", r"de": r"Koordinatensystem (ID)"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/coordinatesystemid/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class CoordinateSystemType(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"CoordinateSystemType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/prop/coordinatesystemtype/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"CoordinateSystemType",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"coordinate system type", r"de": r"Koordinatensystemtyp"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/coordinatesystemtype/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class ElevationReference(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"ElevationReference",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/prop/elevationreference/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ElevationReference",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"elevation reference", r"de": r"Referenz der Höhenangabe"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/elevationreference/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class SeaLevelOfBaseHeight(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Float,
-                    id_short: Optional[str] = r"SeaLevelOfBaseHeight",
-                    value_type: aas.DataTypeDefXsd = xsd.Float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/prop/sealevelofbaseheight/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"SeaLevelOfBaseHeight",
+                        "value_type": xsd.Float,
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"sea level of base height", r"de": r"Seehöhe der Basishöhe"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/sealevelofbaseheight/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class GroundControlPoints(GeneratedSubmodelElementList):
 
@@ -988,117 +611,54 @@ class AssetLocation(aas.Submodel):
 
                         class Longitude(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: float,
-                                id_short: Optional[str] = r"Longitude",
-                                value_type: aas.DataTypeDefXsd = float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-ABH961#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Longitude",
+                                    "value_type": float,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"longitude", r"de": r"Längengrad"}
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r" 0173-1#02-ABH961#002"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Latitude(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: float,
-                                id_short: Optional[str] = r"Latitude",
-                                value_type: aas.DataTypeDefXsd = float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-ABH960#002"),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Latitude",
+                                    "value_type": float,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"latitude", r"de": r"Breitengrad"}
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r" 0173-1#02-ABH960#002"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"GeographicCoordinates",
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"geographic coordinates", r"de": r"Geographische Koordinaten"}
+                                ),
+                                "semantic_id": global_ref(r" 0173-1#02-ABH934#002"),
+                            }
 
                         def __init__(
                             self,
                             longitude: Union[float, Longitude],
                             latitude: Union[float, Latitude],
-                            id_short: Optional[str] = r"GeographicCoordinates",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-ABH934#002"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"geographic coordinates", r"de": r"Geographische Koordinaten"}
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1114,146 +674,66 @@ class AssetLocation(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(longitude, latitude)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class RelativeCoordinates(aas.SubmodelElementCollection):
 
                         class X(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Float,
-                                id_short: Optional[str] = r"X",
-                                value_type: aas.DataTypeDefXsd = xsd.Float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/prop/x/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"X",
+                                    "value_type": xsd.Float,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"X-coordinate", r"de": r"X-Koordinate"}
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/x/1/0"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class Y(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Float,
-                                id_short: Optional[str] = r"Y",
-                                value_type: aas.DataTypeDefXsd = xsd.Float,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/prop/y/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"Y",
+                                    "value_type": xsd.Float,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"Y-coordinate", r"de": r"Y-Koordinate"}
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/y/1/0"),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"RelativeCoordinates",
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"relative coordinates", r"de": r"relative Koordinaten"}
+                                ),
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Coordinates within a cartisian coordinate system",
+                                        r"de": r"Koordinaten in einem kartesischen Koordinatensystem",
+                                    }
+                                ),
+                                "semantic_id": global_ref(r"0173-1#02-ABG741#001"),
+                            }
 
                         def __init__(
                             self,
                             x: Union[xsd.Float, X],
                             y: Union[xsd.Float, Y],
-                            id_short: Optional[str] = r"RelativeCoordinates",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG741#001"),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"relative coordinates", r"de": r"relative Koordinaten"}
-                                )
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Coordinates within a cartisian coordinate system",
-                                        r"de": r"Koordinaten in einem kartesischen Koordinatensystem",
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1269,48 +749,26 @@ class AssetLocation(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(x, y)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
+                                }
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0"),
+                        }
 
                     def __init__(
                         self,
                         geographicCoordinates: GeographicCoordinates,
                         relativeCoordinates: RelativeCoordinates,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Add all passed/initialized submodel elements to a single list
 
@@ -1318,59 +776,33 @@ class AssetLocation(aas.Submodel):
                             geographicCoordinates, relativeCoordinates
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-                def __init__(
-                    self,
-                    groundcontrolpoints_items: Iterable[Groundcontrolpoints_item],
-                    id_short: Optional[str] = r"GroundControlPoints",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/sml/groundcontrolpoints/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"GroundControlPoints",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(
+                            r"https://admin-shell.io/idta/smc/groundcontrolpointsentry/1/0"
+                        ),
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"ground control points", r"de": r"Bodenkontrollpunkte"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)",
                                 r"de": r"Arrays, die ein Mapping von geographischen Koordinaten (Längengrad, Breitengrad) nach WGS84 (EPSG:4326) in relative Koordinaten (x,y) enthalten",
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/groundcontrolpoints/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(
+                    self,
+                    groundcontrolpoints_items: Iterable[Groundcontrolpoints_item],
+                    **kwargs: Unpack[SubmodelElementListMetadata],
+                ):
 
                     # A str would be split into its characters
                     if isinstance(groundcontrolpoints_items, str):
@@ -1382,22 +814,20 @@ class AssetLocation(aas.Submodel):
                         groundcontrolpoints_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Coordinate reference system (CRS) record",
+                            r"de": r"Listeneintrag für ein Koordinatenreferenzsystem (CRS)",
+                        }
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0"),
+                }
 
             def __init__(
                 self,
@@ -1407,32 +837,8 @@ class AssetLocation(aas.Submodel):
                 groundControlPoints: Union[Iterable[GroundControlPoints.Groundcontrolpoints_item], GroundControlPoints],
                 coordinateSystemName: Optional[Union[str, CoordinateSystemName]] = None,
                 seaLevelOfBaseHeight: Optional[Union[xsd.Float, SeaLevelOfBaseHeight]] = None,
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Coordinate reference system (CRS) record",
-                            r"de": r"Listeneintrag für ein Koordinatenreferenzsystem (CRS)",
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1479,57 +885,31 @@ class AssetLocation(aas.Submodel):
                     groundControlPoints,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            coordinatesystems_items: Iterable[Coordinatesystems_item],
-            id_short: Optional[str] = r"CoordinateSystems",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0"
-            ),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = True,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/sml/coordinatesystems/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"CoordinateSystems",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(r"https://admin-shell.io/idta/smc/coordinatesystemsrecord/1/0"),
+                "display_name": aas.MultiLanguageNameType(
                     dict_={r"en": r"coordinate systems", r"de": r"Koordinatensysteme"}
-                )
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+                ),
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"List with information about different coordinate systems that have been used to determine the location of an asset",
                         r"de": r"Liste mit Informationen zu Koordinatensystemen die verwendet wurden, um die Assetposition zu bestimmen",
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/coordinatesystems/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(
+            self,
+            coordinatesystems_items: Iterable[Coordinatesystems_item],
+            **kwargs: Unpack[SubmodelElementListMetadata],
+        ):
 
             # A str would be split into its characters
             if isinstance(coordinatesystems_items, str):
@@ -1539,22 +919,7 @@ class AssetLocation(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(coordinatesystems_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class VisitedAreas(GeneratedSubmodelElementList):
 
@@ -1562,126 +927,62 @@ class AssetLocation(aas.Submodel):
 
             class CoordinateSystemOfArea(aas.ReferenceElement):
 
-                def __init__(
-                    self,
-                    value: aas.Reference,
-                    id_short: Optional[str] = r"CoordinateSystemOfArea",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/ref/coordinatesystemreference/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> ReferenceElementMetadata:
+                    return {
+                        "id_short": r"CoordinateSystemOfArea",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Reference to a local coordinate reference system for an area",
                                 r"de": r"Referenz auf ein lokales Koordinatenreferenzsystem für ein Areal",
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/ref/coordinatesystemreference/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AddressReferences(GeneratedSubmodelElementList):
 
                 class Addressreferences_item(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = None,
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": None,
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Reference to an address", r"de": r"Referenz zu einer Adresse"}
-                            )
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
-
-                def __init__(
-                    self,
-                    addressreferences_items: Iterable[Union[aas.Reference, Addressreferences_item]],
-                    id_short: Optional[str] = r"AddressReferences",
-                    type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/sml/addressreferences/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/sml/addressreferences/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"AddressReferences",
+                        "type_value_list_element": aas.ReferenceElement,
+                        "semantic_id_list_element": global_ref(
+                            r"https://admin-shell.io/idta/sml/addressreferences/1/0"
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"List with references to addresses for the area (area addresses)",
                                 r"de": r"Liste mit Referenzen zu Adressen für das Areal",
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/addressreferences/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(
+                    self,
+                    addressreferences_items: Iterable[Union[aas.Reference, Addressreferences_item]],
+                    **kwargs: Unpack[SubmodelElementListMetadata],
+                ):
 
                     # A str would be split into its characters
                     if isinstance(addressreferences_items, str):
@@ -1700,22 +1001,7 @@ class AssetLocation(aas.Submodel):
                         addressreferences_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class AreaRegionCoordinates(GeneratedSubmodelElementList):
 
@@ -1723,125 +1009,56 @@ class AssetLocation(aas.Submodel):
 
                     class X(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Float,
-                            id_short: Optional[str] = r"X",
-                            value_type: aas.DataTypeDefXsd = xsd.Float,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/prop/x/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"X",
+                                "value_type": xsd.Float,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"X-coordinate", r"de": r"X-Koordinate"}
-                                )
+                                ),
+                                "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/x/1/0"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Y(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Float,
-                            id_short: Optional[str] = r"Y",
-                            value_type: aas.DataTypeDefXsd = xsd.Float,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/prop/y/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Y",
+                                "value_type": xsd.Float,
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"Y-coordinate", r"de": r"Y-Koordinate"}
-                                )
+                                ),
+                                "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/y/1/0"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": None,
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area"
+                                }
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/regioncoordinateentry/1/0"),
+                        }
 
                     def __init__(
                         self,
                         x: Union[xsd.Float, X],
                         y: Union[xsd.Float, Y],
-                        id_short: Optional[str] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/smc/regioncoordinateentry/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area"
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1857,59 +1074,33 @@ class AssetLocation(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(x, y)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-                def __init__(
-                    self,
-                    arearegioncoordinates_items: Iterable[Arearegioncoordinates_item],
-                    id_short: Optional[str] = r"AreaRegionCoordinates",
-                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/smc/regioncoordinateentry/1/0"
-                    ),
-                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                    order_relevant: bool = True,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/sml/regioncoordinates/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementListMetadata:
+                    return {
+                        "id_short": r"AreaRegionCoordinates",
+                        "type_value_list_element": aas.SubmodelElementCollection,
+                        "semantic_id_list_element": global_ref(
+                            r"https://admin-shell.io/idta/smc/regioncoordinateentry/1/0"
+                        ),
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"area region coordinates", r"de": r"Arealgrenzkoordinaten"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"Coordinates forming a polygon that describes the area within the coordinate reference system of the area",
                                 r"de": r"Koordinaten die ein Polygon formen, das die Grenzen eines Areals im Koordinatenrefernzsystem des Areals beschreibt",
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/regioncoordinates/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(
+                    self,
+                    arearegioncoordinates_items: Iterable[Arearegioncoordinates_item],
+                    **kwargs: Unpack[SubmodelElementListMetadata],
+                ):
 
                     # A str would be split into its characters
                     if isinstance(arearegioncoordinates_items, str):
@@ -1921,195 +1112,73 @@ class AssetLocation(aas.Submodel):
                         arearegioncoordinates_items, number_repeated=False
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        type_value_list_element=type_value_list_element,
-                        semantic_id_list_element=semantic_id_list_element,
-                        value_type_list_element=value_type_list_element,
-                        order_relevant=order_relevant,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class KindOfArea(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"KindOfArea",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/prop/kindofarea/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"KindOfArea",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"kind of area", r"de": r"Arealart"}),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/kindofarea/1/0"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"kind of area", r"de": r"Arealart"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AreaName(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AreaName",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/prop/areaname/1/0"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Area name", r"de": r"Arealname"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AreaName",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Area name", r"de": r"Arealname"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Name of the area or building", r"de": r"Name des Areals oder Gebäudes"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/areaname/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AreaId(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AreaId",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/prop/areaid/1/0"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"area (ID)", r"de": r"Areal (ID)"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AreaId",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"area (ID)", r"de": r"Areal (ID)"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identification of an area ", r"de": r"Ident einer Area "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/areaid/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AreaDesciption(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"AreaDesciption",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/mlp/areadescription/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"AreaDesciption",
+                        "display_name": aas.MultiLanguageNameType(
                             dict_={r"en": r"area description", r"de": r"Arealbeschreibung"}
-                        )
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        ),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Description of an area", r"de": r"Beschreibung eines Areals"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = [
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/areadescription/1/0"),
+                        "embedded_data_specifications": [
                             aas.EmbeddedDataSpecification(
                                 data_specification=global_ref(
                                     r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
@@ -2131,113 +1200,63 @@ class AssetLocation(aas.Submodel):
                                     level_types=set(),
                                 ),
                             )
-                        ]
+                        ],
+                    }
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AreaLayout(aas.File):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"AreaLayout",
-                    content_type: Optional[str] = r"application/pdf",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/file/arealayout/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"area layout", r"de": r"Areallayout"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> FileMetadata:
+                    return {
+                        "id_short": r"AreaLayout",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"area layout", r"de": r"Areallayout"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"File with a layout (map) of the area (e.g., hall plan)",
                                 r"de": r"Datei mit einem Areallayout (z.B. Hallenplan)",
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/file/arealayout/1/0"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(
+                    self, value: str, content_type: Optional[str] = r"application/pdf", **kwargs: Unpack[FileMetadata]
+                ):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        content_type=content_type,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
             class BuildingLevel(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"BuildingLevel",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABJ094#001"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"BuildingLevel",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(
+                            dict_={r"en": r"building level", r"de": r"Stockwerk"}
+                        ),
+                        "semantic_id": global_ref(r"0173-1#02-ABJ094#001"),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"building level", r"de": r"Stockwerk"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Areas (e.g., site, building, field warehouse) where an asset has been located or is located"
+                        }
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/visitedareasrecord/1/0"),
+                }
 
             def __init__(
                 self,
@@ -2254,31 +1273,8 @@ class AssetLocation(aas.Submodel):
                 areaDesciption: Optional[Union[aas.LangStringSet, AreaDesciption]] = None,
                 areaLayout: Optional[AreaLayout] = None,
                 buildingLevel: Optional[Union[str, BuildingLevel]] = None,
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/smc/visitedareasrecord/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Areas (e.g., site, building, field warehouse) where an asset has been located or is located"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2342,55 +1338,28 @@ class AssetLocation(aas.Submodel):
                     buildingLevel,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-        def __init__(
-            self,
-            visitedareas_items: Iterable[Visitedareas_item],
-            id_short: Optional[str] = r"VisitedAreas",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/smc/visitedareasrecord/1/0"
-            ),
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = False,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/sml/visitedareas/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"visited areas", r"de": r"besuchte Areale"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"VisitedAreas",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id_list_element": global_ref(r"https://admin-shell.io/idta/smc/visitedareasrecord/1/0"),
+                "order_relevant": False,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"visited areas", r"de": r"besuchte Areale"}),
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located",
                         r"de": r"Liste mit Arealen (z.B. Standort, Gebäude, Freilagerfläche) an denen sich ein Asset befunden hat oder sich befindet",
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/visitedareas/1/0"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
+        def __init__(
+            self, visitedareas_items: Iterable[Visitedareas_item], **kwargs: Unpack[SubmodelElementListMetadata]
+        ):
 
             # A str would be split into its characters
             if isinstance(visitedareas_items, str):
@@ -2400,114 +1369,47 @@ class AssetLocation(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(visitedareas_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class AssetTraces(aas.SubmodelElementCollection):
 
         class AreaEventTimeSeriesData(aas.ReferenceElement):
 
-            def __init__(
-                self,
-                value: aas.Reference,
-                id_short: Optional[str] = r"AreaEventTimeSeriesData",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> ReferenceElementMetadata:
+                return {
+                    "id_short": r"AreaEventTimeSeriesData",
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with AreaRecords",
                             r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für AreaRecords",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LocationEventTimeSeriesData(aas.ReferenceElement):
 
-            def __init__(
-                self,
-                value: aas.Reference,
-                id_short: Optional[str] = r"LocationEventTimeSeriesData",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> ReferenceElementMetadata:
+                return {
+                    "id_short": r"LocationEventTimeSeriesData",
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with LocationRecords",
                             r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für FenceRecords",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/ref/eventtimeseriesdata/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class AreaRecords(GeneratedSubmodelElementList):
 
@@ -2515,247 +1417,111 @@ class AssetLocation(aas.Submodel):
 
                 class AreaRef(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = r"AreaRef",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ref/areareference/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": r"AreaRef",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Reference to the area where the event has been recorded for",
                                     r"de": r"Referenz auf das Areal, zu dem das Event erfasst wurde",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/ref/areareference/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Time(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.DateTime,
-                        id_short: Optional[str] = r"Time",
-                        value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-ABF198#002"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Time ", r"de": r"Zeitpunkt"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Time",
+                            "value_type": xsd.DateTime,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Time ", r"de": r"Zeitpunkt"}),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Time when the event occurred",
                                     r"de": r"Zeitpunkt an dem das Ereignis aufgetreten ist",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r" 0173-1#02-ABF198#002"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class EventId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"EventId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/eventid/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"EventId",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"event (ID)", r"de": r"Ereignis (ID)"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            ),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Identification of an event", r"de": r"Ident eines events"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/eventid/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ProviderId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ProviderId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/providerid/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ProviderId",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"provider (ID)", r"de": r"Lieferant (ID)"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            ),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Identifikation of the location provider which triggered the event ",
                                     r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/providerid/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class EventType(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"EventType",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/eventtype/1/0"
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"EventType",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"event type", r"de": r"Eventtyp"}),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/eventtype/1/0"),
+                        }
+
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": None,
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Record of an area localization event"}
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"event type", r"de": r"Eventtyp"})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/arearecordsrecord/1/0"),
+                    }
 
                 def __init__(
                     self,
@@ -2764,27 +1530,8 @@ class AssetLocation(aas.Submodel):
                     eventType: Union[str, EventType],
                     eventId: Optional[Union[str, EventId]] = None,
                     providerId: Optional[Union[str, ProviderId]] = None,
-                    id_short: Optional[str] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/smc/arearecordsrecord/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Record of an area localization event"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2817,52 +1564,26 @@ class AssetLocation(aas.Submodel):
                         areaRef, time, eventId, providerId, eventType
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-            def __init__(
-                self,
-                arearecords_items: Iterable[Arearecords_item],
-                id_short: Optional[str] = r"AreaRecords",
-                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/smc/arearecordsrecord/1/0"
-                ),
-                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                order_relevant: bool = True,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/sml/arearecords/1/0"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> SubmodelElementListMetadata:
+                return {
+                    "id_short": r"AreaRecords",
+                    "type_value_list_element": aas.SubmodelElementCollection,
+                    "semantic_id_list_element": global_ref(r"https://admin-shell.io/idta/smc/arearecordsrecord/1/0"),
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"List with records for area localization events",
                             r"de": r"Liste mit Datensätzen für Areallokalisierungsereignisse",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/arearecords/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(
+                self, arearecords_items: Iterable[Arearecords_item], **kwargs: Unpack[SubmodelElementListMetadata]
+            ):
 
                 # A str would be split into its characters
                 if isinstance(arearecords_items, str):
@@ -2872,22 +1593,7 @@ class AssetLocation(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(arearecords_items, number_repeated=False)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    type_value_list_element=type_value_list_element,
-                    semantic_id_list_element=semantic_id_list_element,
-                    value_type_list_element=value_type_list_element,
-                    order_relevant=order_relevant,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class LocationRecords(GeneratedSubmodelElementList):
 
@@ -2895,201 +1601,83 @@ class AssetLocation(aas.Submodel):
 
                 class CoordinateSystemReference(aas.ReferenceElement):
 
-                    def __init__(
-                        self,
-                        value: aas.Reference,
-                        id_short: Optional[str] = r"CoordinateSystemReference",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/ref/coordinatesystemreference/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> ReferenceElementMetadata:
+                        return {
+                            "id_short": r"CoordinateSystemReference",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Reference to a coordinate reference system for the position ",
                                     r"de": r"Referenz auf das Koordinatenreferenzsystem für die Position",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/ref/coordinatesystemreference/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Position(aas.SubmodelElementCollection):
 
                     class X(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Float,
-                            id_short: Optional[str] = r"X",
-                            value_type: aas.DataTypeDefXsd = xsd.Float,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/prop/x/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"X",
+                                "value_type": xsd.Float,
+                                "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/x/1/0"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Y(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Float,
-                            id_short: Optional[str] = r"Y",
-                            value_type: aas.DataTypeDefXsd = xsd.Float,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/prop/y/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Y",
+                                "value_type": xsd.Float,
+                                "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/y/1/0"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class Z(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: xsd.Float,
-                            id_short: Optional[str] = r"Z",
-                            value_type: aas.DataTypeDefXsd = xsd.Float,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/prop/z/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Z",
+                                "value_type": xsd.Float,
+                                "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/z/1/0"),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"Position",
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"position", r"de": r"Position"}),
+                            "description": aas.MultiLanguageTextType(dict_={r"en": r"Position of the asset"}),
+                            "semantic_id": global_ref(r"0173-1#02-ABI783#001"),
+                        }
 
                     def __init__(
                         self,
                         x: Union[xsd.Float, X],
                         y: Union[xsd.Float, Y],
                         z: Union[xsd.Float, Z],
-                        id_short: Optional[str] = r"Position",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI783#001"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"position", r"de": r"Position"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(dict_={r"en": r"Position of the asset"})
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -3110,440 +1698,175 @@ class AssetLocation(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(x, y, z)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class ProviderId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ProviderId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/providerid/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ProviderId",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"provider (ID)", r"de": r"Lieferant (ID)"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            ),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Identifikation of the location provider which triggered the event ",
                                     r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/providerid/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ProviderType(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ProviderType",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/providertype/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ProviderType",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"provider type", r"de": r"Versorgertyp"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/providertype/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Accuracy(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: float,
-                        id_short: Optional[str] = r"Accuracy",
-                        value_type: aas.DataTypeDefXsd = float,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/accuracy/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Accuracy",
+                            "value_type": float,
+                            "display_name": aas.MultiLanguageNameType(
+                                dict_={r"en": r"Accuracy", r"de": r"Genauigkeit"}
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/accuracy/1/0"),
+                        }
 
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Accuracy", r"de": r"Genauigkeit"})
+                    def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class MagneticHeading(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: int,
-                        id_short: Optional[str] = r"MagneticHeading",
-                        value_type: aas.DataTypeDefXsd = int,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/magneticheading/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"MagneticHeading",
+                            "value_type": int,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"magnetic heading", r"de": r"magnetische Ausrichtung"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/magneticheading/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class TrueHeading(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: int,
-                        id_short: Optional[str] = r"TrueHeading",
-                        value_type: aas.DataTypeDefXsd = int,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/trueheading/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TrueHeading",
+                            "value_type": int,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"heading", r"de": r"Ausrichtung"}),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/trueheading/1/0"),
+                        }
 
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"heading", r"de": r"Ausrichtung"})
+                    def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class HeadingAccuracy(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: int,
-                        id_short: Optional[str] = r"HeadingAccuracy",
-                        value_type: aas.DataTypeDefXsd = int,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/headingaccuracy/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"HeadingAccuracy",
+                            "value_type": int,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"heading accuracy", r"de": r"Steuerkursgenauigkeit"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/headingaccuracy/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Time(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.DateTime,
-                        id_short: Optional[str] = r"Time",
-                        value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF198#002"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"time", r"de": r"Zeitpunkt"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Time",
+                            "value_type": xsd.DateTime,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"time", r"de": r"Zeitpunkt"}),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"The time (timestamp) when the location data was generated (e.g., by a RTLS) ",
                                     r"de": r"Der Zeitpunkt (Zeitstempel) zu dem die Lokalisierung erfolgt ist (z.B. durch ein RTLS)",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"0173-1#02-ABF198#002"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class TransmissionTime(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.DateTime,
-                        id_short: Optional[str] = r"TransmissionTime",
-                        value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/transmissiontime/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"TransmissionTime",
+                            "value_type": xsd.DateTime,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"transmission time", r"de": r"Sendezeitpunkt"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            ),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Time (timestemp) when the location information has been updated",
                                     r"de": r"Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt geändert wurde",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/transmissiontime/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LocationDescription(aas.MultiLanguageProperty):
 
-                    def __init__(
-                        self,
-                        value: aas.LangStringSet,
-                        id_short: Optional[str] = r"LocationDescription",
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/mlp/locationdescription/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> MultiLanguagePropertyMetadata:
+                        return {
+                            "id_short": r"LocationDescription",
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"location description", r"de": r"Ortsbeschreibung"}
-                            )
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            ),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Location description (meta information for the position) , it is recommended to refer to the origin of the CRS",
                                     r"de": r"Beschreibung des Orts (Metainformationen zur Position); es wird empfohlen, auf den Ursprung des Koordinatenreferenzsystems Bezug zu nehmen",
                                 }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = [
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/locationdescription/1/0"),
+                            "embedded_data_specifications": [
                                 aas.EmbeddedDataSpecification(
                                     data_specification=global_ref(
                                         r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
@@ -3565,161 +1888,77 @@ class AssetLocation(aas.Submodel):
                                         level_types=set(),
                                     ),
                                 )
-                            ]
+                            ],
+                        }
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Speed(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.Float,
-                        id_short: Optional[str] = r"Speed",
-                        value_type: aas.DataTypeDefXsd = xsd.Float,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAV544#004"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"speed", r"de": r"Geschwindigkeit"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Speed",
+                            "value_type": xsd.Float,
+                            "display_name": aas.MultiLanguageNameType(
+                                dict_={r"en": r"speed", r"de": r"Geschwindigkeit"}
+                            ),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Speed of the asset at the time where the position was determined",
                                     r"de": r"Geschwindigkeit des Assets zum Zeitpunkt an dem die Position bestimmt wurde",
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(r" 0173-1#02-AAV544#004"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Course(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: int,
-                        id_short: Optional[str] = r"Course",
-                        value_type: aas.DataTypeDefXsd = int,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/course/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Course",
+                            "value_type": int,
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"course", r"de": r"Kurs"}),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/course/1/0"),
+                        }
 
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"course", r"de": r"Kurs"})
+                    def __init__(self, value: int, **kwargs: Unpack[PropertyMetadata]):
 
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ReferencePointId(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ReferencePointId",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/prop/referencepointid/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ReferencePointId",
+                            "value_type": str,
+                            "display_name": aas.MultiLanguageNameType(
                                 dict_={r"en": r"reference point (ID)", r"de": r"Referenzpunkt (ID)"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/referencepointid/1/0"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": None,
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Record of a location (position) localization event"}
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/locationrecordsrecord/1/0"),
+                    }
 
                 def __init__(
                     self,
@@ -3737,29 +1976,8 @@ class AssetLocation(aas.Submodel):
                     speed: Optional[Union[xsd.Float, Speed]] = None,
                     course: Optional[Union[int, Course]] = None,
                     referencePointId: Optional[Union[str, ReferencePointId]] = None,
-                    id_short: Optional[str] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/smc/locationrecordsrecord/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Record of a location (position) localization event"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -3847,54 +2065,30 @@ class AssetLocation(aas.Submodel):
                         referencePointId,
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-            def __init__(
-                self,
-                locationrecords_items: Iterable[Locationrecords_item],
-                id_short: Optional[str] = r"LocationRecords",
-                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/smc/locationrecordsrecord/1/0"
-                ),
-                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                order_relevant: bool = True,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/sml/locationrecords/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> SubmodelElementListMetadata:
+                return {
+                    "id_short": r"LocationRecords",
+                    "type_value_list_element": aas.SubmodelElementCollection,
+                    "semantic_id_list_element": global_ref(
+                        r"https://admin-shell.io/idta/smc/locationrecordsrecord/1/0"
+                    ),
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"List with records for location (position) localization events",
                             r"de": r"Liste mit Datensätzen für Ereignisse betreffend der Lokalisierung (Positionsbestimmung)",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/locationrecords/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(
+                self,
+                locationrecords_items: Iterable[Locationrecords_item],
+                **kwargs: Unpack[SubmodelElementListMetadata],
+            ):
 
                 # A str would be split into its characters
                 if isinstance(locationrecords_items, str):
@@ -3904,22 +2098,21 @@ class AssetLocation(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(locationrecords_items, number_repeated=False)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    type_value_list_element=type_value_list_element,
-                    semantic_id_list_element=semantic_id_list_element,
-                    value_type_list_element=value_type_list_element,
-                    order_relevant=order_relevant,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"AssetTraces",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"asset traces", r"de": r"Assetverfolgung"}),
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of localization event records for sites, areas, fences and locations",
+                        r"de": r"Sammlung von Lokalisierungsevents für Standorte, Areale, Schranken und Positionen",
+                    }
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/smc/assettraces/1/0"),
+            }
 
         def __init__(
             self,
@@ -3927,33 +2120,8 @@ class AssetLocation(aas.Submodel):
             locationEventTimeSeriesData: Optional[Union[aas.Reference, LocationEventTimeSeriesData]] = None,
             areaRecords: Optional[Union[Iterable[AreaRecords.Arearecords_item], AreaRecords]] = None,
             locationRecords: Optional[Union[Iterable[LocationRecords.Locationrecords_item], LocationRecords]] = None,
-            id_short: Optional[str] = r"AssetTraces",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/smc/assettraces/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"asset traces", r"de": r"Assetverfolgung"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of localization event records for sites, areas, fences and locations",
-                        r"de": r"Sammlung von Lokalisierungsevents für Standorte, Areale, Schranken und Positionen",
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -3991,100 +2159,42 @@ class AssetLocation(aas.Submodel):
                 areaEventTimeSeriesData, locationEventTimeSeriesData, areaRecords, locationRecords
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class AssetLocatingInformation(aas.SubmodelElementCollection):
 
         class Localizable(aas.Property):
 
-            def __init__(
-                self,
-                value: bool,
-                id_short: Optional[str] = r"Localizable",
-                value_type: aas.DataTypeDefXsd = bool,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/prop/localizable/1/0"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"Localizable",
+                    "value_type": bool,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"localizable", r"de": r"lokalisierbar"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/localizable/1/0"),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"localizable", r"de": r"lokalisierbar"})
+            def __init__(self, value: bool, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class AssetLocationServiceRealTimeCapability(aas.MultiLanguageProperty):
 
-            def __init__(
-                self,
-                value: aas.LangStringSet,
-                id_short: Optional[str] = r"AssetLocationServiceRealTimeCapability",
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/mlp/realtimecapabilityofaas/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
+            @staticmethod
+            def template_defaults() -> MultiLanguagePropertyMetadata:
+                return {
+                    "id_short": r"AssetLocationServiceRealTimeCapability",
+                    "display_name": aas.MultiLanguageNameType(
                         dict_={r"en": r"Realtime capability description", r"de": r"Beschreibung der Echtzeitfähigkeit"}
-                    )
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+                    ),
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"Description of the extend and conditions for real time applications of the AAS",
                             r"de": r"Beschreibung, inwieweit und unter welchen Bedingungen eine Echtzeitfähigkeit der AAS besteht",
                         }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = [
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/realtimecapabilityofaas/1/0"),
+                    "embedded_data_specifications": [
                         aas.EmbeddedDataSpecification(
                             data_specification=global_ref(
                                 r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
@@ -4106,100 +2216,44 @@ class AssetLocation(aas.Submodel):
                                 level_types=set(),
                             ),
                         )
-                    ]
+                    ],
+                }
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class RealtimeLocationSourceType(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"RealtimeLocationSourceType",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/prop/realtimelocationsourcetype/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RealtimeLocationSourceType",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(
                         dict_={
                             r"en": r"real time location source type",
                             r"de": r"Typ der Quelle für Echtzeitlokalisierung",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/prop/realtimelocationsourcetype/1/0"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class RealtimeLocationSource(aas.MultiLanguageProperty):
 
-            def __init__(
-                self,
-                value: aas.LangStringSet,
-                id_short: Optional[str] = r"RealtimeLocationSource",
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/mlp/realtimelocationsource/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
+            @staticmethod
+            def template_defaults() -> MultiLanguagePropertyMetadata:
+                return {
+                    "id_short": r"RealtimeLocationSource",
+                    "display_name": aas.MultiLanguageNameType(
                         dict_={r"en": r"Real time location source", r"de": r"Quelle für Echtzeitlokalisierung"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = [
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/realtimelocationsource/1/0"),
+                    "embedded_data_specifications": [
                         aas.EmbeddedDataSpecification(
                             data_specification=global_ref(
                                 r"http://admin-shell.io/DataSpecificationTemplates/DataSpecificationIEC61360/3/0"
@@ -4219,21 +2273,25 @@ class AssetLocation(aas.Submodel):
                                 level_types=set(),
                             ),
                         )
-                    ]
+                    ],
+                }
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"AssetLocatingInformation",
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection with additional information concerning the localization of an asset",
+                        r"de": r"Sammlung mit zusätzlichen Informationen betreffend die Lokalisierung eines Assets",
+                    }
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/sml/assetlocatinginformation/1/0"),
+            }
 
         def __init__(
             self,
@@ -4243,32 +2301,8 @@ class AssetLocation(aas.Submodel):
             ] = None,
             realtimeLocationSourceType: Optional[Union[str, RealtimeLocationSourceType]] = None,
             realtimeLocationSource: Optional[Union[aas.LangStringSet, RealtimeLocationSource]] = None,
-            id_short: Optional[str] = r"AssetLocatingInformation",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/sml/assetlocatinginformation/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection with additional information concerning the localization of an asset",
-                        r"de": r"Sammlung mit zusätzlichen Informationen betreffend die Lokalisierung eines Assets",
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -4302,61 +2336,22 @@ class AssetLocation(aas.Submodel):
                 localizable, assetLocationServiceRealTimeCapability, realtimeLocationSourceType, realtimeLocationSource
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-    def __init__(
-        self,
-        id_: str,
-        addresses: Optional[Union[Iterable[Addresses.Addresses_item], Addresses]] = None,
-        coordinateSystems: Optional[
-            Union[Iterable[CoordinateSystems.Coordinatesystems_item], CoordinateSystems]
-        ] = None,
-        visitedAreas: Optional[Union[Iterable[VisitedAreas.Visitedareas_item], VisitedAreas]] = None,
-        assetTraces: Optional[AssetTraces] = None,
-        assetLocatingInformation: Optional[AssetLocatingInformation] = None,
-        id_short: Optional[str] = r"AssetLocation",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/smt/assetlocation/1/0"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-    ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"AssetLocation",
+            "display_name": aas.MultiLanguageNameType(
                 dict_={r"en": r"Submodel asset location", r"de": r"Teilmodell Assetstandort"}
-            )
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
+            ),
+            "description": aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Submodel for tracking & tracing of the location of an assets",
                     r"de": r"Teilmodell für das Tracking & Tracing des Standortes eines Assets",
                 }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
+            ),
+            "administration": aas.AdministrativeInformation(
                 version=r"1",
                 revision=r"0",
                 creator=aas.ModelReference(
@@ -4370,13 +2365,26 @@ class AssetLocation(aas.Submodel):
                 ),
                 template_id=r"AssetLocation",
                 embedded_data_specifications=[],
-            )
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/smt/assetlocation/1/0"),),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
+    def __init__(
+        self,
+        id_: str,
+        addresses: Optional[Union[Iterable[Addresses.Addresses_item], Addresses]] = None,
+        coordinateSystems: Optional[
+            Union[Iterable[CoordinateSystems.Coordinatesystems_item], CoordinateSystems]
+        ] = None,
+        visitedAreas: Optional[Union[Iterable[VisitedAreas.Visitedareas_item], VisitedAreas]] = None,
+        assetTraces: Optional[AssetTraces] = None,
+        assetLocatingInformation: Optional[AssetLocatingInformation] = None,
+        **kwargs: Unpack[SubmodelMetadata],
+    ):
 
         # A str would be split into its characters
         if isinstance(addresses, str):
@@ -4411,18 +2419,4 @@ class AssetLocation(aas.Submodel):
             addresses, coordinateSystems, visitedAreas, assetTraces, assetLocatingInformation
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

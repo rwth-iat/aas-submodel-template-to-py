@@ -7,6 +7,9 @@ their annotations couldn't be evaluated, see
 https://github.com/rwth-iat/aas-submodel-template-to-py/issues/24
 
 Typehints must be rendered the same way on every Python version.
+
+The class of list items (type_value_list_element) was typed as an instance of aas.SubmodelElement, see
+https://github.com/rwth-iat/aas-submodel-template-to-py/issues/52
 """
 import importlib.util
 import inspect
@@ -16,6 +19,7 @@ from typing import ForwardRef, Iterable, Optional, Set, Union
 import pytest
 from basyx.aas import model
 from basyx.aas.model import datatypes
+from basyx.aas.model.submodel import _SE
 
 from aas_submodel_to_py import SubmodelCodegen
 from aas_submodel_to_py.util import StringHandler
@@ -35,6 +39,7 @@ AAS_FORWARD_REF = ForwardRef("aas.AssetAdministrationShell")
     (model.ModelReference[Union[model.Submodel, model.Entity]], "aas.ModelReference[Union[aas.Submodel, aas.Entity]]"),
     (Optional[model.ModelReference[AAS_FORWARD_REF]],
      "Optional[aas.ModelReference[ForwardRef('aas.AssetAdministrationShell')]]"),
+    (typing.Type[_SE], "type[aas.SubmodelElement]"),
 ])
 def test_reprify_typehint(typehint, expected):
     assert StringHandler.reprify(typehint) == expected
@@ -95,3 +100,17 @@ def generated_classes(cls):
 def test_annotations_of_generated_classes_can_be_evaluated(generated_module):
     for cls in generated_classes(generated_module.TypehintTest):
         typing.get_type_hints(cls.__init__)
+
+
+def test_annotations_of_metadata_can_be_evaluated(generated_module):
+    metadata_classes = [obj for name, obj in vars(generated_module).items() if name.endswith("Metadata")]
+
+    assert len(metadata_classes) == 8
+    for metadata_cls in metadata_classes:
+        typing.get_type_hints(metadata_cls)
+
+
+def test_class_of_list_items_is_typed_as_class(generated_module):
+    hints = typing.get_type_hints(generated_module.SubmodelElementListMetadata)
+
+    assert hints["type_value_list_element"] == type[model.SubmodelElement]

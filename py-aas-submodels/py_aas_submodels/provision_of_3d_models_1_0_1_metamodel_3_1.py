@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,6 +95,113 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class Models3D(aas.Submodel):
 
     class Model3D(GeneratedSubmodelElementList):
@@ -109,150 +216,68 @@ class Models3D(aas.Submodel):
 
                         class FileDomainId(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"FileDomainId",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/FileDomaniId/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"FileDomainId",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/FileDomaniId/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ValueId(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ValueId",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/ValueId/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ValueId",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/ValueId/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class IsPrimary(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: bool,
-                                id_short: Optional[str] = r"IsPrimary",
-                                value_type: aas.DataTypeDefXsd = bool,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/IsPrimary/1/0"
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"IsPrimary",
+                                    "value_type": bool,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/IsPrimary/1/0"
+                                    ),
+                                }
+
+                            def __init__(self, value: bool, **kwargs: Unpack[PropertyMetadata]):
+
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0"
                                 ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                            }
 
                         def __init__(
                             self,
                             fileDomainId: Union[str, FileDomainId],
                             valueId: Union[str, ValueId],
                             isPrimary: Optional[Iterable[Union[bool, IsPrimary]]] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -278,44 +303,21 @@ class Models3D(aas.Submodel):
 
                             embedded_submodel_elements = collect_submodel_elements(fileDomainId, valueId, isPrimary)
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"FileId",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id": global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0"),
+                        }
 
                     def __init__(
                         self,
                         fileid_items: Optional[Iterable[Fileid_item]] = None,
-                        id_short: Optional[str] = r"FileId",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(fileid_items, str):
@@ -325,22 +327,7 @@ class Models3D(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(fileid_items, number_repeated=False)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class FileVersion(GeneratedSubmodelElementList):
 
@@ -348,271 +335,117 @@ class Models3D(aas.Submodel):
 
                         class Title(aas.MultiLanguageProperty):
 
+                            @staticmethod
+                            def template_defaults() -> MultiLanguagePropertyMetadata:
+                                return {
+                                    "id_short": r"Title",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/Title/1/0"
+                                    ),
+                                }
+
                             def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"Title",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/Title/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class FileName(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"FileName",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileName/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"FileName",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileName/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class FileVersionId(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"FileVersionId",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileVersionID/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"FileVersionId",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileVersionID/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class StatusValue(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"StatusValue",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/StatusValue/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"StatusValue",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/StatusValue/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class SetDate(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: xsd.Date,
-                                id_short: Optional[str] = r"SetDate",
-                                value_type: aas.DataTypeDefXsd = xsd.Date,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SetDate/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"SetDate",
+                                    "value_type": xsd.Date,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SetDate/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: xsd.Date, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class BasedOn(GeneratedSubmodelElementList):
 
                             class Basedon_item(aas.ReferenceElement):
 
-                                def __init__(
-                                    self,
-                                    value: aas.Reference,
-                                    id_short: Optional[str] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                @staticmethod
+                                def template_defaults() -> ReferenceElementMetadata:
+                                    return {
+                                        "id_short": None,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementListMetadata:
+                                return {
+                                    "id_short": r"BasedOn",
+                                    "type_value_list_element": aas.ReferenceElement,
+                                    "semantic_id": global_ref(
                                         r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 basedon_items: Optional[Iterable[Union[aas.Reference, Basedon_item]]] = None,
-                                id_short: Optional[str] = r"BasedOn",
-                                type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[aas.Reference] = None,
-                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                order_relevant: bool = True,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementListMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(basedon_items, str):
@@ -632,86 +465,41 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    type_value_list_element=type_value_list_element,
-                                    semantic_id_list_element=semantic_id_list_element,
-                                    value_type_list_element=value_type_list_element,
-                                    order_relevant=order_relevant,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class RefersTo(GeneratedSubmodelElementList):
 
                             class Refersto_item(aas.ReferenceElement):
 
-                                def __init__(
-                                    self,
-                                    value: aas.Reference,
-                                    id_short: Optional[str] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                @staticmethod
+                                def template_defaults() -> ReferenceElementMetadata:
+                                    return {
+                                        "id_short": None,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementListMetadata:
+                                return {
+                                    "id_short": r"RefersTo",
+                                    "type_value_list_element": aas.ReferenceElement,
+                                    "semantic_id": global_ref(
                                         r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 refersto_items: Optional[Iterable[Union[aas.Reference, Refersto_item]]] = None,
-                                id_short: Optional[str] = r"RefersTo",
-                                type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[aas.Reference] = None,
-                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                order_relevant: bool = True,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementListMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(refersto_items, str):
@@ -731,98 +519,51 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    type_value_list_element=type_value_list_element,
-                                    semantic_id_list_element=semantic_id_list_element,
-                                    value_type_list_element=value_type_list_element,
-                                    order_relevant=order_relevant,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class PreviewFile(aas.File):
 
+                            @staticmethod
+                            def template_defaults() -> FileMetadata:
+                                return {
+                                    "id_short": r"PreviewFile",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/PreviewFile/1/0"
+                                    ),
+                                }
+
                             def __init__(
                                 self,
                                 value: str,
-                                id_short: Optional[str] = r"PreviewFile",
                                 content_type: Optional[str] = r"image/png",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/PreviewFile/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[FileMetadata],
                             ):
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
                                 super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    content_type=content_type,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                                 )
 
                         class DigitalFile(aas.File):
 
+                            @staticmethod
+                            def template_defaults() -> FileMetadata:
+                                return {
+                                    "id_short": r"DigitalFile",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/DigitalFile/1/0"
+                                    ),
+                                }
+
                             def __init__(
                                 self,
                                 value: str,
-                                id_short: Optional[str] = r"DigitalFile",
                                 content_type: Optional[str] = r"image/png",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/DigitalFile/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[FileMetadata],
                             ):
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
                                 super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    content_type=content_type,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                                 )
 
                         class ExternalFile(GeneratedSubmodelElementList):
@@ -831,196 +572,85 @@ class Models3D(aas.Submodel):
 
                                 class ExternalUrl(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"ExternalUrl",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/ExternalUrl/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"ExternalUrl",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/ExternalUrl/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class FileIdentifier(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"FileIdentifier",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/FileIdentifier/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"FileIdentifier",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/FileIdentifier/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class HostOrganization(aas.SubmodelElementCollection):
 
                                     class OrganizationName(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"OrganizationName",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationName/1/0"
-                                            ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"OrganizationName",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationName/1/0"
+                                                ),
+                                            }
 
-                                            if qualifier is None:
-                                                qualifier = ()
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                     class OrganizationOfficialName(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"OrganizationOfficialName",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationOfficialName/1/0"
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"OrganizationOfficialName",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationOfficialName/1/0"
+                                                ),
+                                            }
+
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                    @staticmethod
+                                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                                        return {
+                                            "id_short": r"HostOrganization",
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/1/0"
                                             ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
-
-                                            if qualifier is None:
-                                                qualifier = ()
-
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                        }
 
                                     def __init__(
                                         self,
                                         organizationName: Union[str, OrganizationName],
                                         organizationOfficialName: Union[str, OrganizationOfficialName],
-                                        id_short: Optional[str] = r"HostOrganization",
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                     ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1045,16 +675,7 @@ class Models3D(aas.Submodel):
                                         )
 
                                         super().__init__(
-                                            value=embedded_submodel_elements,
-                                            id_short=id_short,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
+                                            value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                         )
 
                                 class Api(GeneratedSubmodelElementList):
@@ -1063,158 +684,68 @@ class Models3D(aas.Submodel):
 
                                         class ApiVersion(aas.Property):
 
-                                            def __init__(
-                                                self,
-                                                value: str,
-                                                id_short: Optional[str] = r"ApiVersion",
-                                                value_type: aas.DataTypeDefXsd = str,
-                                                value_id: Optional[aas.Reference] = None,
-                                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                                category: Optional[str] = None,
-                                                description: Optional[aas.MultiLanguageTextType] = None,
-                                                semantic_id: Optional[aas.Reference] = global_ref(
-                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiVersion/1/0"
-                                                ),
-                                                qualifier: Iterable[aas.Qualifier] = None,
-                                                extension: Iterable[aas.Extension] = (),
-                                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                                embedded_data_specifications: Iterable[
-                                                    aas.EmbeddedDataSpecification
-                                                ] = None,
-                                            ):
+                                            @staticmethod
+                                            def template_defaults() -> PropertyMetadata:
+                                                return {
+                                                    "id_short": r"ApiVersion",
+                                                    "value_type": str,
+                                                    "semantic_id": global_ref(
+                                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiVersion/1/0"
+                                                    ),
+                                                }
 
-                                                if qualifier is None:
-                                                    qualifier = ()
+                                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                                if embedded_data_specifications is None:
-                                                    embedded_data_specifications = []
-
-                                                super().__init__(
-                                                    value=value,
-                                                    id_short=id_short,
-                                                    value_type=value_type,
-                                                    value_id=value_id,
-                                                    display_name=display_name,
-                                                    category=category,
-                                                    description=description,
-                                                    semantic_id=semantic_id,
-                                                    qualifier=qualifier,
-                                                    extension=extension,
-                                                    supplemental_semantic_id=supplemental_semantic_id,
-                                                    embedded_data_specifications=embedded_data_specifications,
-                                                )
+                                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                         class ApiDocumentationUrl(aas.Property):
 
-                                            def __init__(
-                                                self,
-                                                value: str,
-                                                id_short: Optional[str] = r"ApiDocumentationUrl",
-                                                value_type: aas.DataTypeDefXsd = str,
-                                                value_id: Optional[aas.Reference] = None,
-                                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                                category: Optional[str] = None,
-                                                description: Optional[aas.MultiLanguageTextType] = None,
-                                                semantic_id: Optional[aas.Reference] = global_ref(
-                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiDocumentationUrl/1/0"
-                                                ),
-                                                qualifier: Iterable[aas.Qualifier] = None,
-                                                extension: Iterable[aas.Extension] = (),
-                                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                                embedded_data_specifications: Iterable[
-                                                    aas.EmbeddedDataSpecification
-                                                ] = None,
-                                            ):
+                                            @staticmethod
+                                            def template_defaults() -> PropertyMetadata:
+                                                return {
+                                                    "id_short": r"ApiDocumentationUrl",
+                                                    "value_type": str,
+                                                    "semantic_id": global_ref(
+                                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiDocumentationUrl/1/0"
+                                                    ),
+                                                }
 
-                                                if qualifier is None:
-                                                    qualifier = ()
+                                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                                if embedded_data_specifications is None:
-                                                    embedded_data_specifications = []
-
-                                                super().__init__(
-                                                    value=value,
-                                                    id_short=id_short,
-                                                    value_type=value_type,
-                                                    value_id=value_id,
-                                                    display_name=display_name,
-                                                    category=category,
-                                                    description=description,
-                                                    semantic_id=semantic_id,
-                                                    qualifier=qualifier,
-                                                    extension=extension,
-                                                    supplemental_semantic_id=supplemental_semantic_id,
-                                                    embedded_data_specifications=embedded_data_specifications,
-                                                )
+                                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                         class ApiSpecificationUrl(aas.Property):
 
-                                            def __init__(
-                                                self,
-                                                value: str,
-                                                id_short: Optional[str] = r"ApiSpecificationUrl",
-                                                value_type: aas.DataTypeDefXsd = str,
-                                                value_id: Optional[aas.Reference] = None,
-                                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                                category: Optional[str] = None,
-                                                description: Optional[aas.MultiLanguageTextType] = None,
-                                                semantic_id: Optional[aas.Reference] = global_ref(
-                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiSpecificationUrl/1/0"
+                                            @staticmethod
+                                            def template_defaults() -> PropertyMetadata:
+                                                return {
+                                                    "id_short": r"ApiSpecificationUrl",
+                                                    "value_type": str,
+                                                    "semantic_id": global_ref(
+                                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiSpecificationUrl/1/0"
+                                                    ),
+                                                }
+
+                                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                        @staticmethod
+                                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                                            return {
+                                                "id_short": None,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0"
                                                 ),
-                                                qualifier: Iterable[aas.Qualifier] = None,
-                                                extension: Iterable[aas.Extension] = (),
-                                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                                embedded_data_specifications: Iterable[
-                                                    aas.EmbeddedDataSpecification
-                                                ] = None,
-                                            ):
-
-                                                if qualifier is None:
-                                                    qualifier = ()
-
-                                                if embedded_data_specifications is None:
-                                                    embedded_data_specifications = []
-
-                                                super().__init__(
-                                                    value=value,
-                                                    id_short=id_short,
-                                                    value_type=value_type,
-                                                    value_id=value_id,
-                                                    display_name=display_name,
-                                                    category=category,
-                                                    description=description,
-                                                    semantic_id=semantic_id,
-                                                    qualifier=qualifier,
-                                                    extension=extension,
-                                                    supplemental_semantic_id=supplemental_semantic_id,
-                                                    embedded_data_specifications=embedded_data_specifications,
-                                                )
+                                            }
 
                                         def __init__(
                                             self,
                                             apiVersion: Union[str, ApiVersion],
                                             apiDocumentationUrl: Optional[Union[str, ApiDocumentationUrl]] = None,
                                             apiSpecificationUrl: Optional[Union[str, ApiSpecificationUrl]] = None,
-                                            id_short: Optional[str] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0"
-                                            ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
+                                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                         ):
-
-                                            if qualifier is None:
-                                                qualifier = ()
-
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
 
                                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1244,43 +775,24 @@ class Models3D(aas.Submodel):
                                             )
 
                                             super().__init__(
-                                                value=embedded_submodel_elements,
-                                                id_short=id_short,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
+                                                value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                             )
+
+                                    @staticmethod
+                                    def template_defaults() -> SubmodelElementListMetadata:
+                                        return {
+                                            "id_short": r"Api",
+                                            "type_value_list_element": aas.SubmodelElementCollection,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0"
+                                            ),
+                                        }
 
                                     def __init__(
                                         self,
                                         api_items: Optional[Iterable[Api_item]] = None,
-                                        id_short: Optional[str] = r"Api",
-                                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                        semantic_id_list_element: Optional[aas.Reference] = None,
-                                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                        order_relevant: bool = True,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                        **kwargs: Unpack[SubmodelElementListMetadata],
                                     ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
 
                                         # A str would be split into its characters
                                         if isinstance(api_items, str):
@@ -1293,21 +805,17 @@ class Models3D(aas.Submodel):
                                         )
 
                                         super().__init__(
-                                            value=embedded_submodel_elements,
-                                            id_short=id_short,
-                                            type_value_list_element=type_value_list_element,
-                                            semantic_id_list_element=semantic_id_list_element,
-                                            value_type_list_element=value_type_list_element,
-                                            order_relevant=order_relevant,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
+                                            value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                         )
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementCollectionMetadata:
+                                    return {
+                                        "id_short": None,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0"
+                                        ),
+                                    }
 
                                 def __init__(
                                     self,
@@ -1315,24 +823,8 @@ class Models3D(aas.Submodel):
                                     fileIdentifier: Union[str, FileIdentifier],
                                     hostOrganization: HostOrganization,
                                     api: Optional[Union[Iterable[Api.Api_item], Api]] = None,
-                                    id_short: Optional[str] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
 
@@ -1362,43 +854,24 @@ class Models3D(aas.Submodel):
                                     )
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementListMetadata:
+                                return {
+                                    "id_short": r"ExternalFile",
+                                    "type_value_list_element": aas.SubmodelElementCollection,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0"
+                                    ),
+                                }
 
                             def __init__(
                                 self,
                                 externalfile_items: Optional[Iterable[Externalfile_item]] = None,
-                                id_short: Optional[str] = r"ExternalFile",
-                                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                semantic_id_list_element: Optional[aas.Reference] = None,
-                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                order_relevant: bool = True,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementListMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(externalfile_items, str):
@@ -1411,170 +884,75 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    type_value_list_element=type_value_list_element,
-                                    semantic_id_list_element=semantic_id_list_element,
-                                    value_type_list_element=value_type_list_element,
-                                    order_relevant=order_relevant,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class FileFormat(aas.SubmodelElementCollection):
 
                             class FormatName(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"FormatName",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatName/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"FormatName",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatName/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class FormatVersion(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"FormatVersion",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatVersion/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"FormatVersion",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatVersion/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class FormatQualifier(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"FormatQualifier",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatQualifier/1/0"
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"FormatQualifier",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatQualifier/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"FileFormat",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 formatName: Union[str, FormatName],
                                 formatVersion: Union[str, FormatVersion],
                                 formatQualifier: Union[str, FormatQualifier],
-                                id_short: Optional[str] = r"FileFormat",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1598,142 +976,58 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class SourceApplication(aas.SubmodelElementCollection):
 
                             class ApplicationName(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"ApplicationName",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationName/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"ApplicationName",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationName/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class ApplicationVersion(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"ApplicationVersion",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationVersion/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"ApplicationVersion",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationVersion/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class ApplicationQualifier(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"ApplicationQualifier",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationQualifier/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"ApplicationQualifier",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationQualifier/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class Api(GeneratedSubmodelElementList):
 
@@ -1741,156 +1035,68 @@ class Models3D(aas.Submodel):
 
                                     class ApiVersion(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"ApiVersion",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiVersion/1/0"
-                                            ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"ApiVersion",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiVersion/1/0"
+                                                ),
+                                            }
 
-                                            if qualifier is None:
-                                                qualifier = ()
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                     class ApiDocumentationUrl(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"ApiDocumentationUrl",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiDocumentationUrl/1/0"
-                                            ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"ApiDocumentationUrl",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiDocumentationUrl/1/0"
+                                                ),
+                                            }
 
-                                            if qualifier is None:
-                                                qualifier = ()
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                     class ApiSpecificationUrl(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"ApiSpecificationUrl",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiSpecificationUrl/1/0"
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"ApiSpecificationUrl",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiSpecificationUrl/1/0"
+                                                ),
+                                            }
+
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                    @staticmethod
+                                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                                        return {
+                                            "id_short": None,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0"
                                             ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
-
-                                            if qualifier is None:
-                                                qualifier = ()
-
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                        }
 
                                     def __init__(
                                         self,
                                         apiVersion: Union[str, ApiVersion],
                                         apiDocumentationUrl: Optional[Union[str, ApiDocumentationUrl]] = None,
                                         apiSpecificationUrl: Optional[Union[str, ApiSpecificationUrl]] = None,
-                                        id_short: Optional[str] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                     ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
 
@@ -1918,43 +1124,24 @@ class Models3D(aas.Submodel):
                                         )
 
                                         super().__init__(
-                                            value=embedded_submodel_elements,
-                                            id_short=id_short,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
+                                            value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                         )
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementListMetadata:
+                                    return {
+                                        "id_short": r"Api",
+                                        "type_value_list_element": aas.SubmodelElementCollection,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0"
+                                        ),
+                                    }
 
                                 def __init__(
                                     self,
                                     api_items: Optional[Iterable[Api_item]] = None,
-                                    id_short: Optional[str] = r"Api",
-                                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                    semantic_id_list_element: Optional[aas.Reference] = None,
-                                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                    order_relevant: bool = True,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementListMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # A str would be split into its characters
                                     if isinstance(api_items, str):
@@ -1967,128 +1154,58 @@ class Models3D(aas.Submodel):
                                     )
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        type_value_list_element=type_value_list_element,
-                                        semantic_id_list_element=semantic_id_list_element,
-                                        value_type_list_element=value_type_list_element,
-                                        order_relevant=order_relevant,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
 
                             class VendorOrganization(aas.SubmodelElementCollection):
 
                                 class OrganizationName(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"OrganizationName",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationName/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"OrganizationName",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationName/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class OrganizationOfficialName(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"OrganizationOfficialName",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationOfficialName/1/0"
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"OrganizationOfficialName",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationOfficialName/1/0"
+                                            ),
+                                        }
+
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementCollectionMetadata:
+                                    return {
+                                        "id_short": r"VendorOrganization",
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/1/0"
                                         ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                    }
 
                                 def __init__(
                                     self,
                                     organizationName: Union[str, OrganizationName],
                                     organizationOfficialName: Union[str, OrganizationOfficialName],
-                                    id_short: Optional[str] = r"VendorOrganization",
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2113,17 +1230,17 @@ class Models3D(aas.Submodel):
                                     )
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"SourceApplication",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/1/0"
+                                    ),
+                                }
 
                             def __init__(
                                 self,
@@ -2132,24 +1249,8 @@ class Models3D(aas.Submodel):
                                 applicationQualifier: Union[str, ApplicationQualifier],
                                 vendorOrganization: VendorOrganization,
                                 api: Optional[Union[Iterable[Api.Api_item], Api]] = None,
-                                id_short: Optional[str] = r"SourceApplication",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2186,124 +1287,58 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class ProvidingOrganization(aas.SubmodelElementCollection):
 
                             class OrganizationName(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"OrganizationName",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/OrganizationName/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"OrganizationName",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/OrganizationName/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class OrganizationOfficialName(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"OrganizationOfficialName",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization//OrganizationOfficialName/1/0"
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"OrganizationOfficialName",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization//OrganizationOfficialName/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"ProvidingOrganization",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 organizationName: Union[str, OrganizationName],
                                 organizationOfficialName: Union[str, OrganizationOfficialName],
-                                id_short: Optional[str] = r"ProvidingOrganization",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2326,17 +1361,17 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
@@ -2359,24 +1394,8 @@ class Models3D(aas.Submodel):
                                 Union[Iterable[ExternalFile.Externalfile_item], ExternalFile]
                             ] = None,
                             sourceApplication: Optional[SourceApplication] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -2448,44 +1467,23 @@ class Models3D(aas.Submodel):
                                 providingOrganization,
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"FileVersion",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         fileversion_items: Optional[Iterable[Fileversion_item]] = None,
-                        id_short: Optional[str] = r"FileVersion",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(fileversion_items, str):
@@ -2495,22 +1493,7 @@ class Models3D(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(fileversion_items, number_repeated=False)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class ConsumingApplication(GeneratedSubmodelElementList):
 
@@ -2518,233 +1501,101 @@ class Models3D(aas.Submodel):
 
                         class ApplicationName(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ApplicationName",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationName/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ApplicationName",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationName/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ApplicationVersion(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ApplicationVersion",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationVersion/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ApplicationVersion",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationVersion/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ApplicationQualifier(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ApplicationQualifier",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationQualifier1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ApplicationQualifier",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationQualifier1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class VendorOrganization(aas.SubmodelElementCollection):
 
                             class OrganizationName(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"OrganizationName",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationName/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"OrganizationName",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationName/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class OrganizationOfficialName(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"OrganizationOfficialName",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationOfficialName/1/0"
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"OrganizationOfficialName",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationOfficialName/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"VendorOrganization",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 organizationName: Union[str, OrganizationName],
                                 organizationOfficialName: Union[str, OrganizationOfficialName],
-                                id_short: Optional[str] = r"VendorOrganization",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2767,16 +1618,7 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class Api(GeneratedSubmodelElementList):
@@ -2785,150 +1627,68 @@ class Models3D(aas.Submodel):
 
                                 class ApiVersion(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"ApiVersion",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiVersion/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"ApiVersion",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiVersion/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class ApiDocumentationUrl(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"ApiDocumentationUrl",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiDocumentationUrl/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"ApiDocumentationUrl",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiDocumentationUrl/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class ApiSpecificationUrl(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"ApiSpecificationUrl",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiSpecificationUrl/1/0"
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"ApiSpecificationUrl",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiSpecificationUrl/1/0"
+                                            ),
+                                        }
+
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementCollectionMetadata:
+                                    return {
+                                        "id_short": None,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0"
                                         ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                    }
 
                                 def __init__(
                                     self,
                                     apiVersion: Union[str, ApiVersion],
                                     apiDocumentationUrl: Optional[Union[str, ApiDocumentationUrl]] = None,
                                     apiSpecificationUrl: Optional[Union[str, ApiSpecificationUrl]] = None,
-                                    id_short: Optional[str] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
 
@@ -2956,43 +1716,24 @@ class Models3D(aas.Submodel):
                                     )
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementListMetadata:
+                                return {
+                                    "id_short": r"Api",
+                                    "type_value_list_element": aas.SubmodelElementCollection,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0"
+                                    ),
+                                }
 
                             def __init__(
                                 self,
                                 api_items: Optional[Iterable[Api_item]] = None,
-                                id_short: Optional[str] = r"Api",
-                                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                semantic_id_list_element: Optional[aas.Reference] = None,
-                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                order_relevant: bool = True,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementListMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(api_items, str):
@@ -3003,21 +1744,17 @@ class Models3D(aas.Submodel):
                                 embedded_submodel_elements = collect_submodel_elements(api_items, number_repeated=False)
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    type_value_list_element=type_value_list_element,
-                                    semantic_id_list_element=semantic_id_list_element,
-                                    value_type_list_element=value_type_list_element,
-                                    order_relevant=order_relevant,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
@@ -3026,24 +1763,8 @@ class Models3D(aas.Submodel):
                             applicationQualifier: Union[str, ApplicationQualifier],
                             vendorOrganization: VendorOrganization,
                             api: Optional[Union[Iterable[Api.Api_item], Api]] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3079,44 +1800,23 @@ class Models3D(aas.Submodel):
                                 applicationName, applicationVersion, applicationQualifier, vendorOrganization, api
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"ConsumingApplication",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         consumingapplication_items: Optional[Iterable[Consumingapplication_item]] = None,
-                        id_short: Optional[str] = r"ConsumingApplication",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(consumingapplication_items, str):
@@ -3128,22 +1828,7 @@ class Models3D(aas.Submodel):
                             consumingapplication_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class FileClassification(GeneratedSubmodelElementList):
 
@@ -3151,148 +1836,69 @@ class Models3D(aas.Submodel):
 
                         class ClassId(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ClassId",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassId/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ClassId",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassId/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ClassName(aas.MultiLanguageProperty):
 
+                            @staticmethod
+                            def template_defaults() -> MultiLanguagePropertyMetadata:
+                                return {
+                                    "id_short": r"ClassName",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassName/1/0"
+                                    ),
+                                }
+
                             def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"ClassName",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassName/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ClassificationSystem(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ClassificationSystem",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ClassificationSystem/1/0"
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ClassificationSystem",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ClassificationSystem/1/0"
+                                    ),
+                                }
+
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0"
                                 ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                            }
 
                         def __init__(
                             self,
                             classId: Union[str, ClassId],
                             className: Union[aas.LangStringSet, ClassName],
                             classificationSystem: Union[str, ClassificationSystem],
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -3317,44 +1923,23 @@ class Models3D(aas.Submodel):
                                 classId, className, classificationSystem
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"FileClassification",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         fileclassification_items: Iterable[Fileclassification_item],
-                        id_short: Optional[str] = r"FileClassification",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(fileclassification_items, str):
@@ -3366,22 +1951,14 @@ class Models3D(aas.Submodel):
                             fileclassification_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"File",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/File/1/0"),
+                    }
 
                 def __init__(
                     self,
@@ -3391,24 +1968,8 @@ class Models3D(aas.Submodel):
                     consumingApplication: Optional[
                         Union[Iterable[ConsumingApplication.Consumingapplication_item], ConsumingApplication]
                     ] = None,
-                    id_short: Optional[str] = r"File",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/Models3D/Model3D/File/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(fileId, str):
@@ -3452,18 +2013,7 @@ class Models3D(aas.Submodel):
                         fileId, fileVersion, consumingApplication, fileClassification
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Capability(aas.SubmodelElementCollection):
 
@@ -3471,70 +2021,36 @@ class Models3D(aas.Submodel):
 
                     class Posmodelpurpose_item(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = None,
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": None,
+                                "value_type": str,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0"
+                                ),
+                            }
+
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"PosModelPurpose",
+                            "type_value_list_element": aas.Property,
+                            "value_type_list_element": str,
+                            "semantic_id": global_ref(
                                 r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0"
                             ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                        }
 
                     def __init__(
                         self,
                         posmodelpurpose_items: Optional[Iterable[Union[str, Posmodelpurpose_item]]] = None,
-                        id_short: Optional[str] = r"PosModelPurpose",
-                        type_value_list_element: aas.SubmodelElement = aas.Property,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(posmodelpurpose_items, str):
@@ -3553,91 +2069,42 @@ class Models3D(aas.Submodel):
                             posmodelpurpose_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class NegModelPurpose(GeneratedSubmodelElementList):
 
                     class Negmodelpurpose_item(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = None,
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": None,
+                                "value_type": str,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0"
+                                ),
+                            }
+
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"NegModelPurpose",
+                            "type_value_list_element": aas.Property,
+                            "value_type_list_element": str,
+                            "semantic_id": global_ref(
                                 r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0"
                             ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                        }
 
                     def __init__(
                         self,
                         negmodelpurpose_items: Optional[Iterable[Union[str, Negmodelpurpose_item]]] = None,
-                        id_short: Optional[str] = r"NegModelPurpose",
-                        type_value_list_element: aas.SubmodelElement = aas.Property,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(negmodelpurpose_items, str):
@@ -3656,91 +2123,42 @@ class Models3D(aas.Submodel):
                             negmodelpurpose_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class EmbeddedInfo(GeneratedSubmodelElementList):
 
                     class Embeddedinfo_item(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = None,
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": None,
+                                "value_type": str,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0"
+                                ),
+                            }
+
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"EmbeddedInfo",
+                            "type_value_list_element": aas.Property,
+                            "value_type_list_element": str,
+                            "semantic_id": global_ref(
                                 r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0"
                             ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                        }
 
                     def __init__(
                         self,
                         embeddedinfo_items: Optional[Iterable[Union[str, Embeddedinfo_item]]] = None,
-                        id_short: Optional[str] = r"EmbeddedInfo",
-                        type_value_list_element: aas.SubmodelElement = aas.Property,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(embeddedinfo_items, str):
@@ -3759,91 +2177,42 @@ class Models3D(aas.Submodel):
                             embeddedinfo_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class State(GeneratedSubmodelElementList):
 
                     class State_item(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = None,
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": None,
+                                "value_type": str,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0"
+                                ),
+                            }
+
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"State",
+                            "type_value_list_element": aas.Property,
+                            "value_type_list_element": str,
+                            "semantic_id": global_ref(
                                 r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0"
                             ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                        }
 
                     def __init__(
                         self,
                         state_items: Optional[Iterable[Union[str, State_item]]] = None,
-                        id_short: Optional[str] = r"State",
-                        type_value_list_element: aas.SubmodelElement = aas.Property,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(state_items, str):
@@ -3859,216 +2228,92 @@ class Models3D(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(state_items, number_repeated=False)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class ObjectType(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ObjectType",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/ObjectType/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ObjectType",
+                            "value_type": str,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/ObjectType/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Origin(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Origin",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Origin/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Origin",
+                            "value_type": str,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Origin/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Simplification(aas.SubmodelElementCollection):
 
                     class Description(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"Description",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/LevelDescription/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"Description",
+                                "value_type": str,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/LevelDescription/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class ReducedElements(GeneratedSubmodelElementList):
 
                         class Reducedelements_item(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = None,
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": None,
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0"
+                                    ),
+                                }
+
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementListMetadata:
+                            return {
+                                "id_short": r"ReducedElements",
+                                "type_value_list_element": aas.Property,
+                                "value_type_list_element": str,
+                                "semantic_id": global_ref(
                                     r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0"
                                 ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                            }
 
                         def __init__(
                             self,
                             reducedelements_items: Optional[Iterable[Union[str, Reducedelements_item]]] = None,
-                            id_short: Optional[str] = r"ReducedElements",
-                            type_value_list_element: aas.SubmodelElement = aas.Property,
-                            semantic_id_list_element: Optional[aas.Reference] = None,
-                            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-                            order_relevant: bool = True,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementListMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # A str would be split into its characters
                             if isinstance(reducedelements_items, str):
@@ -4087,59 +2332,31 @@ class Models3D(aas.Submodel):
                                 reducedelements_items, number_repeated=False
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                type_value_list_element=type_value_list_element,
-                                semantic_id_list_element=semantic_id_list_element,
-                                value_type_list_element=value_type_list_element,
-                                order_relevant=order_relevant,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class DerivedFrom(aas.ReferenceElement):
 
-                        def __init__(
-                            self,
-                            value: aas.Reference,
-                            id_short: Optional[str] = r"DerivedFrom",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/DerivedFrom/1/0"
+                        @staticmethod
+                        def template_defaults() -> ReferenceElementMetadata:
+                            return {
+                                "id_short": r"DerivedFrom",
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/DerivedFrom/1/0"
+                                ),
+                            }
+
+                        def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
+
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"Simplification",
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/1/0"
                             ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                        }
 
                     def __init__(
                         self,
@@ -4148,24 +2365,8 @@ class Models3D(aas.Submodel):
                             Union[Iterable[Union[str, ReducedElements.Reducedelements_item]], ReducedElements]
                         ] = None,
                         derivedFrom: Optional[Union[aas.Reference, DerivedFrom]] = None,
-                        id_short: Optional[str] = r"Simplification",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # Build a submodel element if a raw value was passed in the argument
 
@@ -4192,18 +2393,14 @@ class Models3D(aas.Submodel):
                             description_, reducedElements, derivedFrom
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Capability",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/Capability/1/0"),
+                    }
 
                 def __init__(
                     self,
@@ -4218,24 +2415,8 @@ class Models3D(aas.Submodel):
                     state: Optional[Union[Iterable[Union[str, State.State_item]], State]] = None,
                     objectType: Optional[Union[str, ObjectType]] = None,
                     simplification: Optional[Simplification] = None,
-                    id_short: Optional[str] = r"Capability",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/Models3D/Model3D/Capability/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(posModelPurpose, str):
@@ -4289,102 +2470,41 @@ class Models3D(aas.Submodel):
                         posModelPurpose, negModelPurpose, embeddedInfo, state, objectType, origin, simplification
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Geometry(aas.SubmodelElementCollection):
 
                 class Representation(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Representation",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/Representation/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Representation",
+                            "value_type": str,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/Representation/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class LengthUnit(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"LengthUnit",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/LengthUnit/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"LengthUnit",
+                            "value_type": str,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/LengthUnit/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class CartBoundingBox(GeneratedSubmodelElementList):
 
@@ -4392,44 +2512,19 @@ class Models3D(aas.Submodel):
 
                         class BoundingBoxKind(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"BoundingBoxKind",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/BoundingBoxKind/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"BoundingBoxKind",
+                                    "value_type": str,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/BoundingBoxKind/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class CartRefSystem(aas.SubmodelElementCollection):
 
@@ -4437,150 +2532,68 @@ class Models3D(aas.Submodel):
 
                                 class X(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"X",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/X/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"X",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/X/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class Y(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"Y",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Y/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"Y",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Y/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class Z(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"Z",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Z/1/0"
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"Z",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Z/1/0"
+                                            ),
+                                        }
+
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementCollectionMetadata:
+                                    return {
+                                        "id_short": r"CartOffsetVector",
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/1/0"
                                         ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                    }
 
                                 def __init__(
                                     self,
                                     x: Union[str, X],
                                     y: Union[str, Y],
                                     z: Union[str, Z],
-                                    id_short: Optional[str] = r"CartOffsetVector",
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
 
@@ -4602,16 +2615,7 @@ class Models3D(aas.Submodel):
                                     embedded_submodel_elements = collect_submodel_elements(x, y, z)
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
 
                             class NormOrientationVector(GeneratedSubmodelElementList):
@@ -4620,156 +2624,68 @@ class Models3D(aas.Submodel):
 
                                     class X(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"X",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/X/1/0"
-                                            ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"X",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/X/1/0"
+                                                ),
+                                            }
 
-                                            if qualifier is None:
-                                                qualifier = ()
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                     class Y(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"Y",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Y/1/0"
-                                            ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"Y",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Y/1/0"
+                                                ),
+                                            }
 
-                                            if qualifier is None:
-                                                qualifier = ()
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                     class Z(aas.Property):
 
-                                        def __init__(
-                                            self,
-                                            value: str,
-                                            id_short: Optional[str] = r"Z",
-                                            value_type: aas.DataTypeDefXsd = str,
-                                            value_id: Optional[aas.Reference] = None,
-                                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                                            category: Optional[str] = None,
-                                            description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = global_ref(
-                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Z/1/0"
+                                        @staticmethod
+                                        def template_defaults() -> PropertyMetadata:
+                                            return {
+                                                "id_short": r"Z",
+                                                "value_type": str,
+                                                "semantic_id": global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Z/1/0"
+                                                ),
+                                            }
+
+                                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                            super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                    @staticmethod
+                                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                                        return {
+                                            "id_short": None,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0"
                                             ),
-                                            qualifier: Iterable[aas.Qualifier] = None,
-                                            extension: Iterable[aas.Extension] = (),
-                                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                            embedded_data_specifications: Iterable[
-                                                aas.EmbeddedDataSpecification
-                                            ] = None,
-                                        ):
-
-                                            if qualifier is None:
-                                                qualifier = ()
-
-                                            if embedded_data_specifications is None:
-                                                embedded_data_specifications = []
-
-                                            super().__init__(
-                                                value=value,
-                                                id_short=id_short,
-                                                value_type=value_type,
-                                                value_id=value_id,
-                                                display_name=display_name,
-                                                category=category,
-                                                description=description,
-                                                semantic_id=semantic_id,
-                                                qualifier=qualifier,
-                                                extension=extension,
-                                                supplemental_semantic_id=supplemental_semantic_id,
-                                                embedded_data_specifications=embedded_data_specifications,
-                                            )
+                                        }
 
                                     def __init__(
                                         self,
                                         x: Union[str, X],
                                         y: Union[str, Y],
                                         z: Union[str, Z],
-                                        id_short: Optional[str] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                     ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
 
                                         # Build a submodel element if a raw value was passed in the argument
 
@@ -4791,43 +2707,24 @@ class Models3D(aas.Submodel):
                                         embedded_submodel_elements = collect_submodel_elements(x, y, z)
 
                                         super().__init__(
-                                            value=embedded_submodel_elements,
-                                            id_short=id_short,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
+                                            value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                         )
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementListMetadata:
+                                    return {
+                                        "id_short": r"NormOrientationVector",
+                                        "type_value_list_element": aas.SubmodelElementCollection,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0"
+                                        ),
+                                    }
 
                                 def __init__(
                                     self,
                                     normorientationvector_items: Iterable[Normorientationvector_item],
-                                    id_short: Optional[str] = r"NormOrientationVector",
-                                    type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                    semantic_id_list_element: Optional[aas.Reference] = None,
-                                    value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                    order_relevant: bool = True,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementListMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # A str would be split into its characters
                                     if isinstance(normorientationvector_items, str):
@@ -4840,21 +2737,17 @@ class Models3D(aas.Submodel):
                                     )
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        type_value_list_element=type_value_list_element,
-                                        semantic_id_list_element=semantic_id_list_element,
-                                        value_type_list_element=value_type_list_element,
-                                        order_relevant=order_relevant,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"CartRefSystem",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/1/0"
+                                    ),
+                                }
 
                             def __init__(
                                 self,
@@ -4865,24 +2758,8 @@ class Models3D(aas.Submodel):
                                         NormOrientationVector,
                                     ]
                                 ] = None,
-                                id_short: Optional[str] = r"CartRefSystem",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(normOrientationVector, str):
@@ -4902,166 +2779,75 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class CartBoundingVector(aas.SubmodelElementCollection):
 
                             class X(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"X",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/X/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"X",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/X/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class Y(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"Y",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Y/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"Y",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Y/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class Z(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"Z",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Z/1/0"
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"Z",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Z/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"CartBoundingVector",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 x: Union[str, X],
                                 y: Union[str, Y],
                                 z: Union[str, Z],
-                                id_short: Optional[str] = r"CartBoundingVector",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5083,41 +2869,25 @@ class Models3D(aas.Submodel):
                                 embedded_submodel_elements = collect_submodel_elements(x, y, z)
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
                             boundingBoxKind: Union[str, BoundingBoxKind],
                             cartBoundingVector: CartBoundingVector,
                             cartRefSystem: Optional[CartRefSystem] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -5130,44 +2900,23 @@ class Models3D(aas.Submodel):
                                 boundingBoxKind, cartRefSystem, cartBoundingVector
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"CartBoundingBox",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         cartboundingbox_items: Optional[Iterable[Cartboundingbox_item]] = None,
-                        id_short: Optional[str] = r"CartBoundingBox",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(cartboundingbox_items, str):
@@ -5179,22 +2928,7 @@ class Models3D(aas.Submodel):
                             cartboundingbox_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class CartRefSystem(GeneratedSubmodelElementList):
 
@@ -5204,150 +2938,68 @@ class Models3D(aas.Submodel):
 
                             class X(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"X",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/X/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"X",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/X/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class Y(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"Y",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Y/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"Y",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Y/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                             class Z(aas.Property):
 
-                                def __init__(
-                                    self,
-                                    value: str,
-                                    id_short: Optional[str] = r"Z",
-                                    value_type: aas.DataTypeDefXsd = str,
-                                    value_id: Optional[aas.Reference] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Z/1/0"
+                                @staticmethod
+                                def template_defaults() -> PropertyMetadata:
+                                    return {
+                                        "id_short": r"Z",
+                                        "value_type": str,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Z/1/0"
+                                        ),
+                                    }
+
+                                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"CartOffsetVector",
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/1/0"
                                     ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
-
-                                    super().__init__(
-                                        value=value,
-                                        id_short=id_short,
-                                        value_type=value_type,
-                                        value_id=value_id,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                                }
 
                             def __init__(
                                 self,
                                 x: Union[str, X],
                                 y: Union[str, Y],
                                 z: Union[str, Z],
-                                id_short: Optional[str] = r"CartOffsetVector",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5369,16 +3021,7 @@ class Models3D(aas.Submodel):
                                 embedded_submodel_elements = collect_submodel_elements(x, y, z)
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class NormOrientationVector(GeneratedSubmodelElementList):
@@ -5387,150 +3030,68 @@ class Models3D(aas.Submodel):
 
                                 class X(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"X",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/X/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"X",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/X/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class Y(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"Y",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Y/1/0"
-                                        ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"Y",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Y/1/0"
+                                            ),
+                                        }
 
-                                        if qualifier is None:
-                                            qualifier = ()
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                                 class Z(aas.Property):
 
-                                    def __init__(
-                                        self,
-                                        value: str,
-                                        id_short: Optional[str] = r"Z",
-                                        value_type: aas.DataTypeDefXsd = str,
-                                        value_id: Optional[aas.Reference] = None,
-                                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                                        category: Optional[str] = None,
-                                        description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = global_ref(
-                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Z/1/0"
+                                    @staticmethod
+                                    def template_defaults() -> PropertyMetadata:
+                                        return {
+                                            "id_short": r"Z",
+                                            "value_type": str,
+                                            "semantic_id": global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Z/1/0"
+                                            ),
+                                        }
+
+                                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                                @staticmethod
+                                def template_defaults() -> SubmodelElementCollectionMetadata:
+                                    return {
+                                        "id_short": None,
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0"
                                         ),
-                                        qualifier: Iterable[aas.Qualifier] = None,
-                                        extension: Iterable[aas.Extension] = (),
-                                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                    ):
-
-                                        if qualifier is None:
-                                            qualifier = ()
-
-                                        if embedded_data_specifications is None:
-                                            embedded_data_specifications = []
-
-                                        super().__init__(
-                                            value=value,
-                                            id_short=id_short,
-                                            value_type=value_type,
-                                            value_id=value_id,
-                                            display_name=display_name,
-                                            category=category,
-                                            description=description,
-                                            semantic_id=semantic_id,
-                                            qualifier=qualifier,
-                                            extension=extension,
-                                            supplemental_semantic_id=supplemental_semantic_id,
-                                            embedded_data_specifications=embedded_data_specifications,
-                                        )
+                                    }
 
                                 def __init__(
                                     self,
                                     x: Union[str, X],
                                     y: Union[str, Y],
                                     z: Union[str, Z],
-                                    id_short: Optional[str] = None,
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                                 ):
-
-                                    if qualifier is None:
-                                        qualifier = ()
-
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
 
                                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5552,43 +3113,24 @@ class Models3D(aas.Submodel):
                                     embedded_submodel_elements = collect_submodel_elements(x, y, z)
 
                                     super().__init__(
-                                        value=embedded_submodel_elements,
-                                        id_short=id_short,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
+                                        value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                     )
+
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementListMetadata:
+                                return {
+                                    "id_short": r"NormOrientationVector",
+                                    "type_value_list_element": aas.SubmodelElementCollection,
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0"
+                                    ),
+                                }
 
                             def __init__(
                                 self,
                                 normorientationvector_items: Iterable[Normorientationvector_item],
-                                id_short: Optional[str] = r"NormOrientationVector",
-                                type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                semantic_id_list_element: Optional[aas.Reference] = None,
-                                value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                                order_relevant: bool = True,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementListMetadata],
                             ):
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(normorientationvector_items, str):
@@ -5601,21 +3143,17 @@ class Models3D(aas.Submodel):
                                 )
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    type_value_list_element=type_value_list_element,
-                                    semantic_id_list_element=semantic_id_list_element,
-                                    value_type_list_element=value_type_list_element,
-                                    order_relevant=order_relevant,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": None,
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
@@ -5623,24 +3161,8 @@ class Models3D(aas.Submodel):
                             normOrientationVector: Optional[
                                 Union[Iterable[NormOrientationVector.Normorientationvector_item], NormOrientationVector]
                             ] = None,
-                            id_short: Optional[str] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # A str would be split into its characters
                             if isinstance(normOrientationVector, str):
@@ -5659,44 +3181,23 @@ class Models3D(aas.Submodel):
                                 cartOffsetVector, normOrientationVector
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementListMetadata:
+                        return {
+                            "id_short": r"CartRefSystem",
+                            "type_value_list_element": aas.SubmodelElementCollection,
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         cartrefsystem_items: Optional[Iterable[Cartrefsystem_item]] = None,
-                        id_short: Optional[str] = r"CartRefSystem",
-                        type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                        semantic_id_list_element: Optional[aas.Reference] = None,
-                        value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-                        order_relevant: bool = True,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementListMetadata],
                     ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(cartrefsystem_items, str):
@@ -5708,22 +3209,14 @@ class Models3D(aas.Submodel):
                             cartrefsystem_items, number_repeated=False
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            type_value_list_element=type_value_list_element,
-                            semantic_id_list_element=semantic_id_list_element,
-                            value_type_list_element=value_type_list_element,
-                            order_relevant=order_relevant,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"Geometry",
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/1/0"),
+                    }
 
                 def __init__(
                     self,
@@ -5733,24 +3226,8 @@ class Models3D(aas.Submodel):
                         Union[Iterable[CartBoundingBox.Cartboundingbox_item], CartBoundingBox]
                     ] = None,
                     cartRefSystem: Optional[Union[Iterable[CartRefSystem.Cartrefsystem_item], CartRefSystem]] = None,
-                    id_short: Optional[str] = r"Geometry",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5786,81 +3263,40 @@ class Models3D(aas.Submodel):
                         representation, lengthUnit, cartBoundingBox, cartRefSystem
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/1/0"),
+                }
 
             def __init__(
                 self,
                 file: File,
                 capability: Optional[Capability] = None,
                 geometry: Optional[Geometry] = None,
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/1/0"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Add all passed/initialized submodel elements to a single list
 
                 embedded_submodel_elements = collect_submodel_elements(file, capability, geometry)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"Model3D",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/1/0"),
+            }
 
         def __init__(
-            self,
-            model3d_items: Optional[Iterable[Model3d_item]] = None,
-            id_short: Optional[str] = r"Model3D",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = None,
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = True,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/1/0"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            self, model3d_items: Optional[Iterable[Model3d_item]] = None, **kwargs: Unpack[SubmodelElementListMetadata]
         ):
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(model3d_items, str):
@@ -5870,54 +3306,25 @@ class Models3D(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(model3d_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"Models3D",
+            "administration": aas.AdministrativeInformation(
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/Models3D/1/0"),),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
     def __init__(
-        self,
-        id_: str,
-        model3D: Union[Iterable[Model3D.Model3d_item], Model3D],
-        id_short: Optional[str] = r"Models3D",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/Models3D/1/0"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        self, id_: str, model3D: Union[Iterable[Model3D.Model3d_item], Model3D], **kwargs: Unpack[SubmodelMetadata]
     ):
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # A str would be split into its characters
         if isinstance(model3D, str):
@@ -5932,18 +3339,4 @@ class Models3D(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(model3D)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

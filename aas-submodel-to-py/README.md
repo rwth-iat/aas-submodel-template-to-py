@@ -17,12 +17,14 @@ all the required submodel element-specific classes. Input files can be `.aasx`,
 Here's a snippet of the classes generated from the
 [Digital Nameplate 3.0.1](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20nameplate/3/0/1)
 submodel template (`...` marks omitted lines). Each submodel element gets a class nested in the class of
-its submodel or collection, with the semantic IDs, descriptions and other metadata of the template as defaults.
+its submodel or collection. Its init takes the values of the element (e.g. `value`) and its submodel elements;
+metadata like `semantic_id` or `description` are keyword arguments, typed by a `TypedDict` per BaSyx class
+(e.g. `PropertyMetadata`), and default to the template's values, which `template_defaults()` returns.
 The classes build instances (`kind=Instance`), so template qualifiers like `SMT/Cardinality`, which are only
 allowed in templates, aren't taken over. Each module starts with a few helpers its classes share:
 
 ```python
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -44,6 +46,15 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
     ...
 
 
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    ...
+    semantic_id: Optional[aas.Reference]
+    ...
+
+
 class Nameplate(aas.Submodel):
 
     class URIOfTheProduct(aas.Property):
@@ -51,15 +62,17 @@ class Nameplate(aas.Submodel):
 
     class ManufacturerName(aas.MultiLanguageProperty):
 
-        def __init__(
-            self,
-            value: aas.LangStringSet,
-            id_short: Optional[str] = r"ManufacturerName",
-            ...
-            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA565#009"),
-            ...
-        ):
-            ...
+        @staticmethod
+        def template_defaults() -> MultiLanguagePropertyMetadata:
+            return {
+                "id_short": r"ManufacturerName",
+                "semantic_id": global_ref(r"0112/2///61987#ABA565#009"),
+                "supplemental_semantic_id": (global_ref(r"0173-1#02-AAO677#004"),),
+            }
+
+        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     ...
 
@@ -67,6 +80,23 @@ class Nameplate(aas.Submodel):
         ...
 
     ...
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"Nameplate",
+            "description": aas.MultiLanguageTextType(
+                dict_={r"en": r"Contains the nameplate information attached to the product"}
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"3",
+                revision=r"0",
+                ...
+                template_id=r"https://admin-shell.io/idta-02006-3-0",
+                ...
+            ),
+            "semantic_id": global_ref(r"https://admin-shell.io/idta/nameplate/3/0/Nameplate"),
+        }
 
     def __init__(
         self,
@@ -78,23 +108,8 @@ class Nameplate(aas.Submodel):
         ...
         markings: Optional[Union[Iterable[Markings.Markings_item], Markings]] = None,
         ...
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        ...
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={r"en": r"Contains the nameplate information attached to the product"}
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"3",
-                revision=r"0",
-                ...
-                template_id=r"https://admin-shell.io/idta-02006-3-0",
-                ...
-            )
         ...
 ```
 
@@ -120,6 +135,8 @@ nameplate = Nameplate(
 ```
 
 All required submodel elements are positional arguments; optional elements default to `None`.
+Metadata is passed as keyword arguments, e.g. `Nameplate(..., id_short="Nameplate01")`, and replaces the
+template's value (`None` removes it); type checkers like mypy report unknown or wrongly typed metadata.
 Instead of submodel elements (e.g. `Nameplate.SerialNumber("12345678")`), raw values can be passed
 (e.g. `yearOfConstruction="2022"`); multi-language values are passed as `MultiLanguageTextType`.
 Properties with a default value in the template (`SMT/DefaultValue`, else `SMT/InitialValue`) can be

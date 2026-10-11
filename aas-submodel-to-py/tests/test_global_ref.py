@@ -56,7 +56,7 @@ def generated(tmp_path_factory):
 def test_global_references_are_rendered_compactly(generated):
     source = generated[1]
 
-    assert 'semantic_id: Optional[aas.Reference] = global_ref(r"https://example.com/ids/cd/Name"),' in source
+    assert '"semantic_id": global_ref(r"https://example.com/ids/cd/Name")' in source
     assert 'global_ref(r"0173-1#02-AAO677#004")' in source
     assert 'global_ref(r"https://example.com/ids/cd/Unit")' in source
     assert source.count("def global_ref(") == 1

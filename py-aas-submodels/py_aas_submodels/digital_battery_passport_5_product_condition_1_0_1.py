@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,123 +95,127 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementListMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementList, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    type_value_list_element: type[aas.SubmodelElement]
+    semantic_id_list_element: Optional[aas.Reference]
+    value_type_list_element: Optional[aas.DataTypeDefXsd]
+    order_relevant: bool
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class ProductCondition(aas.Submodel):
 
     class EnergyThroughput(aas.SubmodelElementCollection):
 
         class EnergyThroughputValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"EnergyThroughputValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughputValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL850#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"EnergyThroughputValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"energy throughput value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughputValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL850#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"energy throughput value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"EnergyThroughput",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"energy throughput"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughput"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL850#001"),),
+            }
 
         def __init__(
             self,
             energyThroughputValue: Union[xsd.Float, EnergyThroughputValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"EnergyThroughput",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#energyThroughput"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL850#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"energy throughput"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -227,134 +231,63 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(energyThroughputValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class CapacityThroughput(aas.SubmodelElementCollection):
 
         class CapacityThroughputValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"CapacityThroughputValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughputValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL849#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"CapacityThroughputValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughputValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL849#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"CapacityThroughput",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughput"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL849#001"),),
+            }
 
         def __init__(
             self,
             capacityThroughputValue: Union[xsd.Float, CapacityThroughputValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"CapacityThroughput",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#capacityThroughput"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL849#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -370,134 +303,63 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(capacityThroughputValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class NumberOfFullCycles(aas.SubmodelElementCollection):
 
         class NumberOfFullCyclesValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.UnsignedInt,
-                id_short: Optional[str] = r"NumberOfFullCyclesValue",
-                value_type: aas.DataTypeDefXsd = xsd.UnsignedInt,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCyclesValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL868#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"NumberOfFullCyclesValue",
+                    "value_type": xsd.UnsignedInt,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCyclesValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL868#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles value"})
+            def __init__(self, value: xsd.UnsignedInt, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"NumberOfFullCycles",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCycles"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL868#001"),),
+            }
 
         def __init__(
             self,
             numberOfFullCyclesValue: Union[xsd.UnsignedInt, NumberOfFullCyclesValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"NumberOfFullCycles",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#numberOfFullCycles"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL868#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -513,134 +375,63 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(numberOfFullCyclesValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class StateOfCertifiedEnergy(aas.SubmodelElementCollection):
 
         class StateOfCertifiedEnergyValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"StateOfCertifiedEnergyValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergyValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL847#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"StateOfCertifiedEnergyValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergyValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL847#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"StateOfCertifiedEnergy",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergy"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL847#001"),),
+            }
 
         def __init__(
             self,
             stateOfCertifiedEnergyValue: Union[xsd.Float, StateOfCertifiedEnergyValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"StateOfCertifiedEnergy",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCertifiedEnergy"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL847#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -658,134 +449,63 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(stateOfCertifiedEnergyValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class RemainingEnergy(aas.SubmodelElementCollection):
 
         class RemainingEnergyValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"RemainingEnergyValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergyValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL870#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RemainingEnergyValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining energy value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergyValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL870#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"RemainingEnergy",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining energy"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergy"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL870#001"),),
+            }
 
         def __init__(
             self,
             remainingEnergyValue: Union[xsd.Float, RemainingEnergyValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"RemainingEnergy",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingEnergy"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL870#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -801,134 +521,63 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(remainingEnergyValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class RemainingCapacity(aas.SubmodelElementCollection):
 
         class RemainingCapacityValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"RemainingCapacityValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacityValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL840#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RemainingCapacityValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacityValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL840#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"RemainingCapacity",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacity"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL840#001"),),
+            }
 
         def __init__(
             self,
             remainingCapacityValue: Union[xsd.Float, RemainingCapacityValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"RemainingCapacity",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingCapacity"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL840#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -944,18 +593,7 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(remainingCapacityValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class NegativeEvents(GeneratedSubmodelElementList):
 
@@ -963,124 +601,60 @@ class ProductCondition(aas.Submodel):
 
             class NegativeEventValue(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"NegativeEventValue",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEventValue"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NegativeEventValue",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"negative event value"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEventValue"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"negative event value"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class LastUpdate(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.DateTime,
-                    id_short: Optional[str] = r"LastUpdate",
-                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"LastUpdate",
+                        "value_type": xsd.DateTime,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                        ),
+                        "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                    }
+
+                def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": None,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"negative event"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+                        }
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NegativeEvent"
+                    ),
+                }
 
             def __init__(
                 self,
                 negativeEventValue: Union[str, NegativeEventValue],
                 lastUpdate: Union[xsd.DateTime, LastUpdate],
-                id_short: Optional[str] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#NegativeEvent"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"negative event"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1096,47 +670,25 @@ class ProductCondition(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(negativeEventValue, lastUpdate)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"NegativeEvents",
+                "type_value_list_element": aas.SubmodelElementCollection,
+                "order_relevant": False,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"negative events"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEvents"
+                ),
+            }
 
         def __init__(
             self,
             negativeevents_items: Optional[Iterable[Negativeevents_item]] = None,
-            id_short: Optional[str] = r"NegativeEvents",
-            type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = None,
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
-            order_relevant: bool = False,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#negativeEvents"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementListMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"negative events"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(negativeevents_items, str):
@@ -1146,100 +698,49 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(negativeevents_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class InformationOnAccidents(GeneratedSubmodelElementList):
 
         class Informationonaccidents_item(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = None,
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": None,
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
+                    ),
+                }
+
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementListMetadata:
+            return {
+                "id_short": r"InformationOnAccidents",
+                "type_value_list_element": aas.Property,
+                "value_type_list_element": str,
+                "order_relevant": False,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"information on accidents"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#informationOnAccidents"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (
+                    global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSet"),
+                    global_ref(r"urn:irdi:0173-1#02-ABL848#001"),
+                ),
+            }
 
         def __init__(
             self,
             informationonaccidents_items: Optional[Iterable[Union[str, Informationonaccidents_item]]] = None,
-            id_short: Optional[str] = r"InformationOnAccidents",
-            type_value_list_element: aas.SubmodelElement = aas.Property,
-            semantic_id_list_element: Optional[aas.Reference] = None,
-            value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
-            order_relevant: bool = False,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#informationOnAccidents"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#DocumentIdentifierSet"),
-                global_ref(r"urn:irdi:0173-1#02-ABL848#001"),
-            ),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementListMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"information on accidents"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(informationonaccidents_items, str):
@@ -1256,288 +757,126 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(informationonaccidents_items, number_repeated=False)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                type_value_list_element=type_value_list_element,
-                semantic_id_list_element=semantic_id_list_element,
-                value_type_list_element=value_type_list_element,
-                order_relevant=order_relevant,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class TemperatureInformation(aas.SubmodelElementCollection):
 
         class MeasuredTemp(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"MeasuredTemp",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#measuredTemp"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"MeasuredTemp",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"measured temp"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#measuredTemp"
+                    ),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"measured temp"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class TimeExtremeHighTemp(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"TimeExtremeHighTemp",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTemp"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL816#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"TimeExtremeHighTemp",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTemp"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL816#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class TimeExtremeLowTemp(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"TimeExtremeLowTemp",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTemp"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL817#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"TimeExtremeLowTemp",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTemp"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL817#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class TimeExtremeHighTempCharging(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"TimeExtremeHighTempCharging",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTempCharging"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL818#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"TimeExtremeHighTempCharging",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp charging"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeHighTempCharging"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL818#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp charging"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class TimeExtremeLowTempCharging(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"TimeExtremeLowTempCharging",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTempCharging"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL819#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"TimeExtremeLowTempCharging",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp charging"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#timeExtremeLowTempCharging"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL819#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp charging"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"TemperatureInformation",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"temperature information"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            }
 
         def __init__(
             self,
@@ -1547,27 +886,8 @@ class ProductCondition(aas.Submodel):
             timeExtremeLowTemp: Optional[Union[xsd.Float, TimeExtremeLowTemp]] = None,
             timeExtremeHighTempCharging: Optional[Union[xsd.Float, TimeExtremeHighTempCharging]] = None,
             timeExtremeLowTempCharging: Optional[Union[xsd.Float, TimeExtremeLowTempCharging]] = None,
-            id_short: Optional[str] = r"TemperatureInformation",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#temperatureInformation"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"temperature information"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1614,18 +934,7 @@ class ProductCondition(aas.Submodel):
                 lastUpdate,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class RemainingPowerCapability(aas.SubmodelElementCollection):
 
@@ -1633,162 +942,74 @@ class ProductCondition(aas.Submodel):
 
             class RPCLastUpdated(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.DateTime,
-                    id_short: Optional[str] = r"RPCLastUpdated",
-                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#rPCLastUpdated"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"RPCLastUpdated",
+                        "value_type": xsd.DateTime,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"RPC last updated"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#rPCLastUpdated"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"RPC last updated"})
+                def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class AtSoC(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Float,
-                    id_short: Optional[str] = r"AtSoC",
-                    value_type: aas.DataTypeDefXsd = xsd.Float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#atSoC"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL821#001"),),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"AtSoC",
+                        "value_type": xsd.Float,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"at so c"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#atSoC"
+                        ),
+                        "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL821#001"),),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"at so c"})
+                def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PowerCapabilityAt(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.Float,
-                    id_short: Optional[str] = r"PowerCapabilityAt",
-                    value_type: aas.DataTypeDefXsd = xsd.Float,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#powerCapabilityAt"
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"PowerCapabilityAt",
+                        "value_type": xsd.Float,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"power capability at"}),
+                        "semantic_id": global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#powerCapabilityAt"
+                        ),
+                    }
+
+                def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
+
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"RemainingPowerCapabilityDynamicAt",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability dynamic at"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapabilityDynamicAt"
                     ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"power capability at"})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL853#001"),),
+                }
 
             def __init__(
                 self,
                 rPCLastUpdated: Union[xsd.DateTime, RPCLastUpdated],
                 atSoC: Union[xsd.Float, AtSoC],
                 powerCapabilityAt: Union[xsd.Float, PowerCapabilityAt],
-                id_short: Optional[str] = r"RemainingPowerCapabilityDynamicAt",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapabilityDynamicAt"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL853#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability dynamic at"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1809,88 +1030,43 @@ class ProductCondition(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(rPCLastUpdated, atSoC, powerCapabilityAt)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"RemainingPowerCapability",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapability"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL820#001"),),
+            }
 
         def __init__(
             self,
             remainingPowerCapabilityDynamicAt: RemainingPowerCapabilityDynamicAt,
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"RemainingPowerCapability",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingPowerCapability"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL820#001"),),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -1901,134 +1077,62 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(remainingPowerCapabilityDynamicAt, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class EvolutionOfSelfDischarge(aas.SubmodelElementCollection):
 
         class EvolutionOfSelfDischargeValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"EvolutionOfSelfDischargeValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischargeValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL834#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"EvolutionOfSelfDischargeValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"evolution of self discharge value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischargeValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL834#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"evolution of self discharge value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"EvolutionOfSelfDischarge",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"evolution of self discharge"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischarge"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            }
 
         def __init__(
             self,
             evolutionOfSelfDischargeValue: Union[xsd.Float, EvolutionOfSelfDischargeValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"EvolutionOfSelfDischarge",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#evolutionOfSelfDischarge"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"evolution of self discharge"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2046,134 +1150,62 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(evolutionOfSelfDischargeValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class CurrentSelfDischargingRate(aas.SubmodelElementCollection):
 
         class CurrentSelfDischargingRateValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"CurrentSelfDischargingRateValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRateValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL825#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"CurrentSelfDischargingRateValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"current self discharging rate value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRateValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL825#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"current self discharging rate value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"CurrentSelfDischargingRate",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"current self discharging rate"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRate"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            }
 
         def __init__(
             self,
             currentSelfDischargingRateValue: Union[xsd.Float, CurrentSelfDischargingRateValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"CurrentSelfDischargingRate",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#currentSelfDischargingRate"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"current self discharging rate"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2191,136 +1223,64 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(currentSelfDischargingRateValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class RemainingRoundTripEnergyEfficiency(aas.SubmodelElementCollection):
 
         class RemainingRoundTripEnergyEfficiencyValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiencyValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiencyValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:iridi:0173-1#02-ABL851#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RemainingRoundTripEnergyEfficiencyValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(
                         dict_={r"en": r"remaining round trip energy efficiency value"}
-                    )
+                    ),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiencyValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:iridi:0173-1#02-ABL851#001"),),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"RemainingRoundTripEnergyEfficiency",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"remaining round trip energy efficiency"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiency"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            }
 
         def __init__(
             self,
             remainingRoundTripEnergyEfficiencyValue: Union[xsd.Float, RemainingRoundTripEnergyEfficiencyValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiency",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#remainingRoundTripEnergyEfficiency"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"remaining round trip energy efficiency"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2340,134 +1300,62 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(remainingRoundTripEnergyEfficiencyValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class StateOfCharge(aas.SubmodelElementCollection):
 
         class StateOfChargeValue(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Float,
-                id_short: Optional[str] = r"StateOfChargeValue",
-                value_type: aas.DataTypeDefXsd = xsd.Float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfChargeValue"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL821#001"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"StateOfChargeValue",
+                    "value_type": xsd.Float,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"state of charge value"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfChargeValue"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABL821#001"),),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of charge value"})
+            def __init__(self, value: xsd.Float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class LastUpdate(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.DateTime,
-                id_short: Optional[str] = r"LastUpdate",
-                value_type: aas.DataTypeDefXsd = xsd.DateTime,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"LastUpdate",
+                    "value_type": xsd.DateTime,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    "semantic_id": global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#lastUpdate"
+                    ),
+                    "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
+                }
+
+            def __init__(self, value: xsd.DateTime, **kwargs: Unpack[PropertyMetadata]):
+
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"StateOfCharge",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"state of charge"}),
+                "semantic_id": global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCharge"
                 ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABG740#003"),),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"last update"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+            }
 
         def __init__(
             self,
             stateOfChargeValue: Union[xsd.Float, StateOfChargeValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
-            id_short: Optional[str] = r"StateOfCharge",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.1#stateOfCharge"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"state of charge"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # Build a submodel element if a raw value was passed in the argument
 
@@ -2483,18 +1371,27 @@ class ProductCondition(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(stateOfChargeValue, lastUpdate)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"ProductCondition",
+            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"product condition"}),
+            "description": aas.MultiLanguageTextType(
+                dict_={r"en": r"Covers all battery lifetime relevant properties."}
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02035-5",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition"
+            ),
+        }
 
     def __init__(
         self,
@@ -2515,41 +1412,8 @@ class ProductCondition(aas.Submodel):
         evolutionOfSelfDischarge: Optional[EvolutionOfSelfDischarge] = None,
         currentSelfDischargingRate: Optional[CurrentSelfDischargingRate] = None,
         remainingRoundTripEnergyEfficiency: Optional[RemainingRoundTripEnergyEfficiency] = None,
-        id_short: Optional[str] = r"ProductCondition",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.0#ProductCondition"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"en": r"product condition"})
-
-        if description is None:
-            description = aas.MultiLanguageTextType(dict_={r"en": r"Covers all battery lifetime relevant properties."})
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02035-5",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # A str would be split into its characters
         if isinstance(negativeEvents, str):
@@ -2588,18 +1452,4 @@ class ProductCondition(aas.Submodel):
             stateOfCharge,
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

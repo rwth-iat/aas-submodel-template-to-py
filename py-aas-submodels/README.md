@@ -58,6 +58,8 @@ nameplate = Nameplate(
 
 Required arguments are those specified as mandatory in the IDTA template (e.g. `Multiplicity=One`).
 Optional submodel elements default to `None` and can be passed as keyword arguments.
+Metadata (e.g. `semantic_id`, `description`) defaults to the template's values, returned by
+`template_defaults()`, and can be replaced by keyword arguments, e.g. `Nameplate(..., id_short="Nameplate01")`.
 
 ## Generating Additional Submodels
 

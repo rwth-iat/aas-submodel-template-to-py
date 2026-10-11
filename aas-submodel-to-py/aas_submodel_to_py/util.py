@@ -1,11 +1,11 @@
 import builtins
-import datetime
-import decimal
 import enum
 import keyword
 import pydoc
 import types
+import inspect
 import typing
+from typing import List
 from basyx.aas import model as aas_model
 from basyx.aas.model import *
 from basyx.aas.model import datatypes as aas_datatypes
@@ -18,18 +18,70 @@ from basyx.aas.model.submodel import _SE
 MODEL_ALIAS = "aas"
 DATATYPES_ALIAS = "xsd"
 # Names generated modules import from typing
-TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "Union")
+TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "TypedDict", "Union", "Unpack")
 # Helpers each generated module defines (see code_templates/helpers.pyi): creating references to global
 # identifiers, collecting the submodel elements passed to inits and the base class of list classes
 GLOBAL_REF_HELPER = "global_ref"
 COLLECT_HELPER = "collect_submodel_elements"
 LIST_BASE_CLS = "GeneratedSubmodelElementList"
+
+# Init arguments of BaSyx classes, which generated classes take explicitly, as they are values of the element.
+# The other ones (metadata, e.g. semantic_id) are keyword arguments, typed by a TypedDict (see metadata_cls_name)
+VALUE_ARGS = {
+    Submodel: ("id_",),
+    Property: ("value",),
+    MultiLanguageProperty: ("value",),
+    Range: ("min", "max"),
+    ReferenceElement: ("value",),
+    File: ("value", "content_type"),
+    Blob: ("value", "content_type"),
+}
+# Init arguments of BaSyx classes taking the submodel elements, which generated classes build from their arguments
+ELEMENT_ARGS = {
+    Submodel: "submodel_element",
+    SubmodelElementCollection: "value",
+    SubmodelElementList: "value",
+    Entity: "statement",
+}
+# Name of the parameter of generated inits taking the metadata
+METADATA_ARG = "kwargs"
+
+
+def metadata_cls_name(basyx_cls: type) -> str:
+    """Return the name of the TypedDict typing the metadata of `basyx_cls` (e.g. PropertyMetadata)"""
+    return f"{basyx_cls.__name__}Metadata"
+
+
+def metadata_args(basyx_cls: type) -> List[str]:
+    """Return the init arguments of `basyx_cls`, which generated classes take as metadata"""
+    excluded = {"self", "parent", *VALUE_ARGS.get(basyx_cls, ()), ELEMENT_ARGS.get(basyx_cls)}
+    return [arg for arg in inspect.signature(basyx_cls.__init__).parameters if arg not in excluded]
+
+
+def is_init_default(basyx_cls: type, arg: str, value) -> bool:
+    """Return if `value` is the default of the init argument `arg` of `basyx_cls`, so that it needn't be passed"""
+    default = inspect.signature(basyx_cls.__init__).parameters[arg].default
+    if default is inspect.Parameter.empty:
+        return False
+    if isinstance(default, tuple):
+        # Iterables (e.g. qualifier) default to an empty tuple
+        return isinstance(value, (*TUPLE_TYPES, list)) and len(value) == 0
+    return value is default or (type(value) is type(default) and value == default)
+
+
+def is_value_arg_name(obj: Referable, arg_name: str) -> bool:
+    """Return if `arg_name` is the name of a value or metadata argument of the generated class of `obj`"""
+    basyx_cls = type(obj)
+    return arg_name in VALUE_ARGS.get(basyx_cls, ()) or arg_name in metadata_args(basyx_cls)
 # Names generated code uses unqualified, which generated classes must not shadow
 RESERVED_CLS_NAMES = (frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
-                      | frozenset((LIST_BASE_CLS,)))
-# Init arguments must not shadow the module aliases used in the init body
-# (and the module re, used for checking allowed values, and the helpers)
-RESERVED_ARG_NAMES = (frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re", GLOBAL_REF_HELPER, COLLECT_HELPER))
+                      | frozenset((LIST_BASE_CLS,))
+                      | frozenset(metadata_cls_name(cls) for cls in vars(aas_model).values()
+                                  if isinstance(cls, type) and issubclass(cls, Referable)))
+# Init arguments must not shadow the module aliases used in the init body (and the module re, used
+# for checking allowed values, and the helpers), nor be named like the other parameters of inits
+RESERVED_ARG_NAMES = (frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re", GLOBAL_REF_HELPER, COLLECT_HELPER,
+                                 "self", METADATA_ARG))
                       | frozenset(keyword.kwlist))
 
 # Collections rendered as tuples in generated code (see StringHandler.reprify)
@@ -109,8 +161,10 @@ class NamingGenerator:
     @classmethod
     def create_arg_name_for_referable(cls, obj: Referable) -> str:
         arg_name = StringHandler.lower_first(cls.create_id_short_stem(obj))
-        # check if arg_name is reserved or is already used in the class as an attribute
-        if arg_name in RESERVED_ARG_NAMES or hasattr(obj, arg_name):
+        # check if arg_name is reserved, is already used in the class as an attribute
+        # or is the name of another argument of the init taking it
+        if arg_name in RESERVED_ARG_NAMES or hasattr(obj, arg_name) \
+                or (obj.parent is not None and is_value_arg_name(obj.parent, arg_name)):
             return f"{arg_name}_"
         return arg_name
 
@@ -230,7 +284,7 @@ class StringHandler:
             Optional[ValueDataType]: f"Optional[{MODEL_ALIAS}.ValueDataType]",
             Optional[LangStringSet]: f"Optional[{MODEL_ALIAS}.LangStringSet]",
             _SE: f"{MODEL_ALIAS}.SubmodelElement",
-            Type[_SE]: f"{MODEL_ALIAS}.SubmodelElement",
+            Type[_SE]: f"type[{MODEL_ALIAS}.SubmodelElement]",
         }
         for typehint in typehint_reprs:
             if val == typehint:
@@ -366,17 +420,3 @@ def get_typehints_for_args(obj, args):
         if arg in typehints:
             args_typehints[arg] = typehints[arg]
     return args_typehints
-
-
-# Values that can't be changed, so that instances can share them as default values
-# (BaSyx References and Keys are immutable)
-IMMUTABLE_TYPES = (type(None), bool, int, float, str, bytes, decimal.Decimal, datetime.date, datetime.time,
-                   enum.Enum, type, Reference, Key)
-
-
-def is_mutable(obj) -> bool:
-    """Return if `obj` can be changed or holds objects that can (e.g. a tuple of submodel elements),
-    so that it must be created for each instance instead of being shared as a default value"""
-    if isinstance(obj, TUPLE_TYPES):
-        return any(is_mutable(item) for item in obj)
-    return not isinstance(obj, IMMUTABLE_TYPES)

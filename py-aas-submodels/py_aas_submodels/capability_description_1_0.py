@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,6 +95,140 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class CapabilityMetadata(TypedDict, total=False):
+    """Metadata of aas.Capability, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RangeMetadata(TypedDict, total=False):
+    """Metadata of aas.Range, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class ReferenceElementMetadata(TypedDict, total=False):
+    """Metadata of aas.ReferenceElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RelationshipElementMetadata(TypedDict, total=False):
+    """Metadata of aas.RelationshipElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    first: Optional[aas.Reference]
+    second: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class CapabilityDescription(aas.Submodel):
 
     class CapabilitySet(aas.SubmodelElementCollection):
@@ -103,33 +237,18 @@ class CapabilityDescription(aas.Submodel):
 
             class Capability(aas.Capability):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"Capability",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/CapabilityDescription/Capability/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> CapabilityMetadata:
+                    return {
+                        "id_short": r"Capability",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
                             }
-                        )
-
-                    if qualifier is None:
-                        qualifier = (
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/CapabilityDescription/Capability/1/0"),
+                        "qualifier": (
                             aas.Qualifier(
                                 type_=r"Required",
                                 value_type=str,
@@ -163,67 +282,31 @@ class CapabilityDescription(aas.Submodel):
                                 ),
                                 supplemental_semantic_id=(),
                             ),
-                        )
+                        ),
+                    }
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[CapabilityMetadata]):
 
-                    super().__init__(
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class CapabilityComment(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"CapabilityComment",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/CapabilityDescription/CapabilityComment/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"CapabilityComment",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Comment"}),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Individual comment of the capability."}
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/CapabilityDescription/CapabilityComment/1/0"
+                        ),
+                    }
 
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Comment"})
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"Individual comment of the capability."})
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class PropertySet(aas.SubmodelElementCollection):
 
@@ -231,256 +314,127 @@ class CapabilityDescription(aas.Submodel):
 
                     class SameProperty(aas.RelationshipElement):
 
-                        def __init__(
-                            self,
-                            id_short: Optional[str] = r"SameProperty",
-                            first: Optional[aas.Reference] = global_ref(
-                                r"urn:example:capability-description:same-property:first"
-                            ),
-                            second: Optional[aas.Reference] = global_ref(
-                                r"urn:example:capability-description:same-property:second"
-                            ),
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Same Property"})
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> RelationshipElementMetadata:
+                            return {
+                                "id_short": r"SameProperty",
+                                "first": global_ref(r"urn:example:capability-description:same-property:first"),
+                                "second": global_ref(r"urn:example:capability-description:same-property:second"),
+                                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Same Property"}),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityDescription/SameProperty/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                id_short=id_short,
-                                first=first,
-                                second=second,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(**(self.template_defaults() | kwargs))
 
                     class PropertyRange(aas.Range):
 
-                        def __init__(
-                            self,
-                            min: str,
-                            max: str,
-                            id_short: Optional[str] = r"PropertyRange",
-                            value_type: aas.DataTypeDefXsd = str,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Range"})
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> RangeMetadata:
+                            return {
+                                "id_short": r"PropertyRange",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Property Range"}),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, min: str, max: str, **kwargs: Unpack[RangeMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                min=min,
-                                max=max,
-                                id_short=id_short,
-                                value_type=value_type,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(min=min, max=max, **(self.template_defaults() | kwargs))
 
                     class PropertyProperty(aas.Property):
 
-                        def __init__(
-                            self,
-                            value: str,
-                            id_short: Optional[str] = r"PropertyProperty",
-                            value_type: aas.DataTypeDefXsd = str,
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityPropertyType/Property/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Property"})
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> PropertyMetadata:
+                            return {
+                                "id_short": r"PropertyProperty",
+                                "value_type": str,
+                                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Property Property"}),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityPropertyType/Property/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_type=value_type,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class PropertyMultiLanguageProperty(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"PropertyMultiLanguageProperty",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityPropertyType/MultiLanguageProperty/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"PropertyMultiLanguageProperty",
+                                "display_name": aas.MultiLanguageNameType(
                                     dict_={r"en": r"Property Multi Language Property"}
-                                )
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                                ),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityPropertyType/MultiLanguageProperty/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
-
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                     class PropertyComment(aas.MultiLanguageProperty):
 
-                        def __init__(
-                            self,
-                            value: aas.LangStringSet,
-                            id_short: Optional[str] = r"PropertyComment",
-                            value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityDescription/PropertyComment/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Comment"})
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                        @staticmethod
+                        def template_defaults() -> MultiLanguagePropertyMetadata:
+                            return {
+                                "id_short": r"PropertyComment",
+                                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Property Comment"}),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={r"en": r"General description of the property."}
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyComment/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                value=value,
-                                id_short=id_short,
-                                value_id=value_id,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"PropertyContainer",
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Property Container"}),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
+                                }
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
@@ -491,34 +445,8 @@ class CapabilityDescription(aas.Submodel):
                             Iterable[Union[aas.LangStringSet, PropertyMultiLanguageProperty]]
                         ] = None,
                         propertyComment: Optional[Union[aas.LangStringSet, PropertyComment]] = None,
-                        id_short: Optional[str] = r"PropertyContainer",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Container"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(sameProperty, str):
@@ -572,48 +500,24 @@ class CapabilityDescription(aas.Submodel):
                             propertyComment,
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"PropertySet",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Property Set"}),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Set of properties describing the capability in more detail, if existing."}
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"),
+                    }
 
                 def __init__(
                     self,
                     propertyContainer: Iterable[PropertyContainer],
-                    id_short: Optional[str] = r"PropertySet",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Property Set"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Set of properties describing the capability in more detail, if existing."}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(propertyContainer, str):
@@ -623,83 +527,46 @@ class CapabilityDescription(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(propertyContainer)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class CapabilityRelations(aas.SubmodelElementCollection):
 
                 class CapabilityRealizedBy(aas.RelationshipElement):
 
-                    def __init__(
-                        self,
-                        id_short: Optional[str] = r"CapabilityRealizedBy",
-                        first: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL,
-                                    value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                    @staticmethod
+                    def template_defaults() -> RelationshipElementMetadata:
+                        return {
+                            "id_short": r"CapabilityRealizedBy",
+                            "first": aas.ModelReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
+                                        value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                    ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
+                                    ),
+                                    aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                 ),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"),
-                                aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                type_=aas.Capability,
+                                referred_semantic_id=None,
                             ),
-                            type_=aas.Capability,
-                            referred_semantic_id=None,
-                        ),
-                        second: Optional[aas.Reference] = global_ref(
-                            r"urn:example:capability-description:capability-realized-by:skill"
-                        ),
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRealizedBy/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Realized By"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            "second": global_ref(r"urn:example:capability-description:capability-realized-by:skill"),
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Realized By"}),
+                            "description": aas.MultiLanguageTextType(
                                 dict_={
                                     r"en": r"Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
                                 }
-                            )
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRealizedBy/1/0"
+                            ),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            id_short=id_short,
-                            first=first,
-                            second=second,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(**(self.template_defaults() | kwargs))
 
                 class ComposedOfSet(aas.SubmodelElementCollection):
 
@@ -707,160 +574,103 @@ class CapabilityDescription(aas.Submodel):
 
                         class CapabilityComposedOf(aas.RelationshipElement):
 
-                            def __init__(
-                                self,
-                                id_short: Optional[str] = r"CapabilityComposedOf",
-                                first: Optional[aas.Reference] = aas.ModelReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL,
-                                            value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                            @staticmethod
+                            def template_defaults() -> RelationshipElementMetadata:
+                                return {
+                                    "id_short": r"CapabilityComposedOf",
+                                    "first": aas.ModelReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL,
+                                                value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                value=r"CapabilityContainer",
+                                            ),
+                                            aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                         ),
-                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
-                                        ),
-                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                        type_=aas.Capability,
+                                        referred_semantic_id=None,
                                     ),
-                                    type_=aas.Capability,
-                                    referred_semantic_id=None,
-                                ),
-                                second: Optional[aas.Reference] = aas.ModelReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL,
-                                            value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                    "second": aas.ModelReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL,
+                                                value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                value=r"CapabilityContainer",
+                                            ),
+                                            aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                         ),
-                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
-                                        ),
-                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                        type_=aas.Capability,
+                                        referred_semantic_id=None,
                                     ),
-                                    type_=aas.Capability,
-                                    referred_semantic_id=None,
-                                ),
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/CapabilityComposedOf/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Composed Of"})
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Composed Of"}),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/CapabilityComposedOf/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    id_short=id_short,
-                                    first=first,
-                                    second=second,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(**(self.template_defaults() | kwargs))
 
                         class ComposedOfComment(aas.MultiLanguageProperty):
 
+                            @staticmethod
+                            def template_defaults() -> MultiLanguagePropertyMetadata:
+                                return {
+                                    "id_short": r"ComposedOfComment",
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Comment"}),
+                                    "description": aas.MultiLanguageTextType(
+                                        dict_={r"en": r"Comment to describe the composition in human readable form."}
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfComment/1/0"
+                                    ),
+                                }
+
                             def __init__(
-                                self,
-                                value: aas.LangStringSet,
-                                id_short: Optional[str] = r"ComposedOfComment",
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfComment/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Comment"})
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Comment to describe the composition in human readable form."}
-                                    )
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"ComposedOfContainer",
+                                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Container"}),
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Container corresponding to one composition for the Capability in the CapabilityContainer."
+                                    }
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfContainer/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
                             capabilityComposedOf: Iterable[CapabilityComposedOf],
                             composedOfComment: Optional[Union[aas.LangStringSet, ComposedOfComment]] = None,
-                            id_short: Optional[str] = r"ComposedOfContainer",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfContainer/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Container"})
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Container corresponding to one composition for the Capability in the CapabilityContainer."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # A str would be split into its characters
                             if isinstance(capabilityComposedOf, str):
@@ -877,50 +687,28 @@ class CapabilityDescription(aas.Submodel):
                                 capabilityComposedOf, composedOfComment
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"ComposedOfSet",
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Set"}),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                                }
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfSet/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         composedOfContainer: Iterable[ComposedOfContainer],
-                        id_short: Optional[str] = r"ComposedOfSet",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/CapabilityDescription/ComposedOfSet/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Composed Of Set"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(composedOfContainer, str):
@@ -930,129 +718,81 @@ class CapabilityDescription(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(composedOfContainer)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class GeneralizedBySet(aas.SubmodelElementCollection):
 
                     class CapabilityGeneralizedBy(aas.RelationshipElement):
 
-                        def __init__(
-                            self,
-                            id_short: Optional[str] = r"CapabilityGeneralizedBy",
-                            first: Optional[aas.Reference] = aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL,
-                                        value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                        @staticmethod
+                        def template_defaults() -> RelationshipElementMetadata:
+                            return {
+                                "id_short": r"CapabilityGeneralizedBy",
+                                "first": aas.ModelReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL,
+                                            value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                        ),
+                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
+                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                     ),
-                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
-                                    ),
-                                    aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                    type_=aas.Capability,
+                                    referred_semantic_id=None,
                                 ),
-                                type_=aas.Capability,
-                                referred_semantic_id=None,
-                            ),
-                            second: Optional[aas.Reference] = aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL,
-                                        value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                "second": aas.ModelReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL,
+                                            value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                        ),
+                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
+                                        aas.Key(
+                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
+                                        ),
+                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                     ),
-                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                    aas.Key(
-                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
-                                    ),
-                                    aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                    type_=aas.Capability,
+                                    referred_semantic_id=None,
                                 ),
-                                type_=aas.Capability,
-                                referred_semantic_id=None,
-                            ),
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityDescription/CapabilityGeneralizedBy/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                        ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Generalized By"})
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
+                                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Generalized By"}),
+                                "description": aas.MultiLanguageTextType(
                                     dict_={
                                         r"en": r"Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
                                     }
-                                )
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityDescription/CapabilityGeneralizedBy/1/0"
+                                ),
+                            }
 
-                            if qualifier is None:
-                                qualifier = ()
+                        def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
+                            super().__init__(**(self.template_defaults() | kwargs))
 
-                            super().__init__(
-                                id_short=id_short,
-                                first=first,
-                                second=second,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"GeneralizedBySet",
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Generalized By Set"}),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                                }
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/CapabilityDescription/GeneralizedBySet/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         capabilityGeneralizedBy: Iterable[CapabilityGeneralizedBy],
-                        id_short: Optional[str] = r"GeneralizedBySet",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/CapabilityDescription/GeneralizedBySet/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Generalized By Set"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(capabilityGeneralizedBy, str):
@@ -1062,18 +802,7 @@ class CapabilityDescription(aas.Submodel):
 
                         embedded_submodel_elements = collect_submodel_elements(capabilityGeneralizedBy)
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                 class ConstraintSet(aas.SubmodelElementCollection):
 
@@ -1081,36 +810,21 @@ class CapabilityDescription(aas.Submodel):
 
                         class BasicConstraint(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"BasicConstraint",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/BasicConstraint/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Basic Constraint"})
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"BasicConstraint",
+                                    "value_type": str,
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Basic Constraint"}),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
                                         }
-                                    )
-
-                                if qualifier is None:
-                                    qualifier = (
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/BasicConstraint/1/0"
+                                    ),
+                                    "qualifier": (
                                         aas.Qualifier(
                                             type_=r"PredicateRelationTemplate",
                                             value_type=str,
@@ -1120,171 +834,85 @@ class CapabilityDescription(aas.Submodel):
                                             semantic_id=None,
                                             supplemental_semantic_id=(),
                                         ),
-                                    )
+                                    ),
+                                }
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class CustomConstraint(aas.SubmodelElementCollection):
 
-                            def __init__(
-                                self,
-                                id_short: Optional[str] = r"CustomConstraint",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/CustomConstraint/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Custom Constraint"})
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"CustomConstraint",
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Custom Constraint"}),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/CustomConstraint/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                                 # Add all passed/initialized submodel elements to a single list
 
                                 embedded_submodel_elements = collect_submodel_elements()
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
 
                         class OCLConstraint(aas.File):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"OCLConstraint",
-                                content_type: Optional[str] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OCLConstraint/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"OCL Constraint"})
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> FileMetadata:
+                                return {
+                                    "id_short": r"OCLConstraint",
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"OCL Constraint"}),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OCLConstraint/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(
+                                self, value: str, content_type: Optional[str] = None, **kwargs: Unpack[FileMetadata]
+                            ):
 
                                 super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    content_type=content_type,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=value, content_type=content_type, **(self.template_defaults() | kwargs)
                                 )
 
                         class OperationConstraint(aas.ReferenceElement):
 
-                            def __init__(
-                                self,
-                                value: aas.Reference,
-                                id_short: Optional[str] = r"OperationConstraint",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OperationConstraint/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Operation Constraint"})
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> ReferenceElementMetadata:
+                                return {
+                                    "id_short": r"OperationConstraint",
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Operation Constraint"}),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintType/OperationConstraint/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: aas.Reference, **kwargs: Unpack[ReferenceElementMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ConstraintType(aas.Property):
 
@@ -1295,251 +923,159 @@ class CapabilityDescription(aas.Submodel):
                                 r"CustomConstraint",
                             )
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"ConstraintType",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/ConstraintType/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Constraint Type"})
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"ConstraintType",
+                                    "value_type": str,
+                                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Constraint Type"}),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/ConstraintType/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
                                 if value is not None and value not in self.ALLOWED_VALUES:
                                     raise ValueError(
                                         f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                                     )
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class PropertyConditionalType(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"PropertyConditionalType",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"PropertyConditionalType",
+                                    "value_type": str,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"Property Conditional Type"}
-                                    )
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                                    ),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Defines the type of the property conditions as defined in the ConceptDescription with the same name (PropertyConditionalType)."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/PropertyConditionalType/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                         class ConstraintPropertyRelations(aas.SubmodelElementCollection):
 
                             class ConstraintHasProperty(aas.RelationshipElement):
 
-                                def __init__(
-                                    self,
-                                    id_short: Optional[str] = r"ConstraintHasProperty",
-                                    first: Optional[aas.Reference] = aas.ModelReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL,
-                                                value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                @staticmethod
+                                def template_defaults() -> RelationshipElementMetadata:
+                                    return {
+                                        "id_short": r"ConstraintHasProperty",
+                                        "first": aas.ModelReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL,
+                                                    value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"CapabilitySet",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"CapabilityContainer",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"CapabilityRelations",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"ConstraintSet",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"PropertyConstraintContainer",
+                                                ),
+                                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"BasicConstraint"),
                                             ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"CapabilityContainer",
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"CapabilityRelations",
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ConstraintSet"
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"PropertyConstraintContainer",
-                                            ),
-                                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"BasicConstraint"),
+                                            type_=aas.Property,
+                                            referred_semantic_id=None,
                                         ),
-                                        type_=aas.Property,
-                                        referred_semantic_id=None,
-                                    ),
-                                    second: Optional[aas.Reference] = aas.ModelReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL,
-                                                value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                        "second": aas.ModelReference(
+                                            key=(
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL,
+                                                    value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"CapabilitySet",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"CapabilityContainer",
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"PropertySet"
+                                                ),
+                                                aas.Key(
+                                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                    value=r"PropertyContainer",
+                                                ),
+                                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"PropertyProperty"),
                                             ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"CapabilityContainer",
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"PropertySet"
-                                            ),
-                                            aas.Key(
-                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                                value=r"PropertyContainer",
-                                            ),
-                                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"PropertyProperty"),
+                                            type_=aas.Property,
+                                            referred_semantic_id=None,
                                         ),
-                                        type_=aas.Property,
-                                        referred_semantic_id=None,
-                                    ),
-                                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                                    category: Optional[str] = None,
-                                    description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = global_ref(
-                                        r"https://admin-shell.io/idta/CapabilityDescription/ConstraintHasProperty/1/0"
-                                    ),
-                                    qualifier: Iterable[aas.Qualifier] = None,
-                                    extension: Iterable[aas.Extension] = (),
-                                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                                ):
-
-                                    if display_name is None:
-                                        display_name = aas.MultiLanguageNameType(
+                                        "display_name": aas.MultiLanguageNameType(
                                             dict_={r"en": r"Constraint Has Property"}
-                                        )
-
-                                    if description is None:
-                                        description = aas.MultiLanguageTextType(
+                                        ),
+                                        "description": aas.MultiLanguageTextType(
                                             dict_={
                                                 r"en": r"Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
                                             }
-                                        )
+                                        ),
+                                        "semantic_id": global_ref(
+                                            r"https://admin-shell.io/idta/CapabilityDescription/ConstraintHasProperty/1/0"
+                                        ),
+                                    }
 
-                                    if qualifier is None:
-                                        qualifier = ()
+                                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                                    if embedded_data_specifications is None:
-                                        embedded_data_specifications = []
+                                    super().__init__(**(self.template_defaults() | kwargs))
 
-                                    super().__init__(
-                                        id_short=id_short,
-                                        first=first,
-                                        second=second,
-                                        display_name=display_name,
-                                        category=category,
-                                        description=description,
-                                        semantic_id=semantic_id,
-                                        qualifier=qualifier,
-                                        extension=extension,
-                                        supplemental_semantic_id=supplemental_semantic_id,
-                                        embedded_data_specifications=embedded_data_specifications,
-                                    )
+                            @staticmethod
+                            def template_defaults() -> SubmodelElementCollectionMetadata:
+                                return {
+                                    "id_short": r"ConstraintPropertyRelations",
+                                    "display_name": aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Constraint Property Relations"}
+                                    ),
+                                    "description": aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Contains all relationships for the constraint in the PropertyConstraintContainer."
+                                        }
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/ConstraintPropertyRelations/1/0"
+                                    ),
+                                }
 
                             def __init__(
                                 self,
                                 constraintHasProperty: Iterable[ConstraintHasProperty],
-                                id_short: Optional[str] = r"ConstraintPropertyRelations",
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/ConstraintPropertyRelations/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                                **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Constraint Property Relations"}
-                                    )
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Contains all relationships for the constraint in the PropertyConstraintContainer."
-                                        }
-                                    )
-
-                                if qualifier is None:
-                                    qualifier = ()
-
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
 
                                 # A str would be split into its characters
                                 if isinstance(constraintHasProperty, str):
@@ -1550,17 +1086,25 @@ class CapabilityDescription(aas.Submodel):
                                 embedded_submodel_elements = collect_submodel_elements(constraintHasProperty)
 
                                 super().__init__(
-                                    value=embedded_submodel_elements,
-                                    id_short=id_short,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
+                                    value=embedded_submodel_elements, **(self.template_defaults() | kwargs)
                                 )
+
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"PropertyConstraintContainer",
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Property Constraint Container"}
+                                ),
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
+                                    }
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
@@ -1571,36 +1115,8 @@ class CapabilityDescription(aas.Submodel):
                             constraintType: Union[str, ConstraintType],
                             propertyConditionalType: Union[str, PropertyConditionalType],
                             constraintPropertyRelations: ConstraintPropertyRelations,
-                            id_short: Optional[str] = r"PropertyConstraintContainer",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Property Constraint Container"}
-                                )
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1638,187 +1154,116 @@ class CapabilityDescription(aas.Submodel):
                                 constraintPropertyRelations,
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
                     class TransitionConstraintContainer(aas.SubmodelElementCollection):
 
                         class TransitionConstrainedBy(aas.RelationshipElement):
 
-                            def __init__(
-                                self,
-                                id_short: Optional[str] = r"TransitionConstrainedBy",
-                                first: Optional[aas.Reference] = aas.ModelReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL,
-                                            value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                            @staticmethod
+                            def template_defaults() -> RelationshipElementMetadata:
+                                return {
+                                    "id_short": r"TransitionConstrainedBy",
+                                    "first": aas.ModelReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL,
+                                                value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                value=r"CapabilityContainer",
+                                            ),
+                                            aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                         ),
-                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
-                                        ),
-                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                        type_=aas.Capability,
+                                        referred_semantic_id=None,
                                     ),
-                                    type_=aas.Capability,
-                                    referred_semantic_id=None,
-                                ),
-                                second: Optional[aas.Reference] = aas.ModelReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL,
-                                            value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                    "second": aas.ModelReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL,
+                                                value=r"https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel",
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"
+                                            ),
+                                            aas.Key(
+                                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                                value=r"CapabilityContainer",
+                                            ),
+                                            aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
                                         ),
-                                        aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilitySet"),
-                                        aas.Key(
-                                            type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"CapabilityContainer"
-                                        ),
-                                        aas.Key(type_=aas.KeyTypes.CAPABILITY, value=r"Capability"),
+                                        type_=aas.Capability,
+                                        referred_semantic_id=None,
                                     ),
-                                    type_=aas.Capability,
-                                    referred_semantic_id=None,
-                                ),
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/TransitionConstrainedBy/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"Transition Constrained By"}
-                                    )
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                                    ),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/TransitionConstrainedBy/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
-
-                                super().__init__(
-                                    id_short=id_short,
-                                    first=first,
-                                    second=second,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                                super().__init__(**(self.template_defaults() | kwargs))
 
                         class TransitionConditionalType(aas.Property):
 
-                            def __init__(
-                                self,
-                                value: str,
-                                id_short: Optional[str] = r"TransitionConditionalType",
-                                value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = None,
-                                display_name: Optional[aas.MultiLanguageNameType] = None,
-                                category: Optional[str] = None,
-                                description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = global_ref(
-                                    r"https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/1/0"
-                                ),
-                                qualifier: Iterable[aas.Qualifier] = None,
-                                extension: Iterable[aas.Extension] = (),
-                                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                            ):
-
-                                if display_name is None:
-                                    display_name = aas.MultiLanguageNameType(
+                            @staticmethod
+                            def template_defaults() -> PropertyMetadata:
+                                return {
+                                    "id_short": r"TransitionConditionalType",
+                                    "value_type": str,
+                                    "display_name": aas.MultiLanguageNameType(
                                         dict_={r"en": r"Transition Conditional Type"}
-                                    )
-
-                                if description is None:
-                                    description = aas.MultiLanguageTextType(
+                                    ),
+                                    "description": aas.MultiLanguageTextType(
                                         dict_={
                                             r"en": r"Defines the element TransitionConstrainedBy of TransitionConstraintType."
                                         }
-                                    )
+                                    ),
+                                    "semantic_id": global_ref(
+                                        r"https://admin-shell.io/idta/CapabilityDescription/TransitionConditionalType/1/0"
+                                    ),
+                                }
 
-                                if qualifier is None:
-                                    qualifier = ()
+                            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                                if embedded_data_specifications is None:
-                                    embedded_data_specifications = []
+                                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                                super().__init__(
-                                    value=value,
-                                    id_short=id_short,
-                                    value_type=value_type,
-                                    value_id=value_id,
-                                    display_name=display_name,
-                                    category=category,
-                                    description=description,
-                                    semantic_id=semantic_id,
-                                    qualifier=qualifier,
-                                    extension=extension,
-                                    supplemental_semantic_id=supplemental_semantic_id,
-                                    embedded_data_specifications=embedded_data_specifications,
-                                )
+                        @staticmethod
+                        def template_defaults() -> SubmodelElementCollectionMetadata:
+                            return {
+                                "id_short": r"TransitionConstraintContainer",
+                                "display_name": aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Transition Constraint Container"}
+                                ),
+                                "description": aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
+                                    }
+                                ),
+                                "semantic_id": global_ref(
+                                    r"https://admin-shell.io/idta/CapabilityDescription/TransitionConstraintContainer/1/0"
+                                ),
+                            }
 
                         def __init__(
                             self,
                             transitionConstrainedBy: TransitionConstrainedBy,
                             transitionConditionalType: Union[str, TransitionConditionalType],
-                            id_short: Optional[str] = r"TransitionConstraintContainer",
-                            display_name: Optional[aas.MultiLanguageNameType] = None,
-                            category: Optional[str] = None,
-                            description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = global_ref(
-                                r"https://admin-shell.io/idta/CapabilityDescription/TransitionConstraintContainer/1/0"
-                            ),
-                            qualifier: Iterable[aas.Qualifier] = None,
-                            extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (),
-                            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                            **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
-
-                            if display_name is None:
-                                display_name = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Transition Constraint Container"}
-                                )
-
-                            if description is None:
-                                description = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
-                                    }
-                                )
-
-                            if qualifier is None:
-                                qualifier = ()
-
-                            if embedded_data_specifications is None:
-                                embedded_data_specifications = []
 
                             # Build a submodel element if a raw value was passed in the argument
 
@@ -1833,51 +1278,29 @@ class CapabilityDescription(aas.Submodel):
                                 transitionConstrainedBy, transitionConditionalType
                             )
 
-                            super().__init__(
-                                value=embedded_submodel_elements,
-                                id_short=id_short,
-                                display_name=display_name,
-                                category=category,
-                                description=description,
-                                semantic_id=semantic_id,
-                                qualifier=qualifier,
-                                extension=extension,
-                                supplemental_semantic_id=supplemental_semantic_id,
-                                embedded_data_specifications=embedded_data_specifications,
-                            )
+                            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                    @staticmethod
+                    def template_defaults() -> SubmodelElementCollectionMetadata:
+                        return {
+                            "id_short": r"ConstraintSet",
+                            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Constraint Set"}),
+                            "description": aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                                }
+                            ),
+                            "semantic_id": global_ref(
+                                r"https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0"
+                            ),
+                        }
 
                     def __init__(
                         self,
                         propertyConstraintContainer: Optional[Iterable[PropertyConstraintContainer]] = None,
                         transitionConstraintContainer: Optional[Iterable[TransitionConstraintContainer]] = None,
-                        id_short: Optional[str] = r"ConstraintSet",
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = None,
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                        **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
-
-                        if display_name is None:
-                            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Constraint Set"})
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
-                                }
-                            )
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
 
                         # A str would be split into its characters
                         if isinstance(propertyConstraintContainer, str):
@@ -1893,18 +1316,20 @@ class CapabilityDescription(aas.Submodel):
                             propertyConstraintContainer, transitionConstraintContainer
                         )
 
-                        super().__init__(
-                            value=embedded_submodel_elements,
-                            id_short=id_short,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"CapabilityRelations",
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Relations"}),
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"Collection of relationships for the capability, if existing."}
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                        ),
+                    }
 
                 def __init__(
                     self,
@@ -1912,32 +1337,8 @@ class CapabilityDescription(aas.Submodel):
                     composedOfSet: Optional[ComposedOfSet] = None,
                     generalizedBySet: Optional[Iterable[GeneralizedBySet]] = None,
                     constraintSet: Optional[Iterable[ConstraintSet]] = None,
-                    id_short: Optional[str] = r"CapabilityRelations",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Relations"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Collection of relationships for the capability, if existing."}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # A str would be split into its characters
                     if isinstance(capabilityRealizedBy, str):
@@ -1957,18 +1358,20 @@ class CapabilityDescription(aas.Submodel):
                         capabilityRealizedBy, composedOfSet, generalizedBySet, constraintSet
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"CapabilityContainer",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Container"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"A Container for one capability and all its additional descriptive elements."}
+                    ),
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                    ),
+                }
 
             def __init__(
                 self,
@@ -1976,32 +1379,8 @@ class CapabilityDescription(aas.Submodel):
                 capabilityComment: Optional[Union[aas.LangStringSet, CapabilityComment]] = None,
                 propertySet: Optional[Iterable[PropertySet]] = None,
                 capabilityRelations: Optional[CapabilityRelations] = None,
-                id_short: Optional[str] = r"CapabilityContainer",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Container"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"A Container for one capability and all its additional descriptive elements."}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -2018,48 +1397,24 @@ class CapabilityDescription(aas.Submodel):
                     capability, capabilityComment, propertySet, capabilityRelations
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"CapabilitySet",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Capability Set"}),
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"A Set of CapabilityContainer for a Use Case for the asset."}
+                ),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"),
+            }
 
         def __init__(
             self,
             capabilityContainer: Iterable[CapabilityContainer],
-            id_short: Optional[str] = r"CapabilitySet",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Capability Set"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"A Set of CapabilityContainer for a Use Case for the asset."}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(capabilityContainer, str):
@@ -2069,60 +1424,31 @@ class CapabilityDescription(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(capabilityContainer)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
-    def __init__(
-        self,
-        id_: str,
-        capabilitySet: Iterable[CapabilitySet],
-        id_short: Optional[str] = r"CapabilityDescription",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.SUBMODEL,
-                    value=r"https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0",
-                ),
-            ),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-    ):
-
-        if display_name is None:
-            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Submodel Template Capability Description"})
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"CapabilityDescription",
+            "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Submodel Template Capability Description"}),
+            "description": aas.MultiLanguageTextType(
                 dict_={
                     r"en": r"Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
                 }
-            )
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(
+                    aas.Key(
+                        type_=aas.KeyTypes.SUBMODEL,
+                        value=r"https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0",
+                    ),
+                ),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
+    def __init__(self, id_: str, capabilitySet: Iterable[CapabilitySet], **kwargs: Unpack[SubmodelMetadata]):
 
         # A str would be split into its characters
         if isinstance(capabilitySet, str):
@@ -2132,18 +1458,4 @@ class CapabilityDescription(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(capabilitySet)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

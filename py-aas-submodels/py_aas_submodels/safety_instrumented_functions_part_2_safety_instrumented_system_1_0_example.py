@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,234 +95,163 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class SafetyInstrumentedSystem(aas.Submodel):
 
     class SISName(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"SISName",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/SISName/1"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"SISName",
+                "value_type": str,
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"SIS name"}),
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/SISName/1"),
+            }
 
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"SIS name"})
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class SRSRequirements(aas.SubmodelElementCollection):
 
         class SurvivabilityRequirement(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"SurvivabilityRequirement",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/cds/SurvivabilityRequirement/1"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"SurvivabilityRequirement",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"survivability requirement"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/SurvivabilityRequirement/1"),
+                }
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"survivability requirement"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class RequirementForStartingUpAndRestartingSIS(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"RequirementForStartingUpAndRestartingSIS",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/cds/RequirementForStartingUpAndRestartingSIS/1"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RequirementForStartingUpAndRestartingSIS",
+                    "value_type": str,
+                    "display_name": aas.MultiLanguageNameType(
                         dict_={r"en": r"requirement for starting up and restarting SIS"}
-                    )
+                    ),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
+                    ),
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/cds/RequirementForStartingUpAndRestartingSIS/1"
+                    ),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class InterfacingSystemSpecification(aas.SubmodelElementCollection):
 
             class InterfacingSystem(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"InterfacingSystem",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/cds/InterfacingSystem/1"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"Interfacing system"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"InterfacingSystem",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"Interfacing system"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"gives relevant information about the SIS"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/InterfacingSystem/1"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class NetworkType(aas.Property):
 
                 ALLOWED_VALUES = (r"control network", r"safety network")
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"NetworkType",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfNetwork/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of network"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"NetworkType",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"type of network"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"gives relevant information about the SIS"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = (
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfNetwork/1/0"
+                        ),
+                        "qualifier": (
                             aas.Qualifier(
                                 type_=r"enumeration",
                                 value_type=str,
@@ -332,63 +261,35 @@ class SafetyInstrumentedSystem(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                        )
+                        ),
+                    }
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
                     if value is not None and value not in self.ALLOWED_VALUES:
                         raise ValueError(
                             f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                         )
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class TypeOfLinksHardwiredOrSoftware(aas.Property):
 
                 ALLOWED_VALUES = (r"hardwired", r"software")
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"TypeOfLinksHardwiredOrSoftware",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfLinks/1/0"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if display_name is None:
-                        display_name = aas.MultiLanguageNameType(dict_={r"en": r"type of links"})
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"TypeOfLinksHardwiredOrSoftware",
+                        "value_type": str,
+                        "display_name": aas.MultiLanguageNameType(dict_={r"en": r"type of links"}),
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"gives relevant information about the SIS"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = (
+                        ),
+                        "semantic_id": global_ref(
+                            r"https://admin-shell.io/idta/SafetyInstrumentedSystem/TypeOfLinks/1/0"
+                        ),
+                        "qualifier": (
                             aas.Qualifier(
                                 type_=r"enumeration",
                                 value_type=str,
@@ -398,60 +299,36 @@ class SafetyInstrumentedSystem(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                        )
+                        ),
+                    }
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
                     if value is not None and value not in self.ALLOWED_VALUES:
                         raise ValueError(
                             f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
                         )
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"InterfacingSystemSpecification",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"interfacing system specification"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"gives relevant information about the SIS"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/InterfacingSystemSpecification/1"),
+                }
 
             def __init__(
                 self,
                 interfacingSystem: Union[str, InterfacingSystem],
                 networkType: Union[str, NetworkType],
                 typeOfLinksHardwiredOrSoftware: Union[str, TypeOfLinksHardwiredOrSoftware],
-                id_short: Optional[str] = r"InterfacingSystemSpecification",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/cds/InterfacingSystemSpecification/1"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"interfacing system specification"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -476,196 +353,108 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     interfacingSystem, networkType, typeOfLinksHardwiredOrSoftware
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class PerformanceStandard(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"PerformanceStandard",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"performance standard"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"gives relevant information about the SIS"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/PerformanceStandard/1"),
+                }
+
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"PerformanceStandard",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/cds/PerformanceStandard/1"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[FileMetadata],
             ):
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"performance standard"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"gives relevant information about the SIS"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
         class ApplicationProgramSafetyRequirements(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"ApplicationProgramSafetyRequirements",
+                    "display_name": aas.MultiLanguageNameType(
+                        dict_={r"en": r"application program safety requirements"}
+                    ),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
+                    ),
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/cds/ApplicationProgramSafetyRequirements/1"
+                    ),
+                }
+
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"ApplicationProgramSafetyRequirements",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/cds/ApplicationProgramSafetyRequirements/1"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[FileMetadata],
             ):
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"application program safety requirements"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
         class DALSpec(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"DALSpec",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"DAL spec"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"SRS requirement(s) according to IEC 61511"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/DALSpec/1"),
+                }
+
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"DALSpec",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/DALSpec/1"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[FileMetadata],
             ):
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"DAL spec"})
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
         class Document(aas.File):
 
+            @staticmethod
+            def template_defaults() -> FileMetadata:
+                return {
+                    "id_short": r"Document",
+                    "display_name": aas.MultiLanguageNameType(dict_={r"en": r"URL of document"}),
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"gives information about relevant document(s)"}
+                    ),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/Document/1"),
+                }
+
             def __init__(
                 self,
                 value: str,
-                id_short: Optional[str] = r"Document",
                 content_type: Optional[str] = r"application/octet-stream",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/Document/1"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[FileMetadata],
             ):
 
-                if display_name is None:
-                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"URL of document"})
+                super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"gives information about relevant document(s)"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    content_type=content_type,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"SRSRequirements",
+                "display_name": aas.MultiLanguageNameType(dict_={r"en": r"SRS requirements"}),
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"}),
+                "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/SRSRequirements/1"),
+            }
 
         def __init__(
             self,
@@ -678,28 +467,8 @@ class SafetyInstrumentedSystem(aas.Submodel):
             applicationProgramSafetyRequirements: Optional[ApplicationProgramSafetyRequirements] = None,
             dALSpec: Optional[DALSpec] = None,
             document: Optional[Iterable[Document]] = None,
-            id_short: Optional[str] = r"SRSRequirements",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/cds/SRSRequirements/1"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if display_name is None:
-                display_name = aas.MultiLanguageNameType(dict_={r"en": r"SRS requirements"})
-
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"SRS requirement(s) according to IEC 61511"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(survivabilityRequirement, str):
@@ -747,60 +516,34 @@ class SafetyInstrumentedSystem(aas.Submodel):
                 document,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"SafetyInstrumentedSystem",
+            "description": aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The submodel Safety Instrumented System is a collection of properties about the functional safety requirements and information for the lifecycle of a device of a safety instrumented system realising one or more safety instrumented functions."
+                }
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02097-1-0",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": global_ref(r"https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedSystem/1/0"),
+        }
 
     def __init__(
         self,
         id_: str,
         sISName: Union[str, SISName],
         sRSRequirements: SRSRequirements,
-        id_short: Optional[str] = r"SafetyInstrumentedSystem",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedSystem/1/0"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The submodel Safety Instrumented System is a collection of properties about the functional safety requirements and information for the lifecycle of a device of a safety instrumented system realising one or more safety instrumented functions."
-                }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02097-1-0",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -811,18 +554,4 @@ class SafetyInstrumentedSystem(aas.Submodel):
 
         embedded_submodel_elements = collect_submodel_elements(sISName, sRSRequirements)
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

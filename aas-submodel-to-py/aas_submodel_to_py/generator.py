@@ -35,6 +35,8 @@ class SubmodelCodegen:
         # Line length of the generated code: longer than Black's default (88), as deeply nested
         # classes would otherwise be wrapped into many lines, each repeating the indentation
         self.line_length = line_length
+        self.imported_modules = set()
+        self.metadata_classes = {}
 
     def generate_from(self, input_file: Union[str, pathlib.Path],
                       output_file: Union[str, pathlib.Path] = "output.py"):
@@ -70,10 +72,13 @@ class SubmodelCodegen:
         if not submodels:
             raise NoSubmodelError("No submodel found in the object store.")
 
-        # Modules imported by the generated classes, besides the standard imports
+        # Modules imported by the generated classes, besides the standard imports,
+        # and TypedDicts typing the metadata of their BaSyx classes (see add_metadata_cls)
         self.imported_modules = set()
+        self.metadata_classes = {}
         classes = "\n\n".join(self.gen_cls_for_submodel(submodel) for submodel in submodels)
-        result = f"\n{self.generate_imports(self.imported_modules)}\n\n{self.generate_helpers()}\n\n{classes}"
+        result = (f"\n{self.generate_imports(self.imported_modules)}\n\n{self.generate_helpers()}\n\n"
+                  f"{self.generate_metadata_classes()}\n\n{classes}")
 
         try:
             # Format the rendered class using Black
@@ -91,6 +96,21 @@ class SubmodelCodegen:
 
     def generate_helpers(self) -> str:
         return self.env.get_template("helpers.pyi").render()
+
+    def generate_metadata_classes(self) -> str:
+        return self.env.get_template("metadata.pyi").render(metadata_classes=dict(sorted(self.metadata_classes.items())))
+
+    def add_metadata_cls(self, referable: Referable) -> str:
+        """Return the name of the TypedDict typing the metadata of the BaSyx class of `referable`
+        (e.g. PropertyMetadata), which is defined once in the generated module"""
+        basyx_cls = type(referable)
+        name = util.metadata_cls_name(basyx_cls)
+        if name not in self.metadata_classes:
+            args = util.metadata_args(basyx_cls)
+            typehints = StringHandler.reprify_kwarg_values(get_typehints_for_args(referable, args))
+            self.metadata_classes[name] = (StringHandler.reprify(basyx_cls),
+                                           {arg: typehints.get(arg, "Any") for arg in args})
+        return name
 
     def get_raw_value_typehint(self, se: SubmodelElement) -> Optional[str]:
         """Return the typehint of a raw value the specific class of `se` can be built from,
@@ -134,7 +154,10 @@ class SubmodelCodegen:
         if list_item is not None:
             return self.get_raw_value_builder(list_item, raw_value)
         if se_list.type_value_list_element is Property and se_list.value_type_list_element is not None:
-            return f"{MODEL_ALIAS}.Property(None, value_type_list_element, {raw_value})"
+            # The value type is metadata, which may be passed
+            value_type = StringHandler.reprify(se_list.value_type_list_element)
+            return f'{MODEL_ALIAS}.Property(None, {util.METADATA_ARG}.get("value_type_list_element", {value_type}), {raw_value})'
+
         return None
 
     def get_raw_value_builder(self, se: SubmodelElement, raw_value: str) -> Optional[str]:
@@ -229,8 +252,11 @@ class SubmodelCodegen:
                                         include_in_args: Iterable[str] = None,
                                         remove_numeric_ending_from_id_short = True,
                                         defaults: Optional[dict] = None) -> dict:
-        """Return the variables for rendering the class of `referable`. Its attributes are the defaults
-        of the init arguments, except for those given in `defaults`"""
+        """Return the variables for rendering the class of `referable`. Its values (see util.VALUE_ARGS) are
+        init arguments: those in `include_in_args` without default, the others with the template's value
+        as default. Its metadata are keyword arguments, typed by a TypedDict (see add_metadata_cls), whose
+        template's values (its attributes, except for those given in `defaults`) template_defaults() returns,
+        if they differ from the defaults of BaSyx"""
         exceptions = ["parent"]
         if exclude_from_args is not None:
             exceptions.extend(exclude_from_args)
@@ -246,28 +272,21 @@ class SubmodelCodegen:
             referable_kwargs["qualifier"] = util.instance_qualifiers(referable)
         referable_kwargs.update(defaults or {})
 
-        # Find and save args with mutable defaults to kwargs_with_mutable_defaults
-        # Set defaults of these args to None
-        # These args will be handled appropriately in the template
-        handle_as_arg_with_mutable_default = ["qualifier"]
-        kwargs_with_mutable_defaults = {}
-        for arg, default in referable_kwargs.items():
-            if util.is_mutable(default) or arg in handle_as_arg_with_mutable_default:
-                kwargs_with_mutable_defaults[arg] = default
-                referable_kwargs[arg] = None
-
-        typehints = get_typehints_for_args(referable, referable_kwargs.keys())
-
+        basyx_cls = type(referable)
         args = [i for i in include_in_args] if include_in_args else []
+        kwargs = {arg: referable_kwargs.pop(arg) for arg in util.VALUE_ARGS.get(basyx_cls, ()) if arg in referable_kwargs}
+        template_defaults = {arg: value for arg, value in referable_kwargs.items()
+                             if not util.is_init_default(basyx_cls, arg, value)}
+        typehints = get_typehints_for_args(referable, [*args, *kwargs])
 
         return {
             "cls_name": NamingGenerator.create_specific_referable_cls_name(referable),
-            "parent_cls_name": StringHandler.reprify(type(referable)),
+            "parent_cls_name": StringHandler.reprify(basyx_cls),
             "args": args,
-            "kwargs": StringHandler.reprify_kwarg_values(referable_kwargs),
-            "kwargs_mutable_defaults": StringHandler.reprify_kwarg_values(
-                kwargs_with_mutable_defaults),
-            "typehints": StringHandler.reprify_kwarg_values(typehints)
+            "kwargs": StringHandler.reprify_kwarg_values(kwargs),
+            "typehints": StringHandler.reprify_kwarg_values(typehints),
+            "metadata_cls": self.add_metadata_cls(referable),
+            "template_defaults": StringHandler.reprify_kwarg_values(template_defaults),
         }
 
 

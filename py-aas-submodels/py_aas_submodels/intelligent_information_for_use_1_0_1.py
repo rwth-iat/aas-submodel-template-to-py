@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,139 +95,168 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class EntityMetadata(TypedDict, total=False):
+    """Metadata of aas.Entity, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    entity_type: Optional[aas.EntityType]
+    global_asset_id: Optional[str]
+    specific_asset_id: Iterable[aas.SpecificAssetId]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class FileMetadata(TypedDict, total=False):
+    """Metadata of aas.File, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class MultiLanguagePropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.MultiLanguageProperty, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class RelationshipElementMetadata(TypedDict, total=False):
+    """Metadata of aas.RelationshipElement, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    first: Optional[aas.Reference]
+    second: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class IntelligentInformationforUse(aas.Submodel):
 
     class ResourceIRI(aas.Property):
 
-        def __init__(
-            self,
-            value: xsd.AnyURI,
-            id_short: Optional[str] = r"ResourceIRI",
-            value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"ResourceIRI",
+                "value_type": xsd.AnyURI,
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                )
+                ),
+                "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class FormatRestriction(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"FormatRestriction",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#formatRestriction"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"FormatRestriction",
+                "value_type": str,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"restriction of media formats allowed in an iiRDS package"}
-                )
+                ),
+                "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#formatRestriction"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class IirdsVersion(aas.Property):
 
-        def __init__(
-            self,
-            value: str,
-            id_short: Optional[str] = r"IirdsVersion",
-            value_type: aas.DataTypeDefXsd = str,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#iiRDSVersion"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"IirdsVersion",
+                "value_type": str,
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
                     dict_={r"en": r"iiRDS version with which the iiRDS package complies"}
-                )
+                ),
+                "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#iiRDSVersion"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class InformationUnitCollection(aas.SubmodelElementCollection):
 
@@ -235,1386 +264,862 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Title(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Title",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#title"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Title",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"name of the information unit"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#title"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"name of the information unit"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfCreation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfCreation",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#dateOfCreation"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfCreation",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"date of creation of the resource"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfCreation"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"date of creation of the resource"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfLastModification(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfLastModification",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#dateOfLastModification"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfLastModification",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "date and time of an information unit's last change "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfLastModification"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Language(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Language",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#language"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Language",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": "identifier of the content's language"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#language"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": "identifier of the content's language"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Revision(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Revision",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#revision"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Revision",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"version of an information unit"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#revision"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"version of an information unit"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Rights(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Rights",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#rights"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Rights",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"declaration of specific rights regarding the usage of the information"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#rights"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasRendition(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasRendition",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasRendition",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-rendition"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its rendition"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-rendition"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasContentLifecycleStatus(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasContentLifecycleStatus",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasContentLifecycleStatus",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"
+                                ),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#has-content-lifecycle-status"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its content lifecycle status"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-content-lifecycle-status"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class IsReplacementOf(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"IsReplacementOf",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#is-replacement-of"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"IsReplacementOf",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing the information unit to be replaced"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-replacement-of"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class IsVersionOf(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"IsVersionOf",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"IsVersionOf",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObjectCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObject"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObjectCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObject"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#is-version-of"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its information object"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-version-of"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToEvent(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToEvent",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToEvent",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-event"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing an event"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-event"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToSupply(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToSupply",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToSupply",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Supply"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Supply"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-supply"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a supply"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-supply"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToQualification(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToQualification",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToQualification",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"SkillLevel"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"SkillLevel"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-qualification"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a qualification "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-qualification"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasIdentity(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasIdentity",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasIdentity",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-identity"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing an identifier"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-identity"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasDocumentType(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasDocumentType",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasDocumentType",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#InstallationInstructions",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#InstallationInstructions",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-document-type"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "document's property referencing its document type"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-document-type"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToComponent(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToComponent",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToComponent",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-component"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a component"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-component"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasSubject(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasSubject",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasSubject",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#GenericTechnicalOverview",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#GenericTechnicalOverview",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-subject"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its subject"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-subject"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToAction(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToAction",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToAction",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Action"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Action"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-action"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing an action"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-action"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductFeature(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductFeature",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductFeature",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductFeature"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductFeature"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-product-feature"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a product feature"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-product-feature"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductLifecyclePhase(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductLifecyclePhase",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductLifecyclePhase",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductLifeCyclePhase"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductLifeCyclePhase"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductVariant(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductVariant",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductVariant",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a product variant"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasPlanningTime(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasPlanningTime",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasPlanningTime",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"WorkingTime"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"WorkingTime"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-planning-time"),
+                    }
+
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
+
+                    super().__init__(**(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Document",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"information unit consisting of an ordered set of information intended by the sender to be regarded as an entity"
+                        }
                     ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-planning-time"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Document"),
+                }
 
             def __init__(
                 self,
@@ -1642,29 +1147,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 relatesToProductLifecyclePhase: Optional[Iterable[RelatesToProductLifecyclePhase]] = None,
                 relatesToProductVariant: Optional[Iterable[RelatesToProductVariant]] = None,
                 hasPlanningTime: Optional[Iterable[HasPlanningTime]] = None,
-                id_short: Optional[str] = r"Document",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Document"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"information unit consisting of an ordered set of information intended by the sender to be regarded as an entity"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -1801,1462 +1285,901 @@ class IntelligentInformationforUse(aas.Submodel):
                     hasPlanningTime,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Topic(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasTopicType(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasTopicType",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasTopicType",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#GenericConcept",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#GenericConcept",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-topic-type"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its topic type"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-topic-type"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class IsVersionOf(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"IsVersionOf",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"IsVersionOf",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObjectCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObject"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObjectCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObject"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#is-version-of"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its information object"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-version-of"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToQualification(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToQualification",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToQualification",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Role"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Role"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-qualification"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a qualification "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-qualification"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductVariant(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductVariant",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductVariant",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a product variant"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class Title(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Title",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#title"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Title",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"name of the information unit"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#title"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"name of the information unit"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfCreation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfCreation",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#dateOfCreation"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfCreation",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"date of creation of the resource"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfCreation"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"date of creation of the resource"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfLastModification(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfLastModification",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#dateOfLastModification"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfLastModification",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "date and time of an information unit's last change "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfLastModification"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Language(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Language",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#language"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Language",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": "identifier of the content's language"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#language"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": "identifier of the content's language"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Revision(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Revision",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#revision"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Revision",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"version of an information unit"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#revision"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"version of an information unit"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Rights(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Rights",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#rights"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Rights",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"declaration of specific rights regarding the usage of the information"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#rights"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasRendition(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasRendition",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasRendition",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-rendition"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its rendition"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-rendition"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasContentLifecycleStatus(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasContentLifecycleStatus",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasContentLifecycleStatus",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"
+                                ),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#has-content-lifecycle-status"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its content lifecycle status"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-content-lifecycle-status"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class IsReplacementOf(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"IsReplacementOf",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#is-replacement-of"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"IsReplacementOf",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing the information unit to be replaced"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-replacement-of"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RelatesToEvent(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToEvent",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToEvent",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-event"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing an event"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-event"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToSupply(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToSupply",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToSupply",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Supply"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Supply"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-supply"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a supply"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-supply"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasIdentity(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasIdentity",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasIdentity",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-identity"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing an identifier"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-identity"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToComponent(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToComponent",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToComponent",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-component"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a component"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-component"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasSubject(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasSubject",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasSubject",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#GenericTechnicalOverview",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#GenericTechnicalOverview",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-subject"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its subject"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-subject"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToAction(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToAction",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToAction",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Action"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Action"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-action"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing an action"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-action"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductFeature(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductFeature",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductFeature",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductFeature"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductFeature"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-product-feature"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a product feature"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-product-feature"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductLifecyclePhase(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductLifecyclePhase",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductLifecyclePhase",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductLifeCyclePhase"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductLifeCyclePhase"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class IsApplicableForDocumentType(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"IsApplicableForDocumentType",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"IsApplicableForDocumentType",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#OperatingInstructions",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#OperatingInstructions",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#is-applicable-for-document-type"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-applicable-for-document-type"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasPlanningTime(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasPlanningTime",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasPlanningTime",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Topic"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"MaintenanceInterval"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"MaintenanceInterval"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-planning-time"),
+                    }
+
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
+
+                    super().__init__(**(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Topic",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"information unit covering a single subject"}
                     ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-planning-time"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Topic"),
+                }
 
             def __init__(
                 self,
@@ -3285,27 +2208,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 relatesToProductLifecyclePhase: Optional[Iterable[RelatesToProductLifecyclePhase]] = None,
                 isApplicableForDocumentType: Optional[Iterable[IsApplicableForDocumentType]] = None,
                 hasPlanningTime: Optional[Iterable[HasPlanningTime]] = None,
-                id_short: Optional[str] = r"Topic",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Topic"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"information unit covering a single subject"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -3447,1281 +2351,782 @@ class IntelligentInformationforUse(aas.Submodel):
                     hasPlanningTime,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Fragment(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RelatesToProductVariant(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductVariant",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductVariant",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a product variant"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class Title(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Title",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#title"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Title",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"name of the information unit"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#title"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"name of the information unit"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfCreation(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfCreation",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#dateOfCreation"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfCreation",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"date of creation of the resource"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfCreation"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"date of creation of the resource"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfLastModification(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfLastModification",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#dateOfLastModification"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfLastModification",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "date and time of an information unit's last change "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfLastModification"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Language(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Language",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#language"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Language",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": "identifier of the content's language"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#language"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": "identifier of the content's language"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Revision(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Revision",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"PARAMETER",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#revision"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Revision",
+                        "value_type": str,
+                        "category": r"PARAMETER",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"version of an information unit"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#revision"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"version of an information unit"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Rights(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Rights",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#rights"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Rights",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"declaration of specific rights regarding the usage of the information"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#rights"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasRendition(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasRendition",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasRendition",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-rendition"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its rendition"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-rendition"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasContentLifecycleStatus(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasContentLifecycleStatus",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasContentLifecycleStatus",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"
+                                ),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#has-content-lifecycle-status"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its content lifecycle status"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-content-lifecycle-status"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class IsReplacementOf(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"IsReplacementOf",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#is-replacement-of"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"IsReplacementOf",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing the information unit to be replaced"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-replacement-of"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class IsVersionOf(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"IsVersionOf",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"IsVersionOf",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObjectCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObject"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObjectCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationObject"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#is-version-of"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its information object"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#is-version-of"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToEvent(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToEvent",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToEvent",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-event"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing an event"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-event"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToQualification(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToQualification",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToQualification",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"SkillLevel"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"SkillLevel"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-qualification"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a qualification "}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-qualification"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToSupply(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToSupply",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToSupply",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Supply"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Supply"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-supply"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a supply"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-supply"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasIdentity(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasIdentity",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasIdentity",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-identity"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing an identifier"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-identity"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToComponent(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToComponent",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToComponent",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-component"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a component"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-component"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasSubject(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasSubject",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasSubject",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#GenericTechnicalOverview",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#GenericTechnicalOverview",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-subject"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing its subject"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-subject"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToAction(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToAction",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToAction",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Action"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Action"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-action"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing an action"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-action"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductFeature(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductFeature",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductFeature",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductFeature"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductFeature"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-product-feature"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "information unit's property referencing a product feature"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-product-feature"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToProductLifecyclePhase(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToProductLifecyclePhase",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToProductLifecyclePhase",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Fragment"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductLifeCyclePhase"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductLifeCyclePhase"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase"),
+                    }
+
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
+
+                    super().__init__(**(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Fragment",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"information unit that requires additional context"}
                     ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Fragment"),
+                }
 
             def __init__(
                 self,
@@ -4747,27 +3152,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 relatesToAction: Optional[Iterable[RelatesToAction]] = None,
                 relatesToProductFeature: Optional[Iterable[RelatesToProductFeature]] = None,
                 relatesToProductLifecyclePhase: Optional[Iterable[RelatesToProductLifecyclePhase]] = None,
-                id_short: Optional[str] = r"Fragment",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Fragment"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"information unit that requires additional context"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -4894,49 +3280,30 @@ class IntelligentInformationforUse(aas.Submodel):
                     relatesToProductLifecyclePhase,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"InformationUnitCollection",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"collection of instances of iirds:topic, iirds:document and iirds:fragment, which are subclasses of iirds:informationunit"
+                    }
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/InformationUnitCollection/1/0"
+                ),
+            }
 
         def __init__(
             self,
             document: Optional[Iterable[Document]] = None,
             topic: Optional[Iterable[Topic]] = None,
             fragment: Optional[Iterable[Fragment]] = None,
-            id_short: Optional[str] = r"InformationUnitCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/InformationUnitCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"collection of instances of iirds:topic, iirds:document and iirds:fragment, which are subclasses of iirds:informationunit"
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(document, str):
@@ -4954,18 +3321,7 @@ class IntelligentInformationforUse(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(document, topic, fragment)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class InformationObjectCollection(aas.SubmodelElementCollection):
 
@@ -4973,72 +3329,34 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"InformationObject",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"version- and language-independent abstraction of an information unit"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#InformationObject"),
+                }
 
             def __init__(
-                self,
-                resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                id_short: Optional[str] = r"InformationObject",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#InformationObject"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                self, resourceIRI: Union[xsd.AnyURI, ResourceIRI], **kwargs: Unpack[SubmodelElementCollectionMetadata]
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"version- and language-independent abstraction of an information unit"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5049,45 +3367,25 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"InformationObjectCollection",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of iirds:InformationObject instances"}
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/InformationObjectCollection/1/0"
+                ),
+            }
 
         def __init__(
             self,
             informationObject: Optional[Iterable[InformationObject]] = None,
-            id_short: Optional[str] = r"InformationObjectCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/InformationObjectCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"collection of iirds:InformationObject instances"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(informationObject, str):
@@ -5097,18 +3395,7 @@ class IntelligentInformationforUse(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(informationObject)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class DirectoryNodeCollection(aas.SubmodelElementCollection):
 
@@ -5116,309 +3403,179 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r'http://iirds.tekom.de/iirds#ResourceIRI">'),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r'http://iirds.tekom.de/iirds#ResourceIRI">'),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RelatesToInformationUnit(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToInformationUnit",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToInformationUnit",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNodeCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNode"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNodeCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNode"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"InformationUnitCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Document"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#relates-to-information-unit"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "directory node's property referencing the corresponding information unit"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-information-unit"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasNextSibling(aas.SubmodelElementCollection):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasNextSibling",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-next-sibling"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"HasNextSibling",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "directory node's property referencing the following directory node on the same hierarchy level in a directory structure Verweist auf den folgenden Verzeichniseintrag einer Verzeichnisstruktur auf gleicher Ebene."
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-next-sibling"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class HasFirstChild(aas.SubmodelElementCollection):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasFirstChild",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-first-child"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"HasFirstChild",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": "directory node's property referencing the first directory node on the next subordinate level in a directory structure"
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-first-child"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class HasDirectoryStructureType(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasDirectoryStructureType",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasDirectoryStructureType",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNodeCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNode"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNodeCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"DirectoryNode"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#TableOfContents",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#TableOfContents",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#has-directory-structure-type"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "directory node's property referencing its node type"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-directory-structure-type"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human- readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"DirectoryNode",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"node in a tree-like, ordered collection"}),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#DirectoryNode"),
+                }
 
             def __init__(
                 self,
@@ -5428,25 +3585,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 hasFirstChild: Optional[HasFirstChild] = None,
                 hasDirectoryStructureType: Optional[HasDirectoryStructureType] = None,
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"DirectoryNode",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#DirectoryNode"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"node in a tree-like, ordered collection"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -5469,43 +3609,24 @@ class IntelligentInformationforUse(aas.Submodel):
                     label,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"DirectoryNodeCollection",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"collection of iirds:DirectoryNode instances"}),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/DirectoryNodeCollection/1/0"
+                ),
+            }
 
         def __init__(
             self,
             directoryNode: Optional[Iterable[DirectoryNode]] = None,
-            id_short: Optional[str] = r"DirectoryNodeCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/DirectoryNodeCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"collection of iirds:DirectoryNode instances"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(directoryNode, str):
@@ -5515,18 +3636,7 @@ class IntelligentInformationforUse(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(directoryNode)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class RenditionCollection(aas.SubmodelElementCollection):
 
@@ -5534,402 +3644,230 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Format(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Format",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#format"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Format",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"media type of the rendition"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#format"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"media type of the rendition"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Source(aas.File):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Source",
-                    content_type: Optional[str] = r"text/plain",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#source"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> FileMetadata:
+                    return {
+                        "id_short": r"Source",
+                        "description": aas.MultiLanguageTextType(
                             dict_={
                                 r"en": r"relative path of a file in the iiRDS package, containing the content of a rendition"
                             }
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#source"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(
+                    self, value: str, content_type: Optional[str] = r"text/plain", **kwargs: Unpack[FileMetadata]
+                ):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        content_type=content_type,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, content_type=content_type, **(self.template_defaults() | kwargs))
 
             class HasSelector(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasSelector",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasSelector",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Rendition"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FragmentSelector"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FragmentSelector"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-selector"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "rendition's property referencing a selector"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-selector"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RangeSelector(aas.SubmodelElementCollection):
 
                 class ResourceIRI(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.AnyURI,
-                        id_short: Optional[str] = r"ResourceIRI",
-                        value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ResourceIRI",
+                            "value_type": xsd.AnyURI,
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class HasStartSelector(aas.RelationshipElement):
 
-                    def __init__(
-                        self,
-                        id_short: Optional[str] = r"HasStartSelector",
-                        first: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                    @staticmethod
+                    def template_defaults() -> RelationshipElementMetadata:
+                        return {
+                            "id_short": r"HasStartSelector",
+                            "first": aas.ModelReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
+                                        value=r"https://example.com/ids/sm/1154_0130_2032_3996",
+                                    ),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"
+                                    ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RangeSelector"),
+                                    aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                                 ),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RangeSelector"),
-                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                                type_=aas.Property,
+                                referred_semantic_id=None,
                             ),
-                            type_=aas.Property,
-                            referred_semantic_id=None,
-                        ),
-                        second: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                            "second": aas.ModelReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
+                                        value=r"https://example.com/ids/sm/1154_0130_2032_3996",
+                                    ),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"
+                                    ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FragmentSelector"),
+                                    aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                                 ),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FragmentSelector"),
-                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                                type_=aas.Property,
+                                referred_semantic_id=None,
                             ),
-                            type_=aas.Property,
-                            referred_semantic_id=None,
-                        ),
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://iirds.tekom.de/iirds#has-start-selector"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": "range selector's property referencing the start of its range"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-start-selector"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            id_short=id_short,
-                            first=first,
-                            second=second,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(**(self.template_defaults() | kwargs))
 
                 class HasEndSelector(aas.RelationshipElement):
 
-                    def __init__(
-                        self,
-                        id_short: Optional[str] = r"HasEndSelector",
-                        first: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                    @staticmethod
+                    def template_defaults() -> RelationshipElementMetadata:
+                        return {
+                            "id_short": r"HasEndSelector",
+                            "first": aas.ModelReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
+                                        value=r"https://example.com/ids/sm/1154_0130_2032_3996",
+                                    ),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"
+                                    ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RangeSelector"),
+                                    aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                                 ),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RangeSelector"),
-                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                                type_=aas.Property,
+                                referred_semantic_id=None,
                             ),
-                            type_=aas.Property,
-                            referred_semantic_id=None,
-                        ),
-                        second: Optional[aas.Reference] = aas.ModelReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                            "second": aas.ModelReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL,
+                                        value=r"https://example.com/ids/sm/1154_0130_2032_3996",
+                                    ),
+                                    aas.Key(
+                                        type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"
+                                    ),
+                                    aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FragmentSelector"),
+                                    aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                                 ),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"RenditionCollection"),
-                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FragmentSelector"),
-                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                                type_=aas.Property,
+                                referred_semantic_id=None,
                             ),
-                            type_=aas.Property,
-                            referred_semantic_id=None,
-                        ),
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"http://iirds.tekom.de/iirds#has-end-selector"
-                        ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": "range selector's property referencing the end of its range"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-end-selector"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
+                        super().__init__(**(self.template_defaults() | kwargs))
 
-                        super().__init__(
-                            id_short=id_short,
-                            first=first,
-                            second=second,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"RangeSelector",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"selector defining the start point and the end point of a part of content"}
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#RangeSelector"),
+                    }
 
                 def __init__(
                     self,
                     hasStartSelector: HasStartSelector,
                     hasEndSelector: HasEndSelector,
                     resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
-                    id_short: Optional[str] = r"RangeSelector",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#RangeSelector"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"selector defining the start point and the end point of a part of content"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -5942,171 +3880,76 @@ class IntelligentInformationforUse(aas.Submodel):
                         resourceIRI, hasStartSelector, hasEndSelector
                     )
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class FragmentSelector(aas.SubmodelElementCollection):
 
                 class ResourceIRI(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: xsd.AnyURI,
-                        id_short: Optional[str] = r"ResourceIRI",
-                        value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if description is None:
-                            description = aas.MultiLanguageTextType(
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ResourceIRI",
+                            "value_type": xsd.AnyURI,
+                            "category": r"CONSTANT",
+                            "description": aas.MultiLanguageTextType(
                                 dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                            )
+                            ),
+                            "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class ConformsTo(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"ConformsTo",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/conformsTo"),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"ConformsTo",
+                            "value_type": str,
+                            "category": r"CONSTANT",
+                            "semantic_id": global_ref(r"http://purl.org/dc/terms/conformsTo"),
+                        }
 
-                        if qualifier is None:
-                            qualifier = ()
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
 
                 class Value(aas.Property):
 
-                    def __init__(
-                        self,
-                        value: str,
-                        id_short: Optional[str] = r"Value",
-                        value_type: aas.DataTypeDefXsd = str,
-                        value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[aas.MultiLanguageNameType] = None,
-                        category: Optional[str] = r"CONSTANT",
-                        description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = global_ref(
-                            r"https://www.w3.org/TR/rdf12-schema/#ch_value"
+                    @staticmethod
+                    def template_defaults() -> PropertyMetadata:
+                        return {
+                            "id_short": r"Value",
+                            "value_type": str,
+                            "category": r"CONSTANT",
+                            "semantic_id": global_ref(r"https://www.w3.org/TR/rdf12-schema/#ch_value"),
+                        }
+
+                    def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
+
+                        super().__init__(value=value, **(self.template_defaults() | kwargs))
+
+                @staticmethod
+                def template_defaults() -> SubmodelElementCollectionMetadata:
+                    return {
+                        "id_short": r"FragmentSelector",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": r"selector defining a part of content by a single identifier"}
                         ),
-                        qualifier: Iterable[aas.Qualifier] = None,
-                        extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (),
-                        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                    ):
-
-                        if qualifier is None:
-                            qualifier = ()
-
-                        if embedded_data_specifications is None:
-                            embedded_data_specifications = []
-
-                        super().__init__(
-                            value=value,
-                            id_short=id_short,
-                            value_type=value_type,
-                            value_id=value_id,
-                            display_name=display_name,
-                            category=category,
-                            description=description,
-                            semantic_id=semantic_id,
-                            qualifier=qualifier,
-                            extension=extension,
-                            supplemental_semantic_id=supplemental_semantic_id,
-                            embedded_data_specifications=embedded_data_specifications,
-                        )
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#FragmentSelector"),
+                    }
 
                 def __init__(
                     self,
                     conformsTo: Union[str, ConformsTo],
                     value_: Union[str, Value],
                     resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
-                    id_short: Optional[str] = r"FragmentSelector",
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#FragmentSelector"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                    **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
-                            dict_={r"en": r"selector defining a part of content by a single identifier"}
-                        )
-
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
 
                     # Build a submodel element if a raw value was passed in the argument
 
@@ -6127,18 +3970,17 @@ class IntelligentInformationforUse(aas.Submodel):
 
                     embedded_submodel_elements = collect_submodel_elements(resourceIRI, conformsTo, value_)
 
-                    super().__init__(
-                        value=embedded_submodel_elements,
-                        id_short=id_short,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Rendition",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"content of an information unit in a specific format"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Rendition"),
+                }
 
             def __init__(
                 self,
@@ -6148,27 +3990,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 hasSelector: Optional[HasSelector] = None,
                 rangeSelector: Optional[Iterable[RangeSelector]] = None,
                 fragmentSelector: Optional[Iterable[FragmentSelector]] = None,
-                id_short: Optional[str] = r"Rendition",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Rendition"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"content of an information unit in a specific format"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6194,43 +4017,22 @@ class IntelligentInformationforUse(aas.Submodel):
                     resourceIRI, format, source, hasSelector, rangeSelector, fragmentSelector
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"RenditionCollection",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(dict_={r"en": r"collection of iirds:Rendition instances"}),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/RenditionCollection/1/0"
+                ),
+            }
 
         def __init__(
-            self,
-            rendition: Optional[Iterable[Rendition]] = None,
-            id_short: Optional[str] = r"RenditionCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/RenditionCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            self, rendition: Optional[Iterable[Rendition]] = None, **kwargs: Unpack[SubmodelElementCollectionMetadata]
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(dict_={r"en": r"collection of iirds:Rendition instances"})
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(rendition, str):
@@ -6240,18 +4042,7 @@ class IntelligentInformationforUse(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(rendition)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class AdministrativeMetadataCollection(aas.SubmodelElementCollection):
 
@@ -6259,401 +4050,202 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfEffect(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfEffect",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#dateOfEffect"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfEffect",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"date and time on which the given content"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfEffect"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfExpiry(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfExpiry",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#dateOfExpiry"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfExpiry",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"date and time on which the given content lifecycle status becomes invalid"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfExpiry"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class DateOfStatus(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"DateOfStatus",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#dateOfStatus"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"DateOfStatus",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "date and time of a lifecycle status's last change"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#dateOfStatus"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class StatusComment(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"StatusComment",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#statusComment"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"StatusComment",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"note on a content lifecycle status"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#statusComment"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"note on a content lifecycle status"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Purpose(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Purpose",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#purpose"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Purpose",
+                        "value_type": str,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "reason for an information unit's lifecycle status"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#purpose"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasContentLifecycleStatusValue(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasContentLifecycleStatusValue",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasContentLifecycleStatusValue",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION, value=r"http://iirds.tekom.de/iirds#Approved"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#Approved",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#has-content-lifecycle-status-value"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "content lifecycle status's property referencing its value"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-content-lifecycle-status-value"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ContentLifecycleStatus"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"ContentLifecycleStatus",
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ContentLifeCycleStatus"),
+                }
 
             def __init__(
                 self,
@@ -6665,24 +4257,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 statusComment: Optional[Iterable[Union[str, StatusComment]]] = None,
                 purpose: Optional[Union[str, Purpose]] = None,
                 relatesToParty: Optional[RelatesToParty] = None,
-                id_short: Optional[str] = r"ContentLifecycleStatus",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"http://iirds.tekom.de/iirds#ContentLifeCycleStatus"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6732,206 +4308,110 @@ class IntelligentInformationforUse(aas.Submodel):
                     relatesToParty,
                 )
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Identity(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Identifier(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Identifier",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#identifier"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Identifier",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"unique name of the resource within a given domain"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#identifier"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasIdentityDomain(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasIdentityDomain",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasIdentityDomain",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Identity"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"IdentityDomain"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"IdentityDomain"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(
-                        r"http://iirds.tekom.de/iirds#has-identity-domain"
-                    ),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "identifier's property referencing the domain in which it is unique"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-identity-domain"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Identity",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"complex identifier of a resource in an external system"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Identity"),
+                }
 
             def __init__(
                 self,
                 identifier: Union[str, Identifier],
                 hasIdentityDomain: HasIdentityDomain,
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
-                id_short: Optional[str] = r"Identity",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Identity"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"complex identifier of a resource in an external system"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -6947,221 +4427,132 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, identifier, hasIdentityDomain)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Party(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasPartyRole(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasPartyRole",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasPartyRole",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                value=r"http://iirds.tekom.de/iirds#Manufacturer",
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                    value=r"http://iirds.tekom.de/iirds#Manufacturer",
+                                ),
                             ),
+                            type_=aas.ConceptDescription,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.ConceptDescription,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-party-role"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": "party's property referencing its role"}
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-party-role"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": "party's property referencing its role"})
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToVcard(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToVcard",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToVcard",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"VCard"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"VCard"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-vcard"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "party's property referencing an organization or person"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-vcard"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Party",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"person, organization or system"}),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Party"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 hasPartyRole: Optional[HasPartyRole] = None,
                 relatesToVcard: Optional[RelatesToVcard] = None,
-                id_short: Optional[str] = r"Party",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Party"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"person, organization or system"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7172,184 +4563,119 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, hasPartyRole, relatesToVcard)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class IdentityDomain(aas.SubmodelElementCollection):
 
             class HasIdentityType(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasIdentityType",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasIdentityType",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"IdentityDomain"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"IdentityDomain"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"IdentityType "),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"IdentityType "),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#IdentityType"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"distinguished set of identifiers that are assigned to an iiRDS identity"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#IdentityType"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"IdentityDomain"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"IdentityDomain"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"IdentityDomain",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"organizational origin of an identifier that is assigned to an iiRDS identity"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#IdentityDomain"),
+                }
 
             def __init__(
                 self,
                 hasIdentityType: Optional[HasIdentityType] = None,
                 relatesToParty: Optional[Iterable[RelatesToParty]] = None,
-                id_short: Optional[str] = r"IdentityDomain",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#IdentityDomain"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"organizational origin of an identifier that is assigned to an iiRDS identity"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # A str would be split into its characters
                 if isinstance(relatesToParty, str):
@@ -7359,105 +4685,59 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(hasIdentityType, relatesToParty)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class IdentityType(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"IdentityType",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#IdentityType"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"IdentityType",
+                    "value_type": str,
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"distinguished set of identifiers that are assigned to an iiRDS identity"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#IdentityType"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class VCard(aas.SubmodelElementCollection):
 
-            def __init__(
-                self,
-                id_short: Optional[str] = r"VCard",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://www.w3.org/2006/vcard/ns#Kind"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"VCard",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"vCard is a file format standard for electronic business cards"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"http://www.w3.org/2006/vcard/ns#Kind"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                 # Add all passed/initialized submodel elements to a single list
 
                 embedded_submodel_elements = collect_submodel_elements()
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"AdministrativeMetadataCollection",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of instances of the subclasses of iirds:AdministrativeMetadata"}
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/AdministrativeMetadataCollection/1/0"
+                ),
+            }
 
         def __init__(
             self,
@@ -7467,29 +4747,8 @@ class IntelligentInformationforUse(aas.Submodel):
             identityDomain: Optional[Iterable[IdentityDomain]] = None,
             identityType: Optional[Iterable[Union[str, IdentityType]]] = None,
             vCard: Optional[Iterable[VCard]] = None,
-            id_short: Optional[str] = r"AdministrativeMetadataCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/AdministrativeMetadataCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"collection of instances of the subclasses of iirds:AdministrativeMetadata"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(contentLifecycleStatus, str):
@@ -7525,18 +4784,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 contentLifecycleStatus, identity, party, identityDomain, identityType, vCard
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class FunctionalMetadataCollection(aas.SubmodelElementCollection):
 
@@ -7544,112 +4792,55 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Supply",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"physical object used by an actor performing work tasks described in technical documentation"
+                        }
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Supply"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"Supply",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Supply"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"physical object used by an actor performing work tasks described in technical documentation"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7665,236 +4856,145 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Event(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class HasEventCode(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasEventCode",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasEventCode",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"EventCode"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"EventCode"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-event-code"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"property to identify an event"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-event-code"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"property to identify an event"})
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class HasEventType(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"HasEventType",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"HasEventType",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Event"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"FunctionalMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"EventType"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"FunctionalMetadataCollection"
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"EventType"),
+                            type_=aas.SubmodelElementCollection,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.SubmodelElementCollection,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#has-event-type"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
+                            dict_={r"en": "event's property referencing its type"}
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#has-event-type"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": "event's property referencing its type"})
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(**(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Event",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"something noticeable that takes place at a given location and point in time"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Event"),
+                }
 
             def __init__(
                 self,
@@ -7902,27 +5002,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 hasEventCode: HasEventCode,
                 hasEventType: HasEventType,
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"Event",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Event"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"something noticeable that takes place at a given location and point in time"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -7938,214 +5019,100 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, hasEventCode, hasEventType, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class EventCode(aas.SubmodelElementCollection):
 
-            def __init__(
-                self,
-                id_short: Optional[str] = r"EventCode",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#EventCode"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"EventCode",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"property to identify an event"}),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#EventCode"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"property to identify an event"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                 # Add all passed/initialized submodel elements to a single list
 
                 embedded_submodel_elements = collect_submodel_elements()
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class EventType(aas.SubmodelElementCollection):
 
-            def __init__(
-                self,
-                id_short: Optional[str] = r"EventType",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref("event's property referencing its type"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"EventType",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": "event's property referencing its type"}),
+                    "semantic_id": global_ref("event's property referencing its type"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": "event's property referencing its type"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+            def __init__(self, **kwargs: Unpack[SubmodelElementCollectionMetadata]):
 
                 # Add all passed/initialized submodel elements to a single list
 
                 embedded_submodel_elements = collect_submodel_elements()
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Role(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Role",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"set of connected behaviors, privileges and obligations associated with a party"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Role"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"Role",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Role"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"set of connected behaviors, privileges and obligations associated with a party"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8161,130 +5128,62 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class SkillLevel(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"SkillLevel",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"degree of qualification of an individual"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#SkillLevel"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"SkillLevel",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#SkillLevel"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"degree of qualification of an individual"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8300,132 +5199,62 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class Action(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Action",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"atomic manipulation of an object by a participant"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Action"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"Action",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Action"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"atomic manipulation of an object by a participant"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8441,175 +5270,79 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class WorkingTime(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Duration(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Duration",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#duration"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Duration",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"span of time"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#duration"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"span of time"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"WorkingTime",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"period of time that is required for conducting a specific task"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#WorkingTime"),
+                }
 
             def __init__(
                 self,
                 duration: Union[str, Duration],
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"WorkingTime",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#WorkingTime"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"period of time that is required for conducting a specific task"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8630,192 +5363,89 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label, duration)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class MaintenanceInterval(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Frequency(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Frequency",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#frequency"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Frequency",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"intended interval between recurring maintanance tasks"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#frequency"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Duration(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Duration",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#duration"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Duration",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"span of time"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#duration"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"span of time"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"MaintenanceInterval",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"period of time between scheduled maintenance operations"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#MaintenanceInterval"),
+                }
 
             def __init__(
                 self,
@@ -8823,27 +5453,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 duration: Union[str, Duration],
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"MaintenanceInterval",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#MaintenanceInterval"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"period of time between scheduled maintenance operations"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -8869,177 +5480,81 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label, frequency, duration)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class DownTime(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Duration(aas.Property):
 
-                def __init__(
-                    self,
-                    value: str,
-                    id_short: Optional[str] = r"Duration",
-                    value_type: aas.DataTypeDefXsd = str,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#duration"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"Duration",
+                        "value_type": str,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(dict_={r"en": r"span of time"}),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#duration"),
+                    }
 
-                    if description is None:
-                        description = aas.MultiLanguageTextType(dict_={r"en": r"span of time"})
+                def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                    if qualifier is None:
-                        qualifier = ()
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"DownTime",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"period of time during which an item is not in condition to perform its intended function"
+                        }
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#DownTime"),
+                }
 
             def __init__(
                 self,
                 duration: Union[str, Duration],
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"DownTime",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#DownTime"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"period of time during which an item is not in condition to perform its intended function"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9060,18 +5575,20 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label, duration)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"FunctionalMetadataCollection",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of instances of the subclasses of iirds:FunctionalMetadata"}
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/FunctionalMetadataCollection/1/0"
+                ),
+            }
 
         def __init__(
             self,
@@ -9085,29 +5602,8 @@ class IntelligentInformationforUse(aas.Submodel):
             workingTime: Optional[Iterable[WorkingTime]] = None,
             maintenanceInterval: Optional[Iterable[MaintenanceInterval]] = None,
             downTime: Optional[Iterable[DownTime]] = None,
-            id_short: Optional[str] = r"FunctionalMetadataCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/FunctionalMetadataCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"collection of instances of the subclasses of iirds:FunctionalMetadata"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(supply, str):
@@ -9164,18 +5660,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 downTime,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class ProductMetadataCollection(aas.SubmodelElementCollection):
 
@@ -9183,205 +5668,116 @@ class IntelligentInformationforUse(aas.Submodel):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = None,
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Asset(aas.Entity):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"Asset",
-                    entity_type: Optional[aas.EntityType] = aas.EntityType.SELF_MANAGED_ENTITY,
-                    global_asset_id: Optional[str] = r"externalAsset",
-                    specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = None,
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> EntityMetadata:
+                    return {
+                        "id_short": r"Asset",
+                        "entity_type": aas.EntityType.SELF_MANAGED_ENTITY,
+                        "global_asset_id": r"externalAsset",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Entity in terms of the asset administration shell"}
-                        )
+                        ),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
-
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                def __init__(self, **kwargs: Unpack[EntityMetadata]):
 
                     # Add all passed/initialized submodel elements to a single list
 
                     embedded_submodel_elements = collect_submodel_elements()
 
-                    super().__init__(
-                        statement=embedded_submodel_elements,
-                        id_short=id_short,
-                        entity_type=entity_type,
-                        global_asset_id=global_asset_id,
-                        specific_asset_id=specific_asset_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(statement=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Component"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"Component",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={r"en": r"part used as a constituent in an assembled product, system or plant"}
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#Component"),
+                }
 
             def __init__(
                 self,
@@ -9389,27 +5785,8 @@ class IntelligentInformationforUse(aas.Submodel):
                 asset: Optional[Iterable[Asset]] = None,
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
                 relatesToParty: Optional[Iterable[RelatesToParty]] = None,
-                id_short: Optional[str] = r"Component",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#Component"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={r"en": r"part used as a constituent in an assembled product, system or plant"}
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9433,130 +5810,60 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, asset, label, relatesToParty)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class ProductFeature(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"ProductFeature",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"product characteristics"}),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ProductFeature"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"ProductFeature",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ProductFeature"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"product characteristics"})
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9572,129 +5879,61 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class ProductLifeCyclePhase(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"ProductLifeCyclePhase",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Defined period in the evolution of a product from the conceptual idea to its ultimate disposal"
+                        }
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ProductLifeCyclePhase"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
-                id_short: Optional[str] = r"ProductLifeCyclePhase",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ProductLifeCyclePhase"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Defined period in the evolution of a product from the conceptual idea to its ultimate disposal"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9710,202 +5949,111 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
         class ProductVariant(aas.SubmodelElementCollection):
 
             class ResourceIRI(aas.Property):
 
-                def __init__(
-                    self,
-                    value: xsd.AnyURI,
-                    id_short: Optional[str] = r"ResourceIRI",
-                    value_type: aas.DataTypeDefXsd = xsd.AnyURI,
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> PropertyMetadata:
+                    return {
+                        "id_short": r"ResourceIRI",
+                        "value_type": xsd.AnyURI,
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": r"Identifies instances of the iirds:classes and subclasses"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ResourceIRI"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: xsd.AnyURI, **kwargs: Unpack[PropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_type=value_type,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class Label(aas.MultiLanguageProperty):
 
-                def __init__(
-                    self,
-                    value: aas.LangStringSet,
-                    id_short: Optional[str] = r"Label",
-                    value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                @staticmethod
+                def template_defaults() -> MultiLanguagePropertyMetadata:
+                    return {
+                        "id_short": r"Label",
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "used to provide a human-readable version of a resource's name"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
-
-                    super().__init__(
-                        value=value,
-                        id_short=id_short,
-                        value_id=value_id,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+                    super().__init__(value=value, **(self.template_defaults() | kwargs))
 
             class RelatesToParty(aas.RelationshipElement):
 
-                def __init__(
-                    self,
-                    id_short: Optional[str] = r"RelatesToParty",
-                    first: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                @staticmethod
+                def template_defaults() -> RelationshipElementMetadata:
+                    return {
+                        "id_short": r"RelatesToParty",
+                        "first": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductMetadataCollection"),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"ProductVariant"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    second: Optional[aas.Reference] = aas.ModelReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                        "second": aas.ModelReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL, value=r"https://example.com/ids/sm/1154_0130_2032_3996"
+                                ),
+                                aas.Key(
+                                    type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
+                                    value=r"AdministrativeMetadataCollection",
+                                ),
+                                aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
+                                aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
                             ),
-                            aas.Key(
-                                type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION,
-                                value=r"AdministrativeMetadataCollection",
-                            ),
-                            aas.Key(type_=aas.KeyTypes.SUBMODEL_ELEMENT_COLLECTION, value=r"Party"),
-                            aas.Key(type_=aas.KeyTypes.PROPERTY, value=r"ResourceIRI"),
+                            type_=aas.Property,
+                            referred_semantic_id=None,
                         ),
-                        type_=aas.Property,
-                        referred_semantic_id=None,
-                    ),
-                    display_name: Optional[aas.MultiLanguageNameType] = None,
-                    category: Optional[str] = r"CONSTANT",
-                    description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
-                    qualifier: Iterable[aas.Qualifier] = None,
-                    extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (),
-                    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-                ):
-
-                    if description is None:
-                        description = aas.MultiLanguageTextType(
+                        "category": r"CONSTANT",
+                        "description": aas.MultiLanguageTextType(
                             dict_={r"en": "iiRDS resource's property referencing a party"}
-                        )
+                        ),
+                        "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#relates-to-party"),
+                    }
 
-                    if qualifier is None:
-                        qualifier = ()
+                def __init__(self, **kwargs: Unpack[RelationshipElementMetadata]):
 
-                    if embedded_data_specifications is None:
-                        embedded_data_specifications = []
+                    super().__init__(**(self.template_defaults() | kwargs))
 
-                    super().__init__(
-                        id_short=id_short,
-                        first=first,
-                        second=second,
-                        display_name=display_name,
-                        category=category,
-                        description=description,
-                        semantic_id=semantic_id,
-                        qualifier=qualifier,
-                        extension=extension,
-                        supplemental_semantic_id=supplemental_semantic_id,
-                        embedded_data_specifications=embedded_data_specifications,
-                    )
+            @staticmethod
+            def template_defaults() -> SubmodelElementCollectionMetadata:
+                return {
+                    "id_short": r"ProductVariant",
+                    "category": r"CONSTANT",
+                    "description": aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"item or service offered on the market and designed to meet the needs or wishes of customers"
+                        }
+                    ),
+                    "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
+                }
 
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 label: Optional[Union[aas.LangStringSet, Label]] = None,
                 relatesToParty: Optional[Iterable[RelatesToParty]] = None,
-                id_short: Optional[str] = r"ProductVariant",
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = r"CONSTANT",
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"http://iirds.tekom.de/iirds#ProductVariant"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+                **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"item or service offered on the market and designed to meet the needs or wishes of customers"
-                        }
-                    )
-
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
 
                 # Build a submodel element if a raw value was passed in the argument
 
@@ -9925,18 +6073,20 @@ class IntelligentInformationforUse(aas.Submodel):
 
                 embedded_submodel_elements = collect_submodel_elements(resourceIRI, label, relatesToParty)
 
-                super().__init__(
-                    value=embedded_submodel_elements,
-                    id_short=id_short,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"ProductMetadataCollection",
+                "category": r"CONSTANT",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of instances of the subclasses of iirds:ProductMetadata"}
+                ),
+                "semantic_id": global_ref(
+                    r"https://admin-shell.io/idta/IntelligentInformationForUse/ProductMetadataCollection/1/0"
+                ),
+            }
 
         def __init__(
             self,
@@ -9944,29 +6094,8 @@ class IntelligentInformationforUse(aas.Submodel):
             productFeature: Optional[Iterable[ProductFeature]] = None,
             productLifeCyclePhase: Optional[Iterable[ProductLifeCyclePhase]] = None,
             productVariant: Optional[Iterable[ProductVariant]] = None,
-            id_short: Optional[str] = r"ProductMetadataCollection",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = r"CONSTANT",
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(
-                r"https://admin-shell.io/idta/IntelligentInformationForUse/ProductMetadataCollection/1/0"
-            ),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"collection of instances of the subclasses of iirds:ProductMetadata"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(component, str):
@@ -9990,18 +6119,26 @@ class IntelligentInformationforUse(aas.Submodel):
                 component, productFeature, productLifeCyclePhase, productVariant
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"IntelligentInformationforUse",
+            "description": aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"This Submodel template aims at interoperable provision of information describing the provisioning of “Intelligent Information for Use”, i.e. information of the Technical Documentation enriched by metadata based on the iiRDS"
+                }
+            ),
+            "administration": aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02063-1-0",
+                embedded_data_specifications=[],
+            ),
+            "semantic_id": global_ref(r"https://admin-shell.io/idta/IntelligentInformationForUse/1/0"),
+        }
 
     def __init__(
         self,
@@ -10016,42 +6153,8 @@ class IntelligentInformationforUse(aas.Submodel):
         administrativeMetadataCollection: Optional[AdministrativeMetadataCollection] = None,
         functionalMetadataCollection: Optional[FunctionalMetadataCollection] = None,
         productMetadataCollection: Optional[ProductMetadataCollection] = None,
-        id_short: Optional[str] = r"IntelligentInformationforUse",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = global_ref(
-            r"https://admin-shell.io/idta/IntelligentInformationForUse/1/0"
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if description is None:
-            description = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"This Submodel template aims at interoperable provision of information describing the provisioning of “Intelligent Information for Use”, i.e. information of the Technical Documentation enriched by metadata based on the iiRDS"
-                }
-            )
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1",
-                revision=r"0",
-                creator=None,
-                template_id=r"https://admin-shell.io/idta-02063-1-0",
-                embedded_data_specifications=[],
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -10083,18 +6186,4 @@ class IntelligentInformationforUse(aas.Submodel):
             productMetadataCollection,
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))

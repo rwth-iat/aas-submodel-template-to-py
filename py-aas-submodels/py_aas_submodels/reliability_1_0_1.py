@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -95,481 +95,272 @@ class GeneratedSubmodelElementList(aas.SubmodelElementList):
         new.id_short = saved_id_short
 
 
+class PropertyMetadata(TypedDict, total=False):
+    """Metadata of aas.Property, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    value_type: aas.DataTypeDefXsd
+    value_id: Optional[aas.Reference]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelElementCollectionMetadata(TypedDict, total=False):
+    """Metadata of aas.SubmodelElementCollection, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
+class SubmodelMetadata(TypedDict, total=False):
+    """Metadata of aas.Submodel, passed as keyword arguments to its generated classes"""
+
+    id_short: Optional[str]
+    display_name: Optional[aas.MultiLanguageNameType]
+    category: Optional[str]
+    description: Optional[aas.MultiLanguageTextType]
+    administration: Optional[aas.AdministrativeInformation]
+    semantic_id: Optional[aas.Reference]
+    qualifier: Iterable[aas.Qualifier]
+    kind: aas.ModellingKind
+    extension: Iterable[aas.Extension]
+    supplemental_semantic_id: Iterable[aas.Reference]
+    embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification]
+
+
 class Reliability(aas.Submodel):
 
     class NumberOfReliabilitySets(aas.Property):
 
-        def __init__(
-            self,
-            value: xsd.Int,
-            id_short: Optional[str] = r"NumberOfReliabilitySets",
-            value_type: aas.DataTypeDefXsd = xsd.Int,
-            value_id: Optional[aas.Reference] = None,
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE006#001"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-        ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
+        @staticmethod
+        def template_defaults() -> PropertyMetadata:
+            return {
+                "id_short": r"NumberOfReliabilitySets",
+                "value_type": xsd.Int,
+                "description": aas.MultiLanguageTextType(
                     dict_={
                         r"en": r"number of reliability sets of characteristics",
                         r"fr": "nombre d'ensembles de caractéristiques de fiabilité",
                     }
-                )
+                ),
+                "semantic_id": global_ref(r"0112/2///62683#ACE006#001"),
+            }
 
-            if qualifier is None:
-                qualifier = ()
+        def __init__(self, value: xsd.Int, **kwargs: Unpack[PropertyMetadata]):
 
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_type=value_type,
-                value_id=value_id,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=value, **(self.template_defaults() | kwargs))
 
     class OperatingConditionsOfReliabilityCharacteristics(aas.SubmodelElementCollection):
 
         class TypeOfVoltage(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"TypeOfVoltage",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABL837#001"),
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABL838#001"),
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABI407#004"),
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"TypeOfVoltage",
+                    "value_type": str,
+                    "value_id": aas.ExternalReference(
+                        key=(
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABL837#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABL838#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABI407#004"),
+                        ),
+                        referred_semantic_id=None,
                     ),
-                    referred_semantic_id=None,
-                ),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA969#007"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"type of voltage", r"fr": r"type de tension", r"de": r"Spannungsart"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///61987#ABA969#007"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class RatedVoltage(aas.Property):
 
-            def __init__(
-                self,
-                value: float,
-                id_short: Optional[str] = r"RatedVoltage",
-                value_type: aas.DataTypeDefXsd = float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA588#004"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RatedVoltage",
+                    "value_type": float,
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"rated voltage", r"fr": r"tension assignée", r"de": r"Bemessungsspannung"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///61987#ABA588#004"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class MinimumRatedVoltage(aas.Property):
 
-            def __init__(
-                self,
-                value: float,
-                id_short: Optional[str] = r"MinimumRatedVoltage",
-                value_type: aas.DataTypeDefXsd = float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABD461#004"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"MinimumRatedVoltage",
+                    "value_type": float,
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"minimum rated voltage",
                             r"fr": r"tension assignée minimale",
                             r"de": r"minimale Bemessungsspannung",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///61987#ABD461#004"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class MaximumRatedVoltage(aas.Property):
 
-            def __init__(
-                self,
-                value: float,
-                id_short: Optional[str] = r"MaximumRatedVoltage",
-                value_type: aas.DataTypeDefXsd = float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABD462#004"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"MaximumRatedVoltage",
+                    "value_type": float,
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"maximum rated voltage",
                             r"fr": r"tension assignée maximale",
                             r"de": r"maximale Bemessungsspannung",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///61987#ABD462#004"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class RatedOperationalCurrent(aas.Property):
 
-            def __init__(
-                self,
-                value: float,
-                id_short: Optional[str] = r"RatedOperationalCurrent",
-                value_type: aas.DataTypeDefXsd = float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(
-                    r"https://admin-shell.io/idta/FunctionalSafety/RatedOperationalCurrent/1/0"
-                ),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"RatedOperationalCurrent",
+                    "value_type": float,
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"rated operational current"}),
+                    "semantic_id": global_ref(
+                        r"https://admin-shell.io/idta/FunctionalSafety/RatedOperationalCurrent/1/0"
+                    ),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"rated operational current"})
+            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
-
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class TypeOfInterlockingDevice(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"TypeOfInterlockingDevice",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH673#001"),
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH674#001"),
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH675#001"),
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH676#001"),
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"TypeOfInterlockingDevice",
+                    "value_type": str,
+                    "value_id": aas.ExternalReference(
+                        key=(
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH673#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH674#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH675#001"),
+                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACH676#001"),
+                        ),
+                        referred_semantic_id=None,
                     ),
-                    referred_semantic_id=None,
-                ),
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE053#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"type of interlocking device", r"fr": r"type de dispositif de verrouillage"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///62683#ACE053#001"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class OtherOperatingConditions(aas.Property):
 
-            def __init__(
-                self,
-                value: str,
-                id_short: Optional[str] = r"OtherOperatingConditions",
-                value_type: aas.DataTypeDefXsd = str,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE070#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"OtherOperatingConditions",
+                    "value_type": str,
+                    "description": aas.MultiLanguageTextType(
                         dict_={r"en": r"other operating conditions", r"fr": r"autres conditions de fonctionnement"}
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///62683#ACE070#001"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: str, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class UsefulLifeInNumberOfOperations(aas.Property):
 
-            def __init__(
-                self,
-                value: float,
-                id_short: Optional[str] = r"UsefulLifeInNumberOfOperations",
-                value_type: aas.DataTypeDefXsd = float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE055#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"UsefulLifeInNumberOfOperations",
+                    "value_type": float,
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"useful life in number of operations",
                             r"fr": r"durée de vie utile en cycle de fonctionnement",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///62683#ACE055#001"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class UsefulLifeInTimeInterval(aas.Property):
 
-            def __init__(
-                self,
-                value: float,
-                id_short: Optional[str] = r"UsefulLifeInTimeInterval",
-                value_type: aas.DataTypeDefXsd = float,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE054#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"UsefulLifeInTimeInterval",
+                    "value_type": float,
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"useful life in time interval",
                             r"fr": r"durée de vie utile en intervalle de temps",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///62683#ACE054#001"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: float, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"OperatingConditionsOfReliabilityCharacteristics",
+                "description": aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"operating conditions of reliability characteristics",
+                        r"fr": r"conditions de fonctionnement des caractéristiques de fiabilité et de sécurité fonctionnelle",
+                    }
+                ),
+                "semantic_id": global_ref(r"0112/2///62683#ACG071#001"),
+            }
 
         def __init__(
             self,
@@ -582,30 +373,8 @@ class Reliability(aas.Submodel):
             otherOperatingConditions: Optional[Iterable[Union[str, OtherOperatingConditions]]] = None,
             usefulLifeInNumberOfOperations: Optional[Iterable[Union[float, UsefulLifeInNumberOfOperations]]] = None,
             usefulLifeInTimeInterval: Optional[Iterable[Union[float, UsefulLifeInTimeInterval]]] = None,
-            id_short: Optional[str] = r"OperatingConditionsOfReliabilityCharacteristics",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACG071#001"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"operating conditions of reliability characteristics",
-                        r"fr": r"conditions de fonctionnement des caractéristiques de fiabilité et de sécurité fonctionnelle",
-                    }
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(typeOfVoltage, str):
@@ -716,41 +485,18 @@ class Reliability(aas.Submodel):
                 usefulLifeInTimeInterval,
             )
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
 
     class ReliabilityCharacteristics(aas.SubmodelElementCollection):
 
         class MTTF(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Int,
-                id_short: Optional[str] = r"MTTF",
-                value_type: aas.DataTypeDefXsd = xsd.Int,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE061#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"MTTF",
+                    "value_type": xsd.Int,
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"mean operating time to failure",
                             r"fr": r"durée moyenne de fonctionnement avant défaillance",
@@ -758,146 +504,68 @@ class Reliability(aas.Submodel):
                             r"jp": r"平均故障間動作時間",
                             r"cn": r"平均失效前工作时间",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///62683#ACE061#001"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.Int, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class MTBF(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Int,
-                id_short: Optional[str] = r"MTBF",
-                value_type: aas.DataTypeDefXsd = xsd.Int,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACE062#001"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
-
-                if description is None:
-                    description = aas.MultiLanguageTextType(
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"MTBF",
+                    "value_type": xsd.Int,
+                    "description": aas.MultiLanguageTextType(
                         dict_={
                             r"en": r"mean operating time between failure",
                             r"fr": r"moyenne des temps de bon fonctionnement",
                             r"de": r"mittlere Betriebszeit zwischen Ausfällen",
                             r"cn": r"平均失效间隔工作时间",
                         }
-                    )
+                    ),
+                    "semantic_id": global_ref(r"0112/2///62683#ACE062#001"),
+                }
 
-                if qualifier is None:
-                    qualifier = ()
+            def __init__(self, value: xsd.Int, **kwargs: Unpack[PropertyMetadata]):
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
         class B(aas.Property):
 
-            def __init__(
-                self,
-                value: xsd.Int,
-                id_short: Optional[str] = r"B",
-                value_type: aas.DataTypeDefXsd = xsd.Int,
-                value_id: Optional[aas.Reference] = None,
-                display_name: Optional[aas.MultiLanguageNameType] = None,
-                category: Optional[str] = None,
-                description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/Reliability/B10/1/0"),
-                qualifier: Iterable[aas.Qualifier] = None,
-                extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (),
-                embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
-            ):
+            @staticmethod
+            def template_defaults() -> PropertyMetadata:
+                return {
+                    "id_short": r"B",
+                    "value_type": xsd.Int,
+                    "description": aas.MultiLanguageTextType(dict_={r"en": r"B10"}),
+                    "semantic_id": global_ref(r"https://admin-shell.io/idta/Reliability/B10/1/0"),
+                }
 
-                if description is None:
-                    description = aas.MultiLanguageTextType(dict_={r"en": r"B10"})
+            def __init__(self, value: xsd.Int, **kwargs: Unpack[PropertyMetadata]):
 
-                if qualifier is None:
-                    qualifier = ()
+                super().__init__(value=value, **(self.template_defaults() | kwargs))
 
-                if embedded_data_specifications is None:
-                    embedded_data_specifications = []
-
-                super().__init__(
-                    value=value,
-                    id_short=id_short,
-                    value_type=value_type,
-                    value_id=value_id,
-                    display_name=display_name,
-                    category=category,
-                    description=description,
-                    semantic_id=semantic_id,
-                    qualifier=qualifier,
-                    extension=extension,
-                    supplemental_semantic_id=supplemental_semantic_id,
-                    embedded_data_specifications=embedded_data_specifications,
-                )
+        @staticmethod
+        def template_defaults() -> SubmodelElementCollectionMetadata:
+            return {
+                "id_short": r"ReliabilityCharacteristics",
+                "description": aas.MultiLanguageTextType(
+                    dict_={r"en": r"Reliability characteristics", r"fr": r"Caractéristiques de fiabilité"}
+                ),
+                "semantic_id": global_ref(r"0112/2///62683#ACG080#001"),
+            }
 
         def __init__(
             self,
             mTTF: Optional[Iterable[Union[xsd.Int, MTTF]]] = None,
             mTBF: Optional[Iterable[Union[xsd.Int, MTBF]]] = None,
             b: Optional[Iterable[Union[xsd.Int, B]]] = None,
-            id_short: Optional[str] = r"ReliabilityCharacteristics",
-            display_name: Optional[aas.MultiLanguageNameType] = None,
-            category: Optional[str] = None,
-            description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACG080#001"),
-            qualifier: Iterable[aas.Qualifier] = None,
-            extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (),
-            embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+            **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
-
-            if description is None:
-                description = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Reliability characteristics", r"fr": r"Caractéristiques de fiabilité"}
-                )
-
-            if qualifier is None:
-                qualifier = ()
-
-            if embedded_data_specifications is None:
-                embedded_data_specifications = []
 
             # A str would be split into its characters
             if isinstance(mTTF, str):
@@ -927,18 +595,23 @@ class Reliability(aas.Submodel):
 
             embedded_submodel_elements = collect_submodel_elements(mTTF, mTBF, b)
 
-            super().__init__(
-                value=embedded_submodel_elements,
-                id_short=id_short,
-                display_name=display_name,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                extension=extension,
-                supplemental_semantic_id=supplemental_semantic_id,
-                embedded_data_specifications=embedded_data_specifications,
-            )
+            super().__init__(value=embedded_submodel_elements, **(self.template_defaults() | kwargs))
+
+    @staticmethod
+    def template_defaults() -> SubmodelMetadata:
+        return {
+            "id_short": r"Reliability",
+            "administration": aas.AdministrativeInformation(
+                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
+            ),
+            "semantic_id": aas.ModelReference(
+                key=(
+                    aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/iec62683/1/0/Reliability"),
+                ),
+                type_=aas.Submodel,
+                referred_semantic_id=None,
+            ),
+        }
 
     def __init__(
         self,
@@ -948,33 +621,8 @@ class Reliability(aas.Submodel):
             Iterable[OperatingConditionsOfReliabilityCharacteristics]
         ] = None,
         reliabilityCharacteristics: Optional[Iterable[ReliabilityCharacteristics]] = None,
-        id_short: Optional[str] = r"Reliability",
-        display_name: Optional[aas.MultiLanguageNameType] = None,
-        category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ModelReference(
-            key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"https://admin-shell.io/idta/iec62683/1/0/Reliability"),),
-            type_=aas.Submodel,
-            referred_semantic_id=None,
-        ),
-        qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
-        extension: Iterable[aas.Extension] = (),
-        supplemental_semantic_id: Iterable[aas.Reference] = (),
-        embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
+        **kwargs: Unpack[SubmodelMetadata],
     ):
-
-        if administration is None:
-            administration = aas.AdministrativeInformation(
-                version=r"1", revision=r"0", creator=None, template_id=None, embedded_data_specifications=[]
-            )
-
-        if qualifier is None:
-            qualifier = ()
-
-        if embedded_data_specifications is None:
-            embedded_data_specifications = []
 
         # Build a submodel element if a raw value was passed in the argument
 
@@ -995,18 +643,4 @@ class Reliability(aas.Submodel):
             numberOfReliabilitySets, operatingConditionsOfReliabilityCharacteristics, reliabilityCharacteristics
         )
 
-        super().__init__(
-            submodel_element=embedded_submodel_elements,
-            id_=id_,
-            id_short=id_short,
-            display_name=display_name,
-            category=category,
-            description=description,
-            administration=administration,
-            semantic_id=semantic_id,
-            qualifier=qualifier,
-            kind=kind,
-            extension=extension,
-            supplemental_semantic_id=supplemental_semantic_id,
-            embedded_data_specifications=embedded_data_specifications,
-        )
+        super().__init__(submodel_element=embedded_submodel_elements, id_=id_, **(self.template_defaults() | kwargs))
