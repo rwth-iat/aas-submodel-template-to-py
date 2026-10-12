@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -306,7 +306,7 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                                     value=r"AML/6eb1965c-9a52-49ac-a19a-a4a32db75317.onOff",
                                 ),
                             ),
-                            type_=type(None),
+                            type_=aas.File,
                             referred_semantic_id=None,
                         ),
                         "second": aas.ModelReference(

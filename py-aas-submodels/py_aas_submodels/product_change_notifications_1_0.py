@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -99,7 +99,7 @@ class BasicEventElementMetadata(TypedDict, total=False):
     """Metadata of aas.BasicEventElement, passed as keyword arguments to its generated classes"""
 
     id_short: Optional[str]
-    observed: aas.ModelReference[Union[ForwardRef("aas.AssetAdministrationShell"), aas.Submodel, aas.SubmodelElement]]
+    observed: aas.ModelReference[Union["aas.AssetAdministrationShell", aas.Submodel, aas.SubmodelElement]]
     direction: aas.Direction
     state: aas.StateOfEvent
     message_topic: Optional[str]

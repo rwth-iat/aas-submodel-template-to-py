@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -1424,7 +1424,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -4898,7 +4898,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -8591,7 +8591,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -12207,7 +12207,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -15538,7 +15538,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -20543,7 +20543,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -24633,7 +24633,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -27930,7 +27930,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     (
                                         i
                                         if isinstance(i, aas.SubmodelElement)
-                                        else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                        else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                                     )
                                     for i in scopes_items
                                 ]
@@ -29683,10 +29683,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         class Canv_offset(aas.Property):
 
-                            ALLOWED_RANGE = (
-                                xsd.from_xsd(r"0", xsd.NonNegativeInteger),
-                                xsd.from_xsd(r"63", xsd.NonNegativeInteger),
-                            )
+                            ALLOWED_RANGE = (xsd.NonNegativeInteger(0), xsd.NonNegativeInteger(63))
 
                             @staticmethod
                             def template_defaults() -> PropertyMetadata:
@@ -29718,10 +29715,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         class Canv_length(aas.Property):
 
-                            ALLOWED_RANGE = (
-                                xsd.from_xsd(r"1", xsd.NonNegativeInteger),
-                                xsd.from_xsd(r"64", xsd.NonNegativeInteger),
-                            )
+                            ALLOWED_RANGE = (xsd.NonNegativeInteger(1), xsd.NonNegativeInteger(64))
 
                             @staticmethod
                             def template_defaults() -> PropertyMetadata:
@@ -29938,10 +29932,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 class Canv_offset(aas.Property):
 
-                                    ALLOWED_RANGE = (
-                                        xsd.from_xsd(r"0", xsd.NonNegativeInteger),
-                                        xsd.from_xsd(r"63", xsd.NonNegativeInteger),
-                                    )
+                                    ALLOWED_RANGE = (xsd.NonNegativeInteger(0), xsd.NonNegativeInteger(63))
 
                                     @staticmethod
                                     def template_defaults() -> PropertyMetadata:
@@ -29975,10 +29966,7 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 class Canv_length(aas.Property):
 
-                                    ALLOWED_RANGE = (
-                                        xsd.from_xsd(r"1", xsd.NonNegativeInteger),
-                                        xsd.from_xsd(r"64", xsd.NonNegativeInteger),
-                                    )
+                                    ALLOWED_RANGE = (xsd.NonNegativeInteger(1), xsd.NonNegativeInteger(64))
 
                                     @staticmethod
                                     def template_defaults() -> PropertyMetadata:

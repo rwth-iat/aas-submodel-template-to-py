@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -1957,7 +1957,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class RegenerationDuration(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+                    ALLOWED_RANGE = (xsd.Float(0.0), None)
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:
@@ -2731,7 +2731,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.UnsignedShort), xsd.from_xsd(r"100", xsd.UnsignedShort))
+                    ALLOWED_RANGE = (xsd.UnsignedShort(0), xsd.UnsignedShort(100))
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:
@@ -4753,7 +4753,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class RegenerationDuration(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+                    ALLOWED_RANGE = (xsd.Float(0.0), None)
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:
@@ -5126,7 +5126,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     class VoltageLevel(aas.Property):
 
-                        ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+                        ALLOWED_RANGE = (xsd.Float(0.0), None)
 
                         @staticmethod
                         def template_defaults() -> PropertyMetadata:
@@ -5538,7 +5538,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.UnsignedShort), xsd.from_xsd(r"100", xsd.UnsignedShort))
+                    ALLOWED_RANGE = (xsd.UnsignedShort(0), xsd.UnsignedShort(100))
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:
@@ -6985,7 +6985,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class RegenerationDuration(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+                    ALLOWED_RANGE = (xsd.Float(0.0), None)
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:
@@ -7460,7 +7460,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.UnsignedShort), xsd.from_xsd(r"100", xsd.UnsignedShort))
+                    ALLOWED_RANGE = (xsd.UnsignedShort(0), xsd.UnsignedShort(100))
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:

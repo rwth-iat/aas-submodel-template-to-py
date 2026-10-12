@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -302,7 +302,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -335,7 +335,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -370,7 +370,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -403,7 +403,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -432,7 +432,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -449,7 +449,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class RecycledContent(aas.Property):
 
-            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
+            ALLOWED_RANGE = (xsd.Decimal(r"0"), xsd.Decimal(r"100"))
 
             @staticmethod
             def template_defaults() -> PropertyMetadata:
@@ -467,7 +467,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -546,7 +546,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -602,7 +602,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -635,7 +635,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -674,7 +674,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
                 class FillerMassPercentage(aas.Property):
 
-                    ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
+                    ALLOWED_RANGE = (xsd.Decimal(r"0"), xsd.Decimal(r"100"))
 
                     @staticmethod
                     def template_defaults() -> PropertyMetadata:
@@ -750,7 +750,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -791,7 +791,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -866,7 +866,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -899,7 +899,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class ContentOfTheMainPlasticType(aas.Property):
 
-            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
+            ALLOWED_RANGE = (xsd.Decimal(r"0"), xsd.Decimal(r"100"))
 
             @staticmethod
             def template_defaults() -> PropertyMetadata:
@@ -917,7 +917,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"3", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(3),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -941,7 +941,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class PercentConfidenceOfCertificateOfAnalysis(aas.Property):
 
-            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
+            ALLOWED_RANGE = (xsd.Decimal(r"0"), xsd.Decimal(r"100"))
 
             @staticmethod
             def template_defaults() -> PropertyMetadata:
@@ -963,7 +963,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"3", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(3),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -987,7 +987,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
         class CoefficientOfVariationWRTCertificateOfAnalysis(aas.Property):
 
-            ALLOWED_RANGE = (xsd.from_xsd(r"0", xsd.Decimal), xsd.from_xsd(r"100", xsd.Decimal))
+            ALLOWED_RANGE = (xsd.Decimal(r"0"), xsd.Decimal(r"100"))
 
             @staticmethod
             def template_defaults() -> PropertyMetadata:
@@ -1009,7 +1009,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"3", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(3),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -1130,7 +1130,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -1179,7 +1179,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"4", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(4),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -1214,7 +1214,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"4", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(4),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -1533,7 +1533,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"1", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(1),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -1691,7 +1691,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -1851,7 +1851,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -2009,7 +2009,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"2", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(2),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -2169,7 +2169,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"3", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(3),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -2333,7 +2333,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"4", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(4),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -2532,7 +2532,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"4", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(4),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(
@@ -2689,7 +2689,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         aas.Qualifier(
                             type_=r"RequiredAtDQL",
                             value_type=xsd.PositiveInteger,
-                            value=xsd.from_xsd(r"4", xsd.PositiveInteger),
+                            value=xsd.PositiveInteger(4),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
                             semantic_id=global_ref(

@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -1985,7 +1985,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             (
                                 i
                                 if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, kwargs.get("value_type_list_element", xsd.Float), i)
+                                else aas.Property(None, kwargs.get("value_type_list_element") or xsd.Float, i)
                             )
                             for i in yieldorproofstrengthindividualvalues_items
                         ]
@@ -2033,7 +2033,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             (
                                 i
                                 if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, kwargs.get("value_type_list_element", xsd.Float), i)
+                                else aas.Property(None, kwargs.get("value_type_list_element") or xsd.Float, i)
                             )
                             for i in tensilestrengthindividualvalues_items
                         ]
@@ -2088,7 +2088,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             (
                                 i
                                 if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, kwargs.get("value_type_list_element", xsd.Float), i)
+                                else aas.Property(None, kwargs.get("value_type_list_element") or xsd.Float, i)
                             )
                             for i in elongationafterfractureindividualvalues_items
                         ]
@@ -2386,7 +2386,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             (
                                 i
                                 if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, kwargs.get("value_type_list_element", str), i)
+                                else aas.Property(None, kwargs.get("value_type_list_element") or str, i)
                             )
                             for i in hardnessindividualvalues_items
                         ]
@@ -2598,7 +2598,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             (
                                 i
                                 if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, kwargs.get("value_type_list_element", xsd.Float), i)
+                                else aas.Property(None, kwargs.get("value_type_list_element") or xsd.Float, i)
                             )
                             for i in notchimpactstrengthindividualvalues_items
                         ]
@@ -2668,7 +2668,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             (
                                 i
                                 if isinstance(i, aas.SubmodelElement)
-                                else aas.Property(None, kwargs.get("value_type_list_element", xsd.Float), i)
+                                else aas.Property(None, kwargs.get("value_type_list_element") or xsd.Float, i)
                             )
                             for i in notchimpactworkindividualvalues_items
                         ]

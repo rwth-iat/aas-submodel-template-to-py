@@ -41,7 +41,7 @@ AAS_FORWARD_REF = ForwardRef("aas.AssetAdministrationShell")
     (Optional[Set[model.Reference]], "Optional[Set[aas.Reference]]"),
     (model.ModelReference[Union[model.Submodel, model.Entity]], "aas.ModelReference[Union[aas.Submodel, aas.Entity]]"),
     (Optional[model.ModelReference[AAS_FORWARD_REF]],
-     "Optional[aas.ModelReference[ForwardRef('aas.AssetAdministrationShell')]]"),
+     "Optional[aas.ModelReference['aas.AssetAdministrationShell']]"),
     (typing.Type[_SE], "type[aas.SubmodelElement]"),
 ])
 def test_reprify_typehint(typehint, expected):

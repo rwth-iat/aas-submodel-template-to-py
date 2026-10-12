@@ -58,6 +58,7 @@ def test_references_keep_keys_and_type(generated_module):
     relation = generated_module.ReferenceTest.Relation()
 
     assert relation.first == FRAGMENT_REFERENCE
-    assert relation.first.type is type(None)
+    # References to fragments refer to their file or blob, as NoneType isn't a Referable (#54)
+    assert relation.first.type is model.File
     assert relation.second == PROPERTY_REFERENCE
     assert relation.second.type is model.Property

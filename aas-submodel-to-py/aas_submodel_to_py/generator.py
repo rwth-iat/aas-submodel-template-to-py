@@ -156,7 +156,7 @@ class SubmodelCodegen:
         if se_list.type_value_list_element is Property and se_list.value_type_list_element is not None:
             # The value type is metadata, which may be passed
             value_type = StringHandler.reprify(se_list.value_type_list_element)
-            return f'{MODEL_ALIAS}.Property(None, {util.METADATA_ARG}.get("value_type_list_element", {value_type}), {raw_value})'
+            return f'{MODEL_ALIAS}.Property(None, {util.METADATA_ARG}.get("value_type_list_element") or {value_type}, {raw_value})'
 
         return None
 

@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -1360,8 +1360,8 @@ class TimeSeries(aas.Submodel):
                     aas.Range(
                         id_short=r"Timespan",
                         value_type=xsd.DateTime,
-                        min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
-                        max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
+                        min=cast(xsd.DateTime, xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime)),
+                        max=cast(xsd.DateTime, xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime)),
                         display_name=None,
                         category=None,
                         description=aas.MultiLanguageTextType(
@@ -1435,8 +1435,8 @@ class TimeSeries(aas.Submodel):
                     aas.Range(
                         id_short=r"Timespan",
                         value_type=xsd.DateTime,
-                        min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
-                        max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
+                        min=cast(xsd.DateTime, xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime)),
+                        max=cast(xsd.DateTime, xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime)),
                         display_name=None,
                         category=None,
                         description=aas.MultiLanguageTextType(
@@ -1482,8 +1482,8 @@ class TimeSeries(aas.Submodel):
                     aas.Range(
                         id_short=r"Timespan",
                         value_type=xsd.DateTime,
-                        min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
-                        max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
+                        min=cast(xsd.DateTime, xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime)),
+                        max=cast(xsd.DateTime, xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime)),
                         display_name=None,
                         category=None,
                         description=aas.MultiLanguageTextType(

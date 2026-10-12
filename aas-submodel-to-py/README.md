@@ -24,7 +24,7 @@ The classes build instances (`kind=Instance`), so template qualifiers like `SMT/
 allowed in templates, aren't taken over. Each module starts with a few helpers its classes share:
 
 ```python
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -146,7 +146,7 @@ Values restricted by the template (`SMT/AllowedValue`, `SMT/AllowedRange`, `Form
 checked as well and available as class attributes, e.g. `SafetyMeasure.ALLOWED_VALUES == ("True", "False")`.
 Lists (`SubmodelElementList`) take an iterable of their items or raw values, e.g. `phases=["A1", "B2"]`.
 List items have no idShort by default, as it is optional since AAS metamodel 3.1.
-The output is auto-formatted with Black.
+The output is auto-formatted with Black and passes the type checker mypy.
 
 ## Installation
 

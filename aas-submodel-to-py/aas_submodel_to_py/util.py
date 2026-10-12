@@ -1,6 +1,8 @@
 import builtins
+import decimal
 import enum
 import keyword
+import math
 import pydoc
 import types
 import inspect
@@ -18,7 +20,7 @@ from basyx.aas.model.submodel import _SE
 MODEL_ALIAS = "aas"
 DATATYPES_ALIAS = "xsd"
 # Names generated modules import from typing
-TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "TypedDict", "Union", "Unpack")
+TYPING_IMPORTS = ("Any", "Iterable", "Optional", "Tuple", "TypedDict", "Union", "Unpack", "cast")
 # Helpers each generated module defines (see code_templates/helpers.pyi): creating references to global
 # identifiers, collecting the submodel elements passed to inits and the base class of list classes
 GLOBAL_REF_HELPER = "global_ref"
@@ -83,6 +85,9 @@ RESERVED_CLS_NAMES = (frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | fro
 RESERVED_ARG_NAMES = (frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re", GLOBAL_REF_HELPER, COLLECT_HELPER,
                                  "self", METADATA_ARG))
                       | frozenset(keyword.kwlist))
+
+# Referables whose fragments references may refer to (AASd-128)
+FRAGMENT_PARENT_TYPES = {KeyTypes.FILE: File, KeyTypes.BLOB: Blob}
 
 # Collections rendered as tuples in generated code (see StringHandler.reprify)
 TUPLE_TYPES = (tuple, NamespaceSet, ConstrainedList)
@@ -264,7 +269,8 @@ class StringHandler:
             name = cls.qualify_names_in_typehint(repr(typehint).split("[", 1)[0])
             return f"{name}[{', '.join(cls.typehint_repr(arg) for arg in args)}]" if args else name
         elif isinstance(typehint, typing.ForwardRef):
-            return cls.qualify_names_in_typehint(f"ForwardRef({typehint.__forward_arg__!r})")
+            # As a string, which type checkers accept as annotation, unlike ForwardRef(...)
+            return repr(cls.qualify_names_in_typehint(typehint.__forward_arg__))
         elif typehint is type(None):
             return "None"
         elif typehint is Ellipsis:
@@ -300,12 +306,12 @@ class StringHandler:
             if any(char in val for char in "'\n\r\0") or val.endswith("\\"):
                 return repr(val)
             return f"r'{val}'"
+        elif type(val) is float and not math.isfinite(val):
+            return f'float("{val}")'
         elif type(val) in (bool, int, float):
             return str(val)
         elif type(val) in XSD_TYPE_NAMES:
-            # Values of other XSD types (e.g. Duration, DateTime, Long) are restored from
-            # their XSD lexical representation, as their constructors differ widely
-            return f"{DATATYPES_ALIAS}.from_xsd({cls.reprify(xsd_repr(val))}, {cls.reprify(type(val))})"
+            return cls.xsd_value_repr(val)
         elif type(val) is dict:
             if val:
                 items_repr = [f"{cls.reprify(key)}: {cls.reprify(value)}" for key, value in val.items()]
@@ -335,11 +341,31 @@ class StringHandler:
             kwargs = get_kwargs_for_init(val)
             if isinstance(val, Qualifiable):
                 kwargs["qualifier"] = instance_qualifiers(val)
+            if isinstance(val, ModelReference) and kwargs.get("type_") is type(None) and len(val.key) > 1:
+                # BaSyx reads references to fragments of a file or blob from JSON with the referred type NoneType,
+                # which isn't a Referable: refer to the file or blob (Referable is abstract)
+                kwargs["type_"] = FRAGMENT_PARENT_TYPES.get(val.key[-2].type, Referable)
             kwargs = cls.reprify_kwarg_values(kwargs)
             kwargs_repr = ", ".join([f"{arg}={kwargs[arg]}" for arg in kwargs])
             typ = cls.reprify(type(val))
             res = f"{typ}({kwargs_repr})"
             return res
+
+    @classmethod
+    def xsd_value_repr(cls, val) -> str:
+        """Return code creating `val` of an XSD type, typed with this type (e.g. "xsd.PositiveInteger(1)")"""
+        typ = cls.reprify(type(val))
+        if isinstance(val, int):
+            return f"{typ}({int(val)})"
+        elif isinstance(val, float) and math.isfinite(val):
+            return f"{typ}({float(val)!r})"
+        elif isinstance(val, (str, decimal.Decimal)):
+            return f"{typ}({cls.reprify(str(val))})"
+        elif isinstance(val, bytearray):
+            return f"{typ}({bytes(val)!r})"
+        # Values of other XSD types (e.g. DateTime, Duration) are restored from their XSD lexical representation,
+        # as their constructors differ widely. from_xsd() is typed with the union of all XSD types
+        return f"cast({typ}, {DATATYPES_ALIAS}.from_xsd({cls.reprify(str(xsd_repr(val)))}, {typ}))"
 
     @classmethod
     def reprify_kwarg_values(cls, kwargs: Dict):

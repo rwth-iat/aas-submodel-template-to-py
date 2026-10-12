@@ -1,4 +1,4 @@
-from typing import Any, ForwardRef, Iterable, Optional, Tuple, TypedDict, Union, Unpack
+from typing import Any, Iterable, Optional, Tuple, TypedDict, Union, Unpack, cast
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
@@ -221,7 +221,7 @@ class ModuleTypePackage(aas.Submodel):
                                 value=r"CAEX@ModuleTypePackage/BPXX_Freelance/CommunicationSet/InstanceList/M0013",
                             ),
                         ),
-                        type_=type(None),
+                        type_=aas.File,
                         referred_semantic_id=None,
                     ),
                     "second": aas.ModelReference(
@@ -578,7 +578,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                                 value=r"CAEX@ModuleTypePackage/BPXX_Freelance/CommunicationSet/InstanceList/M0013",
                             ),
                         ),
-                        type_=type(None),
+                        type_=aas.File,
                         referred_semantic_id=None,
                     ),
                     "second": aas.ModelReference(
