@@ -2,6 +2,9 @@
 
 Module names must tell which template part, version and variant they were
 generated from, see https://github.com/rwth-iat/aas-submodel-template-to-py/issues/31
+
+Modules identical to others are replaced by aliases re-exporting their names, see
+https://github.com/rwth-iat/aas-submodel-template-to-py/issues/55
 """
 import importlib.util
 import pathlib
@@ -63,3 +66,18 @@ def test_assign_output_names_counts_remaining_collisions():
 
     assert list(names.values()) == ["some_template_1_0.py", "some_template_1_0__1.py",
                                     "some_template_1_0_metamodel_3_1.py", "some_template_1_0__2.py"]
+
+
+def test_identical_modules_are_replaced_by_aliases(tmp_path):
+    for name, code in [("template_1_0_1.py", "A = 1\n"), ("template_1_0.py", "A = 1\n"),
+                       ("template_1_0_metamodel_3_1.py", "A = 1\n"), ("template_2_0.py", "A = 2\n")]:
+        (tmp_path / name).write_text(code)
+
+    aliases = regenerate_submodels.replace_identical_modules_by_aliases(tmp_path)
+
+    assert aliases == {"template_1_0_1": "template_1_0", "template_1_0_metamodel_3_1": "template_1_0"}
+    assert (tmp_path / "template_1_0.py").read_text() == "A = 1\n"
+    assert (tmp_path / "template_2_0.py").read_text() == "A = 2\n"
+    for alias in aliases:
+        assert (tmp_path / f"{alias}.py").read_text().endswith(
+            "from .template_1_0 import *  # noqa: F401,F403\n")

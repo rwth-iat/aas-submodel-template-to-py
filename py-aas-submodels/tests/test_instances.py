@@ -12,6 +12,7 @@ import importlib
 import io
 import json
 import pathlib
+import sys
 
 import aas_core3_1.jsonization as aas_jsonization
 import aas_core3_1.verification as aas_verification
@@ -181,6 +182,7 @@ def generated_submodel_classes():
     for path in sorted(pathlib.Path(py_aas_submodels.__file__).parent.glob("*.py")):
         if path.stem != "__init__":
             module = importlib.import_module(f"py_aas_submodels.{path.stem}")
+            # Classes re-exported by aliases of identical modules (#55) are tested with their module
             for obj in vars(module).values():
                 if isinstance(obj, type) and issubclass(obj, model.Submodel) and obj.__module__ == module.__name__:
                     yield pytest.param(obj, id=f"{path.stem}.{obj.__name__}")
@@ -198,3 +200,15 @@ def test_instance_of_generated_submodel_class_is_valid_aas(submodel_cls):
         raise
 
     assert serialization_errors(submodel) == []
+
+
+def peak_memory() -> int:
+    """Peak resident set size of the process in bytes"""
+    resource = pytest.importorskip("resource")
+    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    return peak if sys.platform == "darwin" else peak * 1024
+
+
+def test_memory_stays_bounded():
+    # Runs after the tests above: the ABC caches of the generated classes must not accumulate (#53, conftest.py)
+    assert peak_memory() < 2**30

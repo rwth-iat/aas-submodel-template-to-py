@@ -98,6 +98,30 @@ def assign_output_names(json_files: Iterable[Path], published_dir: Path) -> dict
     return names
 
 
+# Module re-exporting the names of an identical module
+ALIAS_MODULE = '''"""Alias of {module}: its template generates the same classes"""
+from .{module} import *  # noqa: F401,F403
+'''
+
+
+def replace_identical_modules_by_aliases(module_dir: Path) -> dict[str, str]:
+    """Replace modules identical to others (e.g. of a template and its _metamodel_3_1 variant) by aliases
+    re-exporting their names, so that identical classes are defined once: the module with the shortest
+    name keeps the code. Return the names of the aliases and of the modules they refer to"""
+    modules_by_code: dict[bytes, list[Path]] = {}
+    for py_file in sorted(module_dir.glob("*.py")):
+        if py_file.name != "__init__.py":
+            modules_by_code.setdefault(py_file.read_bytes(), []).append(py_file)
+
+    aliases = {}
+    for py_files in modules_by_code.values():
+        original, *identical = sorted(py_files, key=lambda py_file: (len(py_file.stem), py_file.stem))
+        for py_file in identical:
+            py_file.write_text(ALIAS_MODULE.format(module=original.stem), encoding="utf-8")
+            aliases[py_file.stem] = original.stem
+    return aliases
+
+
 def clone_templates_repo(repo_url: str, ref: str, destination: Path) -> None:
     run_command(
         [
@@ -166,6 +190,9 @@ def regenerate_submodels(
             except Exception as ex:  # noqa: BLE001
                 failures.append((json_file, ex))
                 print(f"[FAIL] {json_file.relative_to(published_dir)}: {ex}")
+
+        for alias, module in replace_identical_modules_by_aliases(staged_output_dir).items():
+            print(f"[ALIAS] {alias} -> {module}")
 
         for py_file in output_dir.glob("*.py"):
             if py_file.name != "__init__.py":

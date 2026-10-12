@@ -39,6 +39,11 @@ Variants of a template file get a suffix:
 
 If names still collide, the additional modules get a double-underscore counter (`__1`, `__2`, ...).
 
+Many template files generate the same classes, e.g. a template and its `_forAASMetamodelV3.1` variant.
+Of identical modules, the one with the shortest name holds the classes, and the others are aliases
+re-exporting them: `software_nameplate_1_0_1_metamodel_3_1.SoftwareNameplate` is
+`software_nameplate_1_0.SoftwareNameplate`.
+
 ## Usage
 
 ```python
@@ -95,8 +100,8 @@ regenerated modules only if all [tests](#running-tests) pass.
 
 ## Running Tests
 
-The tests check that every module imports and defines a submodel class, and that instances of the
-generated classes are valid AAS: they are serialized to JSON and XML with BaSyx, read back without
+The tests check that every module imports and defines (or, as an alias, re-exports) a submodel class,
+and that instances of the generated classes are valid AAS: they are serialized to JSON and XML with BaSyx, read back without
 loss, and verified by [aas-core3.1](https://github.com/eclipse-aascw/aas-core3.1-python), an AAS SDK
 independent of BaSyx:
 

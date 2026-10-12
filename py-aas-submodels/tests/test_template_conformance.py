@@ -121,8 +121,10 @@ def generated_class(module_name: str, id_short: str) -> type:
         module = importlib.import_module(f"py_aas_submodels.{module_name}")
     except ModuleNotFoundError:
         pytest.skip(f"No module {module_name}: BaSyx reads no submodel from the template")
+    # Aliases of identical modules re-export their classes (#55)
     classes = [obj for obj in vars(module).values()
-               if isinstance(obj, type) and issubclass(obj, model.Submodel) and obj.__module__ == module.__name__
+               if isinstance(obj, type) and issubclass(obj, model.Submodel)
+               and obj.__module__.startswith("py_aas_submodels.")
                and obj.template_defaults().get("id_short") in (id_short, iteration_stem(id_short))]
     assert classes, f"No class for submodel {id_short} in {module_name}"
     return classes[0]
