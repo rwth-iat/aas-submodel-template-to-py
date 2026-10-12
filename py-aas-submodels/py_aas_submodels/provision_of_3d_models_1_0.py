@@ -345,7 +345,7 @@ class Models3D(aas.Submodel):
                                 }
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -1375,7 +1375,7 @@ class Models3D(aas.Submodel):
 
                         def __init__(
                             self,
-                            title: Union[aas.LangStringSet, Title],
+                            title: Union[aas.MultiLanguageTextType, Title],
                             fileName: Union[str, FileName],
                             fileVersionId: Union[str, FileVersionId],
                             statusValue: Union[str, StatusValue],
@@ -1862,7 +1862,7 @@ class Models3D(aas.Submodel):
                                 }
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -1895,7 +1895,7 @@ class Models3D(aas.Submodel):
                         def __init__(
                             self,
                             classId: Union[str, ClassId],
-                            className: Union[aas.LangStringSet, ClassName],
+                            className: Union[aas.MultiLanguageTextType, ClassName],
                             classificationSystem: Union[str, ClassificationSystem],
                             **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):

@@ -184,7 +184,7 @@ class SimulationModels(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/SimulationModels/Summary/1/0"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -450,7 +450,7 @@ class SimulationModels(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -825,7 +825,7 @@ class SimulationModels(aas.Submodel):
                 operatingSystem: Union[str, OperatingSystem],
                 simulationTool: Iterable[SimulationTool],
                 toolEnvironment: Optional[Iterable[Union[str, ToolEnvironment]]] = None,
-                dependencyEnvironment: Optional[Union[aas.LangStringSet, DependencyEnvironment]] = None,
+                dependencyEnvironment: Optional[Union[aas.MultiLanguageTextType, DependencyEnvironment]] = None,
                 visualizationInformation: Optional[Union[str, VisualizationInformation]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -961,7 +961,9 @@ class SimulationModels(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -995,7 +997,9 @@ class SimulationModels(aas.Submodel):
                     modelVersionId: Union[str, ModelVersionId],
                     digitalFile: DigitalFile,
                     modelPreviewImage: Optional[ModelPreviewImage] = None,
-                    modelFileReleaseNotesTxt: Optional[Union[aas.LangStringSet, ModelFileReleaseNotesTxt]] = None,
+                    modelFileReleaseNotesTxt: Optional[
+                        Union[aas.MultiLanguageTextType, ModelFileReleaseNotesTxt]
+                    ] = None,
                     modelFileReleaseNotesFile: Optional[ModelFileReleaseNotesFile] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
@@ -1435,7 +1439,9 @@ class SimulationModels(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1505,7 +1511,9 @@ class SimulationModels(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1541,7 +1549,9 @@ class SimulationModels(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1605,8 +1615,8 @@ class SimulationModels(aas.Submodel):
                         unitList: Union[str, UnitList],
                         variableCausality: Union[str, VariableCausality],
                         range: Optional[Union[str, Range]] = None,
-                        variableDescription: Optional[Union[aas.LangStringSet, VariableDescription]] = None,
-                        unitDescription: Optional[Union[aas.LangStringSet, UnitDescription]] = None,
+                        variableDescription: Optional[Union[aas.MultiLanguageTextType, VariableDescription]] = None,
+                        unitDescription: Optional[Union[aas.MultiLanguageTextType, UnitDescription]] = None,
                         variablePrefix: Optional[Union[str, VariablePrefix]] = None,
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
@@ -1676,7 +1686,7 @@ class SimulationModels(aas.Submodel):
                 def __init__(
                     self,
                     portConnectorName: Union[str, PortConnectorName],
-                    portConDescription: Optional[Union[aas.LangStringSet, PortConDescription]] = None,
+                    portConDescription: Optional[Union[aas.MultiLanguageTextType, PortConDescription]] = None,
                     variable: Optional[Iterable[Variable]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
@@ -1732,7 +1742,9 @@ class SimulationModels(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1746,7 +1758,7 @@ class SimulationModels(aas.Submodel):
                 def __init__(
                     self,
                     binaryConName: Union[str, BinaryConName],
-                    binaryConDescription: Optional[Union[aas.LangStringSet, BinaryConDescription]] = None,
+                    binaryConDescription: Optional[Union[aas.MultiLanguageTextType, BinaryConDescription]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -1809,7 +1821,7 @@ class SimulationModels(aas.Submodel):
             modelFile: ModelFile,
             paramMethod: Union[str, ParamMethod],
             initStateMethod: Union[str, InitStateMethod],
-            summary: Optional[Union[aas.LangStringSet, Summary]] = None,
+            summary: Optional[Union[aas.MultiLanguageTextType, Summary]] = None,
             typeOfModel: Optional[Iterable[Union[str, TypeOfModel]]] = None,
             licenseModel: Optional[Union[str, LicenseModel]] = None,
             engineeringDomain: Optional[Iterable[Union[str, EngineeringDomain]]] = None,

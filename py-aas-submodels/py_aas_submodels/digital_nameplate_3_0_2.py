@@ -215,7 +215,7 @@ class Nameplate(aas.Submodel):
                 "supplemental_semantic_id": (global_ref(r"0173-1#02-AAO677#004"),),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -229,7 +229,7 @@ class Nameplate(aas.Submodel):
                 "supplemental_semantic_id": (global_ref(r"0173-1#02-AAW338#003"),),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -271,7 +271,7 @@ class Nameplate(aas.Submodel):
                 "supplemental_semantic_id": (global_ref(r"0173-1#02-AAU732#003"),),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -285,7 +285,7 @@ class Nameplate(aas.Submodel):
                 "supplemental_semantic_id": (global_ref(r"0173-1#02-AAU731#003"),),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -711,7 +711,7 @@ class Nameplate(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/ArbitraryMLP"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -806,7 +806,9 @@ class Nameplate(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/ArbitraryMLP"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -819,7 +821,7 @@ class Nameplate(aas.Submodel):
                     guidelineForConformityDeclaration: Union[str, GuidelineForConformityDeclaration],
                     arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
                     arbitraryFile: Optional[Iterable[ArbitraryFile]] = None,
-                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -901,7 +903,7 @@ class Nameplate(aas.Submodel):
         def __init__(
             self,
             arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-            arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+            arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
             arbitraryFile: Optional[Iterable[ArbitraryFile]] = None,
             guidelineSpecificProperties: Optional[
                 Union[
@@ -973,12 +975,12 @@ class Nameplate(aas.Submodel):
         self,
         id_: str,
         uRIOfTheProduct: Union[xsd.AnyURI, URIOfTheProduct],
-        manufacturerName: Union[aas.LangStringSet, ManufacturerName],
-        manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
+        manufacturerName: Union[aas.MultiLanguageTextType, ManufacturerName],
+        manufacturerProductDesignation: Union[aas.MultiLanguageTextType, ManufacturerProductDesignation],
         addressInformation: AddressInformation,
         orderCodeOfManufacturer: Union[str, OrderCodeOfManufacturer],
-        manufacturerProductRoot: Optional[Union[aas.LangStringSet, ManufacturerProductRoot]] = None,
-        manufacturerProductFamily: Optional[Union[aas.LangStringSet, ManufacturerProductFamily]] = None,
+        manufacturerProductRoot: Optional[Union[aas.MultiLanguageTextType, ManufacturerProductRoot]] = None,
+        manufacturerProductFamily: Optional[Union[aas.MultiLanguageTextType, ManufacturerProductFamily]] = None,
         manufacturerProductType: Optional[Union[str, ManufacturerProductType]] = None,
         productArticleNumberOfManufacturer: Optional[Union[str, ProductArticleNumberOfManufacturer]] = None,
         serialNumber: Optional[Union[str, SerialNumber]] = None,

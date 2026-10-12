@@ -233,7 +233,7 @@ class BatteryNameplate(aas.Submodel):
                 ),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -827,7 +827,7 @@ class BatteryNameplate(aas.Submodel):
         self,
         id_: str,
         uRIOfTheProduct: Union[xsd.AnyURI, URIOfTheProduct],
-        manufacturerName: Union[aas.LangStringSet, ManufacturerName],
+        manufacturerName: Union[aas.MultiLanguageTextType, ManufacturerName],
         addressInformation: AddressInformation,
         serialNumber: Union[str, SerialNumber],
         dateOfManufacture: Union[xsd.Date, DateOfManufacture],

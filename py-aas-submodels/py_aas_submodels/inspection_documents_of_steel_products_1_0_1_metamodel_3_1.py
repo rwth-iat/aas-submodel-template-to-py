@@ -748,7 +748,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-AAU734#002"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -766,7 +766,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -836,7 +836,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1782,12 +1782,16 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             self,
             manufacturerProductNumber: Optional[Union[str, ManufacturerProductNumber]] = None,
             purchaserArticleNumber: Optional[Union[str, PurchaserArticleNumber]] = None,
-            productDescription: Optional[Union[aas.LangStringSet, ProductDescription]] = None,
-            additionalProductRequirements: Optional[Union[aas.LangStringSet, AdditionalProductRequirements]] = None,
+            productDescription: Optional[Union[aas.MultiLanguageTextType, ProductDescription]] = None,
+            additionalProductRequirements: Optional[
+                Union[aas.MultiLanguageTextType, AdditionalProductRequirements]
+            ] = None,
             batchNumber: Optional[Union[str, BatchNumber]] = None,
             materialNumber: Optional[Union[str, MaterialNumber]] = None,
             materialShortName: Optional[Union[str, MaterialShortName]] = None,
-            materialAdditionalInformation: Optional[Union[aas.LangStringSet, MaterialAdditionalInformation]] = None,
+            materialAdditionalInformation: Optional[
+                Union[aas.MultiLanguageTextType, MaterialAdditionalInformation]
+            ] = None,
             numberOfPieces: Optional[Union[xsd.PositiveInteger, NumberOfPieces]] = None,
             theoreticalMass: Optional[Union[xsd.Float, TheoreticalMass]] = None,
             actualMass: Optional[Union[xsd.Float, ActualMass]] = None,
@@ -2130,7 +2134,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2148,7 +2152,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2166,7 +2170,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2195,9 +2199,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Union[Iterable[Union[xsd.Float, aas.Property]], ElongationAfterFractureIndividualValues]
                 ] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
-                sampleShape: Optional[Union[aas.LangStringSet, SampleShape]] = None,
-                locationOfSample: Optional[Iterable[Union[aas.LangStringSet, LocationOfSample]]] = None,
-                directionOfSample: Optional[Iterable[Union[aas.LangStringSet, DirectionOfSample]]] = None,
+                sampleShape: Optional[Union[aas.MultiLanguageTextType, SampleShape]] = None,
+                locationOfSample: Optional[Iterable[Union[aas.MultiLanguageTextType, LocationOfSample]]] = None,
+                directionOfSample: Optional[Iterable[Union[aas.MultiLanguageTextType, DirectionOfSample]]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -2428,7 +2432,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2446,7 +2450,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2468,8 +2472,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Union[Iterable[Union[str, aas.Property]], HardnessIndividualValues]
                 ] = None,
                 testTemperature: Optional[Union[xsd.Float, TestTemperature]] = None,
-                locationOfSample: Optional[Iterable[Union[aas.LangStringSet, LocationOfSample]]] = None,
-                directionOfSample: Optional[Iterable[Union[aas.LangStringSet, DirectionOfSample]]] = None,
+                locationOfSample: Optional[Iterable[Union[aas.MultiLanguageTextType, LocationOfSample]]] = None,
+                directionOfSample: Optional[Iterable[Union[aas.MultiLanguageTextType, DirectionOfSample]]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -3284,7 +3288,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3318,7 +3322,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             massFraction_Ti: Optional[Union[xsd.Float, MassFraction_Ti]] = None,
             massFraction_V: Optional[Union[xsd.Float, MassFraction_V]] = None,
             massFraction_W: Optional[Union[xsd.Float, MassFraction_W]] = None,
-            steelmakingProcess: Optional[Union[aas.LangStringSet, SteelmakingProcess]] = None,
+            steelmakingProcess: Optional[Union[aas.MultiLanguageTextType, SteelmakingProcess]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 

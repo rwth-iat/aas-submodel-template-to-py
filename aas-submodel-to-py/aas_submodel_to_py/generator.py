@@ -120,7 +120,7 @@ class SubmodelCodegen:
         elif isinstance(se, Range):
             return f"Tuple[{StringHandler.reprify(se.value_type)}, {StringHandler.reprify(se.value_type)}]"
         elif isinstance(se, MultiLanguageProperty):
-            return f"{MODEL_ALIAS}.LangStringSet"
+            return f"{MODEL_ALIAS}.MultiLanguageTextType"
         elif isinstance(se, ReferenceElement):
             return f"{MODEL_ALIAS}.Reference"
         elif isinstance(se, SubmodelElementList):
@@ -491,7 +491,7 @@ class SubmodelCodegen:
     def gen_cls_for_multilang_property(self, se: MultiLanguageProperty,
                              template: str = 'base_class.pyi') -> str:
         render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
-        render_kwargs["typehints"]["value"] = f"{MODEL_ALIAS}.LangStringSet"
+        render_kwargs["typehints"]["value"] = f"{MODEL_ALIAS}.MultiLanguageTextType"
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_reference_element(self, se: ReferenceElement,

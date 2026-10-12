@@ -248,7 +248,7 @@ class Circularity(aas.Submodel):
                         "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-AAW001#001"),),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -269,7 +269,9 @@ class Circularity(aas.Submodel):
                             "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-AAO134#002"),),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -289,7 +291,9 @@ class Circularity(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -307,7 +311,9 @@ class Circularity(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -324,9 +330,9 @@ class Circularity(aas.Submodel):
 
                 def __init__(
                     self,
-                    nationalCode: Union[aas.LangStringSet, NationalCode],
-                    postalCode: Union[aas.LangStringSet, PostalCode],
-                    street: Union[aas.LangStringSet, Street],
+                    nationalCode: Union[aas.MultiLanguageTextType, NationalCode],
+                    postalCode: Union[aas.MultiLanguageTextType, PostalCode],
+                    street: Union[aas.MultiLanguageTextType, Street],
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -389,7 +395,9 @@ class Circularity(aas.Submodel):
                             "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-AAO200#002"),),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -424,7 +432,9 @@ class Circularity(aas.Submodel):
                             "supplemental_semantic_id": (global_ref(r"urn:irdi:0173-1#02-AAO201#002"),),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -442,9 +452,9 @@ class Circularity(aas.Submodel):
                 def __init__(
                     self,
                     emailAddress: Union[str, EmailAddress],
-                    publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
+                    publicKey: Optional[Union[aas.MultiLanguageTextType, PublicKey]] = None,
                     typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
-                    typeOfPublicKey: Optional[Union[aas.LangStringSet, TypeOfPublicKey]] = None,
+                    typeOfPublicKey: Optional[Union[aas.MultiLanguageTextType, TypeOfPublicKey]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -606,7 +616,7 @@ class Circularity(aas.Submodel):
 
             def __init__(
                 self,
-                nameOfSupplier: Union[aas.LangStringSet, NameOfSupplier],
+                nameOfSupplier: Union[aas.MultiLanguageTextType, NameOfSupplier],
                 addressOfSupplier: AddressOfSupplier,
                 emailAddressOfSupplier: EmailAddressOfSupplier,
                 supplierWebAddress: Union[str, SupplierWebAddress],

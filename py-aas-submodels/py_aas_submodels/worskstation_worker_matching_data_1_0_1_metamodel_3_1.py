@@ -245,7 +245,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -270,7 +270,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -287,7 +287,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/workerassistanceeinformation/1/0"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -316,7 +316,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -341,7 +341,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -357,7 +357,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/personaldataprocessing/1/0"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -382,7 +382,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -407,7 +407,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -434,16 +434,18 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 self,
                 workstationId: Union[str, WorkstationId],
                 workstationName: Optional[Union[str, WorkstationName]] = None,
-                orgName: Optional[Union[aas.LangStringSet, OrgName]] = None,
-                typeOfWorkstation: Optional[Union[aas.LangStringSet, TypeOfWorkstation]] = None,
-                workerAssistanceInformation: Optional[Union[aas.LangStringSet, WorkerAssistanceInformation]] = None,
-                requiredPersonalSafetyEquipment: Optional[
-                    Union[aas.LangStringSet, RequiredPersonalSafetyEquipment]
+                orgName: Optional[Union[aas.MultiLanguageTextType, OrgName]] = None,
+                typeOfWorkstation: Optional[Union[aas.MultiLanguageTextType, TypeOfWorkstation]] = None,
+                workerAssistanceInformation: Optional[
+                    Union[aas.MultiLanguageTextType, WorkerAssistanceInformation]
                 ] = None,
-                necessaryPersonalTools: Optional[Union[aas.LangStringSet, NecessaryPersonalTools]] = None,
-                personalDataProcessing: Optional[Union[aas.LangStringSet, PersonalDataProcessing]] = None,
-                locationDescription: Optional[Union[aas.LangStringSet, LocationDescription]] = None,
-                directions: Optional[Union[aas.LangStringSet, Directions]] = None,
+                requiredPersonalSafetyEquipment: Optional[
+                    Union[aas.MultiLanguageTextType, RequiredPersonalSafetyEquipment]
+                ] = None,
+                necessaryPersonalTools: Optional[Union[aas.MultiLanguageTextType, NecessaryPersonalTools]] = None,
+                personalDataProcessing: Optional[Union[aas.MultiLanguageTextType, PersonalDataProcessing]] = None,
+                locationDescription: Optional[Union[aas.MultiLanguageTextType, LocationDescription]] = None,
+                directions: Optional[Union[aas.MultiLanguageTextType, Directions]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -600,7 +602,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -623,7 +627,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     self,
                     qualificationClassificationId: Union[str, QualificationClassificationId],
                     qualificationId: Union[str, QualificationId],
-                    exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
+                    exceptionRules: Optional[Union[aas.MultiLanguageTextType, ExceptionRules]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -812,7 +816,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/exceptionrules/1/0"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -832,7 +838,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     skillId: Union[str, SkillId],
                     skillLevelClassificationId: Optional[Union[str, SkillLevelClassificationId]] = None,
                     skillLevelId: Optional[Union[str, SkillLevelId]] = None,
-                    exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
+                    exceptionRules: Optional[Union[aas.MultiLanguageTextType, ExceptionRules]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -1530,7 +1536,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1641,7 +1647,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/exceptionrules/1/0"),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1774,7 +1782,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         startTime: Union[xsd.DateTime, StartTime],
                         endTime: Union[xsd.DateTime, EndTime],
                         processTime: Union[int, ProcessTime],
-                        exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
+                        exceptionRules: Optional[Union[aas.MultiLanguageTextType, ExceptionRules]] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
@@ -1876,7 +1884,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
 
             def __init__(
                 self,
-                intervalDescription: Optional[Union[aas.LangStringSet, IntervalDescription]] = None,
+                intervalDescription: Optional[Union[aas.MultiLanguageTextType, IntervalDescription]] = None,
                 intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
                 intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
                 qualificationDemandRecords: Optional[
@@ -1981,7 +1989,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2131,7 +2139,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 "semantic_id": global_ref(r"https://admin-shell.io/idta/mlp/exceptionrules/1/0"),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2266,7 +2276,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         processTime: Union[int, ProcessTime],
                         skillLevelClassificationId: Optional[Union[str, SkillLevelClassificationId]] = None,
                         skillLevelId: Optional[Union[str, SkillLevelId]] = None,
-                        exceptionRules: Optional[Union[aas.LangStringSet, ExceptionRules]] = None,
+                        exceptionRules: Optional[Union[aas.MultiLanguageTextType, ExceptionRules]] = None,
                         demandKind: Optional[Union[str, DemandKind]] = None,
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
@@ -2381,7 +2391,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             def __init__(
                 self,
                 skillDemandRecords: Union[Iterable[SkillDemandRecords.Skilldemandrecords_item], SkillDemandRecords],
-                intervalDescription: Optional[Union[aas.LangStringSet, IntervalDescription]] = None,
+                intervalDescription: Optional[Union[aas.MultiLanguageTextType, IntervalDescription]] = None,
                 intervalStart: Optional[Union[xsd.DateTime, IntervalStart]] = None,
                 intervalEnd: Optional[Union[xsd.DateTime, IntervalEnd]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],

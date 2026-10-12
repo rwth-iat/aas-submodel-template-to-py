@@ -236,7 +236,7 @@ class RailwayFireProtection(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/ManufacturerName/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -255,7 +255,7 @@ class RailwayFireProtection(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/ManufacturerProductDesignation/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -314,8 +314,8 @@ class RailwayFireProtection(aas.Submodel):
 
         def __init__(
             self,
-            manufacturerName: Union[aas.LangStringSet, ManufacturerName],
-            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
+            manufacturerName: Union[aas.MultiLanguageTextType, ManufacturerName],
+            manufacturerProductDesignation: Union[aas.MultiLanguageTextType, ManufacturerProductDesignation],
             orderCodeOfManufacturer: Union[str, OrderCodeOfManufacturer],
             productArticleNumberOfManufacturer: Union[str, ProductArticleNumberOfManufacturer],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -779,7 +779,7 @@ class RailwayFireProtection(aas.Submodel):
                                 }
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -791,7 +791,7 @@ class RailwayFireProtection(aas.Submodel):
                                 return {"id_short": r"CityTown", "semantic_id": global_ref(r"0173-1#02-AAO132#002")}
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -803,7 +803,7 @@ class RailwayFireProtection(aas.Submodel):
                                 return {"id_short": r"Company", "semantic_id": global_ref(r"0173-1#02-AAW001#001")}
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -825,7 +825,9 @@ class RailwayFireProtection(aas.Submodel):
                                     }
 
                                 def __init__(
-                                    self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                    self,
+                                    value: aas.MultiLanguageTextType,
+                                    **kwargs: Unpack[MultiLanguagePropertyMetadata],
                                 ):
 
                                     super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -841,7 +843,7 @@ class RailwayFireProtection(aas.Submodel):
 
                             def __init__(
                                 self,
-                                telephoneNumber: Union[aas.LangStringSet, TelephoneNumber],
+                                telephoneNumber: Union[aas.MultiLanguageTextType, TelephoneNumber],
                                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
                             ):
 
@@ -904,7 +906,7 @@ class RailwayFireProtection(aas.Submodel):
                                 return {"id_short": r"Street", "semantic_id": global_ref(r"0173-1#02-AAO128#002")}
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -924,7 +926,7 @@ class RailwayFireProtection(aas.Submodel):
                                 }
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -950,13 +952,13 @@ class RailwayFireProtection(aas.Submodel):
                         def __init__(
                             self,
                             addressOfAdditionalLink: Optional[Union[str, AddressOfAdditionalLink]] = None,
-                            nationalCode: Optional[Union[aas.LangStringSet, NationalCode]] = None,
-                            cityTown: Optional[Union[aas.LangStringSet, CityTown]] = None,
-                            company: Optional[Union[aas.LangStringSet, Company]] = None,
+                            nationalCode: Optional[Union[aas.MultiLanguageTextType, NationalCode]] = None,
+                            cityTown: Optional[Union[aas.MultiLanguageTextType, CityTown]] = None,
+                            company: Optional[Union[aas.MultiLanguageTextType, Company]] = None,
                             phone: Optional[Phone] = None,
                             email: Optional[Email] = None,
-                            street: Optional[Union[aas.LangStringSet, Street]] = None,
-                            zipcode: Optional[Union[aas.LangStringSet, Zipcode]] = None,
+                            street: Optional[Union[aas.MultiLanguageTextType, Street]] = None,
+                            zipcode: Optional[Union[aas.MultiLanguageTextType, Zipcode]] = None,
                             **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
 

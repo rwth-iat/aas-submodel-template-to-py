@@ -539,7 +539,7 @@ class AIDeployment(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -674,7 +674,7 @@ class AIDeployment(aas.Submodel):
 
             def __init__(
                 self,
-                time: Union[aas.LangStringSet, Time],
+                time: Union[aas.MultiLanguageTextType, Time],
                 hardware: Hardware,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):

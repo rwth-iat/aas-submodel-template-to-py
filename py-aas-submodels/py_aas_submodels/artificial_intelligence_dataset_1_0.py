@@ -757,7 +757,7 @@ class AIDataset(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -936,7 +936,7 @@ class AIDataset(aas.Submodel):
 
             def __init__(
                 self,
-                labeledescription: Union[aas.LangStringSet, Labeledescription],
+                labeledescription: Union[aas.MultiLanguageTextType, Labeledescription],
                 annotationFile: Optional[AnnotationFile] = None,
                 singleFiles: Optional[SingleFiles] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -1399,7 +1399,7 @@ class AIDataset(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1417,7 +1417,7 @@ class AIDataset(aas.Submodel):
             self,
             dataCollectors: Optional[DataCollectors] = None,
             enviromentConditions: Optional[EnviromentConditions] = None,
-            syntheticData: Optional[Union[aas.LangStringSet, SyntheticData]] = None,
+            syntheticData: Optional[Union[aas.MultiLanguageTextType, SyntheticData]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 

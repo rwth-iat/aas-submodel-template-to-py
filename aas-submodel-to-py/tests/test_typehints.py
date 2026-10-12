@@ -10,6 +10,9 @@ Typehints must be rendered the same way on every Python version.
 
 The class of list items (type_value_list_element) was typed as an instance of aas.SubmodelElement, see
 https://github.com/rwth-iat/aas-submodel-template-to-py/issues/52
+
+Values of MultiLanguageProperties were typed as aas.LangStringSet, the base class of MultiLanguageTextType,
+which BaSyx expects, see https://github.com/rwth-iat/aas-submodel-template-to-py/issues/49
 """
 import importlib.util
 import inspect
@@ -114,3 +117,10 @@ def test_class_of_list_items_is_typed_as_class(generated_module):
     hints = typing.get_type_hints(generated_module.SubmodelElementListMetadata)
 
     assert hints["type_value_list_element"] == type[model.SubmodelElement]
+
+
+def test_multi_language_values_are_typed_as_multi_language_text(generated_module):
+    cls = generated_module.TypehintTest
+
+    assert typing.get_type_hints(cls.Title.__init__)["value"] is model.MultiLanguageTextType
+    assert typing.get_type_hints(cls.__init__)["title"] == Union[model.MultiLanguageTextType, cls.Title]

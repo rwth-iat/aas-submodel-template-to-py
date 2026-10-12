@@ -92,7 +92,7 @@ def sample_argument(cls: type, name: str, typehint, full: bool = False):
         return tuple(sample_argument(cls, name, arg, full) for arg in args)
     elif isinstance(typehint, type) and typehint.__module__ == cls.__module__:
         return build_instance(typehint, full)
-    elif typehint is model.LangStringSet:
+    elif typehint is model.MultiLanguageTextType:
         return model.MultiLanguageTextType({"en": "x"})
     elif typehint is model.Reference:
         return model.ExternalReference((model.Key(model.KeyTypes.GLOBAL_REFERENCE, "https://example.com/ids/x"),))

@@ -267,7 +267,9 @@ class ProductChangeNotifications(aas.Submodel):
                     def template_defaults() -> MultiLanguagePropertyMetadata:
                         return {"id_short": r"ManufacturerName", "semantic_id": global_ref(r"0173-1#02-AAO677#004")}
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -330,7 +332,7 @@ class ProductChangeNotifications(aas.Submodel):
 
                 def __init__(
                     self,
-                    manufacturerName: Union[aas.LangStringSet, ManufacturerName],
+                    manufacturerName: Union[aas.MultiLanguageTextType, ManufacturerName],
                     physicalAddress__0__: PhysicalAddress__0__,
                     physicalAddress__1__: PhysicalAddress__1__,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -854,7 +856,7 @@ class ProductChangeNotifications(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-ABF814#002"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -871,7 +873,9 @@ class ProductChangeNotifications(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -886,7 +890,9 @@ class ProductChangeNotifications(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -901,8 +907,8 @@ class ProductChangeNotifications(aas.Submodel):
 
                 def __init__(
                     self,
-                    changeTitle: Union[aas.LangStringSet, ChangeTitle],
-                    changeDetail: Union[aas.LangStringSet, ChangeDetail],
+                    changeTitle: Union[aas.MultiLanguageTextType, ChangeTitle],
+                    changeDetail: Union[aas.MultiLanguageTextType, ChangeDetail],
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -1013,7 +1019,9 @@ class ProductChangeNotifications(aas.Submodel):
                             "semantic_id": global_ref(r"0173-1#02-AAU731#003"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1029,7 +1037,9 @@ class ProductChangeNotifications(aas.Submodel):
                             "semantic_id": global_ref(r"0173-1#02-AAW338#002"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1045,7 +1055,9 @@ class ProductChangeNotifications(aas.Submodel):
                             "semantic_id": global_ref(r"0173-1#02-AAO227#004"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1453,9 +1465,9 @@ class ProductChangeNotifications(aas.Submodel):
 
                 def __init__(
                     self,
-                    manufacturerProductFamily: Union[aas.LangStringSet, ManufacturerProductFamily],
-                    manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
-                    orderCodeOfManufacturer: Optional[Union[aas.LangStringSet, OrderCodeOfManufacturer]] = None,
+                    manufacturerProductFamily: Union[aas.MultiLanguageTextType, ManufacturerProductFamily],
+                    manufacturerProductDesignation: Union[aas.MultiLanguageTextType, ManufacturerProductDesignation],
+                    orderCodeOfManufacturer: Optional[Union[aas.MultiLanguageTextType, OrderCodeOfManufacturer]] = None,
                     manufacturerAssetID: Optional[Union[aas.Reference, ManufacturerAssetID]] = None,
                     productClassifications: Optional[
                         Union[Iterable[ProductClassifications.Productclassifications_item], ProductClassifications]
@@ -1563,7 +1575,9 @@ class ProductChangeNotifications(aas.Submodel):
                                 "semantic_id": global_ref(r"0173-1#02-AAU731#003"),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1581,7 +1595,9 @@ class ProductChangeNotifications(aas.Submodel):
                                 "semantic_id": global_ref(r"0173-1#02-AAW338#002"),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1597,7 +1613,9 @@ class ProductChangeNotifications(aas.Submodel):
                                 "semantic_id": global_ref(r"0173-1#02-AAO227#004"),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2129,9 +2147,11 @@ class ProductChangeNotifications(aas.Submodel):
 
                     def __init__(
                         self,
-                        manufacturerProductFamily: Union[aas.LangStringSet, ManufacturerProductFamily],
-                        manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
-                        orderCodeOfManufacturer: Union[aas.LangStringSet, OrderCodeOfManufacturer],
+                        manufacturerProductFamily: Union[aas.MultiLanguageTextType, ManufacturerProductFamily],
+                        manufacturerProductDesignation: Union[
+                            aas.MultiLanguageTextType, ManufacturerProductDesignation
+                        ],
+                        orderCodeOfManufacturer: Union[aas.MultiLanguageTextType, OrderCodeOfManufacturer],
                         productClassifications: Optional[
                             Union[Iterable[ProductClassifications.Productclassifications_item], ProductClassifications]
                         ] = None,
@@ -2272,7 +2292,7 @@ class ProductChangeNotifications(aas.Submodel):
                 affectedPartNumbers: Optional[
                     Union[Iterable[Union[str, AffectedPartNumbers.Affectedpartnumbers_item]], AffectedPartNumbers]
                 ] = None,
-                pcnReasonComment: Optional[Union[aas.LangStringSet, PcnReasonComment]] = None,
+                pcnReasonComment: Optional[Union[aas.MultiLanguageTextType, PcnReasonComment]] = None,
                 additionalInformation: Optional[
                     Union[Iterable[AdditionalInformation.Additionalinformation_item], AdditionalInformation]
                 ] = None,

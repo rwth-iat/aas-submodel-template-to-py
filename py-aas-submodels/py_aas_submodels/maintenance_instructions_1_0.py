@@ -270,7 +270,7 @@ class MaintenanceInstructions(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-BAF831#002"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -390,7 +390,9 @@ class MaintenanceInstructions(aas.Submodel):
             def __init__(
                 self,
                 numberOfRequiredTechnicians: Optional[Union[xsd.Decimal, NumberOfRequiredTechnicians]] = None,
-                requiredQualification: Optional[Iterable[Union[aas.LangStringSet, RequiredQualification]]] = None,
+                requiredQualification: Optional[
+                    Iterable[Union[aas.MultiLanguageTextType, RequiredQualification]]
+                ] = None,
                 estimatedTotalWorkingTime: Optional[EstimatedTotalWorkingTime] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -466,7 +468,9 @@ class MaintenanceInstructions(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -488,7 +492,9 @@ class MaintenanceInstructions(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -554,7 +560,9 @@ class MaintenanceInstructions(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -882,7 +890,9 @@ class MaintenanceInstructions(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -926,7 +936,9 @@ class MaintenanceInstructions(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -994,13 +1006,15 @@ class MaintenanceInstructions(aas.Submodel):
                 def __init__(
                     self,
                     maintenanceStepID: Optional[Union[str, MaintenanceStepID]] = None,
-                    maintenanceStepName: Optional[Union[aas.LangStringSet, MaintenanceStepName]] = None,
-                    localizationDescription: Optional[Union[aas.LangStringSet, LocalizationDescription]] = None,
+                    maintenanceStepName: Optional[Union[aas.MultiLanguageTextType, MaintenanceStepName]] = None,
+                    localizationDescription: Optional[Union[aas.MultiLanguageTextType, LocalizationDescription]] = None,
                     linkSMMaintenanceComponentModuleMachine: Optional[
                         Union[aas.Reference, LinkSMMaintenanceComponentModuleMachine]
                     ] = None,
                     linkAASComponentModuleMachine: Optional[Union[aas.Reference, LinkAASComponentModuleMachine]] = None,
-                    instructionMaintenanceStep: Optional[Union[aas.LangStringSet, InstructionMaintenanceStep]] = None,
+                    instructionMaintenanceStep: Optional[
+                        Union[aas.MultiLanguageTextType, InstructionMaintenanceStep]
+                    ] = None,
                     relatedDocumentOrFileMaintenanceStep: Optional[
                         Iterable[RelatedDocumentOrFileMaintenanceStep]
                     ] = None,
@@ -1026,11 +1040,11 @@ class MaintenanceInstructions(aas.Submodel):
                     documentationSignatureMandatory: Optional[Union[bool, DocumentationSignatureMandatory]] = None,
                     estimatedDurationTimeMaintenanceStep: Optional[EstimatedDurationTimeMaintenanceStep] = None,
                     conditionForNextMaintenanceStep: Optional[
-                        Union[aas.LangStringSet, ConditionForNextMaintenanceStep]
+                        Union[aas.MultiLanguageTextType, ConditionForNextMaintenanceStep]
                     ] = None,
                     nextMaintenanceStep: Optional[Union[aas.Reference, NextMaintenanceStep]] = None,
                     conditionForAlternativeNextStep: Optional[
-                        Iterable[Union[aas.LangStringSet, ConditionForAlternativeNextStep]]
+                        Iterable[Union[aas.MultiLanguageTextType, ConditionForAlternativeNextStep]]
                     ] = None,
                     alternativeNextMaintenanceStep: Optional[
                         Iterable[Union[aas.Reference, AlternativeNextMaintenanceStep]]
@@ -1338,7 +1352,7 @@ class MaintenanceInstructions(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/maintenanceinstructions/toolname/1/0"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1511,7 +1525,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1555,7 +1569,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1597,11 +1611,11 @@ class MaintenanceInstructions(aas.Submodel):
             def __init__(
                 self,
                 toolID: Optional[Union[str, ToolID]] = None,
-                toolName: Optional[Union[aas.LangStringSet, ToolName]] = None,
+                toolName: Optional[Union[aas.MultiLanguageTextType, ToolName]] = None,
                 collectionMaxQuantityOfTool: Optional[CollectionMaxQuantityOfTool] = None,
-                companyNameToolSupplier: Optional[Union[aas.LangStringSet, CompanyNameToolSupplier]] = None,
+                companyNameToolSupplier: Optional[Union[aas.MultiLanguageTextType, CompanyNameToolSupplier]] = None,
                 orderCodeToolOfManufacturer: Optional[Union[str, OrderCodeToolOfManufacturer]] = None,
-                toolDescription: Optional[Iterable[Union[aas.LangStringSet, ToolDescription]]] = None,
+                toolDescription: Optional[Iterable[Union[aas.MultiLanguageTextType, ToolDescription]]] = None,
                 addressOfAdditionalLinkTool: Optional[Iterable[Union[str, AddressOfAdditionalLinkTool]]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -1739,7 +1753,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1936,7 +1950,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1979,7 +1993,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2001,7 +2015,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2043,14 +2057,18 @@ class MaintenanceInstructions(aas.Submodel):
             def __init__(
                 self,
                 consumableID: Optional[Union[str, ConsumableID]] = None,
-                consumableName: Optional[Union[aas.LangStringSet, ConsumableName]] = None,
+                consumableName: Optional[Union[aas.MultiLanguageTextType, ConsumableName]] = None,
                 collectionQuantityOfConsumable: Optional[CollectionQuantityOfConsumable] = None,
                 unitMaxQuantityOfConsumable: Optional[Union[str, UnitMaxQuantityOfConsumable]] = None,
-                companyNameSupplierConsumable: Optional[Union[aas.LangStringSet, CompanyNameSupplierConsumable]] = None,
+                companyNameSupplierConsumable: Optional[
+                    Union[aas.MultiLanguageTextType, CompanyNameSupplierConsumable]
+                ] = None,
                 orderCodeConsumableOfManufacturer: Optional[Union[str, OrderCodeConsumableOfManufacturer]] = None,
-                consumableDescription: Optional[Iterable[Union[aas.LangStringSet, ConsumableDescription]]] = None,
+                consumableDescription: Optional[
+                    Iterable[Union[aas.MultiLanguageTextType, ConsumableDescription]]
+                ] = None,
                 disposalInstructionsForConsumable: Optional[
-                    Iterable[Union[aas.LangStringSet, DisposalInstructionsForConsumable]]
+                    Iterable[Union[aas.MultiLanguageTextType, DisposalInstructionsForConsumable]]
                 ] = None,
                 addressOfAdditionalLinkConsumable: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkConsumable]]
@@ -2219,7 +2237,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2267,7 +2285,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2306,7 +2324,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2328,7 +2346,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2370,13 +2388,15 @@ class MaintenanceInstructions(aas.Submodel):
             def __init__(
                 self,
                 sparePartID: Optional[Union[str, SparePartID]] = None,
-                sparePartName: Optional[Union[aas.LangStringSet, SparePartName]] = None,
+                sparePartName: Optional[Union[aas.MultiLanguageTextType, SparePartName]] = None,
                 collectionQuantityOfSparePart: Optional[CollectionQuantityOfSparePart] = None,
-                companyNameSupplierSparePart: Optional[Union[aas.LangStringSet, CompanyNameSupplierSparePart]] = None,
+                companyNameSupplierSparePart: Optional[
+                    Union[aas.MultiLanguageTextType, CompanyNameSupplierSparePart]
+                ] = None,
                 orderCodeSparePartOfManufacturer: Optional[Union[str, OrderCodeSparePartOfManufacturer]] = None,
-                sparePartDescription: Optional[Iterable[Union[aas.LangStringSet, SparePartDescription]]] = None,
+                sparePartDescription: Optional[Iterable[Union[aas.MultiLanguageTextType, SparePartDescription]]] = None,
                 disposalInstructionsForSparePart: Optional[
-                    Iterable[Union[aas.LangStringSet, DisposalInstructionsForSparePart]]
+                    Iterable[Union[aas.MultiLanguageTextType, DisposalInstructionsForSparePart]]
                 ] = None,
                 addressOfAdditionalLinkSparePart: Optional[
                     Iterable[Union[str, AddressOfAdditionalLinkSparePart]]

@@ -267,7 +267,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -390,7 +390,7 @@ class PowerDriveTrainSizing(aas.Submodel):
             dateChanged: Union[xsd.DateTime, DateChanged],
             contactInformation: Iterable[ContactInformation],
             sizingProjectAxisReference: Optional[Union[str, SizingProjectAxisReference]] = None,
-            sizingProjectDescription: Optional[Union[aas.LangStringSet, SizingProjectDescription]] = None,
+            sizingProjectDescription: Optional[Union[aas.MultiLanguageTextType, SizingProjectDescription]] = None,
             amlDriveConfigVersion: Optional[Union[str, AmlDriveConfigVersion]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
@@ -4414,7 +4414,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-AAW338#001"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4573,7 +4573,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 manufacturerName: Optional[Union[str, ManufacturerName]] = None,
                 manufacturerArticleNumber: Optional[Union[str, ManufacturerArticleNumber]] = None,
                 manufacturerProductDesignation: Optional[
-                    Union[aas.LangStringSet, ManufacturerProductDesignation]
+                    Union[aas.MultiLanguageTextType, ManufacturerProductDesignation]
                 ] = None,
                 manufacturerOrderCode: Optional[Union[str, ManufacturerOrderCode]] = None,
                 externalMomentOfInertia: Optional[Union[xsd.Long, ExternalMomentOfInertia]] = None,
@@ -4742,7 +4742,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-AAW338#001"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5192,7 +5192,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 manufacturerArticleNumber: Union[str, ManufacturerArticleNumber],
                 manufacturerOrderCode: Union[str, ManufacturerOrderCode],
                 manufacturerProductDesignation: Optional[
-                    Union[aas.LangStringSet, ManufacturerProductDesignation]
+                    Union[aas.MultiLanguageTextType, ManufacturerProductDesignation]
                 ] = None,
                 maxCurrentUtilizationPercentage: Optional[Union[xsd.Long, MaxCurrentUtilizationPercentage]] = None,
                 maxCurrentUtilization: Optional[Union[xsd.Long, MaxCurrentUtilization]] = None,
@@ -5482,7 +5482,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-AAW338#001"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5574,7 +5574,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 manufacturerName: Optional[Union[str, ManufacturerName]] = None,
                 manufacturerArticleNumber: Optional[Union[str, ManufacturerArticleNumber]] = None,
                 manufacturerProductDesignation: Optional[
-                    Union[aas.LangStringSet, ManufacturerProductDesignation]
+                    Union[aas.MultiLanguageTextType, ManufacturerProductDesignation]
                 ] = None,
                 manufacturerOrderCode: Optional[Union[str, ManufacturerOrderCode]] = None,
                 quantityOfParts: Optional[Union[int, QuantityOfParts]] = None,
@@ -5677,7 +5677,9 @@ class PowerDriveTrainSizing(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5692,7 +5694,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                 def __init__(
                     self,
                     criticalityOfMessage: Union[str, CriticalityOfMessage],
-                    messageText: Union[aas.LangStringSet, MessageText],
+                    messageText: Union[aas.MultiLanguageTextType, MessageText],
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -5745,7 +5747,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/PowerDriveTrainSizing/TextStatement/1/0"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5765,7 +5767,7 @@ class PowerDriveTrainSizing(aas.Submodel):
             overallSystem: Optional[OverallSystem] = None,
             mainComponent: Optional[Iterable[MainComponent]] = None,
             otherComponent: Optional[Iterable[OtherComponent]] = None,
-            textStatement: Optional[Union[aas.LangStringSet, TextStatement]] = None,
+            textStatement: Optional[Union[aas.MultiLanguageTextType, TextStatement]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 

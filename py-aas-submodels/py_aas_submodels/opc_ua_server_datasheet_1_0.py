@@ -742,7 +742,9 @@ class UAServerDataSheet(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -883,7 +885,7 @@ class UAServerDataSheet(aas.Submodel):
                     self,
                     applicationUri: Union[str, ApplicationUri],
                     productUri: Optional[Union[str, ProductUri]] = None,
-                    applicationName: Optional[Union[aas.LangStringSet, ApplicationName]] = None,
+                    applicationName: Optional[Union[aas.MultiLanguageTextType, ApplicationName]] = None,
                     applicationType: Optional[Union[str, ApplicationType]] = None,
                     gatewayServerUri: Optional[Union[str, GatewayServerUri]] = None,
                     discoveryProfileUri: Optional[Union[str, DiscoveryProfileUri]] = None,

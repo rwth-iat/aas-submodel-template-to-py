@@ -413,7 +413,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -460,7 +462,7 @@ class HandoverDocumentation(aas.Submodel):
                     def __init__(
                         self,
                         classId: Union[str, ClassId],
-                        className: Union[aas.LangStringSet, ClassName],
+                        className: Union[aas.MultiLanguageTextType, ClassName],
                         classificationSystem: Union[str, ClassificationSystem],
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
@@ -620,7 +622,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -640,7 +644,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -660,7 +666,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -680,7 +688,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1053,15 +1063,15 @@ class HandoverDocumentation(aas.Submodel):
                         self,
                         language: Union[Iterable[Union[str, Language.Language_item]], Language],
                         version: Union[str, Version],
-                        title: Union[aas.LangStringSet, Title],
-                        description_: Union[aas.LangStringSet, Description],
+                        title: Union[aas.MultiLanguageTextType, Title],
+                        description_: Union[aas.MultiLanguageTextType, Description],
                         statusSetDate: Union[xsd.Date, StatusSetDate],
                         statusValue: Union[str, StatusValue],
                         organizationShortName: Union[str, OrganizationShortName],
                         organizationOfficialName: Union[str, OrganizationOfficialName],
                         digitalFiles: Union[Iterable[DigitalFiles.Digitalfiles_item], DigitalFiles],
-                        subtitle: Optional[Union[aas.LangStringSet, Subtitle]] = None,
-                        keyWords: Optional[Union[aas.LangStringSet, KeyWords]] = None,
+                        subtitle: Optional[Union[aas.MultiLanguageTextType, Subtitle]] = None,
+                        keyWords: Optional[Union[aas.MultiLanguageTextType, KeyWords]] = None,
                         refersToEntities: Optional[
                             Union[
                                 Iterable[Union[aas.Reference, RefersToEntities.Referstoentities_item]], RefersToEntities

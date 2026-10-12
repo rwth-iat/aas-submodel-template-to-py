@@ -269,7 +269,7 @@ class TechnicalData(aas.Submodel):
                     "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAW338-003"),),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -348,7 +348,9 @@ class TechnicalData(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -380,7 +382,7 @@ class TechnicalData(aas.Submodel):
                 def __init__(
                     self,
                     imageFile: ImageFile,
-                    imageNote: Optional[Union[aas.LangStringSet, ImageNote]] = None,
+                    imageNote: Optional[Union[aas.MultiLanguageTextType, ImageNote]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -438,7 +440,7 @@ class TechnicalData(aas.Submodel):
         def __init__(
             self,
             manufacturerName: Union[str, ManufacturerName],
-            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
+            manufacturerProductDesignation: Union[aas.MultiLanguageTextType, ManufacturerProductDesignation],
             manufacturerArticleNumber: Union[str, ManufacturerArticleNumber],
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
@@ -602,7 +604,7 @@ class TechnicalData(aas.Submodel):
                         "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABK273-002"),),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -658,7 +660,7 @@ class TechnicalData(aas.Submodel):
                 productClassCodedName: Union[str, ProductClassCodedName],
                 classificationSystemVersion: Optional[Union[str, ClassificationSystemVersion]] = None,
                 classificationSystemUrl: Optional[Union[str, ClassificationSystemUrl]] = None,
-                productClassName: Optional[Union[aas.LangStringSet, ProductClassName]] = None,
+                productClassName: Optional[Union[aas.MultiLanguageTextType, ProductClassName]] = None,
                 referenceToTechnicalPropertyArea: Optional[
                     Union[aas.Reference, ReferenceToTechnicalPropertyArea]
                 ] = None,
@@ -849,7 +851,9 @@ class TechnicalData(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -884,7 +888,7 @@ class TechnicalData(aas.Submodel):
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
                     arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                     arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
@@ -1041,7 +1045,9 @@ class TechnicalData(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1076,7 +1082,7 @@ class TechnicalData(aas.Submodel):
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
                     arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                     arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
@@ -1198,7 +1204,7 @@ class TechnicalData(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1251,7 +1257,7 @@ class TechnicalData(aas.Submodel):
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                 arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
                 arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-                arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                 arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -1358,7 +1364,7 @@ class TechnicalData(aas.Submodel):
                     "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABK134-002"),),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1393,7 +1399,7 @@ class TechnicalData(aas.Submodel):
         def __init__(
             self,
             validDate: Union[xsd.Date, ValidDate],
-            textStatement: Optional[Iterable[Union[aas.LangStringSet, TextStatement]]] = None,
+            textStatement: Optional[Iterable[Union[aas.MultiLanguageTextType, TextStatement]]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1526,7 +1532,9 @@ class TechnicalData(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1564,7 +1572,7 @@ class TechnicalData(aas.Submodel):
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
                     arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                     arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
@@ -1730,7 +1738,9 @@ class TechnicalData(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1768,7 +1778,7 @@ class TechnicalData(aas.Submodel):
                     arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                     arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
                     arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-                    arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                    arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                     arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
@@ -1890,7 +1900,7 @@ class TechnicalData(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/SMT/General/Arbitrary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1954,7 +1964,7 @@ class TechnicalData(aas.Submodel):
                 arbitrarySMC: Optional[Iterable[ArbitrarySMC]] = None,
                 arbitrarySML: Optional[Union[Iterable[aas.SubmodelElement], ArbitrarySML]] = None,
                 arbitraryProperty: Optional[Iterable[Union[str, ArbitraryProperty]]] = None,
-                arbitraryMLP: Optional[Iterable[Union[aas.LangStringSet, ArbitraryMLP]]] = None,
+                arbitraryMLP: Optional[Iterable[Union[aas.MultiLanguageTextType, ArbitraryMLP]]] = None,
                 arbitraryRange: Optional[Iterable[Union[Tuple[str, str], ArbitraryRange]]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):

@@ -204,7 +204,7 @@ class ProcessParameters(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -329,7 +329,7 @@ class ProcessParameters(aas.Submodel):
                 self,
                 processId: Union[str, ProcessId],
                 processName: Union[str, ProcessName],
-                processDescription: Union[aas.LangStringSet, ProcessDescription],
+                processDescription: Union[aas.MultiLanguageTextType, ProcessDescription],
                 plannedProcessTime: Union[xsd.Duration, PlannedProcessTime],
                 productParameters: ProductParameters,
                 processParameters: ProcessParameters,

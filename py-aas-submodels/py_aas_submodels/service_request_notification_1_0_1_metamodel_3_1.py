@@ -418,7 +418,7 @@ class ServiceRequestNotification(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-ABI762#001"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -458,7 +458,7 @@ class ServiceRequestNotification(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-ABI764#001"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -554,7 +554,9 @@ class ServiceRequestNotification(aas.Submodel):
                                 "semantic_id": global_ref(r"0173-1#02-ABI768#001"),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -569,7 +571,7 @@ class ServiceRequestNotification(aas.Submodel):
                     def __init__(
                         self,
                         digitalFile: DigitalFile,
-                        comment: Optional[Union[aas.LangStringSet, Comment]] = None,
+                        comment: Optional[Union[aas.MultiLanguageTextType, Comment]] = None,
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
 
@@ -631,7 +633,7 @@ class ServiceRequestNotification(aas.Submodel):
 
             def __init__(
                 self,
-                longText: Optional[Union[aas.LangStringSet, LongText]] = None,
+                longText: Optional[Union[aas.MultiLanguageTextType, LongText]] = None,
                 startOfFault: Optional[Union[xsd.DateTime, StartOfFault]] = None,
                 errorCode: Optional[Union[str, ErrorCode]] = None,
                 attachedMedia: Optional[AttachedMedia] = None,
@@ -778,7 +780,7 @@ class ServiceRequestNotification(aas.Submodel):
             status: Union[str, Status],
             priority: Union[str, Priority],
             relatedAsset: RelatedAsset,
-            shortText: Union[aas.LangStringSet, ShortText],
+            shortText: Union[aas.MultiLanguageTextType, ShortText],
             serviceType: Union[str, ServiceType],
             serviceRequestNotificationId: Optional[Union[str, ServiceRequestNotificationId]] = None,
             detailedInformation: Optional[DetailedInformation] = None,

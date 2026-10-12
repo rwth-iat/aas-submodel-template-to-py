@@ -260,7 +260,7 @@ class TechnicalDataAGV(aas.Submodel):
                     "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAW338-003"),),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -332,7 +332,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -364,7 +366,7 @@ class TechnicalDataAGV(aas.Submodel):
                 def __init__(
                     self,
                     imageFile: ImageFile,
-                    imageNote: Optional[Union[aas.LangStringSet, ImageNote]] = None,
+                    imageNote: Optional[Union[aas.MultiLanguageTextType, ImageNote]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -428,7 +430,7 @@ class TechnicalDataAGV(aas.Submodel):
         def __init__(
             self,
             manufacturerName: Union[str, ManufacturerName],
-            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
+            manufacturerProductDesignation: Union[aas.MultiLanguageTextType, ManufacturerProductDesignation],
             productArticleNumberOfManufacturer: Union[str, ProductArticleNumberOfManufacturer],
             manufacturerOrderCode: Union[str, ManufacturerOrderCode],
             companyLogo: Optional[CompanyLogo] = None,
@@ -673,7 +675,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -694,7 +698,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -762,7 +768,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -786,7 +794,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -816,14 +826,16 @@ class TechnicalDataAGV(aas.Submodel):
                     transportPrinciple: Optional[Union[str, TransportPrinciple]] = None,
                     localizationType: Optional[Union[str, LocalizationType]] = None,
                     navigationType: Optional[Union[str, NavigationType]] = None,
-                    specialApplications: Optional[Union[aas.LangStringSet, SpecialApplications]] = None,
-                    specialCapabilities: Optional[Union[aas.LangStringSet, SpecialCapabilities]] = None,
+                    specialApplications: Optional[Union[aas.MultiLanguageTextType, SpecialApplications]] = None,
+                    specialCapabilities: Optional[Union[aas.MultiLanguageTextType, SpecialCapabilities]] = None,
                     protectionClassIP: Optional[Union[str, ProtectionClassIP]] = None,
                     suitableForOutdoorUse: Optional[Union[bool, SuitableForOutdoorUse]] = None,
                     requiredEnvironmentalConditions: Optional[
-                        Union[aas.LangStringSet, RequiredEnvironmentalConditions]
+                        Union[aas.MultiLanguageTextType, RequiredEnvironmentalConditions]
                     ] = None,
-                    specialQualificationDemand: Optional[Union[aas.LangStringSet, SpecialQualificationDemand]] = None,
+                    specialQualificationDemand: Optional[
+                        Union[aas.MultiLanguageTextType, SpecialQualificationDemand]
+                    ] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -1079,7 +1091,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1161,7 +1175,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1580,7 +1596,9 @@ class TechnicalDataAGV(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/idta/technicaldataagv/emissions/1/0"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1606,7 +1624,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1630,7 +1650,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1654,7 +1676,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1679,11 +1703,15 @@ class TechnicalDataAGV(aas.Submodel):
                     maxLateralInclinationWithoutLoad: Optional[Union[int, MaxLateralInclinationWithoutLoad]] = None,
                     maxClimbingInclinationMaxLoad: Optional[Union[int, MaxClimbingInclinationMaxLoad]] = None,
                     maxClimbingInclinationWithoutLoad: Optional[Union[int, MaxClimbingInclinationWithoutLoad]] = None,
-                    localizationSensorDetails: Optional[Union[aas.LangStringSet, LocalizationSensorDetails]] = None,
+                    localizationSensorDetails: Optional[
+                        Union[aas.MultiLanguageTextType, LocalizationSensorDetails]
+                    ] = None,
                     localizationAccuracy: Optional[Union[xsd.Float, LocalizationAccuracy]] = None,
                     positioningAccuracy: Optional[Union[xsd.Float, PositioningAccuracy]] = None,
                     maxLoadMass: Optional[Union[xsd.Float, MaxLoadMass]] = None,
-                    interfacesForAttachments: Optional[Union[aas.LangStringSet, InterfacesForAttachments]] = None,
+                    interfacesForAttachments: Optional[
+                        Union[aas.MultiLanguageTextType, InterfacesForAttachments]
+                    ] = None,
                     systemAvailability: Optional[Union[xsd.Float, SystemAvailability]] = None,
                     maxRunTimeAsSpecified: Optional[Union[int, MaxRunTimeAsSpecified]] = None,
                     maxRunTimeAsOperated: Optional[Union[int, MaxRunTimeAsOperated]] = None,
@@ -1698,10 +1726,14 @@ class TechnicalDataAGV(aas.Submodel):
                     vehicleWidth: Optional[Union[str, VehicleWidth]] = None,
                     vehicleLength: Optional[Union[str, VehicleLength]] = None,
                     vehicleWeight: Optional[Union[str, VehicleWeight]] = None,
-                    emissions: Optional[Union[aas.LangStringSet, Emissions]] = None,
-                    mapProcessingInformation: Optional[Union[aas.LangStringSet, MapProcessingInformation]] = None,
-                    manualControllerInformation: Optional[Union[aas.LangStringSet, ManualControllerInformation]] = None,
-                    digitalAnalogInterfaces: Optional[Union[aas.LangStringSet, DigitalAnalogInterfaces]] = None,
+                    emissions: Optional[Union[aas.MultiLanguageTextType, Emissions]] = None,
+                    mapProcessingInformation: Optional[
+                        Union[aas.MultiLanguageTextType, MapProcessingInformation]
+                    ] = None,
+                    manualControllerInformation: Optional[
+                        Union[aas.MultiLanguageTextType, ManualControllerInformation]
+                    ] = None,
+                    digitalAnalogInterfaces: Optional[Union[aas.MultiLanguageTextType, DigitalAnalogInterfaces]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -2260,7 +2292,9 @@ class TechnicalDataAGV(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2283,7 +2317,9 @@ class TechnicalDataAGV(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2390,9 +2426,9 @@ class TechnicalDataAGV(aas.Submodel):
                     def __init__(
                         self,
                         chargingDeviceRequirements: Optional[
-                            Union[aas.LangStringSet, ChargingDeviceRequirements]
+                            Union[aas.MultiLanguageTextType, ChargingDeviceRequirements]
                         ] = None,
-                        batteryInformation: Optional[Union[aas.LangStringSet, BatteryInformation]] = None,
+                        batteryInformation: Optional[Union[aas.MultiLanguageTextType, BatteryInformation]] = None,
                         chargingTimeAsSpecified: Optional[Union[xsd.Float, ChargingTimeAsSpecified]] = None,
                         chargingTimeAsOperated: Optional[Union[xsd.Float, ChargingTimeAsOperated]] = None,
                         remainingChargeCycles: Optional[Union[int, RemainingChargeCycles]] = None,
@@ -2466,7 +2502,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2486,7 +2524,9 @@ class TechnicalDataAGV(aas.Submodel):
                     energySource: Optional[Union[str, EnergySource]] = None,
                     energyAbsorption: Optional[Union[str, EnergyAbsorption]] = None,
                     energyStorage: Optional[Union[str, EnergyStorage]] = None,
-                    powerTransmissionToExternal: Optional[Union[aas.LangStringSet, PowerTransmissionToExternal]] = None,
+                    powerTransmissionToExternal: Optional[
+                        Union[aas.MultiLanguageTextType, PowerTransmissionToExternal]
+                    ] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -2541,7 +2581,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2564,7 +2606,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2588,7 +2632,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2611,7 +2657,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2634,7 +2682,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2652,11 +2702,15 @@ class TechnicalDataAGV(aas.Submodel):
 
                 def __init__(
                     self,
-                    communicationProtocol: Optional[Union[aas.LangStringSet, CommunicationProtocol]] = None,
-                    communicationNetwork: Optional[Union[aas.LangStringSet, CommunicationNetwork]] = None,
-                    vDA5050InterfaceDescription: Optional[Union[aas.LangStringSet, VDA5050InterfaceDescription]] = None,
-                    automationInterface: Optional[Union[aas.LangStringSet, AutomationInterface]] = None,
-                    controlSystemInformation: Optional[Union[aas.LangStringSet, ControlSystemInformation]] = None,
+                    communicationProtocol: Optional[Union[aas.MultiLanguageTextType, CommunicationProtocol]] = None,
+                    communicationNetwork: Optional[Union[aas.MultiLanguageTextType, CommunicationNetwork]] = None,
+                    vDA5050InterfaceDescription: Optional[
+                        Union[aas.MultiLanguageTextType, VDA5050InterfaceDescription]
+                    ] = None,
+                    automationInterface: Optional[Union[aas.MultiLanguageTextType, AutomationInterface]] = None,
+                    controlSystemInformation: Optional[
+                        Union[aas.MultiLanguageTextType, ControlSystemInformation]
+                    ] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -2725,7 +2779,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2749,7 +2805,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2772,7 +2830,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2793,7 +2853,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2809,10 +2871,14 @@ class TechnicalDataAGV(aas.Submodel):
 
                 def __init__(
                     self,
-                    conformityToSafetyStandards: Optional[Union[aas.LangStringSet, ConformityToSafetyStandards]] = None,
-                    manualControlInformation: Optional[Union[aas.LangStringSet, ManualControlInformation]] = None,
-                    safetySensorTechnology: Optional[Union[aas.LangStringSet, SafetySensorTechnology]] = None,
-                    safetyMechanics: Optional[Union[aas.LangStringSet, SafetyMechanics]] = None,
+                    conformityToSafetyStandards: Optional[
+                        Union[aas.MultiLanguageTextType, ConformityToSafetyStandards]
+                    ] = None,
+                    manualControlInformation: Optional[
+                        Union[aas.MultiLanguageTextType, ManualControlInformation]
+                    ] = None,
+                    safetySensorTechnology: Optional[Union[aas.MultiLanguageTextType, SafetySensorTechnology]] = None,
+                    safetyMechanics: Optional[Union[aas.MultiLanguageTextType, SafetyMechanics]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],
                 ):
 
@@ -2935,7 +3001,9 @@ class TechnicalDataAGV(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3159,7 +3227,7 @@ class TechnicalDataAGV(aas.Submodel):
                     currentWorkingSetupName: Optional[Union[str, CurrentWorkingSetupName]] = None,
                     activeLoading: Optional[Union[bool, ActiveLoading]] = None,
                     loadingType: Optional[Union[str, LoadingType]] = None,
-                    loadingRequirements: Optional[Union[aas.LangStringSet, LoadingRequirements]] = None,
+                    loadingRequirements: Optional[Union[aas.MultiLanguageTextType, LoadingRequirements]] = None,
                     currentAttachments: Optional[
                         Union[Iterable[Union[str, CurrentAttachments.Currentattachments_item]], CurrentAttachments]
                     ] = None,

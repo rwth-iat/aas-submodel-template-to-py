@@ -218,7 +218,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -239,7 +239,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -324,7 +324,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -345,7 +345,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -430,7 +430,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -451,7 +451,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -536,7 +536,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -557,7 +557,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -642,7 +642,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -663,7 +663,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -748,7 +748,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -769,7 +769,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -854,7 +854,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -875,7 +875,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -960,7 +960,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -981,7 +981,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1066,7 +1066,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1087,7 +1087,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1172,7 +1172,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1193,7 +1193,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1278,7 +1278,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1299,7 +1299,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1384,7 +1384,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1403,7 +1403,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Decimal, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1488,7 +1488,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1509,7 +1509,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Decimal, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1594,7 +1594,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1615,7 +1615,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Decimal, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1700,7 +1700,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1721,7 +1721,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Decimal, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1806,7 +1806,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1827,7 +1827,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Decimal, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -1912,7 +1912,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1933,7 +1933,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Decimal, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -2018,7 +2018,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2039,7 +2039,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -2124,7 +2124,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2145,7 +2145,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             self,
             key: Union[str, Key],
             currentValue: Union[xsd.Duration, CurrentValue],
-            comment: Union[aas.LangStringSet, Comment],
+            comment: Union[aas.MultiLanguageTextType, Comment],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 

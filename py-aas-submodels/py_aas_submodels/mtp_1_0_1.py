@@ -346,7 +346,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -360,7 +360,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -374,7 +374,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -485,9 +485,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -749,7 +749,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -763,7 +763,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -777,7 +777,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -888,9 +888,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -1152,7 +1152,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1166,7 +1166,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1180,7 +1180,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1291,9 +1291,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -1555,7 +1555,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1569,7 +1569,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1583,7 +1583,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1694,9 +1694,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -1958,7 +1958,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1972,7 +1972,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1986,7 +1986,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2097,9 +2097,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -2361,7 +2361,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2375,7 +2375,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2389,7 +2389,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2500,9 +2500,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -2779,7 +2779,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2793,7 +2793,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2807,7 +2807,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2919,9 +2919,9 @@ class Documentation(aas.Submodel):
                 language01: Union[str, Language01],
                 language02: Union[str, Language02],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -3189,7 +3189,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3203,7 +3203,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3217,7 +3217,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3328,9 +3328,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -3592,7 +3592,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3606,7 +3606,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3620,7 +3620,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3731,9 +3731,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -4229,7 +4229,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 "semantic_id": global_ref(r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel/DisplayName"),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4243,7 +4243,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 "semantic_id": global_ref(r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel/Description"),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4325,8 +4325,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
         id_: str,
         mTPFile: Optional[MTPFile] = None,
         sourceList: Optional[SourceList] = None,
-        displayName: Optional[Union[aas.LangStringSet, DisplayName]] = None,
-        description_: Optional[Union[aas.LangStringSet, Description]] = None,
+        displayName: Optional[Union[aas.MultiLanguageTextType, DisplayName]] = None,
+        description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
         documentationReferences: Optional[DocumentationReferences] = None,
         **kwargs: Unpack[SubmodelMetadata],
     ):
@@ -4475,7 +4475,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4489,7 +4489,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4503,7 +4503,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4614,9 +4614,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -4878,7 +4878,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4892,7 +4892,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4906,7 +4906,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5017,9 +5017,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -5281,7 +5281,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5295,7 +5295,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5309,7 +5309,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5420,9 +5420,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -5684,7 +5684,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5698,7 +5698,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5712,7 +5712,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5823,9 +5823,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -6087,7 +6087,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6101,7 +6101,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6115,7 +6115,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6226,9 +6226,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -6490,7 +6490,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6504,7 +6504,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6518,7 +6518,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6629,9 +6629,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -6908,7 +6908,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6922,7 +6922,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6936,7 +6936,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7048,9 +7048,9 @@ class Documentation(aas.Submodel):
                 language01: Union[str, Language01],
                 language02: Union[str, Language02],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -7318,7 +7318,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7332,7 +7332,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7346,7 +7346,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7457,9 +7457,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],
@@ -7721,7 +7721,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/Description/Title"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7735,7 +7735,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7749,7 +7749,7 @@ class Documentation(aas.Submodel):
                         "semantic_id": global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -7860,9 +7860,9 @@ class Documentation(aas.Submodel):
                 self,
                 language01: Union[str, Language01],
                 documentVersionId: Union[str, DocumentVersionId],
-                title: Union[aas.LangStringSet, Title],
-                summary: Union[aas.LangStringSet, Summary],
-                keyWords: Union[aas.LangStringSet, KeyWords],
+                title: Union[aas.MultiLanguageTextType, Title],
+                summary: Union[aas.MultiLanguageTextType, Summary],
+                keyWords: Union[aas.MultiLanguageTextType, KeyWords],
                 setDate: Union[xsd.Date, SetDate],
                 statusValue: Union[str, StatusValue],
                 role: Union[str, Role],

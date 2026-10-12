@@ -236,7 +236,7 @@ class RailwayFireProtection(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/ManufacturerName/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -255,7 +255,7 @@ class RailwayFireProtection(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/ManufacturerProductDesignation/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -314,8 +314,8 @@ class RailwayFireProtection(aas.Submodel):
 
         def __init__(
             self,
-            manufacturerName: Union[aas.LangStringSet, ManufacturerName],
-            manufacturerProductDesignation: Union[aas.LangStringSet, ManufacturerProductDesignation],
+            manufacturerName: Union[aas.MultiLanguageTextType, ManufacturerName],
+            manufacturerProductDesignation: Union[aas.MultiLanguageTextType, ManufacturerProductDesignation],
             orderCodeOfManufacturer: Union[str, OrderCodeOfManufacturer],
             productArticleNumberOfManufacturer: Union[str, ProductArticleNumberOfManufacturer],
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -1036,7 +1036,7 @@ class RailwayFireProtection(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/MaterialName/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1052,7 +1052,7 @@ class RailwayFireProtection(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/cds/MaterialManufacturer/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1215,8 +1215,8 @@ class RailwayFireProtection(aas.Submodel):
             self,
             masses: Masses,
             materialCharacteristics: Union[Tuple[xsd.Int, xsd.Int], MaterialCharacteristics],
-            materialName: Optional[Union[aas.LangStringSet, MaterialName]] = None,
-            materialManufacturer: Optional[Union[aas.LangStringSet, MaterialManufacturer]] = None,
+            materialName: Optional[Union[aas.MultiLanguageTextType, MaterialName]] = None,
+            materialManufacturer: Optional[Union[aas.MultiLanguageTextType, MaterialManufacturer]] = None,
             testedMaterialCombinationDescription: Optional[Union[str, TestedMaterialCombinationDescription]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):

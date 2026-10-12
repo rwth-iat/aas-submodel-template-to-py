@@ -253,7 +253,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -527,7 +527,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 efdmVersion: EfdmVersion,
                 origin: Origin,
                 modification: Modification,
-                comment: Optional[Union[aas.LangStringSet, Comment]] = None,
+                comment: Optional[Union[aas.MultiLanguageTextType, Comment]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -955,7 +955,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1225,7 +1225,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 efdmVersion: EfdmVersion,
                 origin: Origin,
                 modification: Modification,
-                comment: Optional[Union[aas.LangStringSet, Comment]] = None,
+                comment: Optional[Union[aas.MultiLanguageTextType, Comment]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -3747,7 +3747,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4021,7 +4021,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 efdmVersion: EfdmVersion,
                 origin: Origin,
                 modification: Modification,
-                comment: Optional[Union[aas.LangStringSet, Comment]] = None,
+                comment: Optional[Union[aas.MultiLanguageTextType, Comment]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -6556,7 +6556,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6826,7 +6826,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 efdmVersion: EfdmVersion,
                 origin: Origin,
                 modification: Modification,
-                comment: Optional[Union[aas.LangStringSet, Comment]] = None,
+                comment: Optional[Union[aas.MultiLanguageTextType, Comment]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -7809,7 +7809,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -8079,7 +8079,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 efdmVersion: EfdmVersion,
                 origin: Origin,
                 modification: Modification,
-                comment: Optional[Union[aas.LangStringSet, Comment]] = None,
+                comment: Optional[Union[aas.MultiLanguageTextType, Comment]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 

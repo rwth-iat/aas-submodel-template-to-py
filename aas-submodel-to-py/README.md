@@ -70,7 +70,7 @@ class Nameplate(aas.Submodel):
                 "supplemental_semantic_id": (global_ref(r"0173-1#02-AAO677#004"),),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -102,7 +102,7 @@ class Nameplate(aas.Submodel):
         self,
         id_: str,
         uRIOfTheProduct: Union[xsd.AnyURI, URIOfTheProduct],
-        manufacturerName: Union[aas.LangStringSet, ManufacturerName],
+        manufacturerName: Union[aas.MultiLanguageTextType, ManufacturerName],
         ...
         yearOfConstruction: Optional[Union[str, YearOfConstruction]] = None,
         ...

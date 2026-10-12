@@ -378,7 +378,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABJ219-002"),),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -417,7 +417,7 @@ class DigitalQualityDocuments(aas.Submodel):
             def __init__(
                 self,
                 classId: Union[str, ClassId],
-                className: Union[aas.LangStringSet, ClassName],
+                className: Union[aas.MultiLanguageTextType, ClassName],
                 classificationSystem: Union[str, ClassificationSystem],
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -558,7 +558,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABG940-003"),),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -578,7 +578,7 @@ class DigitalQualityDocuments(aas.Submodel):
                         "supplemental_semantic_id": (global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN466-004"),),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -894,7 +894,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                     }
 
                                 def __init__(
-                                    self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                    self,
+                                    value: aas.MultiLanguageTextType,
+                                    **kwargs: Unpack[MultiLanguagePropertyMetadata],
                                 ):
 
                                     super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -1024,7 +1026,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             def __init__(
                                 self,
-                                identificationName: Optional[Union[aas.LangStringSet, IdentificationName]] = None,
+                                identificationName: Optional[
+                                    Union[aas.MultiLanguageTextType, IdentificationName]
+                                ] = None,
                                 identificationIssuer: Optional[Union[str, IdentificationIssuer]] = None,
                                 identificationValue: Optional[Union[str, IdentificationValue]] = None,
                                 iD: Optional[Union[str, ID]] = None,
@@ -1208,7 +1212,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                     }
 
                                 def __init__(
-                                    self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                    self,
+                                    value: aas.MultiLanguageTextType,
+                                    **kwargs: Unpack[MultiLanguagePropertyMetadata],
                                 ):
 
                                     super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -1338,7 +1344,9 @@ class DigitalQualityDocuments(aas.Submodel):
 
                             def __init__(
                                 self,
-                                identificationName: Optional[Union[aas.LangStringSet, IdentificationName]] = None,
+                                identificationName: Optional[
+                                    Union[aas.MultiLanguageTextType, IdentificationName]
+                                ] = None,
                                 identificationIssuer: Optional[Union[str, IdentificationIssuer]] = None,
                                 identificationValue: Optional[Union[str, IdentificationValue]] = None,
                                 iD: Optional[Union[str, ID]] = None,
@@ -1458,7 +1466,7 @@ class DigitalQualityDocuments(aas.Submodel):
 
                                         def __init__(
                                             self,
-                                            value: aas.LangStringSet,
+                                            value: aas.MultiLanguageTextType,
                                             **kwargs: Unpack[MultiLanguagePropertyMetadata],
                                         ):
 
@@ -1592,7 +1600,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     def __init__(
                                         self,
                                         identificationName: Optional[
-                                            Union[aas.LangStringSet, IdentificationName]
+                                            Union[aas.MultiLanguageTextType, IdentificationName]
                                         ] = None,
                                         identificationIssuer: Optional[Union[str, IdentificationIssuer]] = None,
                                         identificationValue: Optional[Union[str, IdentificationValue]] = None,
@@ -1861,7 +1869,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                 }
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -1880,7 +1888,7 @@ class DigitalQualityDocuments(aas.Submodel):
                             self,
                             dateOfStatement: Optional[Union[xsd.DateTime, DateOfStatement]] = None,
                             statementReference: Optional[Union[str, StatementReference]] = None,
-                            declaration: Optional[Union[aas.LangStringSet, Declaration]] = None,
+                            declaration: Optional[Union[aas.MultiLanguageTextType, Declaration]] = None,
                             **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
 
@@ -2275,8 +2283,8 @@ class DigitalQualityDocuments(aas.Submodel):
                 self,
                 language: Union[Iterable[Union[str, Language.Language_item]], Language],
                 version: Union[str, Version],
-                title: Union[aas.LangStringSet, Title],
-                description_: Union[aas.LangStringSet, Description],
+                title: Union[aas.MultiLanguageTextType, Title],
+                description_: Union[aas.MultiLanguageTextType, Description],
                 statusSetDate: Union[xsd.DateTime, StatusSetDate],
                 statusValue: Union[str, StatusValue],
                 organizationShortName: Union[str, OrganizationShortName],

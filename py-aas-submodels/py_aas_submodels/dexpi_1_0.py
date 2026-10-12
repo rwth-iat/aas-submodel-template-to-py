@@ -612,7 +612,7 @@ class DEXPI(aas.Submodel):
                         "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/ApprovalDescriptionAssignmentClass"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -711,7 +711,7 @@ class DEXPI(aas.Submodel):
                         "semantic_id": global_ref(r"http://sandbox.dexpi.org/rdl/DrawingSubTitleAssignmentClass"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -741,14 +741,14 @@ class DEXPI(aas.Submodel):
             def __init__(
                 self,
                 approvalDate: Optional[Union[xsd.Date, ApprovalDate]] = None,
-                approvalDescription: Optional[Union[aas.LangStringSet, ApprovalDescription]] = None,
+                approvalDescription: Optional[Union[aas.MultiLanguageTextType, ApprovalDescription]] = None,
                 archiveNumber: Optional[Union[str, ArchiveNumber]] = None,
                 checkerName: Optional[Union[str, CheckerName]] = None,
                 creationDate: Optional[Union[xsd.Date, CreationDate]] = None,
                 creatorName: Optional[Union[str, CreatorName]] = None,
                 designerName: Optional[Union[str, DesignerName]] = None,
                 drawingNumber: Optional[Union[str, DrawingNumber]] = None,
-                drawingSubTitle: Optional[Union[aas.LangStringSet, DrawingSubTitle]] = None,
+                drawingSubTitle: Optional[Union[aas.MultiLanguageTextType, DrawingSubTitle]] = None,
                 lastModificationDate: Optional[Union[xsd.Date, LastModificationDate]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):

@@ -215,7 +215,7 @@ class TimeSeries(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Metadata/Name/1/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -229,7 +229,7 @@ class TimeSeries(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Metadata/Description/1/1"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -351,9 +351,9 @@ class TimeSeries(aas.Submodel):
 
         def __init__(
             self,
-            name: Union[aas.LangStringSet, Name],
+            name: Union[aas.MultiLanguageTextType, Name],
             record: Record,
-            description_: Optional[Union[aas.LangStringSet, Description]] = None,
+            description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 
@@ -387,7 +387,7 @@ class TimeSeries(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Segment/Name/1/1"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -401,7 +401,7 @@ class TimeSeries(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Segment/Description/1/1"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -571,8 +571,8 @@ class TimeSeries(aas.Submodel):
 
             def __init__(
                 self,
-                name: Optional[Union[aas.LangStringSet, Name]] = None,
-                description_: Optional[Union[aas.LangStringSet, Description]] = None,
+                name: Optional[Union[aas.MultiLanguageTextType, Name]] = None,
+                description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
                 recordCount: Optional[Union[xsd.Long, RecordCount]] = None,
                 startTime: Optional[Union[str, StartTime]] = None,
                 endTime: Optional[Union[str, EndTime]] = None,
@@ -667,7 +667,7 @@ class TimeSeries(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Segment/Name/1/1"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -681,7 +681,7 @@ class TimeSeries(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Segment/Description/1/1"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -848,8 +848,8 @@ class TimeSeries(aas.Submodel):
                 self,
                 endpoint: Union[str, Endpoint],
                 query: Union[str, Query],
-                name: Optional[Union[aas.LangStringSet, Name]] = None,
-                description_: Optional[Union[aas.LangStringSet, Description]] = None,
+                name: Optional[Union[aas.MultiLanguageTextType, Name]] = None,
+                description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
                 recordCount: Optional[Union[xsd.Long, RecordCount]] = None,
                 startTime: Optional[Union[str, StartTime]] = None,
                 endTime: Optional[Union[str, EndTime]] = None,
@@ -952,7 +952,7 @@ class TimeSeries(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Segment/Name/1/1"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -966,7 +966,7 @@ class TimeSeries(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/TimeSeries/Segment/Description/1/1"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1236,8 +1236,8 @@ class TimeSeries(aas.Submodel):
             def __init__(
                 self,
                 records: Records,
-                name: Optional[Union[aas.LangStringSet, Name]] = None,
-                description_: Optional[Union[aas.LangStringSet, Description]] = None,
+                name: Optional[Union[aas.MultiLanguageTextType, Name]] = None,
+                description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
                 recordCount: Optional[Union[xsd.Long, RecordCount]] = None,
                 startTime: Optional[Union[str, StartTime]] = None,
                 endTime: Optional[Union[str, EndTime]] = None,

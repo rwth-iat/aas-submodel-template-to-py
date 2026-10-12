@@ -215,7 +215,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -300,7 +302,7 @@ class HandoverDocumentation(aas.Submodel):
 
                     def __init__(
                         self,
-                        className: Union[aas.LangStringSet, ClassName],
+                        className: Union[aas.MultiLanguageTextType, ClassName],
                         classId: Union[str, ClassId],
                         classificationSystem: Union[str, ClassificationSystem],
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -640,7 +642,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -661,7 +665,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -684,7 +690,9 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -787,11 +795,11 @@ class HandoverDocumentation(aas.Submodel):
                     def __init__(
                         self,
                         language: Union[Iterable[Union[str, Language.Language_item]], Language],
-                        title: Union[aas.LangStringSet, Title],
+                        title: Union[aas.MultiLanguageTextType, Title],
                         digitalFiles: Union[Iterable[DigitalFiles.Digitalfiles_item], DigitalFiles],
                         version: Optional[Union[str, Version]] = None,
-                        subtitle: Optional[Union[aas.LangStringSet, Subtitle]] = None,
-                        description_: Optional[Union[aas.LangStringSet, Description]] = None,
+                        subtitle: Optional[Union[aas.MultiLanguageTextType, Subtitle]] = None,
+                        description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
 

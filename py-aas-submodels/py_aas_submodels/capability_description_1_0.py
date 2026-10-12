@@ -304,7 +304,7 @@ class CapabilityDescription(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -398,7 +398,9 @@ class CapabilityDescription(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -417,7 +419,9 @@ class CapabilityDescription(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -442,9 +446,9 @@ class CapabilityDescription(aas.Submodel):
                         propertyRange: Optional[Iterable[Union[Tuple[str, str], PropertyRange]]] = None,
                         propertyProperty: Optional[Iterable[Union[str, PropertyProperty]]] = None,
                         propertyMultiLanguageProperty: Optional[
-                            Iterable[Union[aas.LangStringSet, PropertyMultiLanguageProperty]]
+                            Iterable[Union[aas.MultiLanguageTextType, PropertyMultiLanguageProperty]]
                         ] = None,
-                        propertyComment: Optional[Union[aas.LangStringSet, PropertyComment]] = None,
+                        propertyComment: Optional[Union[aas.MultiLanguageTextType, PropertyComment]] = None,
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):
 
@@ -645,7 +649,7 @@ class CapabilityDescription(aas.Submodel):
                                 }
 
                             def __init__(
-                                self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                                self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
                             ):
 
                                 super().__init__(value=value, **(self.template_defaults() | kwargs))
@@ -668,7 +672,7 @@ class CapabilityDescription(aas.Submodel):
                         def __init__(
                             self,
                             capabilityComposedOf: Iterable[CapabilityComposedOf],
-                            composedOfComment: Optional[Union[aas.LangStringSet, ComposedOfComment]] = None,
+                            composedOfComment: Optional[Union[aas.MultiLanguageTextType, ComposedOfComment]] = None,
                             **kwargs: Unpack[SubmodelElementCollectionMetadata],
                         ):
 
@@ -1376,7 +1380,7 @@ class CapabilityDescription(aas.Submodel):
             def __init__(
                 self,
                 capability: Capability,
-                capabilityComment: Optional[Union[aas.LangStringSet, CapabilityComment]] = None,
+                capabilityComment: Optional[Union[aas.MultiLanguageTextType, CapabilityComment]] = None,
                 propertySet: Optional[Iterable[PropertySet]] = None,
                 capabilityRelations: Optional[CapabilityRelations] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],

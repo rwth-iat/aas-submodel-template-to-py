@@ -1203,7 +1203,7 @@ class AssetLocation(aas.Submodel):
                         ],
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1270,7 +1270,7 @@ class AssetLocation(aas.Submodel):
                 ] = None,
                 kindOfArea: Optional[Union[str, KindOfArea]] = None,
                 areaName: Optional[Union[str, AreaName]] = None,
-                areaDesciption: Optional[Union[aas.LangStringSet, AreaDesciption]] = None,
+                areaDesciption: Optional[Union[aas.MultiLanguageTextType, AreaDesciption]] = None,
                 areaLayout: Optional[AreaLayout] = None,
                 buildingLevel: Optional[Union[str, BuildingLevel]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -1891,7 +1891,9 @@ class AssetLocation(aas.Submodel):
                             ],
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1972,7 +1974,7 @@ class AssetLocation(aas.Submodel):
                     trueHeading: Optional[Union[int, TrueHeading]] = None,
                     headingAccuracy: Optional[Union[int, HeadingAccuracy]] = None,
                     transmissionTime: Optional[Union[xsd.DateTime, TransmissionTime]] = None,
-                    locationDescription: Optional[Union[aas.LangStringSet, LocationDescription]] = None,
+                    locationDescription: Optional[Union[aas.MultiLanguageTextType, LocationDescription]] = None,
                     speed: Optional[Union[xsd.Float, Speed]] = None,
                     course: Optional[Union[int, Course]] = None,
                     referencePointId: Optional[Union[str, ReferencePointId]] = None,
@@ -2219,7 +2221,7 @@ class AssetLocation(aas.Submodel):
                     ],
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2276,7 +2278,7 @@ class AssetLocation(aas.Submodel):
                     ],
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2297,10 +2299,10 @@ class AssetLocation(aas.Submodel):
             self,
             localizable: Optional[Union[bool, Localizable]] = None,
             assetLocationServiceRealTimeCapability: Optional[
-                Union[aas.LangStringSet, AssetLocationServiceRealTimeCapability]
+                Union[aas.MultiLanguageTextType, AssetLocationServiceRealTimeCapability]
             ] = None,
             realtimeLocationSourceType: Optional[Union[str, RealtimeLocationSourceType]] = None,
-            realtimeLocationSource: Optional[Union[aas.LangStringSet, RealtimeLocationSource]] = None,
+            realtimeLocationSource: Optional[Union[aas.MultiLanguageTextType, RealtimeLocationSource]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
 

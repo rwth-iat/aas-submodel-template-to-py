@@ -187,7 +187,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -234,7 +234,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -265,7 +265,7 @@ class BackendSpecificMaterialInformation(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -297,12 +297,12 @@ class BackendSpecificMaterialInformation(aas.Submodel):
         def __init__(
             self,
             materialType: Optional[Union[str, MaterialType]] = None,
-            baseUnitOfMeasure: Optional[Union[aas.LangStringSet, BaseUnitOfMeasure]] = None,
+            baseUnitOfMeasure: Optional[Union[aas.MultiLanguageTextType, BaseUnitOfMeasure]] = None,
             materialStatus: Optional[Union[str, MaterialStatus]] = None,
             industry: Optional[Union[str, Industry]] = None,
-            productName: Optional[Union[aas.LangStringSet, ProductName]] = None,
+            productName: Optional[Union[aas.MultiLanguageTextType, ProductName]] = None,
             materialNumber: Optional[Union[str, MaterialNumber]] = None,
-            description_: Optional[Union[aas.LangStringSet, Description]] = None,
+            description_: Optional[Union[aas.MultiLanguageTextType, Description]] = None,
             plant: Optional[Union[str, Plant]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):

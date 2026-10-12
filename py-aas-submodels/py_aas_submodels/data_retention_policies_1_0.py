@@ -621,7 +621,9 @@ class DataRetentionPolicies(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -639,7 +641,9 @@ class DataRetentionPolicies(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -655,7 +659,9 @@ class DataRetentionPolicies(aas.Submodel):
                                 ),
                             }
 
-                        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                        def __init__(
+                            self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                        ):
 
                             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -693,9 +699,9 @@ class DataRetentionPolicies(aas.Submodel):
                     def __init__(
                         self,
                         timestamp: Union[xsd.DateTime, Timestamp],
-                        identity: Union[aas.LangStringSet, Identity],
-                        operation: Union[aas.LangStringSet, Operation],
-                        reason: Union[aas.LangStringSet, Reason],
+                        identity: Union[aas.MultiLanguageTextType, Identity],
+                        operation: Union[aas.MultiLanguageTextType, Operation],
+                        reason: Union[aas.MultiLanguageTextType, Reason],
                         signature: Union[str, Signature],
                         **kwargs: Unpack[SubmodelElementCollectionMetadata],
                     ):

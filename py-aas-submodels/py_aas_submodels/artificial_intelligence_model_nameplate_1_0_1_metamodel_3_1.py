@@ -292,7 +292,7 @@ class AIModelNameplate(aas.Submodel):
                 "semantic_id": global_ref(r"https://admin-shell.io/idta/AIModelNameplate/KindOfLearning/1/0"),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -472,7 +472,7 @@ class AIModelNameplate(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -489,7 +489,7 @@ class AIModelNameplate(aas.Submodel):
             def __init__(
                 self,
                 size: Union[str, Size],
-                result: Union[aas.LangStringSet, Result],
+                result: Union[aas.MultiLanguageTextType, Result],
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -1118,7 +1118,7 @@ class AIModelNameplate(aas.Submodel):
                     ),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1136,7 +1136,7 @@ class AIModelNameplate(aas.Submodel):
 
         def __init__(
             self,
-            type: Union[aas.LangStringSet, Type],
+            type: Union[aas.MultiLanguageTextType, Type],
             transferLearning: Optional[TransferLearning] = None,
             hyperparameter: Optional[Hyperparameter] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -1176,7 +1176,7 @@ class AIModelNameplate(aas.Submodel):
         version: Union[str, Version],
         contactInformation: Union[aas.Reference, ContactInformation],
         storage: Union[str, Storage],
-        kindOfLearning: Union[aas.LangStringSet, KindOfLearning],
+        kindOfLearning: Union[aas.MultiLanguageTextType, KindOfLearning],
         inputs: Inputs,
         outputs: Outputs,
         trainingResults: TrainingResults,

@@ -375,7 +375,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#rights"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1129,7 +1129,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 dateOfLastModification: Optional[Union[str, DateOfLastModification]] = None,
                 language: Optional[Iterable[Union[str, Language]]] = None,
                 revision: Optional[Union[str, Revision]] = None,
-                rights: Optional[Iterable[Union[aas.LangStringSet, Rights]]] = None,
+                rights: Optional[Iterable[Union[aas.MultiLanguageTextType, Rights]]] = None,
                 hasRendition: Optional[Iterable[HasRendition]] = None,
                 hasContentLifecycleStatus: Optional[Iterable[HasContentLifecycleStatus]] = None,
                 isReplacementOf: Optional[Union[str, IsReplacementOf]] = None,
@@ -1577,7 +1577,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#rights"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2193,7 +2193,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 dateOfLastModification: Optional[Union[str, DateOfLastModification]] = None,
                 language: Optional[Iterable[Union[str, Language]]] = None,
                 revision: Optional[Union[str, Revision]] = None,
-                rights: Optional[Iterable[Union[aas.LangStringSet, Rights]]] = None,
+                rights: Optional[Iterable[Union[aas.MultiLanguageTextType, Rights]]] = None,
                 hasRendition: Optional[Iterable[HasRendition]] = None,
                 hasContentLifecycleStatus: Optional[Iterable[HasContentLifecycleStatus]] = None,
                 isReplacementOf: Optional[Union[str, IsReplacementOf]] = None,
@@ -2513,7 +2513,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"http://iirds.tekom.de/iirds#rights"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3137,7 +3137,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 dateOfLastModification: Optional[Union[str, DateOfLastModification]] = None,
                 language: Optional[Iterable[Union[str, Language]]] = None,
                 revision: Optional[Union[str, Revision]] = None,
-                rights: Optional[Iterable[Union[aas.LangStringSet, Rights]]] = None,
+                rights: Optional[Iterable[Union[aas.MultiLanguageTextType, Rights]]] = None,
                 hasRendition: Optional[Iterable[HasRendition]] = None,
                 hasContentLifecycleStatus: Optional[Iterable[HasContentLifecycleStatus]] = None,
                 isReplacementOf: Optional[Union[str, IsReplacementOf]] = None,
@@ -3564,7 +3564,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -3584,7 +3584,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 hasNextSibling: Optional[HasNextSibling] = None,
                 hasFirstChild: Optional[HasFirstChild] = None,
                 hasDirectoryStructureType: Optional[HasDirectoryStructureType] = None,
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -4818,7 +4818,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -4838,7 +4838,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -4981,7 +4981,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5001,7 +5001,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 hasEventCode: HasEventCode,
                 hasEventType: HasEventType,
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5092,7 +5092,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5110,7 +5110,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5163,7 +5163,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5181,7 +5181,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5234,7 +5234,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5252,7 +5252,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5305,7 +5305,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5340,7 +5340,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 self,
                 duration: Union[str, Duration],
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5398,7 +5398,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5452,7 +5452,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 frequency: Union[str, Frequency],
                 duration: Union[str, Duration],
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5515,7 +5515,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5552,7 +5552,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 self,
                 duration: Union[str, Duration],
                 resourceIRI: Optional[Union[xsd.AnyURI, ResourceIRI]] = None,
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5718,7 +5718,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5783,7 +5783,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
                 asset: Optional[Iterable[Asset]] = None,
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 relatesToParty: Optional[Iterable[RelatesToParty]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -5845,7 +5845,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5861,7 +5861,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5911,7 +5911,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -5931,7 +5931,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -5984,7 +5984,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         "semantic_id": global_ref(r"https://www.w3.org/2000/01/rdf-schema#label"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -6050,7 +6050,7 @@ class IntelligentInformationforUse(aas.Submodel):
             def __init__(
                 self,
                 resourceIRI: Union[xsd.AnyURI, ResourceIRI],
-                label: Optional[Union[aas.LangStringSet, Label]] = None,
+                label: Optional[Union[aas.MultiLanguageTextType, Label]] = None,
                 relatesToParty: Optional[Iterable[RelatesToParty]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):

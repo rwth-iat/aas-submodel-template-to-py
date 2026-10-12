@@ -229,7 +229,7 @@ class CompanyData(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/CompanyData/CompanyDescription/1/0"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -242,7 +242,7 @@ class CompanyData(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/CompanyData/HomepageURL/1/0"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -325,7 +325,7 @@ class CompanyData(aas.Submodel):
                     "semantic_id": global_ref(r"https://admin-shell.io/idta/CompanyData/OrderCurrency/1/0"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -340,7 +340,7 @@ class CompanyData(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/CompanyData/MainProductGroup/1/0"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -355,7 +355,7 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                mainproductgroups_items: Iterable[Union[aas.LangStringSet, Mainproductgroups_item]],
+                mainproductgroups_items: Iterable[Union[aas.MultiLanguageTextType, Mainproductgroups_item]],
                 **kwargs: Unpack[SubmodelElementListMetadata],
             ):
 
@@ -387,7 +387,7 @@ class CompanyData(aas.Submodel):
                         "semantic_id": global_ref(r"https://admin-shell.io/idta/CompanyData/Industry/1/0"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -402,7 +402,7 @@ class CompanyData(aas.Submodel):
 
             def __init__(
                 self,
-                industries_items: Iterable[Union[aas.LangStringSet, Industries_item]],
+                industries_items: Iterable[Union[aas.MultiLanguageTextType, Industries_item]],
                 **kwargs: Unpack[SubmodelElementListMetadata],
             ):
 
@@ -451,19 +451,22 @@ class CompanyData(aas.Submodel):
         def __init__(
             self,
             companyName: Union[str, CompanyName],
-            companyDescription: Optional[Union[aas.LangStringSet, CompanyDescription]] = None,
-            homepageURL: Optional[Union[aas.LangStringSet, HomepageURL]] = None,
+            companyDescription: Optional[Union[aas.MultiLanguageTextType, CompanyDescription]] = None,
+            homepageURL: Optional[Union[aas.MultiLanguageTextType, HomepageURL]] = None,
             vATNumber: Optional[Union[str, VATNumber]] = None,
             taxNumber: Optional[Union[str, TaxNumber]] = None,
             dUNS: Optional[Union[str, DUNS]] = None,
             commercialRegisterNumber: Optional[Union[str, CommercialRegisterNumber]] = None,
             foundingYear: Optional[Union[xsd.GYear, FoundingYear]] = None,
-            orderCurrency: Optional[Union[aas.LangStringSet, OrderCurrency]] = None,
+            orderCurrency: Optional[Union[aas.MultiLanguageTextType, OrderCurrency]] = None,
             mainProductGroups: Optional[
-                Union[Iterable[Union[aas.LangStringSet, MainProductGroups.Mainproductgroups_item]], MainProductGroups]
+                Union[
+                    Iterable[Union[aas.MultiLanguageTextType, MainProductGroups.Mainproductgroups_item]],
+                    MainProductGroups,
+                ]
             ] = None,
             industries: Optional[
-                Union[Iterable[Union[aas.LangStringSet, Industries.Industries_item]], Industries]
+                Union[Iterable[Union[aas.MultiLanguageTextType, Industries.Industries_item]], Industries]
             ] = None,
             companyLogo: Optional[CompanyLogo] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
@@ -2465,7 +2468,9 @@ class CompanyData(aas.Submodel):
                             ),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2507,7 +2512,9 @@ class CompanyData(aas.Submodel):
                             "semantic_id": global_ref(r"https://admin-shell.io/idta/CompanyData/RegulationName/1/0"),
                         }
 
-                    def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                    def __init__(
+                        self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]
+                    ):
 
                         super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -2521,8 +2528,8 @@ class CompanyData(aas.Submodel):
                 def __init__(
                     self,
                     complianceStatus: Union[str, ComplianceStatus],
-                    regulationName: Union[aas.LangStringSet, RegulationName],
-                    complianceStatement: Optional[Union[aas.LangStringSet, ComplianceStatement]] = None,
+                    regulationName: Union[aas.MultiLanguageTextType, RegulationName],
+                    complianceStatement: Optional[Union[aas.MultiLanguageTextType, ComplianceStatement]] = None,
                     documentationURI: Optional[Iterable[Union[xsd.AnyURI, DocumentationURI]]] = None,
                     documentationReference: Optional[Iterable[Union[aas.Reference, DocumentationReference]]] = None,
                     **kwargs: Unpack[SubmodelElementCollectionMetadata],

@@ -360,7 +360,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-AAO134#002"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -420,7 +420,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-AAO132#002"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -430,7 +430,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"Company", "semantic_id": global_ref(r"0173-1#02-AAW001#001")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -440,7 +440,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"Department", "semantic_id": global_ref(r"0173-1#02-AAO127#003")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -460,7 +460,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-AAO136#002"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -494,7 +494,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -509,9 +509,9 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             def __init__(
                 self,
-                telephoneNumber: Union[aas.LangStringSet, TelephoneNumber],
+                telephoneNumber: Union[aas.MultiLanguageTextType, TelephoneNumber],
                 typeOfTelephone: Optional[Union[str, TypeOfTelephone]] = None,
-                availableTime: Optional[Union[aas.LangStringSet, AvailableTime]] = None,
+                availableTime: Optional[Union[aas.MultiLanguageTextType, AvailableTime]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -552,7 +552,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-AAO195#002"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -581,7 +581,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
             def __init__(
                 self,
-                faxNumber: Union[aas.LangStringSet, FaxNumber],
+                faxNumber: Union[aas.MultiLanguageTextType, FaxNumber],
                 typeOfFaxNumber: Optional[Union[str, TypeOfFaxNumber]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
@@ -632,7 +632,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         "semantic_id": global_ref(r"0173-1#02-AAO200#002"),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -661,7 +661,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 def template_defaults() -> MultiLanguagePropertyMetadata:
                     return {"id_short": r"TypeOfPublicKey", "semantic_id": global_ref(r"0173-1#02-AAO201#002")}
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -672,9 +672,9 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def __init__(
                 self,
                 emailAddress: Union[str, EmailAddress],
-                publicKey: Optional[Union[aas.LangStringSet, PublicKey]] = None,
+                publicKey: Optional[Union[aas.MultiLanguageTextType, PublicKey]] = None,
                 typeOfEmailAddress: Optional[Union[str, TypeOfEmailAddress]] = None,
-                typeOfPublicKey: Optional[Union[aas.LangStringSet, TypeOfPublicKey]] = None,
+                typeOfPublicKey: Optional[Union[aas.MultiLanguageTextType, TypeOfPublicKey]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -749,7 +749,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         ),
                     }
 
-                def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+                def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                     super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -764,7 +764,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 self,
                 addressOfAdditionalLink: Union[str, AddressOfAdditionalLink],
                 typeOfCommunication: Optional[Union[str, TypeOfCommunication]] = None,
-                availableTime: Optional[Union[aas.LangStringSet, AvailableTime]] = None,
+                availableTime: Optional[Union[aas.MultiLanguageTextType, AvailableTime]] = None,
                 **kwargs: Unpack[SubmodelElementCollectionMetadata],
             ):
 
@@ -805,7 +805,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-AAO128#002"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -823,7 +823,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-AAO129#002"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -833,7 +833,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"POBox", "semantic_id": global_ref(r"0173-1#02-AAO130#002")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -851,7 +851,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     "semantic_id": global_ref(r"0173-1#02-AAO131#002"),
                 }
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -861,7 +861,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"StateCounty", "semantic_id": global_ref(r"0173-1#02-AAO133#002")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -871,7 +871,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"NameOfContact", "semantic_id": global_ref(r"0173-1#02-AAO205#002")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -881,7 +881,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"FirstName", "semantic_id": global_ref(r"0173-1#02-AAO206#002")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -891,7 +891,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"MiddleNames", "semantic_id": global_ref(r"0173-1#02-AAO207#002")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -901,7 +901,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"Title", "semantic_id": global_ref(r"0173-1#02-AAO208#003")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -911,7 +911,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"AcademicTitle", "semantic_id": global_ref(r"0173-1#02-AAO209#003")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -921,7 +921,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             def template_defaults() -> MultiLanguagePropertyMetadata:
                 return {"id_short": r"FurtherDetailsOfContact", "semantic_id": global_ref(r"0173-1#02-AAO210#002")}
 
-            def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+            def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
                 super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -955,28 +955,28 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
 
         def __init__(
             self,
-            nationalCode: Union[aas.LangStringSet, NationalCode],
-            cityTown: Union[aas.LangStringSet, CityTown],
-            street: Union[aas.LangStringSet, Street],
-            zipcode: Union[aas.LangStringSet, Zipcode],
+            nationalCode: Union[aas.MultiLanguageTextType, NationalCode],
+            cityTown: Union[aas.MultiLanguageTextType, CityTown],
+            street: Union[aas.MultiLanguageTextType, Street],
+            zipcode: Union[aas.MultiLanguageTextType, Zipcode],
             roleOfContactPerson: Optional[Union[str, RoleOfContactPerson]] = None,
             language: Optional[Iterable[Union[str, Language]]] = None,
             timeZone: Optional[Union[str, TimeZone]] = None,
-            company: Optional[Union[aas.LangStringSet, Company]] = None,
-            department: Optional[Union[aas.LangStringSet, Department]] = None,
+            company: Optional[Union[aas.MultiLanguageTextType, Company]] = None,
+            department: Optional[Union[aas.MultiLanguageTextType, Department]] = None,
             phone: Optional[Phone] = None,
             fax: Optional[Fax] = None,
             email: Optional[Email] = None,
             iPCommunication: Optional[Iterable[IPCommunication]] = None,
-            pOBox: Optional[Union[aas.LangStringSet, POBox]] = None,
-            zipCodeOfPOBox: Optional[Union[aas.LangStringSet, ZipCodeOfPOBox]] = None,
-            stateCounty: Optional[Union[aas.LangStringSet, StateCounty]] = None,
-            nameOfContact: Optional[Union[aas.LangStringSet, NameOfContact]] = None,
-            firstName: Optional[Union[aas.LangStringSet, FirstName]] = None,
-            middleNames: Optional[Union[aas.LangStringSet, MiddleNames]] = None,
-            title: Optional[Union[aas.LangStringSet, Title]] = None,
-            academicTitle: Optional[Union[aas.LangStringSet, AcademicTitle]] = None,
-            furtherDetailsOfContact: Optional[Union[aas.LangStringSet, FurtherDetailsOfContact]] = None,
+            pOBox: Optional[Union[aas.MultiLanguageTextType, POBox]] = None,
+            zipCodeOfPOBox: Optional[Union[aas.MultiLanguageTextType, ZipCodeOfPOBox]] = None,
+            stateCounty: Optional[Union[aas.MultiLanguageTextType, StateCounty]] = None,
+            nameOfContact: Optional[Union[aas.MultiLanguageTextType, NameOfContact]] = None,
+            firstName: Optional[Union[aas.MultiLanguageTextType, FirstName]] = None,
+            middleNames: Optional[Union[aas.MultiLanguageTextType, MiddleNames]] = None,
+            title: Optional[Union[aas.MultiLanguageTextType, Title]] = None,
+            academicTitle: Optional[Union[aas.MultiLanguageTextType, AcademicTitle]] = None,
+            furtherDetailsOfContact: Optional[Union[aas.MultiLanguageTextType, FurtherDetailsOfContact]] = None,
             addressOfAdditionalLink: Optional[Union[str, AddressOfAdditionalLink]] = None,
             **kwargs: Unpack[SubmodelElementCollectionMetadata],
         ):
@@ -1127,7 +1127,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 "semantic_id": global_ref(r"0173-1#02-ABA685#001"),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1143,7 +1143,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 "semantic_id": global_ref(r"0173-1#02-ABJ035#002"),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1161,7 +1161,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 "semantic_id": global_ref(r"0173-1#02-ABA686#001"),
             }
 
-        def __init__(self, value: aas.LangStringSet, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
+        def __init__(self, value: aas.MultiLanguageTextType, **kwargs: Unpack[MultiLanguagePropertyMetadata]):
 
             super().__init__(value=value, **(self.template_defaults() | kwargs))
 
@@ -1190,9 +1190,9 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
         articleID: Optional[Iterable[Union[str, ArticleID]]] = None,
         articleName: Optional[Iterable[Union[str, ArticleName]]] = None,
         affiliation: Optional[Affiliation] = None,
-        componentName: Optional[Union[aas.LangStringSet, ComponentName]] = None,
-        comments: Optional[Iterable[Union[aas.LangStringSet, Comments]]] = None,
-        location: Optional[Union[aas.LangStringSet, Location]] = None,
+        componentName: Optional[Union[aas.MultiLanguageTextType, ComponentName]] = None,
+        comments: Optional[Iterable[Union[aas.MultiLanguageTextType, Comments]]] = None,
+        location: Optional[Union[aas.MultiLanguageTextType, Location]] = None,
         **kwargs: Unpack[SubmodelMetadata],
     ):
 
