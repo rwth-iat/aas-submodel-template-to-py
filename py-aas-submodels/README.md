@@ -66,6 +66,43 @@ Optional submodel elements default to `None` and can be passed as keyword argume
 Metadata (e.g. `semantic_id`, `description`) defaults to the template's values, returned by
 `template_defaults()`, and can be replaced by keyword arguments, e.g. `Nameplate(..., id_short="Nameplate01")`.
 
+A fuller example with a list, elements taking several values, and serialization to JSON with BaSyx:
+
+```python
+import json
+
+from basyx.aas.adapter.json import AASToJsonEncoder
+from basyx.aas.model import MultiLanguageTextType
+from basyx.aas.model.datatypes import Date
+from py_aas_submodels.digital_nameplate_3_0_1 import Nameplate
+
+Marking = Nameplate.Markings.Markings_item
+
+nameplate = Nameplate(
+    id_="https://example.com/ids/sm/nameplate-002",
+    uRIOfTheProduct="https://www.domain-abc.com/Model-Nr-1234",
+    manufacturerName=MultiLanguageTextType({"en": "Example AG"}),
+    manufacturerProductDesignation=MultiLanguageTextType({"en": "ABC-123"}),
+    addressInformation=Nameplate.AddressInformation(),
+    orderCodeOfManufacturer="ABC-123-XYZ",
+    # Lists take their items
+    markings=[
+        Marking(
+            markingName="CE",
+            markingFile=Marking.MarkingFile("/aasx/ce.png", "image/png"),
+            issueDate=Date(2024, 1, 15),
+            # Elements taking several values are numbered: MarkingAdditionalText00, MarkingAdditionalText01
+            markingAdditionalText=["Low Voltage Directive", "EMC Directive"],
+        )
+    ],
+    # Metadata replaces the template's values, here the idShort "Nameplate"
+    id_short="Nameplate01",
+)
+
+print(Nameplate.template_defaults()["id_short"])  # Nameplate
+print(json.dumps(nameplate, cls=AASToJsonEncoder, indent=2))
+```
+
 ## Generating Additional Submodels
 
 To generate classes for your own submodel templates, use the
